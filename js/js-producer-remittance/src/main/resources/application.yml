@@ -3,11 +3,11 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://root:123456@47.94.235.82:7776/eureka/
+      defaultZone: http://root:123456@localhost:7776/eureka/
 spring:
   datasource:
     # 使用druid数据源
-    url: jdbc:mysql://localhost:3306/js_bank_account
+    url: jdbc:mysql://localhost:3306/jsyh
     username: root
     password: 1234
     type: com.alibaba.druid.pool.DruidDataSource
@@ -25,6 +25,10 @@ spring:
       validationQuery: select 'x'
       #配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
       timeBetweenEvictionRunsMillis: 60000
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
   application:
     name: js-producer-remittance
   profiles:
@@ -50,5 +54,3 @@ spring:
 #          max-idle: 10 # 连接池中的最大空闲连接
 #          max-wait: 1000 # 连接池最大阻塞等待时间（使用负值表示没有限制）
 #          min-idle: 5
-mybatis:
-  mapper-locations: classpath:mapper/*.xml

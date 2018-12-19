@@ -2,7 +2,10 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/js/js-spring-eureka-server/dm-spring-eureka-server.iml" filepath="$PROJECT_DIR$/js/js-spring-eureka-server/dm-spring-eureka-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/js.iml" filepath="$PROJECT_DIR$/.idea/js.iml" />
+      <module fileurl="file://$PROJECT_DIR$/js/js-consumer-remittance/js-consumer-remittance.iml" filepath="$PROJECT_DIR$/js/js-consumer-remittance/js-consumer-remittance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/js/js-producer-remittance/js-producer-remittance.iml" filepath="$PROJECT_DIR$/js/js-producer-remittance/js-producer-remittance.iml" />
     </modules>
   </component>
 </project>
