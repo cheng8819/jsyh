@@ -3,4 +3,16 @@
   <component name="JavaScriptSettings">
     <option name="languageLevel" value="ES6" />
   </component>
+  <component name="MavenProjectsManager">
+    <option name="originalFiles">
+      <list>
+        <option value="$PROJECT_DIR$/js/js-producer-fund/pom.xml" />
+        <option value="$PROJECT_DIR$/js/js-producer-financial/pom.xml" />
+        <option value="$PROJECT_DIR$/js/js-consumer-financial/pom.xml" />
+        <option value="$PROJECT_DIR$/js/js-cosumer-fund/pom.xml" />
+        <option value="$PROJECT_DIR$/js/js-spring-eureka-server/pom.xml" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" project-jdk-name="1.8" project-jdk-type="JavaSDK" />
 </project>

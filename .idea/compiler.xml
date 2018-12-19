@@ -1,6 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="8" />
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="dm-spring-eureka-server" />
+        <module name="js-consumer-financial" />
+        <module name="js-cosumer-fund" />
+        <module name="js-producer-financial" />
+        <module name="js-producer-fund" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8">
+      <module name="dm-spring-eureka-server" target="1.8" />
+      <module name="js-consumer-financial" target="1.8" />
+      <module name="js-cosumer-fund" target="1.8" />
+      <module name="js-producer-financial" target="1.8" />
+      <module name="js-producer-fund" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

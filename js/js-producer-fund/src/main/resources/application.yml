@@ -1,9 +1,27 @@
 server:
   port: 8084
-spring:
-  application:
-    name: js-producer-fund
 eureka:
   client:
     service-url:
-      defaultZone: http://root:123456@47.94.235.82:7776/eureka/
+      defaultZone: http://root:123456@localhost:7776/eureka/
+spring:
+  application:
+    name: js-producer-fund
+  datasource:
+    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://47.95.116.4:3306/bank?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+    username: bank
+    password: bank
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+#  type-aliases-package: com.example.jsproducerfund.pojo
+#  data:
+#    elasticsearch:
+#        cluster-name: my-auction2
+#        cluster-nodes: 47.100.246.114:9300
+#        properties:
+#        path:
+#          logs: ./elasticsearch/logs
+#          data: ./elasticsearch/data
+#      repositories:
+#        enabled: false
