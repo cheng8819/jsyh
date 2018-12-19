@@ -2,8 +2,39 @@ server:
   port: 8025
 spring:
   application:
-    name: js-producer-account
+    name: js-producer-list
+  datasource:
+    url: jdbc:mysql://localhost:3306/bank?serverTimezone=GMT%2B8
+    username: root
+    password: 19970203
+    driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+    initialSize: 1
+    minIdle: 3
+    maxActive: 20
+    maxWait: 60000
+    timeBetweenEvictionRunsMillis: 60000
+    minEvictableIdleTimeMillis: 30000
+    validationQuery: select 'x'
+    testWhileIdle: true
+    testOnBorrow: false
+    testOnReturn: false
+    poolPreparedStatements: true
+    maxPoolPreparedStatementPerConnectionSize: 20
+    filters: config,stat,slf4j
+    connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+    useGlobalDataSourceStat: true
 eureka:
   client:
     service-url:
-      defaultZone: http://root:123456@47.94.235.82:7776/eureka/
+      defaultZone: http://root:123456@39.105.153.204:7776/eureka/
+mybatis:
+
+  type-aliases-package: com/example/jsproduceraccount/pojo
+
+  mapper-locations: classpath:mapper/*.xml
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
