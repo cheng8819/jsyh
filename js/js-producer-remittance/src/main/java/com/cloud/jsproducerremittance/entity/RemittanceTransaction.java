@@ -38,6 +38,7 @@ public class RemittanceTransaction implements Serializable {
     private Integer remittancetransactionPayuserid;
     //付款人电话
     private String phone;
+
     //手续费
     private String remittancetransactionProcedure;
 
