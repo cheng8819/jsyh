@@ -19,20 +19,19 @@ public class SwaggerConfig {
         return new Docket(DocumentationType.SWAGGER_2)
                 .apiInfo(apiInfo())
                 .select()
-                // 自行修改为自己的包路径
-                .apis(RequestHandlerSelectors.basePackage("com.example.swagger.com.example.springbootshirojwt.controller"))
+                .apis(RequestHandlerSelectors.basePackage("com.example.jsproducerloans.controller"))
                 .paths(PathSelectors.any())
                 .build();
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("api文档")
-                .description("restfun 风格接口")
+                .title("贷款api文档")
+                .description("restful 风格接口")
                 //服务条款网址
                 .termsOfServiceUrl("http://www.baidu.com")
                 .version("1.0")
-                .contact(new Contact("莫小泽", "/test", "981205912@qq.com"))
+                .contact(new Contact("郭", "/test", "981205912@qq.com"))
                 .build();
     }
 }

@@ -32,9 +32,6 @@ spring:
     useGlobalDataSourceStat: true
   application:
     name: js-producer-loans
-  thymeleaf:
-      cache: false
-      suffix: .html
   profiles:
     active: dev
   zipkin:
@@ -54,4 +51,4 @@ spring:
           simple:
             prefetch: 1
 mybatis:
-  mapperLocations: classpath:mapper/*.xml
+#  mapperLocations: classpath:mapper/*.xml
