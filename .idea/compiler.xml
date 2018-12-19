@@ -1,6 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="8" />
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="dm-spring-eureka-server" />
+        <module name="js-consumer-remittance" />
+        <module name="js-producer-remittance" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel target="8">
+      <module name="dm-spring-eureka-server" target="1.7" />
+      <module name="js-consumer-remittance" target="1.7" />
+      <module name="js-producer-remittance" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>
