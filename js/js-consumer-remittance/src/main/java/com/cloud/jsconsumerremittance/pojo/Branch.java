@@ -1,9 +1,6 @@
-package com.cloud.jsproducerremittance.entity;
+package com.cloud.jsconsumerremittance.pojo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
 import java.io.Serializable;
 
 /**
@@ -12,13 +9,9 @@ import java.io.Serializable;
  * @author makejava
  * @since 2018-11-10 08:52:16
  */
-@Entity
-@Table(name = "BRANCH")
 public class Branch implements Serializable {
 
     //网点ID
-    @Id
-    @GeneratedValue
     private Integer branchId;
     //网点名称
     private String branchName;

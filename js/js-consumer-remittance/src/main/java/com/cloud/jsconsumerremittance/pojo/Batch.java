@@ -1,9 +1,6 @@
-package com.cloud.jsproducerremittance.entity;
+package com.cloud.jsconsumerremittance.pojo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
 import java.io.Serializable;
 
 /**
@@ -12,13 +9,10 @@ import java.io.Serializable;
  * @author makejava
  * @since 2018-11-10 08:51:40
  */
-@Entity
-@Table(name = "BATCH")
+
 public class Batch implements Serializable {
 
     //批量汇款ID
-    @Id
-    @GeneratedValue
     private Integer batchId;
     //收款人姓名
     private String batchName = "";

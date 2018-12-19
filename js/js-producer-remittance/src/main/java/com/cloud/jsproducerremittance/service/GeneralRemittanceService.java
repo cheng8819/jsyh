@@ -1,5 +1,8 @@
 package com.cloud.jsproducerremittance.service;
 
-public interface GeneralRemittanceService {
+import com.cloud.jsproducerremittance.entity.RemittanceTransaction;
 
+public interface GeneralRemittanceService {
+    void addGeneralRemittance(RemittanceTransaction remittanceTransaction);
+    RemittanceTransaction addGeneralRemittancerecord(RemittanceTransaction remittanceTransaction);
 }

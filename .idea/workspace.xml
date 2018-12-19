@@ -1,10 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ce3f4790-d3cd-47e8-a661-ccfb63ed1f92" name="Default" comment="初始" />
+    <list default="true" id="ce3f4790-d3cd-47e8-a661-ccfb63ed1f92" name="Default" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_7_0.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/Swagger2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/config/DalyConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/config/RabbitConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/config/RabbitSender.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/controller/Remittance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/feign/ToApplyDorRheRemittance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/pojo/Batch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/pojo/Branch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/pojo/MakeRemittance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/pojo/RemittanceTransaction.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/service/AddRemittanceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/service/SaveMoneyService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/Swagger2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/config/GeneralRemittance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/config/RedisConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/controller/ToApplyDorRheRemittance.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/service/ApplicationInformationService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/service/impl/ApplicationInformationServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/service/impl/GeneralRemittanceServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/util/RedisUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/js-consumer-remittance/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-consumer-remittance/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/js-producer-remittance/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-producer-remittance/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/entity/Batch.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/entity/Batch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/entity/Branch.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/entity/Branch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/entity/MakeRemittance.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/entity/MakeRemittance.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/entity/RemittanceTransaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/entity/RemittanceTransaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/service/GeneralRemittanceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/service/GeneralRemittanceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/js-producer-remittance/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-producer-remittance/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/js-producer-remittance/src/main/resources/redis.properties" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-producer-remittance/src/main/resources/redis.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/js-producer-remittance/src/test/java/com/cloud/dmspringproducerserver/DmSpringProducerServerApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-producer-remittance/src/test/java/com/cloud/dmspringproducerserver/DmSpringProducerServerApplicationTests.java" afterDir="false" />
+    </list>
     <list id="c32b14a6-f51c-4607-a576-2e8f66703361" name="初始" comment="初始&#10;&#10;(cherry picked from commit 5aec4b0)">
       <changelist_data name="PwolGithub" email="850866596@qq.com" date="1545193803000" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/js/js-consumer-remittance/target/" />
     <ignored path="$PROJECT_DIR$/js/js-producer-remittance/target/" />
@@ -18,20 +51,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/resources/application.yml">
+      <file leaf-file-name="ApplicationInformationServiceImpl.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/service/impl/ApplicationInformationServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="527">
-              <caret line="31" column="14" lean-forward="true" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BatchDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/dao/BatchDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="61" selection-start-line="5" selection-start-column="61" selection-end-line="5" selection-end-column="61" />
+            <state relative-caret-position="227">
+              <caret line="17" column="138" selection-start-line="17" selection-start-column="138" selection-end-line="17" selection-end-column="138" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -39,41 +63,26 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BranchDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/dao/BranchDao.java">
+      <file leaf-file-name="RedisUtil.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/util/RedisUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
+            <state relative-caret-position="137">
+              <caret line="165" selection-start-line="165" selection-end-line="165" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <element signature="e#4013#4014#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MakeremittanceDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/dao/MakeremittanceDao.java">
+      <file leaf-file-name="GeneralRemittanceServiceImpl.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/service/impl/GeneralRemittanceServiceImpl.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="59" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="RemittancetransactionDao.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/dao/RemittancetransactionDao.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="34">
-              <caret line="2" column="66" selection-start-line="2" selection-start-column="66" selection-end-line="2" selection-end-column="66" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="application.yml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/js-spring-eureka-server/src/main/resources/application.yml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
-              <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+            <state relative-caret-position="188">
+              <caret line="30" column="73" lean-forward="true" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="73" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -81,32 +90,26 @@
       <file leaf-file-name="Batch.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/entity/Batch.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
-              <caret line="14" selection-start-line="14" selection-end-line="15" selection-end-column="22" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="-110">
+              <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Branch.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/entity/Branch.java">
+      <file leaf-file-name="DmSpringConsumerServerApplicationTests.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/js-consumer-remittance/src/test/java/com/cloud/dmspringconsumerserver/DmSpringConsumerServerApplicationTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="63">
-              <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="68">
+              <caret line="7" selection-start-line="7" selection-end-line="15" selection-end-column="1" />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MakeRemittance.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/entity/MakeRemittance.java">
+      <file leaf-file-name="DmSpringProducerServerApplicationTests.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/test/java/com/cloud/dmspringproducerserver/DmSpringProducerServerApplicationTests.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="131">
-              <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+            <state relative-caret-position="180">
+              <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -114,14 +117,71 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="RemittanceTransaction.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="ToApplyDorRheRemittance.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/controller/ToApplyDorRheRemittance.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="271">
+              <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DmSpringProducerServerApplication.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/DmSpringProducerServerApplication.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="153">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
+              <folding>
+                <element signature="e#507#508#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RemittanceTransaction.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/entity/RemittanceTransaction.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="39" column="25" lean-forward="true" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+            <state relative-caret-position="-35">
+              <caret line="21" column="15" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="15" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#1195#1196#0" expanded="true" />
+                <element signature="e#1241#1242#0" expanded="true" />
+                <element signature="e#1438#1439#0" expanded="true" />
+                <element signature="e#1486#1487#0" expanded="true" />
+                <element signature="e#1700#1701#0" expanded="true" />
+                <element signature="e#1754#1755#0" expanded="true" />
+                <element signature="e#1988#1989#0" expanded="true" />
+                <element signature="e#2037#2038#0" expanded="true" />
+                <element signature="e#2251#2252#0" expanded="true" />
+                <element signature="e#2300#2301#0" expanded="true" />
+                <element signature="e#2513#2514#0" expanded="true" />
+                <element signature="e#2561#2562#0" expanded="true" />
+                <element signature="e#2773#2774#0" expanded="true" />
+                <element signature="e#2824#2825#0" expanded="true" />
+                <element signature="e#3046#3047#0" expanded="true" />
+                <element signature="e#3096#3097#0" expanded="true" />
+                <element signature="e#3318#3319#0" expanded="true" />
+                <element signature="e#3371#3372#0" expanded="true" />
+                <element signature="e#3580#3581#0" expanded="true" />
+                <element signature="e#3608#3609#0" expanded="true" />
+                <element signature="e#3650#3651#0" expanded="true" />
+                <element signature="e#3684#3685#0" expanded="true" />
+                <element signature="e#3741#3742#0" expanded="true" />
+                <element signature="e#3794#3795#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="ApplicationInformationService.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/service/ApplicationInformationService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="102">
+              <caret line="6" selection-start-line="6" selection-end-line="6" />
             </state>
           </provider>
         </entry>
@@ -135,6 +195,15 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>s</find>
+      <find>remittancetransactionCardnumber</find>
+      <find>remittancetransactionNumber</find>
+      <find>templateid</find>
+      <find>int</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="ROOT_SYNC" value="DONT_SYNC" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -143,19 +212,51 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/js/js-consumer-remittance/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/js/js-producer-remittance/src/test/java/com/cloud/dmspringproducerserver/DmSpringProducerServerApplicationTests.java" />
-        <option value="$PROJECT_DIR$/js/js-producer-remittance/pom.xml" />
         <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/DmSpringProducerServerApplication.java" />
         <option value="$PROJECT_DIR$/js/js-spring-eureka-server/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/resources/application.yml" />
-        <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/entity/Batch.java" />
-        <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/entity/Branch.java" />
         <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/dao/BatchDao.java" />
         <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/dao/BranchDao.java" />
         <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/entity/Makeremittance.java" />
         <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/entity/Remittancetransaction.java" />
         <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/dao/MakeremittanceDao.java" />
         <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/dao/RemittancetransactionDao.java" />
+        <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/config/RedisConfig.java" />
+        <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/Swagger2.java" />
+        <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/util/RedisUtil.java" />
+        <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/service/GeneralRemittanceService.java" />
+        <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/service/ApplicationInformationService.java" />
+        <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/config/GeneralRemittance.java" />
+        <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/entity/Branch.java" />
+        <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/entity/Batch.java" />
+        <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/entity/MakeRemittance.java" />
+        <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/resources/redis.properties" />
+        <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/util/huiDiao/entity/ReceNoticeResp.java" />
+        <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/util/encryption/JavaWebToken.java" />
+        <option value="$PROJECT_DIR$/js/js-producer-remittance/pom.xml" />
+        <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/util/huiDiao/MoNotice.java" />
+        <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/util/huiDiao/VoiceBack.java" />
+        <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/util/huiDiao/ReceNotice.java" />
+        <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/util/huiDiao/Gson.java" />
+        <option value="$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/Swagger2.java" />
+        <option value="$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/pojo/Batch.java" />
+        <option value="$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/pojo/Branch.java" />
+        <option value="$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/pojo/MakeRemittance.java" />
+        <option value="$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/pojo/RemittanceTransaction.java" />
+        <option value="$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/feign/ToApplyDorRheRemittance.java" />
+        <option value="$PROJECT_DIR$/js/js-consumer-remittance/pom.xml" />
+        <option value="$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/config/DalyConfig.java" />
+        <option value="$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/service/AddRemittance.java" />
+        <option value="$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/controller/addRemittance.java" />
+        <option value="$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/service/SaveMoneyService.java" />
+        <option value="$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/service/AddRemittanceService.java" />
+        <option value="$PROJECT_DIR$/js/js-producer-remittance/src/test/java/com/cloud/dmspringproducerserver/DmSpringConsumerServerApplicationTests.java" />
+        <option value="$PROJECT_DIR$/js/js-producer-remittance/src/test/java/com/cloud/dmspringproducerserver/DmSpringProducerServerApplicationTests.java" />
+        <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/service/impl/Test.java" />
+        <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/controller/ToApplyDorRheRemittance.java" />
+        <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/service/impl/GeneralRemittanceServiceImpl.java" />
+        <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/service/impl/ApplicationInformationServiceImpl.java" />
+        <option value="$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/entity/RemittanceTransaction.java" />
       </list>
     </option>
   </component>
@@ -208,7 +309,9 @@
     <option name="width" value="1940" />
     <option name="height" value="1040" />
   </component>
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -231,6 +334,46 @@
               <item name="js" type="b2602c69:ProjectViewProjectNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="js-consumer-remittance" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="js-consumer-remittance" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="js-consumer-remittance" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="js-consumer-remittance" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="js-consumer-remittance" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="dmspringconsumerserver" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="js-producer-remittance" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -276,7 +419,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="jsproducerremittance" type="462c0819:PsiDirectoryNode" />
-              <item name="dao" type="462c0819:PsiDirectoryNode" />
+              <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="js" type="b2602c69:ProjectViewProjectNode" />
@@ -296,63 +439,48 @@
               <item name="js-producer-remittance" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jsproducerremittance" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="js" type="b2602c69:ProjectViewProjectNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="js-spring-eureka-server" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="js" type="b2602c69:ProjectViewProjectNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="js-spring-eureka-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="js" type="b2602c69:ProjectViewProjectNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="js-spring-eureka-server" type="462c0819:PsiDirectoryNode" />
+              <item name="js-producer-remittance" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jsproducerremittance" type="462c0819:PsiDirectoryNode" />
+              <item name="service" type="462c0819:PsiDirectoryNode" />
+              <item name="impl" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="js" type="b2602c69:ProjectViewProjectNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="js-spring-eureka-server" type="462c0819:PsiDirectoryNode" />
+              <item name="js-producer-remittance" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="js" type="b2602c69:ProjectViewProjectNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="js-producer-remittance" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="js" type="b2602c69:ProjectViewProjectNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="js-spring-eureka-server" type="462c0819:PsiDirectoryNode" />
+              <item name="js-producer-remittance" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="demo" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="js" type="b2602c69:ProjectViewProjectNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="js-spring-eureka-server" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="js" type="b2602c69:ProjectViewProjectNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="js-spring-eureka-server" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
+              <item name="dmspringproducerserver" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -374,13 +502,26 @@
     <property name="last_opened_file_path" value="E:/学习录像/分布式/springboot/demo2" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="settings.editor.selected.configurable" value="vcs.Git" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="com.cloud.jsproducerremittance.util.huiDiao" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.cloud.dmspringproducerserver" />
+      <recent name="com.cloud.jsconsumerremittance" />
+      <recent name="com.cloud.jsproducerremittance" />
+      <recent name="com.cloud.jsproducerremittance.util" />
+      <recent name="com.cloud.jsproducerremittance.config" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\js\js\js-consumer-remittance\src\main\java\com\cloud\jsconsumerremittance\config" />
+      <recent name="D:\js\js\js-consumer-remittance\src\main\java\com\cloud\jsconsumerremittance\pojo" />
+      <recent name="D:\js\js\js-producer-remittance\src\main\java\com\cloud\jsproducerremittance\util" />
       <recent name="D:\js\js\js-producer-remittance\src\main\java\com\cloud\jsproducerremittance" />
     </key>
   </component>
@@ -396,9 +537,77 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.DmSpringEurekaServerApplication">
+  <component name="RunManager" selected="Spring Boot.DmSpringProducerServerApplication">
+    <configuration name="DmSpringProducerServerApplicationTests" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cloud.dmspringproducerserver.DmSpringProducerServerApplicationTests" />
+      <module name="js-producer-remittance" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cloud.dmspringproducerserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
+    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.cloud.jsproducerremittance.service.impl.Test" />
+      <module name="js-producer-remittance" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cloud.jsproducerremittance.service.impl.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+    </configuration>
+    <configuration name="DmSpringProducerServerApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="js-producer-remittance" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cloud.dmspringproducerserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.cloud.dmspringproducerserver" />
+      <option name="MAIN_CLASS_NAME" value="com.cloud.dmspringproducerserver.DmSpringProducerServerApplicationTests" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="DmSpringProducerServerApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="js-producer-remittance" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.cloud.dmspringproducerserver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.cloud.dmspringproducerserver" />
+      <option name="MAIN_CLASS_NAME" value="com.cloud.dmspringproducerserver.DmSpringProducerServerApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" value="-ea" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="%MODULE_WORKING_DIR%" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
     </configuration>
     <configuration default="true" type="JUnit" factoryName="JUnit">
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
@@ -416,15 +625,9 @@
       </option>
       <patterns />
     </configuration>
-    <configuration name="DmSpringEurekaServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
-      <module name="dm-spring-eureka-server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.demo.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.demo.DmSpringEurekaServerApplication" />
+    <configuration name="DmSpringConsumerServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="js-consumer-remittance" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.cloud.jsconsumerremittance.DmSpringConsumerServerApplication" />
     </configuration>
     <configuration name="DmSpringProducerServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="js-producer-remittance" />
@@ -579,13 +782,20 @@
     </configuration>
     <list>
       <item itemvalue="Tomcat Server.tomcat7" />
-      <item itemvalue="Spring Boot.DmSpringEurekaServerApplication" />
       <item itemvalue="Spring Boot.DmSpringProducerServerApplication" />
+      <item itemvalue="Spring Boot.DmSpringConsumerServerApplication" />
+      <item itemvalue="Application.DmSpringProducerServerApplicationTests" />
+      <item itemvalue="JUnit.DmSpringProducerServerApplicationTests" />
+      <item itemvalue="JUnit.DmSpringProducerServerApplicationTests.contextLoads" />
+      <item itemvalue="Application.Test" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.DmSpringEurekaServerApplication" />
         <item itemvalue="Spring Boot.DmSpringProducerServerApplication" />
+        <item itemvalue="Application.Test" />
+        <item itemvalue="JUnit.DmSpringProducerServerApplicationTests.contextLoads" />
+        <item itemvalue="JUnit.DmSpringProducerServerApplicationTests" />
+        <item itemvalue="Application.DmSpringProducerServerApplicationTests" />
       </list>
     </recent_temporary>
   </component>
@@ -603,7 +813,7 @@
       <workItem from="1545138303706" duration="53000" />
       <workItem from="1545138440444" duration="1835000" />
       <workItem from="1545180947348" duration="343000" />
-      <workItem from="1545181389162" duration="10461000" />
+      <workItem from="1545181389162" duration="40433000" />
     </task>
     <task id="LOCAL-00001" summary="初始">
       <created>1545181297192</created>
@@ -619,11 +829,39 @@
       <option name="project" value="LOCAL" />
       <updated>1545193807461</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="初始">
+      <created>1545196343237</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1545196343237</updated>
+    </task>
+    <task id="LOCAL-00004" summary="初始">
+      <created>1545200763257</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1545200763257</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="DmSpringProducerServerApplicationTests - 2018.12.19 at 23h 02m 32s.xml">
+      <configuration name="DmSpringProducerServerApplicationTests" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DmSpringProducerServerApplicationTests_contextLoads - 2018.12.19 at 23h 03m 10s.xml">
+      <configuration name="DmSpringProducerServerApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DmSpringProducerServerApplicationTests_contextLoads - 2018.12.19 at 23h 04m 40s.xml">
+      <configuration name="DmSpringProducerServerApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="DmSpringProducerServerApplicationTests_contextLoads - 2018.12.19 at 23h 05m 10s.xml">
+      <configuration name="DmSpringProducerServerApplicationTests.contextLoads" configurationId="JUnit" />
+    </history-entry>
+  </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="13369000" />
+    <option name="totallyTimeSpent" value="43341000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
@@ -647,13 +885,14 @@
       <window_info anchor="bottom" id="Java Enterprise" order="8" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
       <window_info active="true" anchor="bottom" id="Version Control" order="7" visible="true" weight="0.3281471" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.32956153" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3437058" />
       <window_info anchor="bottom" id="Spring" order="8" />
       <window_info anchor="bottom" id="Terminal" order="7" weight="0.32909605" />
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2660858" />
       <window_info anchor="right" id="Bean Validation" order="4" />
       <window_info id="Web" order="3" side_tool="true" />
       <window_info anchor="right" id="BPMNPalette" order="3" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32956153" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -661,7 +900,6 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Find" order="1" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -702,25 +940,136 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="1" />
+      <option name="time" value="2" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/pom.xml">
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/util/huiDiao/entity/VoiceBackRep.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/util/encryption/JavaWebToken.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1258">
-          <caret line="74" column="45" selection-start-line="74" selection-start-column="45" selection-end-line="74" selection-end-column="45" />
+        <state relative-caret-position="272">
+          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/util/encryption/Md5.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/util/httpApiDemo/AccountInfo.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="148">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/util/httpApiDemo/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/util/httpApiDemo/HttpUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/util/httpApiDemo/IndustrySMS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-111">
+          <caret line="18" column="36" selection-start-line="18" selection-start-column="26" selection-end-line="18" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/util/huiDiao/entity/MoNoticeReq.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/util/huiDiao/entity/MoNoticeResp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/util/huiDiao/entity/ReceNoticeReq.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/util/huiDiao/entity/ReceNoticeResp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/util/huiDiao/entity/VoiceBackResp.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/util/huiDiao/MoNotice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/util/huiDiao/RespCode.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="13" selection-start-line="6" selection-start-column="13" selection-end-line="6" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/util/huiDiao/VoiceBack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="46" column="10" selection-start-line="46" selection-start-column="10" selection-end-line="46" selection-end-column="10" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/util/huiDiao/Gson.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/util/huiDiao/ReceNotice.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="47" column="11" selection-start-line="47" selection-start-column="11" selection-end-line="47" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/js-spring-eureka-server/pom.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/resources/mapper/BranchDao.xml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/resources/mapper/BatchDao.xml">
-      <provider selected="true" editor-type-id="text-editor" />
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="663">
+          <caret line="42" column="21" selection-start-line="42" selection-start-column="21" selection-end-line="42" selection-end-column="21" />
+        </state>
+      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/DmSpringConsumerServerApplication.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -729,46 +1078,122 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-consumer-remittance/src/main/resources/application.yml">
+    <entry file="file://$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/Swagger2.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="17" lean-forward="true" selection-start-line="16" selection-start-column="17" selection-end-line="16" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/test/java/com/cloud/dmspringproducerserver/DmSpringProducerServerApplicationTests.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="23" selection-start-line="23" selection-end-line="23" />
+        <state relative-caret-position="-4">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/resources/currencytable.properties">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/pojo/Batch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-683">
+          <caret line="2" selection-start-line="2" selection-end-line="2" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/resources/database.properties">
-      <provider selected="true" editor-type-id="text-editor" />
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="187">
+          <caret line="32" column="32" selection-start-line="32" selection-start-column="10" selection-end-line="32" selection-end-column="32" />
+        </state>
+      </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/resources/redis.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/resources/time.properties">
+    <entry file="file://$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/config/RabbitConfig.java">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="64">
-          <caret line="53" column="21" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
+        <state relative-caret-position="167">
+          <caret line="66" column="1" selection-start-line="66" selection-start-column="1" selection-end-line="69" selection-end-column="21" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/DmSpringProducerServerApplication.java">
+    <entry file="file://$PROJECT_DIR$/js/js-consumer-remittance/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="374">
+          <caret line="31" column="21" selection-start-line="31" selection-start-column="21" selection-end-line="31" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/config/DalyConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1462">
+          <caret line="1" selection-start-line="1" selection-end-line="1" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/feign/ToApplyDorRheRemittance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="14" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/service/SaveMoneyService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/pojo/RemittanceTransaction.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="191">
+          <caret line="19" column="46" selection-start-line="19" selection-start-column="20" selection-end-line="19" selection-end-column="46" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/pojo/MakeRemittance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="12" column="13" selection-start-line="12" selection-start-column="13" selection-end-line="12" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/pojo/Branch.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/config/RabbitSender.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/service/AddRemittanceService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-103">
+          <caret line="24" column="9" selection-start-line="24" selection-start-column="9" selection-end-line="24" selection-end-column="9" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-consumer-remittance/src/main/java/com/cloud/jsconsumerremittance/controller/Remittance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="18" lean-forward="true" selection-start-line="18" selection-end-line="18" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -779,83 +1204,112 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-spring-eureka-server/src/main/resources/application.yml">
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/Swagger2.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="102">
-          <caret line="6" column="25" lean-forward="true" selection-start-line="6" selection-start-column="25" selection-end-line="6" selection-end-column="25" />
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$USER_HOME$/AppData/Local/Temp/Rar$DRa11004.5164/晋商银行项目/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/dao/BatchDao.java">
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/config/RedisConfig.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-153" />
+        <state relative-caret-position="272">
+          <caret line="44" column="25" selection-start-line="44" selection-start-column="25" selection-end-line="44" selection-end-column="25" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/config/GeneralRemittance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="79" selection-start-line="7" selection-start-column="57" selection-end-line="7" selection-end-column="79" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/service/GeneralRemittanceService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="17" selection-start-line="4" selection-start-column="17" selection-end-line="4" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/service/ApplicationInformationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-consumer-remittance/src/test/java/com/cloud/dmspringconsumerserver/DmSpringConsumerServerApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="7" selection-start-line="7" selection-end-line="15" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/test/java/com/cloud/dmspringproducerserver/DmSpringProducerServerApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/service/impl/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/test/java/com/cloud/dmspringproducerserver/DmSpringProducerServerApplicationTests.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/controller/ToApplyDorRheRemittance.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="271">
+          <caret line="28" column="29" selection-start-line="28" selection-start-column="29" selection-end-line="28" selection-end-column="29" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/DmSpringProducerServerApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+          <folding>
+            <element signature="e#507#508#0" expanded="true" />
+          </folding>
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/entity/Batch.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
-          <caret line="14" selection-start-line="14" selection-end-line="15" selection-end-column="22" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-110">
+          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/resources/application.yml">
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/service/impl/ApplicationInformationServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="527">
-          <caret line="31" column="14" lean-forward="true" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/dao/BatchDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="61" selection-start-line="5" selection-start-column="61" selection-end-line="5" selection-end-column="61" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/dao/BranchDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="60" selection-start-line="5" selection-start-column="60" selection-end-line="5" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/entity/Branch.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="15" column="21" selection-start-line="15" selection-start-column="21" selection-end-line="15" selection-end-column="21" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/dao/MakeremittanceDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="59" selection-start-line="2" selection-start-column="59" selection-end-line="2" selection-end-column="59" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/dao/RemittancetransactionDao.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="34">
-          <caret line="2" column="66" selection-start-line="2" selection-start-column="66" selection-end-line="2" selection-end-column="66" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/entity/MakeRemittance.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="131">
-          <caret line="16" column="36" selection-start-line="16" selection-start-column="36" selection-end-line="16" selection-end-column="36" />
+        <state relative-caret-position="227">
+          <caret line="17" column="138" selection-start-line="17" selection-start-column="138" selection-end-line="17" selection-end-column="138" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -864,8 +1318,52 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/entity/RemittanceTransaction.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="39" column="25" lean-forward="true" selection-start-line="39" selection-start-column="25" selection-end-line="39" selection-end-column="25" />
+        <state relative-caret-position="-35">
+          <caret line="21" column="15" selection-start-line="21" selection-start-column="12" selection-end-line="21" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1195#1196#0" expanded="true" />
+            <element signature="e#1241#1242#0" expanded="true" />
+            <element signature="e#1438#1439#0" expanded="true" />
+            <element signature="e#1486#1487#0" expanded="true" />
+            <element signature="e#1700#1701#0" expanded="true" />
+            <element signature="e#1754#1755#0" expanded="true" />
+            <element signature="e#1988#1989#0" expanded="true" />
+            <element signature="e#2037#2038#0" expanded="true" />
+            <element signature="e#2251#2252#0" expanded="true" />
+            <element signature="e#2300#2301#0" expanded="true" />
+            <element signature="e#2513#2514#0" expanded="true" />
+            <element signature="e#2561#2562#0" expanded="true" />
+            <element signature="e#2773#2774#0" expanded="true" />
+            <element signature="e#2824#2825#0" expanded="true" />
+            <element signature="e#3046#3047#0" expanded="true" />
+            <element signature="e#3096#3097#0" expanded="true" />
+            <element signature="e#3318#3319#0" expanded="true" />
+            <element signature="e#3371#3372#0" expanded="true" />
+            <element signature="e#3580#3581#0" expanded="true" />
+            <element signature="e#3608#3609#0" expanded="true" />
+            <element signature="e#3650#3651#0" expanded="true" />
+            <element signature="e#3684#3685#0" expanded="true" />
+            <element signature="e#3741#3742#0" expanded="true" />
+            <element signature="e#3794#3795#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/util/RedisUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="137">
+          <caret line="165" selection-start-line="165" selection-end-line="165" />
+          <folding>
+            <element signature="e#4013#4014#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-producer-remittance/src/main/java/com/cloud/jsproducerremittance/service/impl/GeneralRemittanceServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="188">
+          <caret line="30" column="73" lean-forward="true" selection-start-line="30" selection-start-column="11" selection-end-line="30" selection-end-column="73" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -875,8 +1373,33 @@
   </component>
   <component name="masterDetails">
     <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Spring</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="GlobalLibrariesConfigurable.UI">
         <settings>
+          <last-edited>antlr-2.7.6 (2)</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>
@@ -898,6 +1421,19 @@
           </splitter-proportions>
         </settings>
       </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>js-consumer-remittance</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+                <option value="0.6" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
       <state key="ProjectJDKs.UI">
         <settings>
           <last-edited>1.7</last-edited>
@@ -912,6 +1448,7 @@
       </state>
       <state key="ProjectLibrariesConfigurable.UI">
         <settings>
+          <last-edited>Maven: antlr:antlr:2.7.7</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

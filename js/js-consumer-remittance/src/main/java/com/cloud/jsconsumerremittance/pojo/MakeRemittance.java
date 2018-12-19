@@ -1,9 +1,6 @@
-package com.cloud.jsproducerremittance.entity;
+package com.cloud.jsconsumerremittance.pojo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.Table;
+
 import java.io.Serializable;
 
 /**
@@ -12,13 +9,10 @@ import java.io.Serializable;
  * @author makejava
  * @since 2018-11-22 21:01:21
  */
-@Entity
-@Table(name = "MAKEREMITTANCE")
+
 public class MakeRemittance implements Serializable {
 
     //预约汇款表
-    @Id
-    @GeneratedValue
     private Integer makeremittanceId;
     //预约编号
     private String makeremittanceSerialnumber;
