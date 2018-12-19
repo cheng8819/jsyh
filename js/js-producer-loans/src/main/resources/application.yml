@@ -50,5 +50,3 @@ spring:
       listener:
           simple:
             prefetch: 1
-mybatis:
-#  mapperLocations: classpath:mapper/*.xml

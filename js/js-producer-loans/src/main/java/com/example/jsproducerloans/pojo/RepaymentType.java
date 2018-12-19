@@ -6,8 +6,7 @@ public class RepaymentType {
   private Integer rtid;
   private String rtname;
 
-
-  public long getRtid() {
+  public Integer getRtid() {
     return rtid;
   }
 
@@ -22,5 +21,4 @@ public class RepaymentType {
   public void setRtname(String rtname) {
     this.rtname = rtname;
   }
-
 }

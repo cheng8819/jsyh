@@ -1,22 +1,13 @@
-package com.example.jsproducerloans.pojo;
+package com.example.jsproducerloans.controllerpojo;
 
 
-public class LoansTransaction {
+public class LoansTransactionCon {
 
   private Integer liid;
   private Integer liuid;
-  private Integer litype;
+  private String litype;
   private Double linumber;
   private Integer linumberofperiods;
-  private Integer listate;
-
-  public Integer getListate() {
-    return listate;
-  }
-
-  public void setListate(Integer listate) {
-    this.listate = listate;
-  }
 
   public Integer getLinumberofperiods() {
     return linumberofperiods;
@@ -42,11 +33,11 @@ public class LoansTransaction {
     this.liuid = liuid;
   }
 
-  public Integer getLitype() {
+  public String getLitype() {
     return litype;
   }
 
-  public void setLitype(Integer litype) {
+  public void setLitype(String litype) {
     this.litype = litype;
   }
 

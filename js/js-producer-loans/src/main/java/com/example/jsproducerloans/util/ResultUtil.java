@@ -29,4 +29,5 @@ public class ResultUtil {
     public static Result systemError(){
         return new Result(ResultEnum.ERROR.getCode(),ResultEnum.ERROR.getMsg(),"");
     }
+
 }
