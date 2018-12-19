@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 @Api(value="贷款controller",tags={"贷款操作接口"})
 @RestController
 @RequestMapping("loantypes")
-public class LoantypeController {
+public class LoantController {
 
     @Autowired
     private Pledge pledge;

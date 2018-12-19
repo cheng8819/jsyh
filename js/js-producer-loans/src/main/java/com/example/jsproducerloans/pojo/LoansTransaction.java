@@ -9,6 +9,15 @@ public class LoansTransaction {
   private Double linumber;
   private Integer linumberofperiods;
   private Integer listate;
+  private String lidate;
+
+  public String getLidate() {
+    return lidate;
+  }
+
+  public void setLidate(String lidate) {
+    this.lidate = lidate;
+  }
 
   public Integer getListate() {
     return listate;

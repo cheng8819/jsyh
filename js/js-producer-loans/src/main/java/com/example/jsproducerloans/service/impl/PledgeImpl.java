@@ -14,7 +14,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tk.mybatis.mapper.entity.Example;
 
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 
@@ -61,6 +63,7 @@ public class PledgeImpl implements Pledge {
             loansTransactionCon.setLitype(repaymentType.getRtname());
             loansTransactionCon.setLinumberofperiods(loansTransactions.get(i).getLinumberofperiods());
             loansTransactionCon.setLinumber(loansTransactions.get(i).getLinumber());
+            loansTransactionCon.setLidate(loansTransactions.get(i).getLidate());
             loansTransactionCons.add(loansTransactionCon);
             example1 = null;
             criteria1 = null;
@@ -77,6 +80,8 @@ public class PledgeImpl implements Pledge {
     @Override
     public Result addLoansTransaction(LoansTransaction loansTransaction) {
         loansTransaction.setListate(0);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat();
+        loansTransaction.setLidate(simpleDateFormat.format(new Date()));
         int count = loansTransactionDao.insert(loansTransaction);
         if(count == 1){
             return ResultUtil.success(JSON.toJSON(new String("生成订单成功")));
@@ -105,6 +110,8 @@ public class PledgeImpl implements Pledge {
             return ResultUtil.success(JSON.toJSON(new String("订单不存在")));
         }
         loansTransaction.setListate(state);
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat();
+        loansTransaction.setLidate(simpleDateFormat.format(new Date()));
         int count = loansTransactionDao.updateByExampleSelective(loansTransaction,example);
         if (count == 1) {
             return ResultUtil.success(JSON.toJSON(new String("修改订单状态成功")));

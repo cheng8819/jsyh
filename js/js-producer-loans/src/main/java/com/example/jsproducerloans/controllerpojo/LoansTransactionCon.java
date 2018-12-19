@@ -8,6 +8,15 @@ public class LoansTransactionCon {
   private String litype;
   private Double linumber;
   private Integer linumberofperiods;
+  private String lidate;
+
+  public String getLidate() {
+    return lidate;
+  }
+
+  public void setLidate(String lidate) {
+    this.lidate = lidate;
+  }
 
   public Integer getLinumberofperiods() {
     return linumberofperiods;
