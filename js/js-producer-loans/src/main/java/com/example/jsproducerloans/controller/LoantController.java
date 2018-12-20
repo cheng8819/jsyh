@@ -25,7 +25,7 @@ public class LoantController {
     }
 
     @PostMapping(value = "/addloanstransaction")
-    public Result addLoanstransaction(LoansTransaction loansTransaction) {
+    public Result addLoanstransaction(@RequestBody LoansTransaction loansTransaction) {
         return pledge.addLoansTransaction(loansTransaction);
     }
 

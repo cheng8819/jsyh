@@ -1,9 +1,9 @@
 package com.example.jsproducerloans.dao;
 
-import com.example.jsproducerloans.pojo.LoansUserinfo;
+import com.example.jsproducerloans.pojo.LeaveInfo;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface LoansUserinfoDao extends JpaRepository<LoansUserinfo, Integer> {
+public interface LeaveInfoDao extends JpaRepository<LeaveInfo, String> {
 }

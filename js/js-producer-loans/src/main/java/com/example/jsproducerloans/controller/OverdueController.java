@@ -3,11 +3,11 @@ package com.example.jsproducerloans.controller;
 import com.example.jsproducerloans.service.Repayment;
 import com.example.jsproducerloans.util.Result;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
-@Controller
+@RestController
 @RequestMapping("/overduecontroller")
 public class OverdueController {
 

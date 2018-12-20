@@ -13,5 +13,6 @@ public class JsProducerLoansApplicationTests {
 
     @Test
     public void contextLoads() throws IOException {
+
     }
 }

@@ -1,10 +1,9 @@
 package com.example.jsproducerloans.dao;
 
 import com.example.jsproducerloans.pojo.LoansLoansandhouses;
-import org.apache.ibatis.annotations.Mapper;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-@Mapper
-public interface LoansLoansandhousesDao extends MyMapper<LoansLoansandhouses> {
+public interface LoansLoansandhousesDao extends JpaRepository<LoansLoansandhouses, Integer> {
 }
