@@ -1,6 +1,8 @@
 package com.example.jsconsumerloans.pojo;
 
+import lombok.Data;
 
+@Data
 public class Loantype {
 
     private Integer lid;
@@ -22,11 +24,4 @@ public class Loantype {
         this.ltname = ltname;
     }
 
-    @Override
-    public String toString() {
-        return "Loantype{" +
-                "ltid=" + lid +
-                ", ltname='" + ltname + '\'' +
-                '}';
-    }
 }
