@@ -10,7 +10,7 @@
     <!--查询单个-->
     <select id="queryById" resultMap="FinancialtypelistMap">
         select
-          financialtypelist_id, financialtypelist_name
+        financialtypelist_id, financialtypelist_name
         from js_bank_account.financialtypelist
         where financialtypelist_id = #{financialtypelistId}
     </select>
@@ -18,7 +18,7 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="FinancialtypelistMap">
         select
-          financialtypelist_id, financialtypelist_name
+        financialtypelist_id, financialtypelist_name
         from js_bank_account.financialtypelist
         limit #{offset}, #{limit}
     </select>
@@ -26,7 +26,7 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="FinancialtypelistMap">
         select
-          financialtypelist_id, financialtypelist_name
+        financialtypelist_id, financialtypelist_name
         from js_bank_account.financialtypelist
         <where>
             <if test="financialtypelistId != null">

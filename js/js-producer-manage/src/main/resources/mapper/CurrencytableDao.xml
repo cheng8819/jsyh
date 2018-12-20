@@ -10,7 +10,7 @@
     <!--查询单个-->
     <select id="queryById" resultMap="CurrencytableMap">
         select
-          currencytable_id, currencytable_name
+        currencytable_id, currencytable_name
         from js_bank_account.currencytable
         where currencytable_id = #{currencytableId}
     </select>
@@ -18,7 +18,7 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="CurrencytableMap">
         select
-          currencytable_id, currencytable_name
+        currencytable_id, currencytable_name
         from js_bank_account.currencytable
         limit #{offset}, #{limit}
     </select>
@@ -26,7 +26,7 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="CurrencytableMap">
         select
-          currencytable_id, currencytable_name
+        currencytable_id, currencytable_name
         from js_bank_account.currencytable
         <where>
             <if test="currencytableId != null">

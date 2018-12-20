@@ -21,7 +21,7 @@ import java.util.regex.Pattern;
 @SpringBootTest
 public class DmSpringProducerServerApplicationTests {
 
-    private  static  Double a = 0.0;
+    private static Double a = 0.0;
    /*public static final String PREFIX = "";
     private static long code;
     *//*public static void main(String[] args) {

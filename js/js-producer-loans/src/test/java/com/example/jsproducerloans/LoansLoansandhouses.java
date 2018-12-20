@@ -3,65 +3,65 @@ package com.sample;
 
 public class LoansLoansandhouses {
 
-  private long lhid;
-  private double lhmoney;
-  private double lhdownpayment;
-  private double lhcommercialmoney;
-  private long lhdate;
-  private long lhuid;
+    private long lhid;
+    private double lhmoney;
+    private double lhdownpayment;
+    private double lhcommercialmoney;
+    private long lhdate;
+    private long lhuid;
 
 
-  public long getLhid() {
-    return lhid;
-  }
+    public long getLhid() {
+        return lhid;
+    }
 
-  public void setLhid(long lhid) {
-    this.lhid = lhid;
-  }
-
-
-  public double getLhmoney() {
-    return lhmoney;
-  }
-
-  public void setLhmoney(double lhmoney) {
-    this.lhmoney = lhmoney;
-  }
+    public void setLhid(long lhid) {
+        this.lhid = lhid;
+    }
 
 
-  public double getLhdownpayment() {
-    return lhdownpayment;
-  }
+    public double getLhmoney() {
+        return lhmoney;
+    }
 
-  public void setLhdownpayment(double lhdownpayment) {
-    this.lhdownpayment = lhdownpayment;
-  }
-
-
-  public double getLhcommercialmoney() {
-    return lhcommercialmoney;
-  }
-
-  public void setLhcommercialmoney(double lhcommercialmoney) {
-    this.lhcommercialmoney = lhcommercialmoney;
-  }
+    public void setLhmoney(double lhmoney) {
+        this.lhmoney = lhmoney;
+    }
 
 
-  public long getLhdate() {
-    return lhdate;
-  }
+    public double getLhdownpayment() {
+        return lhdownpayment;
+    }
 
-  public void setLhdate(long lhdate) {
-    this.lhdate = lhdate;
-  }
+    public void setLhdownpayment(double lhdownpayment) {
+        this.lhdownpayment = lhdownpayment;
+    }
 
 
-  public long getLhuid() {
-    return lhuid;
-  }
+    public double getLhcommercialmoney() {
+        return lhcommercialmoney;
+    }
 
-  public void setLhuid(long lhuid) {
-    this.lhuid = lhuid;
-  }
+    public void setLhcommercialmoney(double lhcommercialmoney) {
+        this.lhcommercialmoney = lhcommercialmoney;
+    }
+
+
+    public long getLhdate() {
+        return lhdate;
+    }
+
+    public void setLhdate(long lhdate) {
+        this.lhdate = lhdate;
+    }
+
+
+    public long getLhuid() {
+        return lhuid;
+    }
+
+    public void setLhuid(long lhuid) {
+        this.lhuid = lhuid;
+    }
 
 }

@@ -14,7 +14,7 @@
     <!--查询单个-->
     <select id="queryById" resultMap="DepositBusinessMap">
         select
-         deposit_businessName,deposit_businessRate
+        deposit_businessName,deposit_businessRate
         from deposit_business
         where deposit_businessId = #{depositBusinessid}
     </select>
@@ -22,7 +22,8 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="DepositBusinessMap">
         select
-          deposit_businessId, deposit_businessName, deposit_businessMoney, deposit_businessRate, deposit_businessType, deposit_businessLong
+        deposit_businessId, deposit_businessName, deposit_businessMoney, deposit_businessRate, deposit_businessType,
+        deposit_businessLong
         from js-deposit.deposit_business
         limit #{offset}, #{limit}
     </select>
@@ -30,7 +31,8 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="DepositBusinessMap">
         select
-          deposit_businessId, deposit_businessName, deposit_businessMoney, deposit_businessRate, deposit_businessType, deposit_businessLong
+        deposit_businessId, deposit_businessName, deposit_businessMoney, deposit_businessRate, deposit_businessType,
+        deposit_businessLong
         from js-deposit.deposit_business
         <where>
             <if test="depositBusinessid != null">
@@ -56,8 +58,10 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="depositBusinessid" useGeneratedKeys="true">
-        insert into js-deposit.deposit_business(deposit_businessName, deposit_businessMoney, deposit_businessRate, deposit_businessType, deposit_businessLong)
-        values (#{depositBusinessname}, #{depositBusinessmoney}, #{depositBusinessrate}, #{depositBusinesstype}, #{depositBusinesslong})
+        insert into js-deposit.deposit_business(deposit_businessName, deposit_businessMoney, deposit_businessRate,
+        deposit_businessType, deposit_businessLong)
+        values (#{depositBusinessname}, #{depositBusinessmoney}, #{depositBusinessrate}, #{depositBusinesstype},
+        #{depositBusinesslong})
     </insert>
 
     <!--通过主键修改数据-->
@@ -88,7 +92,8 @@
         delete from js-deposit.deposit_business where deposit_businessId = #{depositBusinessid}
     </delete>
     <select id="getAll" resultMap="DepositBusinessMap">
-        select deposit_businessId, deposit_businessName, deposit_businessMoney, deposit_businessRate, deposit_businessLong,deposit_businessType
+        select deposit_businessId, deposit_businessName, deposit_businessMoney, deposit_businessRate,
+        deposit_businessLong,deposit_businessType
         from deposit_business
     </select>
 

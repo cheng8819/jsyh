@@ -3,22 +3,22 @@ package com.example.jsproducerloans.pojo;
 
 public class RepaymentType {
 
-  private Integer rtid;
-  private String rtname;
+    private Integer rtid;
+    private String rtname;
 
-  public Integer getRtid() {
-    return rtid;
-  }
+    public Integer getRtid() {
+        return rtid;
+    }
 
-  public void setRtid(Integer rtid) {
-    this.rtid = rtid;
-  }
+    public void setRtid(Integer rtid) {
+        this.rtid = rtid;
+    }
 
-  public String getRtname() {
-    return rtname;
-  }
+    public String getRtname() {
+        return rtname;
+    }
 
-  public void setRtname(String rtname) {
-    this.rtname = rtname;
-  }
+    public void setRtname(String rtname) {
+        this.rtname = rtname;
+    }
 }

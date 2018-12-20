@@ -17,17 +17,19 @@
     <!--查询单个-->
     <select id="queryById" resultMap="SecondaccountMap">
         select
-          account_id, account_card, account_openbank
+        account_id, account_card, account_openbank
         from secondaccount
         where account_userid = #{accountUserid}
     </select>
 
 
-
     <!--新增所有列-->
-    <insert id="insert" keyProperty="accountId" useGeneratedKeys="true" parameterType="com.cloud.jsproduceraccount.entity.Secondaccount">
-        insert into secondaccount(account_IDnumber, account_card, account_mycard, account_openbank, account_pwd, account_userid)
-        values (#{accountIdnumber}, #{accountCard}, #{accountMycard}, #{accountOpenbank}, #{accountPwd}, #{accountUserid})
+    <insert id="insert" keyProperty="accountId" useGeneratedKeys="true"
+            parameterType="com.cloud.jsproduceraccount.entity.Secondaccount">
+        insert into secondaccount(account_IDnumber, account_card, account_mycard, account_openbank, account_pwd,
+        account_userid)
+        values (#{accountIdnumber}, #{accountCard}, #{accountMycard}, #{accountOpenbank}, #{accountPwd},
+        #{accountUserid})
     </insert>
     <!--根据卡号查询出该卡号的余额-->
     <select id="selprice" resultMap="SecondaccountMap">

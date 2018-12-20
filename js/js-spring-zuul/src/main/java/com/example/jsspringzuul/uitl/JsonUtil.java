@@ -23,12 +23,12 @@ public class JsonUtil {
     }
 
     public static String serializeToString(Object object) {
-        return serializeToString(object,false);
+        return serializeToString(object, false);
     }
 
-    public static String serializeToString(Object object,Boolean rootValueState) {
+    public static String serializeToString(Object object, Boolean rootValueState) {
         SerializationConfig serializationConfig = mapper.getSerializationConfig();
-        mapper.configure(SerializationFeature.WRAP_ROOT_VALUE,rootValueState);
+        mapper.configure(SerializationFeature.WRAP_ROOT_VALUE, rootValueState);
         if (object != null) {
             try {
                 return mapper.writeValueAsString(object);
@@ -54,18 +54,19 @@ public class JsonUtil {
 
     /**
      * 反序列化Json数据
-     * @param jsonData Json数据字符串
-     * @param valueType 反序列化的类型
+     *
+     * @param jsonData       Json数据字符串
+     * @param valueType      反序列化的类型
      * @param rootValueState 是否解析Json root name
      * @param <T>
      * @return 反序列化后的POJO
      */
-    public static <T> T deserialize(String jsonData,Class<T> valueType,Boolean rootValueState) {
+    public static <T> T deserialize(String jsonData, Class<T> valueType, Boolean rootValueState) {
         if (StringUtils.isEmpty(jsonData) || rootValueState == null) {
             return null;
         }
         DeserializationConfig deserializationConfig = mapper.getDeserializationConfig();
-        mapper.configure(DeserializationFeature.UNWRAP_ROOT_VALUE,rootValueState);
+        mapper.configure(DeserializationFeature.UNWRAP_ROOT_VALUE, rootValueState);
         try {
             return mapper.readValue(jsonData, valueType);
         } catch (IOException e) {
@@ -78,12 +79,13 @@ public class JsonUtil {
 
     /**
      * 反序列化Json数据,默认解析Json root name
-     * @param jsonData Json数据字符串
+     *
+     * @param jsonData  Json数据字符串
      * @param valueType 反序列化的类型
      * @param <T>
      * @return 反序列化后的POJO
      */
-    public static <T> T deserialize(String jsonData,Class<T> valueType) {
+    public static <T> T deserialize(String jsonData, Class<T> valueType) {
         return deserialize(jsonData, valueType, true);
     }
 
@@ -93,30 +95,33 @@ public class JsonUtil {
 
     /**
      * 用Json数据中的key获取对应的value
-     * @param jsonString json数据字符串
-     * @param field 需要取值的字段
+     *
+     * @param jsonString     json数据字符串
+     * @param field          需要取值的字段
      * @param rootValueState 是否解析Json root name
      * @return 字段对应的值
      */
-    public static String getValue(String jsonString,String field,Boolean rootValueState) {
-        JsonNode node = getJsonNode(jsonString,field,rootValueState);
+    public static String getValue(String jsonString, String field, Boolean rootValueState) {
+        JsonNode node = getJsonNode(jsonString, field, rootValueState);
         return node == null ? "" : node.toString();
     }
 
     /**
      * 用Json数据中的key获取对应的value, 默认解析Json root name
+     *
      * @param jsonString json数据字符串
-     * @param field 需要取值的字段
+     * @param field      需要取值的字段
      * @return 字段对应的值
      */
-    public static String getValue(String jsonString,String field) {
-        return getValue(jsonString,field,true);
+    public static String getValue(String jsonString, String field) {
+        return getValue(jsonString, field, true);
     }
 
     /**
      * 用Json数据中的key获取对应的value
-     * @param jsonString json数据字符串
-     * @param field 需要取值的字段
+     *
+     * @param jsonString     json数据字符串
+     * @param field          需要取值的字段
      * @param rootValueState 是否解析Json root name
      * @return 字段对应的值
      */
@@ -128,7 +133,7 @@ public class JsonUtil {
         JsonNode node = null;// 这里的JsonNode和XML里面的Node很像
         // 默认的反序列化配置
         DeserializationConfig deserializationConfig = mapper.getDeserializationConfig();
-        mapper.configure(DeserializationFeature.UNWRAP_ROOT_VALUE,rootValueState);
+        mapper.configure(DeserializationFeature.UNWRAP_ROOT_VALUE, rootValueState);
         try {
             node = mapper.readTree(jsonString);
         } catch (IOException e) {

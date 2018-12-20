@@ -37,7 +37,11 @@
     <!--查询单个-->
     <select id="queryById" resultMap="CreditcardPersonalMap">
         select
-          personal_id, personal_name, personal_english, personal_sex, personal_marriage, personal_data, personal_cardtype, personal_card, personal_carddata, personal_nationality, personal_education, personal_issue, personal_answer, personal_addres, personal_addressstatus, personal_maill, personal_familyy, personal_unitname, personal_unitnature, personal_unitphone, personal_industry, personal_unitaddress, personal_unitmail, personal_pursue, personal_duty, personal_income, personal_linkmanname, personal_relation, personal_linkmanphone
+        personal_id, personal_name, personal_english, personal_sex, personal_marriage, personal_data, personal_cardtype,
+        personal_card, personal_carddata, personal_nationality, personal_education, personal_issue, personal_answer,
+        personal_addres, personal_addressstatus, personal_maill, personal_familyy, personal_unitname,
+        personal_unitnature, personal_unitphone, personal_industry, personal_unitaddress, personal_unitmail,
+        personal_pursue, personal_duty, personal_income, personal_linkmanname, personal_relation, personal_linkmanphone
         from js_creditcard.creditcard_personal
         where personal_id = #{personalId}
     </select>
@@ -45,7 +49,11 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="CreditcardPersonalMap">
         select
-          personal_id, personal_name, personal_english, personal_sex, personal_marriage, personal_data, personal_cardtype, personal_card, personal_carddata, personal_nationality, personal_education, personal_issue, personal_answer, personal_addres, personal_addressstatus, personal_maill, personal_familyy, personal_unitname, personal_unitnature, personal_unitphone, personal_industry, personal_unitaddress, personal_unitmail, personal_pursue, personal_duty, personal_income, personal_linkmanname, personal_relation, personal_linkmanphone
+        personal_id, personal_name, personal_english, personal_sex, personal_marriage, personal_data, personal_cardtype,
+        personal_card, personal_carddata, personal_nationality, personal_education, personal_issue, personal_answer,
+        personal_addres, personal_addressstatus, personal_maill, personal_familyy, personal_unitname,
+        personal_unitnature, personal_unitphone, personal_industry, personal_unitaddress, personal_unitmail,
+        personal_pursue, personal_duty, personal_income, personal_linkmanname, personal_relation, personal_linkmanphone
         from js_creditcard.creditcard_personal
         limit #{offset}, #{limit}
     </select>
@@ -53,7 +61,11 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="CreditcardPersonalMap">
         select
-          personal_id, personal_name, personal_english, personal_sex, personal_marriage, personal_data, personal_cardtype, personal_card, personal_carddata, personal_nationality, personal_education, personal_issue, personal_answer, personal_addres, personal_addressstatus, personal_maill, personal_familyy, personal_unitname, personal_unitnature, personal_unitphone, personal_industry, personal_unitaddress, personal_unitmail, personal_pursue, personal_duty, personal_income, personal_linkmanname, personal_relation, personal_linkmanphone
+        personal_id, personal_name, personal_english, personal_sex, personal_marriage, personal_data, personal_cardtype,
+        personal_card, personal_carddata, personal_nationality, personal_education, personal_issue, personal_answer,
+        personal_addres, personal_addressstatus, personal_maill, personal_familyy, personal_unitname,
+        personal_unitnature, personal_unitphone, personal_industry, personal_unitaddress, personal_unitmail,
+        personal_pursue, personal_duty, personal_income, personal_linkmanname, personal_relation, personal_linkmanphone
         from js_creditcard.creditcard_personal
         <where>
             <if test="personalId != null">
@@ -148,8 +160,18 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="personalId" useGeneratedKeys="true">
-        insert into js_creditcard.creditcard_personal(personal_name, personal_english, personal_sex, personal_marriage, personal_data, personal_cardtype, personal_card, personal_carddata, personal_nationality, personal_education, personal_issue, personal_answer, personal_addres, personal_addressstatus, personal_maill, personal_familyy, personal_unitname, personal_unitnature, personal_unitphone, personal_industry, personal_unitaddress, personal_unitmail, personal_pursue, personal_duty, personal_income, personal_linkmanname, personal_relation, personal_linkmanphone)
-        values (#{personalName}, #{personalEnglish}, #{personalSex}, #{personalMarriage}, #{personalData}, #{personalCardtype}, #{personalCard}, #{personalCarddata}, #{personalNationality}, #{personalEducation}, #{personalIssue}, #{personalAnswer}, #{personalAddres}, #{personalAddressstatus}, #{personalMaill}, #{personalFamilyy}, #{personalUnitname}, #{personalUnitnature}, #{personalUnitphone}, #{personalIndustry}, #{personalUnitaddress}, #{personalUnitmail}, #{personalPursue}, #{personalDuty}, #{personalIncome}, #{personalLinkmanname}, #{personalRelation}, #{personalLinkmanphone})
+        insert into js_creditcard.creditcard_personal(personal_name, personal_english, personal_sex, personal_marriage,
+        personal_data, personal_cardtype, personal_card, personal_carddata, personal_nationality, personal_education,
+        personal_issue, personal_answer, personal_addres, personal_addressstatus, personal_maill, personal_familyy,
+        personal_unitname, personal_unitnature, personal_unitphone, personal_industry, personal_unitaddress,
+        personal_unitmail, personal_pursue, personal_duty, personal_income, personal_linkmanname, personal_relation,
+        personal_linkmanphone)
+        values (#{personalName}, #{personalEnglish}, #{personalSex}, #{personalMarriage}, #{personalData},
+        #{personalCardtype}, #{personalCard}, #{personalCarddata}, #{personalNationality}, #{personalEducation},
+        #{personalIssue}, #{personalAnswer}, #{personalAddres}, #{personalAddressstatus}, #{personalMaill},
+        #{personalFamilyy}, #{personalUnitname}, #{personalUnitnature}, #{personalUnitphone}, #{personalIndustry},
+        #{personalUnitaddress}, #{personalUnitmail}, #{personalPursue}, #{personalDuty}, #{personalIncome},
+        #{personalLinkmanname}, #{personalRelation}, #{personalLinkmanphone})
     </insert>
 
     <!--通过主键修改数据-->

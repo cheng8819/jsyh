@@ -19,14 +19,14 @@ public class JwtUitl {
         Date expirationDate = new Date();
         Calendar calendar = Calendar.getInstance();
         //设置一天过期
-        calendar.add(Calendar.DATE,1);
+        calendar.add(Calendar.DATE, 1);
         Date time = calendar.getTime();
         //DateTime expirationDate = new DateTime().plusMinutes(30);
         // Claims是需要保存到token中的信息，可以自定义，需要存什么就放什么，会保存到token的payload中
         Map<String, Object> claims = new HashMap<>();
 
         // 放用户对象
-        claims.put("","");
+        claims.put("", "");
 
         String compactJws = Jwts.builder()
                 // 设置subject，一般是用户的唯一标识，比如用户对象的ID，用户名等，目前设置的是userCode

@@ -29,6 +29,7 @@ public class PledgeImpl implements Pledge {
     private LoansTransactionDao loansTransactionDao;
     @Autowired
     private RepaymentTypeDao repaymentTypeDao;
+
     /**
      * 全部贷款种类
      *
@@ -48,8 +49,8 @@ public class PledgeImpl implements Pledge {
     public Result allLoansTransactionByUid(Integer uid) {
         Example example = new Example(LoansTransaction.class);
         Example.Criteria criteria = example.createCriteria();
-        criteria.andEqualTo("liuid",uid);
-        criteria.andEqualTo("listate",1);
+        criteria.andEqualTo("liuid", uid);
+        criteria.andEqualTo("listate", 1);
         List<LoansTransaction> loansTransactions = loansTransactionDao.selectByExample(example);
         List<LoansTransactionCon> loansTransactionCons = new ArrayList<>();
         for (int i = 0; i < loansTransactions.size(); i++) {
@@ -58,7 +59,7 @@ public class PledgeImpl implements Pledge {
             loansTransactionCon.setLiuid(loansTransactions.get(i).getLiuid());
             Example example1 = new Example(RepaymentType.class);
             Example.Criteria criteria1 = example1.createCriteria();
-            criteria1.andEqualTo("rtid",loansTransactions.get(i).getLitype());
+            criteria1.andEqualTo("rtid", loansTransactions.get(i).getLitype());
             RepaymentType repaymentType = repaymentTypeDao.selectOneByExample(example1);
             loansTransactionCon.setLitype(repaymentType.getRtname());
             loansTransactionCon.setLinumberofperiods(loansTransactions.get(i).getLinumberofperiods());
@@ -83,9 +84,9 @@ public class PledgeImpl implements Pledge {
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat();
         loansTransaction.setLidate(simpleDateFormat.format(new Date()));
         int count = loansTransactionDao.insert(loansTransaction);
-        if(count == 1){
+        if (count == 1) {
             return ResultUtil.success(JSON.toJSON(new String("生成订单成功")));
-        }else{
+        } else {
             return ResultUtil.success(JSON.toJSON(new String("生成订单失败")));
         }
     }
@@ -99,20 +100,20 @@ public class PledgeImpl implements Pledge {
      */
     @Override
     public Result updateLoansTransactionToState(Integer lid, Integer state) {
-        if(state > 1 || state < 0){
+        if (state > 1 || state < 0) {
             return ResultUtil.success(JSON.toJSON(new String("状态码有误")));
         }
         Example example = new Example(LoansTransaction.class);
         Example.Criteria criteria = example.createCriteria();
         criteria.andEqualTo("liid", lid);
         LoansTransaction loansTransaction = loansTransactionDao.selectOneByExample(example);
-        if(loansTransaction == null){
+        if (loansTransaction == null) {
             return ResultUtil.success(JSON.toJSON(new String("订单不存在")));
         }
         loansTransaction.setListate(state);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat();
         loansTransaction.setLidate(simpleDateFormat.format(new Date()));
-        int count = loansTransactionDao.updateByExampleSelective(loansTransaction,example);
+        int count = loansTransactionDao.updateByExampleSelective(loansTransaction, example);
         if (count == 1) {
             return ResultUtil.success(JSON.toJSON(new String("修改订单状态成功")));
         } else {

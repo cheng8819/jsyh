@@ -16,7 +16,8 @@
     <!--查询单个-->
     <select id="queryById" resultMap="ManagemoneyMap">
         select
-          managemoney_id, managemoney_name, managemoney_yield, managemoney_purchase, managemoney_deadline, managemoney_category, managemoney_releasedate, managemoney_repertory
+        managemoney_id, managemoney_name, managemoney_yield, managemoney_purchase, managemoney_deadline,
+        managemoney_category, managemoney_releasedate, managemoney_repertory
         from js_bank_account.managemoney
         where managemoney_id = #{managemoneyId}
     </select>
@@ -24,7 +25,8 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="ManagemoneyMap">
         select
-          managemoney_id, managemoney_name, managemoney_yield, managemoney_purchase, managemoney_deadline, managemoney_category, managemoney_releasedate, managemoney_repertory
+        managemoney_id, managemoney_name, managemoney_yield, managemoney_purchase, managemoney_deadline,
+        managemoney_category, managemoney_releasedate, managemoney_repertory
         from js_bank_account.managemoney
         limit #{offset}, #{limit}
     </select>
@@ -32,7 +34,8 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="ManagemoneyMap">
         select
-          managemoney_id, managemoney_name, managemoney_yield, managemoney_purchase, managemoney_deadline, managemoney_category, managemoney_releasedate, managemoney_repertory
+        managemoney_id, managemoney_name, managemoney_yield, managemoney_purchase, managemoney_deadline,
+        managemoney_category, managemoney_releasedate, managemoney_repertory
         from js_bank_account.managemoney
         <where>
             <if test="managemoneyId != null">
@@ -64,8 +67,10 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="managemoneyId" useGeneratedKeys="true">
-        insert into js_bank_account.managemoney(managemoney_name, managemoney_yield, managemoney_purchase, managemoney_deadline, managemoney_category, managemoney_releasedate, managemoney_repertory)
-        values (#{managemoneyName}, #{managemoneyYield}, #{managemoneyPurchase}, #{managemoneyDeadline}, #{managemoneyCategory}, #{managemoneyReleasedate}, #{managemoneyRepertory})
+        insert into js_bank_account.managemoney(managemoney_name, managemoney_yield, managemoney_purchase,
+        managemoney_deadline, managemoney_category, managemoney_releasedate, managemoney_repertory)
+        values (#{managemoneyName}, #{managemoneyYield}, #{managemoneyPurchase}, #{managemoneyDeadline},
+        #{managemoneyCategory}, #{managemoneyReleasedate}, #{managemoneyRepertory})
     </insert>
 
     <!--通过主键修改数据-->

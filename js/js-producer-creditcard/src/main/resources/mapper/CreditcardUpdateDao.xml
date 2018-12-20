@@ -13,7 +13,7 @@
     <!--查询单个-->
     <select id="queryById" resultMap="CreditcardUpdateMap">
         select
-          update_id, update_card, update_plan, update_date, update_applyid
+        update_id, update_card, update_plan, update_date, update_applyid
         from js_creditcard.creditcard_update
         where update_id = #{updateId}
     </select>
@@ -21,7 +21,7 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="CreditcardUpdateMap">
         select
-          update_id, update_card, update_plan, update_date, update_applyid
+        update_id, update_card, update_plan, update_date, update_applyid
         from js_creditcard.creditcard_update
         limit #{offset}, #{limit}
     </select>
@@ -29,7 +29,7 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="CreditcardUpdateMap">
         select
-          update_id, update_card, update_plan, update_date, update_applyid
+        update_id, update_card, update_plan, update_date, update_applyid
         from js_creditcard.creditcard_update
         <where>
             <if test="updateId != null">

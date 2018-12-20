@@ -30,8 +30,8 @@ spring:
     name: js-producer-deposit
   profiles:
     active: dev
-#  zipkin: #追踪
-#    base-url: http://localhost:7700
+  #  zipkin: #追踪
+  #    base-url: http://localhost:7700
   sleuth:
     sampler:
       percentage: 1.0
@@ -44,7 +44,7 @@ spring:
     publisher-confirms: true
     publisher-returns: true
     listener:
-        simple:
-          prefetch: 1
+      simple:
+        prefetch: 1
 mybatis:
   mapperLocations: classpath:mapper/*.xml

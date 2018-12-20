@@ -17,7 +17,7 @@ public class CreatUtil {
         Date expirationDate = new Date();
         Calendar calendar = Calendar.getInstance();
         //设置一天过期
-        calendar.add(Calendar.DATE,1);
+        calendar.add(Calendar.DATE, 1);
         Date time = calendar.getTime();
         //DateTime expirationDate = new DateTime().plusMinutes(30);
         // Claims是需要保存到token中的信息，可以自定义，需要存什么就放什么，会保存到token的payload中
@@ -26,8 +26,8 @@ public class CreatUtil {
 //        // 放用户对象
 //        claims.put("","");
         String compactJws = Jwts.builder()
-                .setHeaderParam("typ","JWT")
-                .setHeaderParam("alg","HS512")
+                .setHeaderParam("typ", "JWT")
+                .setHeaderParam("alg", "HS512")
                 // 设置失效时间
                 .setExpiration(time)
                 //主体

@@ -25,7 +25,9 @@
     <!--查询单个-->
     <select id="queryById" resultMap="CreditcardCardMap">
         select
-          card_id, card_number, card_balance, card_state, card_sign, card_duedate, card_date, card_usablebalanc, card_alias, card_handledate, card_startdate, card_limit, card_currency, card_aa, card_bb, card_peson, card_applyid
+        card_id, card_number, card_balance, card_state, card_sign, card_duedate, card_date, card_usablebalanc,
+        card_alias, card_handledate, card_startdate, card_limit, card_currency, card_aa, card_bb, card_peson,
+        card_applyid
         from js_creditcard.creditcard_card
         where card_number = #{cardNumber}
     </select>
@@ -33,7 +35,9 @@
     <!--根据id查询用户卡片-->
     <select id="liss" resultMap="CreditcardCardMap">
         select
-          card_id, card_number, card_balance, card_state, card_sign, card_duedate, card_date, card_usablebalanc, card_alias, card_handledate, card_startdate, card_limit, card_currency, card_aa, card_bb, card_peson, card_applyid
+        card_id, card_number, card_balance, card_state, card_sign, card_duedate, card_date, card_usablebalanc,
+        card_alias, card_handledate, card_startdate, card_limit, card_currency, card_aa, card_bb, card_peson,
+        card_applyid
         from js_creditcard.creditcard_card
         where card_peson = #{cardPeson}
     </select>
@@ -42,7 +46,9 @@
     <!--查询单个-->
     <select id="getAll" resultMap="CreditcardCardMap">
         select
-          card_id, card_number, card_balance, card_state, card_sign, card_duedate, card_date, card_usablebalanc, card_alias, card_handledate, card_startdate, card_limit, card_currency, card_aa, card_bb, card_peson, card_applyid
+        card_id, card_number, card_balance, card_state, card_sign, card_duedate, card_date, card_usablebalanc,
+        card_alias, card_handledate, card_startdate, card_limit, card_currency, card_aa, card_bb, card_peson,
+        card_applyid
         from js_creditcard.creditcard_card
         where card_number = #{cardNumber}
     </select>
@@ -51,7 +57,9 @@
     <!--根据id查询单条消息-->
     <select id="refer" resultMap="CreditcardCardMap">
         select
-          card_id, card_number, card_balance, card_state, card_sign, card_duedate, card_date, card_usablebalanc, card_alias, card_handledate, card_startdate, card_limit, card_currency, card_aa, card_bb, card_peson, card_applyid
+        card_id, card_number, card_balance, card_state, card_sign, card_duedate, card_date, card_usablebalanc,
+        card_alias, card_handledate, card_startdate, card_limit, card_currency, card_aa, card_bb, card_peson,
+        card_applyid
         from js_creditcard.creditcard_card
         where card_id = #{cardId}
     </select>
@@ -59,7 +67,9 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="CreditcardCardMap">
         select
-          card_id, card_number, card_balance, card_state, card_sign, card_duedate, card_date, card_usablebalanc, card_alias, card_handledate, card_startdate, card_limit, card_currency, card_aa, card_bb, card_peson, card_applyid
+        card_id, card_number, card_balance, card_state, card_sign, card_duedate, card_date, card_usablebalanc,
+        card_alias, card_handledate, card_startdate, card_limit, card_currency, card_aa, card_bb, card_peson,
+        card_applyid
         from js_creditcard.creditcard_card
         limit #{offset}, #{limit}
     </select>
@@ -67,7 +77,9 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="CreditcardCardMap">
         select
-          card_id, card_number, card_balance, card_state, card_sign, card_duedate, card_date, card_usablebalanc, card_alias, card_handledate, card_startdate, card_limit, card_currency, card_aa, card_bb, card_peson, card_applyid
+        card_id, card_number, card_balance, card_state, card_sign, card_duedate, card_date, card_usablebalanc,
+        card_alias, card_handledate, card_startdate, card_limit, card_currency, card_aa, card_bb, card_peson,
+        card_applyid
         from js_creditcard.creditcard_card
         <where>
             <if test="cardId != null">
@@ -126,8 +138,12 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="cardId" useGeneratedKeys="true">
-        insert into js_creditcard.creditcard_card(card_number, card_balance, card_state, card_sign, card_duedate, card_date, card_usablebalanc, card_alias, card_handledate, card_startdate, card_limit, card_currency, card_aa, card_bb, card_peson, card_applyid)
-        values (#{cardNumber}, #{cardBalance}, #{cardState}, #{cardSign}, #{cardDuedate}, #{cardDate}, #{cardUsablebalanc}, #{cardAlias}, #{cardHandledate}, #{cardStartdate}, #{cardLimit}, #{cardCurrency}, #{cardAa}, #{cardBb}, #{cardPeson}, #{cardApplyid})
+        insert into js_creditcard.creditcard_card(card_number, card_balance, card_state, card_sign, card_duedate,
+        card_date, card_usablebalanc, card_alias, card_handledate, card_startdate, card_limit, card_currency, card_aa,
+        card_bb, card_peson, card_applyid)
+        values (#{cardNumber}, #{cardBalance}, #{cardState}, #{cardSign}, #{cardDuedate}, #{cardDate},
+        #{cardUsablebalanc}, #{cardAlias}, #{cardHandledate}, #{cardStartdate}, #{cardLimit}, #{cardCurrency},
+        #{cardAa}, #{cardBb}, #{cardPeson}, #{cardApplyid})
     </insert>
 
     <!--通过主键修改数据-->

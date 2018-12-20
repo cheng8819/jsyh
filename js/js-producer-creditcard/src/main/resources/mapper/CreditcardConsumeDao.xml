@@ -22,22 +22,29 @@
     <!--查询单个-->
     <select id="queryById" resultMap="CreditcardConsumeMap">
         select
-          consume_id, consume_date, cousume_money, cousume_message, cousume_cardid, cousume_area, consume_sign, consume_capital, consume_balance, consume_currency, consume_dealmoney, consume_tallycurrency, consume_tallymoney, consume_place
+        consume_id, consume_date, cousume_money, cousume_message, cousume_cardid, cousume_area, consume_sign,
+        consume_capital, consume_balance, consume_currency, consume_dealmoney, consume_tallycurrency,
+        consume_tallymoney, consume_place
         from js_creditcard.creditcard_consume
         where cousume_cardid = #{cousumeCardid}
     </select>
 
     <!--查询单个-->
     <select id="month" resultMap="CreditcardConsumeMap">
-        SELECT consume_id, consume_date, cousume_money, cousume_message, cousume_cardid, cousume_area, consume_sign, consume_capital, consume_balance, consume_currency, consume_dealmoney, consume_tallycurrency, consume_tallymoney, consume_place
+        SELECT consume_id, consume_date, cousume_money, cousume_message, cousume_cardid, cousume_area, consume_sign,
+        consume_capital, consume_balance, consume_currency, consume_dealmoney, consume_tallycurrency,
+        consume_tallymoney, consume_place
         FROM creditcard_consume
-        WHERE DATE_FORMAT( consume_date, '%Y%m' ) = DATE_FORMAT( CURDATE( ) , '%Y%m' ) and cousume_cardid=#{cousumeCardid}
+        WHERE DATE_FORMAT( consume_date, '%Y%m' ) = DATE_FORMAT( CURDATE( ) , '%Y%m' ) and
+        cousume_cardid=#{cousumeCardid}
     </select>
 
     <!--查询单个-->
     <select id="getAll" resultMap="CreditcardConsumeMap">
         select
-          consume_id, consume_date, cousume_money, cousume_message, cousume_cardid, cousume_area, consume_sign, consume_capital, consume_balance, consume_currency, consume_dealmoney, consume_tallycurrency, consume_tallymoney, consume_place
+        consume_id, consume_date, cousume_money, cousume_message, cousume_cardid, cousume_area, consume_sign,
+        consume_capital, consume_balance, consume_currency, consume_dealmoney, consume_tallycurrency,
+        consume_tallymoney, consume_place
         from js_creditcard.creditcard_consume
         where consume_id = #{consumeId}
     </select>
@@ -45,7 +52,9 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="CreditcardConsumeMap">
         select
-          consume_id, consume_date, cousume_money, cousume_message, cousume_cardid, cousume_area, consume_sign, consume_capital, consume_balance, consume_currency, consume_dealmoney, consume_tallycurrency, consume_tallymoney, consume_place
+        consume_id, consume_date, cousume_money, cousume_message, cousume_cardid, cousume_area, consume_sign,
+        consume_capital, consume_balance, consume_currency, consume_dealmoney, consume_tallycurrency,
+        consume_tallymoney, consume_place
         from js_creditcard.creditcard_consume
         limit #{offset}, #{limit}
     </select>
@@ -53,7 +62,9 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="CreditcardConsumeMap">
         select
-          consume_id, consume_date, cousume_money, cousume_message, cousume_cardid, cousume_area, consume_sign, consume_capital, consume_balance, consume_currency, consume_dealmoney, consume_tallycurrency, consume_tallymoney, consume_place
+        consume_id, consume_date, cousume_money, cousume_message, cousume_cardid, cousume_area, consume_sign,
+        consume_capital, consume_balance, consume_currency, consume_dealmoney, consume_tallycurrency,
+        consume_tallymoney, consume_place
         from js_creditcard.creditcard_consume
         <where>
             <if test="consumeId != null">
@@ -103,8 +114,12 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="consumeId" useGeneratedKeys="true">
-        insert into js_creditcard.creditcard_consume(consume_date, cousume_money, cousume_message, cousume_cardid, cousume_area, consume_sign, consume_capital, consume_balance, consume_currency, consume_dealmoney, consume_tallycurrency, consume_tallymoney, consume_place)
-        values (#{consumeDate}, #{cousumeMoney}, #{cousumeMessage}, #{cousumeCardid}, #{cousumeArea}, #{consumeSign}, #{consumeCapital}, #{consumeBalance}, #{consumeCurrency}, #{consumeDealmoney}, #{consumeTallycurrency}, #{consumeTallymoney}, #{consumePlace})
+        insert into js_creditcard.creditcard_consume(consume_date, cousume_money, cousume_message, cousume_cardid,
+        cousume_area, consume_sign, consume_capital, consume_balance, consume_currency, consume_dealmoney,
+        consume_tallycurrency, consume_tallymoney, consume_place)
+        values (#{consumeDate}, #{cousumeMoney}, #{cousumeMessage}, #{cousumeCardid}, #{cousumeArea}, #{consumeSign},
+        #{consumeCapital}, #{consumeBalance}, #{consumeCurrency}, #{consumeDealmoney}, #{consumeTallycurrency},
+        #{consumeTallymoney}, #{consumePlace})
     </insert>
 
     <!--通过主键修改数据-->

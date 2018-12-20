@@ -19,12 +19,13 @@ import java.util.List;
 @SpringBootTest
 public class JsDepositProviderApplicationTests {
     @Resource
-    private  DepositFixationDao depositFixationDao;
+    private DepositFixationDao depositFixationDao;
+
     @Test
     public void contextLoads() {
         String nowDate = DateUtil.getNowDate();
         List<DepositFixation> all = depositFixationDao.getAll(nowDate);
-        for (DepositFixation d: all) {
+        for (DepositFixation d : all) {
             System.out.println(d.getDepositFixationid());
         }
     }

@@ -10,7 +10,7 @@
     <!--查询单个-->
     <select id="queryById" resultMap="CurrencytableMap">
         select
-          currencytable_name
+        currencytable_name
         from currencytable
         where currencytable_id = #{currencytableId}
     </select>

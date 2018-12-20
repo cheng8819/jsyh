@@ -4,14 +4,14 @@ spring:
   application:
     name: js-consumer-loans
   zipkin: #追踪
-    base-url: http://localhost:7700
+    base-url: http://116.62.167.249:6601
   sleuth:
     sampler:
       percentage: 1.0
 eureka:
   client:
     service-url:
-      defaultZone: http://root:123456@47.94.235.82:7776/eureka/
+      defaultZone: http://root:123456@localhost:7776/eureka/
 feign:
   hystrix:
     enabled: true

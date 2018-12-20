@@ -14,7 +14,7 @@
     <!--查询单个-->
     <select id="queryById" resultMap="BranchMap">
         select
-          branch_id, branch_name, branch_site, branch_data, branch_longitude, branch_dimensionality
+        branch_id, branch_name, branch_site, branch_data, branch_longitude, branch_dimensionality
         from js_bank_account.branch
         where branch_id = #{branchId}
     </select>
@@ -22,7 +22,7 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="BranchMap">
         select
-          branch_id, branch_name, branch_site, branch_data, branch_longitude, branch_dimensionality
+        branch_id, branch_name, branch_site, branch_data, branch_longitude, branch_dimensionality
         from js_bank_account.branch
         limit #{offset}, #{limit}
     </select>
@@ -30,7 +30,7 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="BranchMap">
         select
-          branch_id, branch_name, branch_site, branch_data, branch_longitude, branch_dimensionality
+        branch_id, branch_name, branch_site, branch_data, branch_longitude, branch_dimensionality
         from js_bank_account.branch
         <where>
             <if test="branchId != null">
@@ -56,7 +56,8 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="branchId" useGeneratedKeys="true">
-        insert into js_bank_account.branch(branch_name, branch_site, branch_data, branch_longitude, branch_dimensionality)
+        insert into js_bank_account.branch(branch_name, branch_site, branch_data, branch_longitude,
+        branch_dimensionality)
         values (#{branchName}, #{branchSite}, #{branchData}, #{branchLongitude}, #{branchDimensionality})
     </insert>
 

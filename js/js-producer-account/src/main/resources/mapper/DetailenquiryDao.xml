@@ -13,14 +13,17 @@
         <result property="detailenquiryPaper" column="detailenquiry_paper" jdbcType="VARCHAR"/>
         <result property="detailenquiryFundflow" column="detailenquiry_fundflow" jdbcType="INTEGER"/>
         <result property="detailenquiryBalance" column="detailenquiry_balance" jdbcType="VARCHAR"/>
-        <result property="detailenquiryTransactioncurrency" column="detailenquiry_transactioncurrency" jdbcType="INTEGER"/>
+        <result property="detailenquiryTransactioncurrency" column="detailenquiry_transactioncurrency"
+                jdbcType="INTEGER"/>
         <result property="detailenquiryMoney" column="detailenquiry_money" jdbcType="OTHER"/>
     </resultMap>
 
     <!--查询单个-->
     <select id="queryById" resultMap="DetailenquiryMap">
         select
-          detailenquiry_id, detailenquiry_number, detailenquiry_data, detailenquiry_place, detailenquiry_abstract, detailenquiry_countries, detailenquiry_otherinformation, detailenquiry_paper, detailenquiry_fundflow, detailenquiry_balance, detailenquiry_transactioncurrency, detailenquiry_money
+        detailenquiry_id, detailenquiry_number, detailenquiry_data, detailenquiry_place, detailenquiry_abstract,
+        detailenquiry_countries, detailenquiry_otherinformation, detailenquiry_paper, detailenquiry_fundflow,
+        detailenquiry_balance, detailenquiry_transactioncurrency, detailenquiry_money
         from detailenquiry
         where detailenquiry_id = #{detailenquiryId}
     </select>
@@ -29,7 +32,9 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="DetailenquiryMap">
         select
-          detailenquiry_id, detailenquiry_data, detailenquiry_abstract, detailenquiry_otherinformation,detailenquiry_fundflow, detailenquiry_balance, detailenquiry_transactioncurrency, detailenquiry_money
+        detailenquiry_id, detailenquiry_data, detailenquiry_abstract,
+        detailenquiry_otherinformation,detailenquiry_fundflow, detailenquiry_balance, detailenquiry_transactioncurrency,
+        detailenquiry_money
         from detailenquiry
         <where>
 
@@ -50,8 +55,12 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="detailenquiryId" useGeneratedKeys="true">
-        insert into detailenquiry(detailenquiry_number, detailenquiry_data, detailenquiry_place, detailenquiry_abstract, detailenquiry_countries, detailenquiry_otherinformation, detailenquiry_paper, detailenquiry_fundflow, detailenquiry_balance, detailenquiry_transactioncurrency, detailenquiry_money)
-        values (#{detailenquiryNumber}, #{detailenquiryData}, #{detailenquiryPlace}, #{detailenquiryAbstract}, #{detailenquiryCountries}, #{detailenquiryOtherinformation}, #{detailenquiryPaper}, #{detailenquiryFundflow}, #{detailenquiryBalance}, #{detailenquiryTransactioncurrency}, #{detailenquiryMoney})
+        insert into detailenquiry(detailenquiry_number, detailenquiry_data, detailenquiry_place, detailenquiry_abstract,
+        detailenquiry_countries, detailenquiry_otherinformation, detailenquiry_paper, detailenquiry_fundflow,
+        detailenquiry_balance, detailenquiry_transactioncurrency, detailenquiry_money)
+        values (#{detailenquiryNumber}, #{detailenquiryData}, #{detailenquiryPlace}, #{detailenquiryAbstract},
+        #{detailenquiryCountries}, #{detailenquiryOtherinformation}, #{detailenquiryPaper}, #{detailenquiryFundflow},
+        #{detailenquiryBalance}, #{detailenquiryTransactioncurrency}, #{detailenquiryMoney})
     </insert>
 
     <!--通过主键修改数据-->

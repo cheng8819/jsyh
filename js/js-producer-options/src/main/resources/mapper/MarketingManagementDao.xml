@@ -14,7 +14,7 @@
     <!--查询单个-->
     <select id="queryById" resultMap="MarketingManagementMap">
         select
-          user_id, number, name, marketing, phone, state
+        user_id, number, name, marketing, phone, state
         from js_management.marketing_management
         where user_id = #{userId} and number = #{number}
     </select>
@@ -23,7 +23,7 @@
     <!--通过id查询用户的所有信息-->
     <select id="queryAll" resultMap="MarketingManagementMap">
         select
-          user_id, number, name, marketing, phone, state
+        user_id, number, name, marketing, phone, state
         from js_management.marketing_management
         where user_id = #{userId}
     </select>

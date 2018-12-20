@@ -8,9 +8,10 @@ public class Result {
     /*返回的数据*/
     private Object data;
 
-    public Result(){}
+    public Result() {
+    }
 
-    public Result(Integer code,String message,Object data) {
+    public Result(Integer code, String message, Object data) {
         this.code = code;
         this.message = message;
         this.data = data;
@@ -24,18 +25,23 @@ public class Result {
     public Integer getCode() {
         return code;
     }
+
     public void setCode(Integer code) {
         this.code = code;
     }
+
     public String getMessage() {
         return message;
     }
+
     public void setMessage(String message) {
         this.message = message;
     }
+
     public Object getData() {
         return data;
     }
+
     public void setData(Object data) {
         this.data = data;
     }

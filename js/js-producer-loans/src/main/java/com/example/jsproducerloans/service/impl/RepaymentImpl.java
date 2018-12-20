@@ -19,16 +19,17 @@ public class RepaymentImpl implements Repayment {
 
     /**
      * 根据uid和loid查询逾期订单
+     *
      * @param ltid 订单ID
-     * @param uid 用户ID
+     * @param uid  用户ID
      * @return
      */
     @Override
-    public Result allLoansOverdueByuidAndloid(Integer ltid,Integer uid) {
+    public Result allLoansOverdueByuidAndloid(Integer ltid, Integer uid) {
         Example example = new Example(LoansOverdue.class);
         Example.Criteria criteria = example.createCriteria();
-        criteria.andEqualTo("loid",ltid);
-        criteria.andEqualTo("uid",uid);
+        criteria.andEqualTo("loid", ltid);
+        criteria.andEqualTo("uid", uid);
         return ResultUtil.success(JSON.toJSON(loansOverdueDao.selectByExample(example)));
     }
 }

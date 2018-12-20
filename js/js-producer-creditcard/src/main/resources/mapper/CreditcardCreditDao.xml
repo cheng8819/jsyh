@@ -13,14 +13,14 @@
     <!--查询单个-->
     <select id="queryById" resultMap="CreditcardCreditMap">
         select
-          credit_id, credit_picture, credit_details, credit_areaid, credit_name
+        credit_id, credit_picture, credit_details, credit_areaid, credit_name
         from js_creditcard.creditcard_credit
         where credit_id = #{creditId}
     </select>
     <!--查询所有-->
     <select id="getaa" resultMap="CreditcardCreditMap">
         select
-          credit_id, credit_picture, credit_details, credit_areaid, credit_name
+        credit_id, credit_picture, credit_details, credit_areaid, credit_name
         from js_creditcard.creditcard_credit
     </select>
 
@@ -28,7 +28,7 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="CreditcardCreditMap">
         select
-          credit_id, credit_picture, credit_details, credit_areaid, credit_name
+        credit_id, credit_picture, credit_details, credit_areaid, credit_name
         from js_creditcard.creditcard_credit
         limit #{offset}, #{limit}
     </select>
@@ -36,7 +36,7 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="CreditcardCreditMap">
         select
-          credit_id, credit_picture, credit_details, credit_areaid, credit_name
+        credit_id, credit_picture, credit_details, credit_areaid, credit_name
         from js_creditcard.creditcard_credit
         <where>
             <if test="creditId != null">
@@ -90,6 +90,7 @@
 
 
     <select id="getAll" resultMap="CreditcardCreditMap" parameterType="Integer">
-        select credit_id, credit_picture, credit_details,credit_name from creditcard_credit where  credit_areaid = #{creditareaid}
+        select credit_id, credit_picture, credit_details,credit_name from creditcard_credit where credit_areaid =
+        #{creditareaid}
     </select>
 </mapper>

@@ -41,8 +41,8 @@ spring:
     publisher-confirms: true
     publisher-returns: true
     listener:
-        simple:
-          prefetch: 1
+      simple:
+        prefetch: 1
 mybatis:
   type-aliases-package: com.example.jsdengluprovider.pojo
 

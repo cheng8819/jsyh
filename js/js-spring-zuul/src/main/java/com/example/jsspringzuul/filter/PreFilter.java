@@ -70,45 +70,45 @@ public class PreFilter extends ZuulFilter {
             return null;
         } else {
             if (StringUtils.isEmpty(token)) {
-               ctx.setSendZuulResponse(false); //过滤该请求不对其进行路由
-               ctx.setResponseBody("请求头错误");
-               ctx.getResponse().setContentType("text/html;charset=utf-8");
-               ctx.set("isSuccess",false);//传给后面两个网关
-               return null;
+                ctx.setSendZuulResponse(false); //过滤该请求不对其进行路由
+                ctx.setResponseBody("请求头错误");
+                ctx.getResponse().setContentType("text/html;charset=utf-8");
+                ctx.set("isSuccess", false);//传给后面两个网关
+                return null;
             }
-                byte[] secretKey = Base64.getEncoder().encode(CommonConstants.SECURITY_KEY.getBytes());
-                Claims claims = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token).getBody();
-                String signature = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token).getSignature();
-                if (claims != null) {
-                    String s = CreatUtil.generateJwt(claims);
-                    String signature1 = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(s).getSignature();
-                    if(signature.equals(signature1)){
-                        Integer user = (Integer) claims.get("user");
-                        String UserNameToken = user + "token";
-                        Long expirationDate = redisUtil.getExpire(UserNameToken);
-                        //如果还剩余5分钟，重置redis里面数据的存活时间
-                        if(expirationDate > 300){
-                            redisUtil.expire(UserNameToken,1800);
-                            return null;
-                        }else {
-                            ctx.setSendZuulResponse(false);
-                            System.out.println("111111111111111111");//过滤该请求不对其进行路由
-                            ctx.setResponseBody("登陆失效，请重新登陆");
-                            ctx.set("isSuccess",false);//传给后面两个网关
-                            return null;
-                        }
-                    }else {
-                        ctx.setSendZuulResponse(false); //过滤该请求不对其进行路由
-                        ctx.setResponseBody("登陆失效，清重新登陆");
-                        ctx.set("isSuccess",false);//传给后面两个网关
+            byte[] secretKey = Base64.getEncoder().encode(CommonConstants.SECURITY_KEY.getBytes());
+            Claims claims = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token).getBody();
+            String signature = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(token).getSignature();
+            if (claims != null) {
+                String s = CreatUtil.generateJwt(claims);
+                String signature1 = Jwts.parser().setSigningKey(secretKey).parseClaimsJws(s).getSignature();
+                if (signature.equals(signature1)) {
+                    Integer user = (Integer) claims.get("user");
+                    String UserNameToken = user + "token";
+                    Long expirationDate = redisUtil.getExpire(UserNameToken);
+                    //如果还剩余5分钟，重置redis里面数据的存活时间
+                    if (expirationDate > 300) {
+                        redisUtil.expire(UserNameToken, 1800);
+                        return null;
+                    } else {
+                        ctx.setSendZuulResponse(false);
+                        System.out.println("111111111111111111");//过滤该请求不对其进行路由
+                        ctx.setResponseBody("登陆失效，请重新登陆");
+                        ctx.set("isSuccess", false);//传给后面两个网关
                         return null;
                     }
                 } else {
                     ctx.setSendZuulResponse(false); //过滤该请求不对其进行路由
                     ctx.setResponseBody("登陆失效，清重新登陆");
-                    ctx.set("isSuccess",false);//传给后面两个网关
+                    ctx.set("isSuccess", false);//传给后面两个网关
                     return null;
                 }
-             }
+            } else {
+                ctx.setSendZuulResponse(false); //过滤该请求不对其进行路由
+                ctx.setResponseBody("登陆失效，清重新登陆");
+                ctx.set("isSuccess", false);//传给后面两个网关
+                return null;
+            }
         }
+    }
 }

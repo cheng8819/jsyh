@@ -23,7 +23,8 @@
     <!--查询单个-->
     <select id="queryById" resultMap="CreditcardApplyMap">
         select
-          apply_id, apply_number, apply_type, apply_date, apply_area, apply_ditch, apply_cards, apply_plan, apply_dateupdate, apply_name, apply_card, applu_type, apply_phone, apply_code, apply_cardtype
+        apply_id, apply_number, apply_type, apply_date, apply_area, apply_ditch, apply_cards, apply_plan,
+        apply_dateupdate, apply_name, apply_card, applu_type, apply_phone, apply_code, apply_cardtype
         from js_creditcard.creditcard_apply
         where apply_card = #{applyCard}
     </select>
@@ -31,7 +32,8 @@
     <!--查询单个-->
     <select id="applyid" resultMap="CreditcardApplyMap">
         select
-          apply_id, apply_number, apply_type, apply_date, apply_area, apply_ditch, apply_cards, apply_plan, apply_dateupdate, apply_name, apply_card, applu_type, apply_phone, apply_code, apply_cardtype
+        apply_id, apply_number, apply_type, apply_date, apply_area, apply_ditch, apply_cards, apply_plan,
+        apply_dateupdate, apply_name, apply_card, applu_type, apply_phone, apply_code, apply_cardtype
         from js_creditcard.creditcard_apply
         where apply_id = #{applyId}
     </select>
@@ -39,7 +41,8 @@
     <!--条件查询单个-->
     <select id="getss" resultMap="CreditcardApplyMap">
         select
-          apply_id, apply_number, apply_type, apply_date, apply_area, apply_ditch, apply_cards, apply_plan, apply_dateupdate, apply_name, apply_card, applu_type, apply_phone, apply_code, apply_cardtype
+        apply_id, apply_number, apply_type, apply_date, apply_area, apply_ditch, apply_cards, apply_plan,
+        apply_dateupdate, apply_name, apply_card, applu_type, apply_phone, apply_code, apply_cardtype
         from js_creditcard.creditcard_apply
         where apply_name = #{applyName} and apply_card = #{applyCard}
     </select>
@@ -47,7 +50,8 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="CreditcardApplyMap">
         select
-          apply_id, apply_number, apply_type, apply_date, apply_area, apply_ditch, apply_cards, apply_plan, apply_dateupdate, apply_name, apply_card, applu_type, apply_phone, apply_code, apply_cardtype
+        apply_id, apply_number, apply_type, apply_date, apply_area, apply_ditch, apply_cards, apply_plan,
+        apply_dateupdate, apply_name, apply_card, applu_type, apply_phone, apply_code, apply_cardtype
         from js_creditcard.creditcard_apply
         limit #{offset}, #{limit}
     </select>
@@ -55,7 +59,8 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="CreditcardApplyMap">
         select
-          apply_id, apply_number, apply_type, apply_date, apply_area, apply_ditch, apply_cards, apply_plan, apply_dateupdate, apply_name, apply_card, applu_type, apply_phone, apply_code, apply_cardtype
+        apply_id, apply_number, apply_type, apply_date, apply_area, apply_ditch, apply_cards, apply_plan,
+        apply_dateupdate, apply_name, apply_card, applu_type, apply_phone, apply_code, apply_cardtype
         from js_creditcard.creditcard_apply
         <where>
             <if test="applyId != null">
@@ -108,8 +113,11 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="applyId" useGeneratedKeys="true">
-        insert into js_creditcard.creditcard_apply(apply_number, apply_type, apply_date, apply_area, apply_ditch, apply_cards, apply_plan, apply_dateupdate, apply_name, apply_card, applu_type, apply_phone, apply_code, apply_cardtype)
-        values (#{applyNumber}, #{applyType}, #{applyDate}, #{applyArea}, #{applyDitch}, #{applyCards}, #{applyPlan}, #{applyDateupdate}, #{applyName}, #{applyCard}, #{appluType}, #{applyPhone}, #{applyCode}, #{applyCardtype})
+        insert into js_creditcard.creditcard_apply(apply_number, apply_type, apply_date, apply_area, apply_ditch,
+        apply_cards, apply_plan, apply_dateupdate, apply_name, apply_card, applu_type, apply_phone, apply_code,
+        apply_cardtype)
+        values (#{applyNumber}, #{applyType}, #{applyDate}, #{applyArea}, #{applyDitch}, #{applyCards}, #{applyPlan},
+        #{applyDateupdate}, #{applyName}, #{applyCard}, #{appluType}, #{applyPhone}, #{applyCode}, #{applyCardtype})
     </insert>
 
     <!--通过主键修改数据-->

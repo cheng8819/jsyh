@@ -12,8 +12,8 @@ spring:
     publisher-confirms: true
     publisher-returns: true
     listener:
-        simple:
-          prefetch: 1
+      simple:
+        prefetch: 1
 eureka:
   client:
     service-url:

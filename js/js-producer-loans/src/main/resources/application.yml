@@ -40,13 +40,13 @@ spring:
     sampler:
       percentage: 1.0
   rabbitmq:
-      host: 127.0.0.1
-      port: 5672
-      username: moxiaoze
-      password: moxiaoze
-      virtual-host: /heheda
-      publisher-confirms: true
-      publisher-returns: true
-      listener:
-          simple:
-            prefetch: 1
+    host: 127.0.0.1
+    port: 5672
+    username: moxiaoze
+    password: moxiaoze
+    virtual-host: /heheda
+    publisher-confirms: true
+    publisher-returns: true
+    listener:
+      simple:
+        prefetch: 1

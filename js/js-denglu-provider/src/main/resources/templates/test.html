@@ -9,10 +9,10 @@
             $.ajax({
                 type: "Post",
                 url: "/login",
-                success: function(data) {
+                success: function (data) {
                     console.log(data);
                 },
-                beforeSend: function(xhr) {
+                beforeSend: function (xhr) {
                     xhr.setRequestHeader("token", "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzUxMiJ9.eyJ1c2VyIjoxfQ.Ubff6_ZMlkqT-Hsxp317uyiO9kAV1h4N40gMEYHs5xRsHDlJ9IMBWGuoj12nAq95a0WXOAnRRbsXVx9Ip24lsg");
                 }
             });

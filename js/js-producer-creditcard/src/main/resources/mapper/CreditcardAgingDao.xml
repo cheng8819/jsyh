@@ -23,7 +23,9 @@
     <!--查询单个-->
     <select id="queryById" resultMap="CreditcardAgingMap">
         select
-          aging_id, aging_amount, aging_charges, aging_periods, aging_mode, aging_refund, aging_capital, aging_surplusrefund, aging_surpluscapital, aging_surpluscharges, aging_priorfund, aging_lowestfund, aging_optimalfund, aging_fund, aging_cardid
+        aging_id, aging_amount, aging_charges, aging_periods, aging_mode, aging_refund, aging_capital,
+        aging_surplusrefund, aging_surpluscapital, aging_surpluscharges, aging_priorfund, aging_lowestfund,
+        aging_optimalfund, aging_fund, aging_cardid
         from js_creditcard.creditcard_aging
         where aging_cardid = #{agingCardid}
     </select>
@@ -31,7 +33,9 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="CreditcardAgingMap">
         select
-          aging_id, aging_amount, aging_charges, aging_periods, aging_mode, aging_refund, aging_capital, aging_surplusrefund, aging_surpluscapital, aging_surpluscharges, aging_priorfund, aging_lowestfund, aging_optimalfund, aging_fund, aging_cardid
+        aging_id, aging_amount, aging_charges, aging_periods, aging_mode, aging_refund, aging_capital,
+        aging_surplusrefund, aging_surpluscapital, aging_surpluscharges, aging_priorfund, aging_lowestfund,
+        aging_optimalfund, aging_fund, aging_cardid
         from js_creditcard.creditcard_aging
         limit #{offset}, #{limit}
     </select>
@@ -39,7 +43,9 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="CreditcardAgingMap">
         select
-          aging_id, aging_amount, aging_charges, aging_periods, aging_mode, aging_refund, aging_capital, aging_surplusrefund, aging_surpluscapital, aging_surpluscharges, aging_priorfund, aging_lowestfund, aging_optimalfund, aging_fund, aging_cardid
+        aging_id, aging_amount, aging_charges, aging_periods, aging_mode, aging_refund, aging_capital,
+        aging_surplusrefund, aging_surpluscapital, aging_surpluscharges, aging_priorfund, aging_lowestfund,
+        aging_optimalfund, aging_fund, aging_cardid
         from js_creditcard.creditcard_aging
         <where>
             <if test="agingId != null">
@@ -92,8 +98,12 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="agingId" useGeneratedKeys="true">
-        insert into js_creditcard.creditcard_aging(aging_amount, aging_charges, aging_periods, aging_mode, aging_refund, aging_capital, aging_surplusrefund, aging_surpluscapital, aging_surpluscharges, aging_priorfund, aging_lowestfund, aging_optimalfund, aging_fund, aging_cardid)
-        values (#{agingAmount}, #{agingCharges}, #{agingPeriods}, #{agingMode}, #{agingRefund}, #{agingCapital}, #{agingSurplusrefund}, #{agingSurpluscapital}, #{agingSurpluscharges}, #{agingPriorfund}, #{agingLowestfund}, #{agingOptimalfund}, #{agingFund}, #{agingCardid})
+        insert into js_creditcard.creditcard_aging(aging_amount, aging_charges, aging_periods, aging_mode, aging_refund,
+        aging_capital, aging_surplusrefund, aging_surpluscapital, aging_surpluscharges, aging_priorfund,
+        aging_lowestfund, aging_optimalfund, aging_fund, aging_cardid)
+        values (#{agingAmount}, #{agingCharges}, #{agingPeriods}, #{agingMode}, #{agingRefund}, #{agingCapital},
+        #{agingSurplusrefund}, #{agingSurpluscapital}, #{agingSurpluscharges}, #{agingPriorfund}, #{agingLowestfund},
+        #{agingOptimalfund}, #{agingFund}, #{agingCardid})
     </insert>
 
     <!--通过主键修改数据-->

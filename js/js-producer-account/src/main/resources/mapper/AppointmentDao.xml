@@ -23,31 +23,37 @@
     <!--根据账户ID和时间段查询当前账户预约信息-->
     <select id="queryById" resultMap="AppointmentMap">
         select
-          appointment_id, appointment_number, appointment_userid, appointment_businesstype, appointment_branch, appointment_data, appointment_time, appointment_currentdata, appointment_channel, appointment_result
+        appointment_id, appointment_number, appointment_userid, appointment_businesstype, appointment_branch,
+        appointment_data, appointment_time, appointment_currentdata, appointment_channel, appointment_result
         from appointment
         where appointment_userid = #{UserId} and appointment_data between #{timeone} and #{timetwo}
     </select>
 
     <!--根据预约信息ID查询详细预约信息-->
     <select id="selAll" resultMap="AppointmentMap">
-        select appointment_id, appointment_number, appointment_userid, appointment_businesstype, appointment_currency, appointment_price, appointment_branch, appointment_data, appointment_time, appointment_phone, appointment_currentdata, appointment_channel, appointment_result
+        select appointment_id, appointment_number, appointment_userid, appointment_businesstype, appointment_currency,
+        appointment_price, appointment_branch, appointment_data, appointment_time, appointment_phone,
+        appointment_currentdata, appointment_channel, appointment_result
         from appointment where appointment_id = #{appId} and appointment_userid = #{Userid}
     </select>
 
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="AppointmentMap">
         select
-          appointment_id, appointment_number, appointment_userid, appointment_businesstype, appointment_currency, appointment_price, appointment_branch, appointment_data, appointment_time, appointment_phone, appointment_currentdata, appointment_channel, appointment_result, appointment_one, appointment_two
+        appointment_id, appointment_number, appointment_userid, appointment_businesstype, appointment_currency,
+        appointment_price, appointment_branch, appointment_data, appointment_time, appointment_phone,
+        appointment_currentdata, appointment_channel, appointment_result, appointment_one, appointment_two
         from js_bank_account.appointment
         limit #{offset}, #{limit}
     </select>
 
 
-
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="AppointmentMap">
         select
-          appointment_id, appointment_number, appointment_userid, appointment_businesstype, appointment_currency, appointment_price, appointment_branch, appointment_data, appointment_time, appointment_phone, appointment_currentdata, appointment_channel, appointment_result, appointment_one, appointment_two
+        appointment_id, appointment_number, appointment_userid, appointment_businesstype, appointment_currency,
+        appointment_price, appointment_branch, appointment_data, appointment_time, appointment_phone,
+        appointment_currentdata, appointment_channel, appointment_result, appointment_one, appointment_two
         from js_bank_account.appointment
         <where>
             <if test="appointmentId != null">
@@ -99,14 +105,20 @@
     </select>
 
     <!--新增所有列-->
-    <insert id="insert" keyProperty="appointmentId" useGeneratedKeys="true" parameterType="com.cloud.jsproduceraccount.entity.Appointment">
-        insert into appointment(appointment_number, appointment_userid, appointment_businesstype, appointment_currency, appointment_price, appointment_branch, appointment_data, appointment_time, appointment_phone, appointment_currentdata, appointment_channel, appointment_result, appointment_one, appointment_two)
-        values (#{appointmentNumber}, #{appointmentUserid}, #{appointmentBusinesstype}, #{appointmentCurrency}, #{appointmentPrice}, #{appointmentBranch}, #{appointmentData}, #{appointmentTime}, #{appointmentPhone}, #{appointmentCurrentdata}, #{appointmentChannel}, #{appointmentResult}, #{appointmentOne}, #{appointmentTwo})
+    <insert id="insert" keyProperty="appointmentId" useGeneratedKeys="true"
+            parameterType="com.cloud.jsproduceraccount.entity.Appointment">
+        insert into appointment(appointment_number, appointment_userid, appointment_businesstype, appointment_currency,
+        appointment_price, appointment_branch, appointment_data, appointment_time, appointment_phone,
+        appointment_currentdata, appointment_channel, appointment_result, appointment_one, appointment_two)
+        values (#{appointmentNumber}, #{appointmentUserid}, #{appointmentBusinesstype}, #{appointmentCurrency},
+        #{appointmentPrice}, #{appointmentBranch}, #{appointmentData}, #{appointmentTime}, #{appointmentPhone},
+        #{appointmentCurrentdata}, #{appointmentChannel}, #{appointmentResult}, #{appointmentOne}, #{appointmentTwo})
     </insert>
 
     <!--通过主键修改数据-->
     <update id="update">
-        update appointment set appointment_result = 2 where appointment_id = #{appointmentId} and appointment_userid = #{appointmentUserid}
+        update appointment set appointment_result = 2 where appointment_id = #{appointmentId} and appointment_userid =
+        #{appointmentUserid}
     </update>
 
     <!--通过主键删除-->

@@ -13,7 +13,8 @@
     <!--查询单个-->
     <select id="queryById" resultMap="FinancialrecordsMap">
         select
-          financialrecords_id, financialrecords_manageid, financialrecords_data, financialrecords_money, financialrecords_userid
+        financialrecords_id, financialrecords_manageid, financialrecords_data, financialrecords_money,
+        financialrecords_userid
         from js_bank_account.financialrecords
         where financialrecords_id = #{financialrecordsId}
     </select>
@@ -21,7 +22,8 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="FinancialrecordsMap">
         select
-          financialrecords_id, financialrecords_manageid, financialrecords_data, financialrecords_money, financialrecords_userid
+        financialrecords_id, financialrecords_manageid, financialrecords_data, financialrecords_money,
+        financialrecords_userid
         from js_bank_account.financialrecords
         limit #{offset}, #{limit}
     </select>
@@ -29,7 +31,8 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="FinancialrecordsMap">
         select
-          financialrecords_id, financialrecords_manageid, financialrecords_data, financialrecords_money, financialrecords_userid
+        financialrecords_id, financialrecords_manageid, financialrecords_data, financialrecords_money,
+        financialrecords_userid
         from js_bank_account.financialrecords
         <where>
             <if test="financialrecordsId != null">
@@ -52,8 +55,10 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="financialrecordsId" useGeneratedKeys="true">
-        insert into js_bank_account.financialrecords(financialrecords_manageid, financialrecords_data, financialrecords_money, financialrecords_userid)
-        values (#{financialrecordsManageid}, #{financialrecordsData}, #{financialrecordsMoney}, #{financialrecordsUserid})
+        insert into js_bank_account.financialrecords(financialrecords_manageid, financialrecords_data,
+        financialrecords_money, financialrecords_userid)
+        values (#{financialrecordsManageid}, #{financialrecordsData}, #{financialrecordsMoney},
+        #{financialrecordsUserid})
     </insert>
 
     <!--通过主键修改数据-->

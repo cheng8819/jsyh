@@ -10,7 +10,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 public class JsConsumerManagementApplicationTests {
 
     @Test
-     public void contextLoads(String a) {
+    public void contextLoads(String a) {
 
 
     }

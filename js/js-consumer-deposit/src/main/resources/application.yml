@@ -3,8 +3,8 @@ server:
 spring:
   application:
     name: js-consumer-deposit
-#  zipkin: #追踪
-#    base-url: http://localhost:7700
+  #  zipkin: #追踪
+  #    base-url: http://localhost:7700
   sleuth:
     sampler:
       percentage: 1.0

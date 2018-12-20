@@ -3,7 +3,7 @@ server:
 spring:
   application:
     name: js-cosumer-fund
- rabbitmq:
+  rabbitmq:
     host: 123.206.255.244
     port: 5672
     username: rabbit
@@ -12,8 +12,8 @@ spring:
     publisher-confirms: true
     publisher-returns: true
     listener:
-        simple:
-          prefetch: 1
+      simple:
+        prefetch: 1
 eureka:
   client:
     service-url:

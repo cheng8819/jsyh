@@ -19,31 +19,34 @@
     <!--查询单个-->
     <select id="queryById" resultMap="DepositBigMap">
         select
-          deposit_bigId,  deposit_bigCardId, deposit_bigMoney, deposit_biglv,  deposit_bigLong
+        deposit_bigId, deposit_bigCardId, deposit_bigMoney, deposit_biglv, deposit_bigLong
         from deposit_big
         where deposit_bigId = #{depositBigid}
     </select>
     <select id="getAllNow" resultMap="DepositBigMap">
-        select  deposit_bigId,  deposit_bigCardId, deposit_bigMoney, deposit_biglv
+        select deposit_bigId, deposit_bigCardId, deposit_bigMoney, deposit_biglv
         from deposit_big
         where deposit_bigOutTime = #{today}
     </select>
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="DepositBigMap">
         select
-          deposit_bigId, deposit_bigNumber, deposit_bigCardId, deposit_bigMoney, deposit_biglv, deposit_bigBusType, deposit_bigInTime, deposit_bigLong, deposit_bigOutTime, deposit_bigUserId
+        deposit_bigId, deposit_bigNumber, deposit_bigCardId, deposit_bigMoney, deposit_biglv, deposit_bigBusType,
+        deposit_bigInTime, deposit_bigLong, deposit_bigOutTime, deposit_bigUserId
         from js-deposit.deposit_big
         limit #{offset}, #{limit}
     </select>
     <select id="getAllById" resultMap="DepositBigMap">
-        select deposit_bigId, deposit_bigNumber, deposit_bigCardId, deposit_bigMoney, deposit_biglv, deposit_bigInTime, deposit_bigOutTime
-          from deposit_big
-          where deposit_bigUserId = #{userid}
+        select deposit_bigId, deposit_bigNumber, deposit_bigCardId, deposit_bigMoney, deposit_biglv, deposit_bigInTime,
+        deposit_bigOutTime
+        from deposit_big
+        where deposit_bigUserId = #{userid}
     </select>
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="DepositBigMap">
         select
-          deposit_bigId, deposit_bigNumber, deposit_bigCardId, deposit_bigMoney, deposit_biglv, deposit_bigBusType, deposit_bigInTime, deposit_bigLong, deposit_bigOutTime, deposit_bigUserId
+        deposit_bigId, deposit_bigNumber, deposit_bigCardId, deposit_bigMoney, deposit_biglv, deposit_bigBusType,
+        deposit_bigInTime, deposit_bigLong, deposit_bigOutTime, deposit_bigUserId
         from js-deposit.deposit_big
         <where>
             <if test="depositBigid != null">
@@ -81,8 +84,10 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="depositBigid" useGeneratedKeys="true">
-        insert into deposit_big(deposit_bigNumber, deposit_bigCardId, deposit_bigMoney, deposit_biglv, deposit_bigBusType, deposit_bigInTime, deposit_bigLong, deposit_bigOutTime, deposit_bigUserId,deposit_bigState)
-        values (#{depositBignumber}, #{depositBigcardid}, #{depositBigmoney}, #{depositBiglv}, #{depositBigbustype}, #{depositBigintime}, #{depositBiglong}, #{depositBigouttime}, #{depositBiguserid},0)
+        insert into deposit_big(deposit_bigNumber, deposit_bigCardId, deposit_bigMoney, deposit_biglv,
+        deposit_bigBusType, deposit_bigInTime, deposit_bigLong, deposit_bigOutTime, deposit_bigUserId,deposit_bigState)
+        values (#{depositBignumber}, #{depositBigcardid}, #{depositBigmoney}, #{depositBiglv}, #{depositBigbustype},
+        #{depositBigintime}, #{depositBiglong}, #{depositBigouttime}, #{depositBiguserid},0)
     </insert>
     <update id="changestate">
         update deposit_big

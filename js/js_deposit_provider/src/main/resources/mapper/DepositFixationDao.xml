@@ -18,31 +18,35 @@
     <!--查询单个-->
     <select id="queryById" resultMap="DepositFixationMap">
         select
-          deposit_fixationId, deposit_fixationNumber, deposit_fixationCardID, deposit_fixationMoney, deposit_fixationLv, deposit_fixationBusinessType, deposit_fixationInTime, deposit_fixationOutTime, deposit_fixationUserId
+        deposit_fixationId, deposit_fixationNumber, deposit_fixationCardID, deposit_fixationMoney, deposit_fixationLv,
+        deposit_fixationBusinessType, deposit_fixationInTime, deposit_fixationOutTime, deposit_fixationUserId
         from deposit_fixation
         where deposit_fixationId = #{depositFixationid}
     </select>
     <select id="getAllById" resultMap="DepositFixationMap">
-        select deposit_fixationId, deposit_fixationNumber, deposit_fixationCardID, deposit_fixationMoney, deposit_fixationLv, deposit_fixationInTime, deposit_fixationOutTime
-        from    deposit_fixation
+        select deposit_fixationId, deposit_fixationNumber, deposit_fixationCardID, deposit_fixationMoney,
+        deposit_fixationLv, deposit_fixationInTime, deposit_fixationOutTime
+        from deposit_fixation
         where deposit_fixationUserId = #{userid}
     </select>
     <select id="getAll" resultMap="DepositFixationMap">
-        select  deposit_fixationId,deposit_fixationCardID,deposit_fixationMoney,deposit_fixationLv
+        select deposit_fixationId,deposit_fixationCardID,deposit_fixationMoney,deposit_fixationLv
         from deposit_fixation
         WHERE deposit_fixationOutTime = #{d}
     </select>
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="DepositFixationMap">
         select
-          deposit_fixationId, deposit_fixationNumber, deposit_fixationCardID, deposit_fixationMoney, deposit_fixationMoneyAndLX, deposit_fixationBusinessType, deposit_fixationInTime, deposit_fixationOutTime, deposit_fixationUserId
+        deposit_fixationId, deposit_fixationNumber, deposit_fixationCardID, deposit_fixationMoney,
+        deposit_fixationMoneyAndLX, deposit_fixationBusinessType, deposit_fixationInTime, deposit_fixationOutTime,
+        deposit_fixationUserId
         from deposit_fixation
         limit #{offset}, #{limit}
     </select>
     <!--查询余额-->
     <select id="getYE" resultMap="DepositFixationMap">
-        select  deposit_fixationMoney,deposit_fixationCardID
-        from  deposit_fixation
+        select deposit_fixationMoney,deposit_fixationCardID
+        from deposit_fixation
         where deposit_fixationId = #{informid}
     </select>
     <!---  扣钱 -->
@@ -54,7 +58,9 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="DepositFixationMap">
         select
-          deposit_fixationId, deposit_fixationNumber, deposit_fixationCardID, deposit_fixationMoney, deposit_fixationMoneyAndLX, deposit_fixationBusinessType, deposit_fixationInTime, deposit_fixationOutTime, deposit_fixationUserId
+        deposit_fixationId, deposit_fixationNumber, deposit_fixationCardID, deposit_fixationMoney,
+        deposit_fixationMoneyAndLX, deposit_fixationBusinessType, deposit_fixationInTime, deposit_fixationOutTime,
+        deposit_fixationUserId
         from js-deposit.deposit_fixation
         <where>
             <if test="depositFixationid != null">
@@ -89,8 +95,11 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="depositFixationid" useGeneratedKeys="true">
-        insert into deposit_fixation(deposit_fixationNumber, deposit_fixationCardID, deposit_fixationMoney, deposit_fixationLv, deposit_fixationBusinessType, deposit_fixationInTime, deposit_fixationOutTime, deposit_fixationUserId,deposit_state)
-        values (#{depositFixationnumber}, #{depositFixationcardid}, #{depositFixationmoney}, #{deposit_fixationLv}, #{depositFixationbusinesstype}, #{depositFixationintime}, #{depositFixationouttime}, #{depositFixationuserid},0)
+        insert into deposit_fixation(deposit_fixationNumber, deposit_fixationCardID, deposit_fixationMoney,
+        deposit_fixationLv, deposit_fixationBusinessType, deposit_fixationInTime, deposit_fixationOutTime,
+        deposit_fixationUserId,deposit_state)
+        values (#{depositFixationnumber}, #{depositFixationcardid}, #{depositFixationmoney}, #{deposit_fixationLv},
+        #{depositFixationbusinesstype}, #{depositFixationintime}, #{depositFixationouttime}, #{depositFixationuserid},0)
     </insert>
     <update id="changeState">
         update deposit_fixation

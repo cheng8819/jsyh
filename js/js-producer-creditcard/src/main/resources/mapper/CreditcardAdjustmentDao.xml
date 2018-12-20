@@ -15,7 +15,8 @@
     <!--查询单个-->
     <select id="queryById" resultMap="CreditcardAdjustmentMap" parameterType="Integer">
         select
-          adjustment_id, adjustment_type, adjustment_currency, adjustment_limit, adjustment_adjustlimit, adjustment_date, adjustment_cardid
+        adjustment_id, adjustment_type, adjustment_currency, adjustment_limit, adjustment_adjustlimit, adjustment_date,
+        adjustment_cardid
         from js_creditcard.creditcard_adjustment
         where adjustment_id = #{adjustmentId}
     </select>
@@ -23,7 +24,8 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="CreditcardAdjustmentMap">
         select
-          adjustment_id, adjustment_type, adjustment_currency, adjustment_limit, adjustment_adjustlimit, adjustment_date, adjustment_cardid
+        adjustment_id, adjustment_type, adjustment_currency, adjustment_limit, adjustment_adjustlimit, adjustment_date,
+        adjustment_cardid
         from js_creditcard.creditcard_adjustment
         limit #{offset}, #{limit}
     </select>
@@ -31,7 +33,8 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="CreditcardAdjustmentMap">
         select
-          adjustment_id, adjustment_type, adjustment_currency, adjustment_limit, adjustment_adjustlimit, adjustment_date, adjustment_cardid
+        adjustment_id, adjustment_type, adjustment_currency, adjustment_limit, adjustment_adjustlimit, adjustment_date,
+        adjustment_cardid
         from js_creditcard.creditcard_adjustment
         <where>
             <if test="adjustmentId != null">
@@ -60,8 +63,10 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="adjustmentId" useGeneratedKeys="true">
-        insert into js_creditcard.creditcard_adjustment(adjustment_type, adjustment_currency, adjustment_limit, adjustment_adjustlimit, adjustment_date, adjustment_cardid)
-        values (#{adjustmentType}, #{adjustmentCurrency}, #{adjustmentLimit}, #{adjustmentAdjustlimit}, #{adjustmentDate}, #{adjustmentCardid})
+        insert into js_creditcard.creditcard_adjustment(adjustment_type, adjustment_currency, adjustment_limit,
+        adjustment_adjustlimit, adjustment_date, adjustment_cardid)
+        values (#{adjustmentType}, #{adjustmentCurrency}, #{adjustmentLimit}, #{adjustmentAdjustlimit},
+        #{adjustmentDate}, #{adjustmentCardid})
     </insert>
 
     <!--通过主键修改数据-->

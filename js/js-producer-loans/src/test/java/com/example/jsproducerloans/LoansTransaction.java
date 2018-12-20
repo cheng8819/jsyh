@@ -3,45 +3,45 @@ package com.sample;
 
 public class LoansTransaction {
 
-  private long liid;
-  private long liuid;
-  private long litype;
-  private double linumber;
+    private long liid;
+    private long liuid;
+    private long litype;
+    private double linumber;
 
 
-  public long getLiid() {
-    return liid;
-  }
+    public long getLiid() {
+        return liid;
+    }
 
-  public void setLiid(long liid) {
-    this.liid = liid;
-  }
-
-
-  public long getLiuid() {
-    return liuid;
-  }
-
-  public void setLiuid(long liuid) {
-    this.liuid = liuid;
-  }
+    public void setLiid(long liid) {
+        this.liid = liid;
+    }
 
 
-  public long getLitype() {
-    return litype;
-  }
+    public long getLiuid() {
+        return liuid;
+    }
 
-  public void setLitype(long litype) {
-    this.litype = litype;
-  }
+    public void setLiuid(long liuid) {
+        this.liuid = liuid;
+    }
 
 
-  public double getLinumber() {
-    return linumber;
-  }
+    public long getLitype() {
+        return litype;
+    }
 
-  public void setLinumber(double linumber) {
-    this.linumber = linumber;
-  }
+    public void setLitype(long litype) {
+        this.litype = litype;
+    }
+
+
+    public double getLinumber() {
+        return linumber;
+    }
+
+    public void setLinumber(double linumber) {
+        this.linumber = linumber;
+    }
 
 }

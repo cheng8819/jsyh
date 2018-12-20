@@ -37,7 +37,9 @@
     <!--查询单个-->
     <select id="queryById" resultMap="BankuserMap">
         select
-          userid, name, idcard, province, city, imgurl, credit, jingpwd, sex, birthday, married, education, occupation, industry, skill, administrative, people, work, worktime, webstate, reservedms, faststate, idcarddate, bankcarddate, e_mail, tallage, integral, duoyu3, duoyu4
+        userid, name, idcard, province, city, imgurl, credit, jingpwd, sex, birthday, married, education, occupation,
+        industry, skill, administrative, people, work, worktime, webstate, reservedms, faststate, idcarddate,
+        bankcarddate, e_mail, tallage, integral, duoyu3, duoyu4
         from bank.bankuser
         where userid = #{userid}
     </select>
@@ -45,7 +47,9 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="BankuserMap">
         select
-          userid, name, idcard, province, city, imgurl, credit, jingpwd, sex, birthday, married, education, occupation, industry, skill, administrative, people, work, worktime, webstate, reservedms, faststate, idcarddate, bankcarddate, e_mail, tallage, integral, duoyu3, duoyu4
+        userid, name, idcard, province, city, imgurl, credit, jingpwd, sex, birthday, married, education, occupation,
+        industry, skill, administrative, people, work, worktime, webstate, reservedms, faststate, idcarddate,
+        bankcarddate, e_mail, tallage, integral, duoyu3, duoyu4
         from bank.bankuser
         limit #{offset}, #{limit}
     </select>
@@ -53,7 +57,9 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="BankuserMap">
         select
-          userid, name, idcard, province, city, imgurl, credit, jingpwd, sex, birthday, married, education, occupation, industry, skill, administrative, people, work, worktime, webstate, reservedms, faststate, idcarddate, bankcarddate, e_mail, tallage, integral, duoyu3, duoyu4
+        userid, name, idcard, province, city, imgurl, credit, jingpwd, sex, birthday, married, education, occupation,
+        industry, skill, administrative, people, work, worktime, webstate, reservedms, faststate, idcarddate,
+        bankcarddate, e_mail, tallage, integral, duoyu3, duoyu4
         from bank.bankuser
         <where>
             <if test="userid != null">
@@ -148,8 +154,13 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="userid" useGeneratedKeys="true">
-        insert into bank.bankuser(name, idcard, province, city, imgurl, credit, jingpwd, sex, birthday, married, education, occupation, industry, skill, administrative, people, work, worktime, webstate, reservedms, faststate, idcarddate, bankcarddate, e_mail, tallage, integral, duoyu3, duoyu4)
-        values (#{name}, #{idcard}, #{province}, #{city}, #{imgurl}, #{credit}, #{jingpwd}, #{sex}, #{birthday}, #{married}, #{education}, #{occupation}, #{industry}, #{skill}, #{administrative}, #{people}, #{work}, #{worktime}, #{webstate}, #{reservedms}, #{faststate}, #{idcarddate}, #{bankcarddate}, #{eMail}, #{tallage}, #{integral}, #{duoyu3}, #{duoyu4})
+        insert into bank.bankuser(name, idcard, province, city, imgurl, credit, jingpwd, sex, birthday, married,
+        education, occupation, industry, skill, administrative, people, work, worktime, webstate, reservedms, faststate,
+        idcarddate, bankcarddate, e_mail, tallage, integral, duoyu3, duoyu4)
+        values (#{name}, #{idcard}, #{province}, #{city}, #{imgurl}, #{credit}, #{jingpwd}, #{sex}, #{birthday},
+        #{married}, #{education}, #{occupation}, #{industry}, #{skill}, #{administrative}, #{people}, #{work},
+        #{worktime}, #{webstate}, #{reservedms}, #{faststate}, #{idcarddate}, #{bankcarddate}, #{eMail}, #{tallage},
+        #{integral}, #{duoyu3}, #{duoyu4})
     </insert>
 
     <!--通过主键修改数据-->

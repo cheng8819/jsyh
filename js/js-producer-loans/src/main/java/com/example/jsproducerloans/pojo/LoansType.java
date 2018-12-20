@@ -3,22 +3,22 @@ package com.example.jsproducerloans.pojo;
 
 public class LoansType {
 
-  private Integer ltid;
-  private String lttype;
+    private Integer ltid;
+    private String lttype;
 
-  public Integer getLtid() {
-    return ltid;
-  }
+    public Integer getLtid() {
+        return ltid;
+    }
 
-  public void setLtid(Integer ltid) {
-    this.ltid = ltid;
-  }
+    public void setLtid(Integer ltid) {
+        this.ltid = ltid;
+    }
 
-  public String getLttype() {
-    return lttype;
-  }
+    public String getLttype() {
+        return lttype;
+    }
 
-  public void setLttype(String lttype) {
-    this.lttype = lttype;
-  }
+    public void setLttype(String lttype) {
+        this.lttype = lttype;
+    }
 }
