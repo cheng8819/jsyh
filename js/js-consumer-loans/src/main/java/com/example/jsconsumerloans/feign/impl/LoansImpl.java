@@ -4,7 +4,9 @@ import com.example.jsconsumerloans.feign.Loans;
 import com.example.jsconsumerloans.pojo.LoansTransaction;
 import com.example.jsconsumerloans.util.Result;
 import com.example.jsconsumerloans.util.ResultUtil;
+import org.springframework.stereotype.Component;
 
+@Component
 public class LoansImpl implements Loans {
     @Override
     public Result allLoantype() {
