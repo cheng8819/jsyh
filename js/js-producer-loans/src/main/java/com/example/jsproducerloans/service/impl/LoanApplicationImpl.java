@@ -3,10 +3,18 @@ package com.example.jsproducerloans.service.impl;
 import com.example.jsproducerloans.dao.*;
 import com.example.jsproducerloans.pojo.*;
 import com.example.jsproducerloans.service.LoanApplication;
+import com.example.jsproducerloans.service.ov.LoantService;
 import com.example.jsproducerloans.util.Result;
 import com.example.jsproducerloans.util.ResultUtil;
+import org.activiti.engine.RuntimeService;
+import org.activiti.engine.runtime.ProcessInstance;
+import org.activiti.engine.task.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
 //import tk.mybatis.mapper.entity.Example;
 
 @Service
@@ -20,10 +28,12 @@ public class LoanApplicationImpl implements LoanApplication {
     private JobDao jobDao;
     @Autowired
     private EducationsDao educationDao;
-//    @Autowired
-//    private TestLeaveService testLeaveService;
+    @Autowired
+    private LoantService testLeaveService;
     @Autowired
     private LeaveInfoDao leaveInfoDao;
+    @Autowired
+    private RuntimeService runtimeService;
 
     /**
      * 录入登记信息
@@ -76,7 +86,7 @@ public class LoanApplicationImpl implements LoanApplication {
         LoansUserinfo loansUserinfo1 = loansUserinfoDao.save(loansUserinfo);
         if(loansUserinfo1 != null){
             str = "提交成功";
-//            addLeaveAInfo(count);
+            addLeaveAInfo(loansUserinfo1.getLuid());
         }else{
             str = "提交失败";
         }
@@ -87,16 +97,47 @@ public class LoanApplicationImpl implements LoanApplication {
      * 以申请表单记录id添加一条流程
      * @param leid 表单记录id
      */
-//    @Override
-//    public void addLeaveAInfo(Integer leid) {
-//        LeaveInfo leaveInfo = new LeaveInfo();
-//        leaveInfo.setLoansid(leid);
-//        String id = UUID.randomUUID().toString();
-//        leaveInfo.setId(id);
-//        //新增一条记录至数据库中
-//        leaveInfoDao.insert(leaveInfo);
-//        //启动流程引擎
-//        testLeaveService.startProcess(id);
-//    }
+    @Override
+    public void addLeaveAInfo(Integer leid) {
+        LeaveInfo leaveInfo = new LeaveInfo();
+        leaveInfo.setLoansid(leid);
+        String id = UUID.randomUUID().toString();
+        leaveInfo.setId(id);
+        //新增一条记录至数据库中
+        leaveInfoDao.save(leaveInfo);
+        //启动流程引擎
+        testLeaveService.startProcess(id);
+    }
 
+    /**
+     * 获取当前用户的任务
+     * @param userId
+     * @return
+     */
+    @Override
+    public List<LeaveInfo> getByUserId(String userId) {
+        ArrayList<LeaveInfo> leaveInfoList = new ArrayList<>();
+        List<Task> list = testLeaveService.findTaskByUserId(userId);
+        for (Task task : list) {
+            ProcessInstance result = runtimeService.createProcessInstanceQuery().processInstanceId(task.getProcessInstanceId()).singleResult();
+            //获得业务流程的bussinessKey
+            String businessKey = result.getBusinessKey();
+            LeaveInfo leaveInfo = leaveInfoDao.findLeaveInfoById(businessKey);
+            leaveInfo.setTaskId(task.getId());
+            leaveInfoList.add(leaveInfo);
+        }
+        return leaveInfoList;
+    }
+
+    /**
+     * 执行审批操作
+     * @param taskId 审批的任务id
+     * @param userId 审批人的名字
+     * @param audit 审批通过（cg）/未通过(sb)
+     * @return
+     */
+    @Override
+    public Result completeTaskByUser(String taskId, String userId, String audit) {
+        return ResultUtil.success(testLeaveService.completeTaskByUser(taskId, userId, audit));
+    }
 }

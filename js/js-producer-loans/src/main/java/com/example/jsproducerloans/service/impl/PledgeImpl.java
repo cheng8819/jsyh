@@ -87,6 +87,7 @@ public class PledgeImpl implements Pledge {
             return ResultUtil.success("金额不能为null");
         }
         loansTransaction.setListate(0);
+        loansTransaction.setLinumberofnoperiods(0);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat();
         loansTransaction.setLidate(simpleDateFormat.format(new Date()));
 //        int count = loansTransactionDao.insert(loansTransaction);

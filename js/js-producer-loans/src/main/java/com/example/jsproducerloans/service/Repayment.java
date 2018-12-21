@@ -10,5 +10,18 @@ public interface Repayment {
      * @param uid  用户ID
      * @return Result
      */
-    public Result allLoansOverdueByuidAndloid(Integer ltid, Integer uid);
+    Result allLoansOverdueByuidAndloid(Integer ltid, Integer uid);
+
+    /**
+     * 根据用户ID查询贷款详情
+     * @param uid
+     * @return
+     */
+    Result loanDetailsByuid(Integer uid);
+
+    /**
+     * 根据订单ID还款
+     * @return
+     */
+    Result repaymenting(Integer liid);
 }

@@ -10,15 +10,15 @@
     <sequenceFlow id="_12" name="失败" sourceRef="_7" targetRef="_11">
       <conditionExpression xsi:type="tFormalExpression"><![CDATA[${audit=='sb'}]]></conditionExpression>
     </sequenceFlow>
-    <serviceTask activiti:exclusive="true" activiti:expression="#{leaveService.changeStatus(execution,'ing')}" id="service1" name="修改申请资料状态（ing)"/>
+    <serviceTask activiti:exclusive="true" activiti:expression="#{leaveService.changeStatus(execution,'ing')}" id="service1" name="修改申请资料状态(ing)"/>
     <sequenceFlow id="_4" sourceRef="start" targetRef="service1"/>
     <sequenceFlow id="_5" sourceRef="service1" targetRef="sh"/>
-    <serviceTask activiti:exclusive="true" activiti:expression="#{leaveService.changeStatus(execution,'pass')}" id="service2" name="修改申请单状态（pass）"/>
+    <serviceTask activiti:exclusive="true" activiti:expression="#{leaveService.changeStatus(execution,'pass')}" id="service2" name="修改申请单状态(pass)"/>
     <sequenceFlow id="_2" name="成功" sourceRef="_7" targetRef="service2">
       <conditionExpression xsi:type="tFormalExpression"><![CDATA[${audit=='cg'}]]></conditionExpression>
     </sequenceFlow>
     <sequenceFlow id="_9" sourceRef="service2" targetRef="dz"/>
-    <sequenceFlow id="_3" sourceRef="dz" targetRef="_11"/>
+    <sequenceFlow id="_10" sourceRef="dz" targetRef="_11"/>
   </process>
   <bpmndi:BPMNDiagram documentation="background=#3C3F41;count=1;horizontalcount=1;orientation=0;width=842.4;height=1195.2;imageableWidth=832.4;imageableHeight=1185.2;imageableX=5.0;imageableY=5.0" id="Diagram-_1" name="New Diagram">
     <bpmndi:BPMNPlane bpmnElement="myProcess_1">
@@ -35,19 +35,19 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="_7" id="Shape-_7" isMarkerVisible="false">
-        <omgdc:Bounds height="32.0" width="32.0" x="510.0" y="255.0"/>
+        <omgdc:Bounds height="32.0" width="32.0" x="480.0" y="255.0"/>
         <bpmndi:BPMNLabel>
           <omgdc:Bounds height="32.0" width="32.0" x="0.0" y="0.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="dz" id="Shape-dz">
-        <omgdc:Bounds height="55.0" width="85.0" x="650.0" y="225.0"/>
+        <omgdc:Bounds height="55.0" width="85.0" x="755.0" y="170.0"/>
         <bpmndi:BPMNLabel>
           <omgdc:Bounds height="55.0" width="85.0" x="0.0" y="0.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape bpmnElement="_11" id="Shape-_11">
-        <omgdc:Bounds height="32.0" width="32.0" x="525.0" y="515.0"/>
+        <omgdc:Bounds height="32.0" width="32.0" x="505.0" y="365.0"/>
         <bpmndi:BPMNLabel>
           <omgdc:Bounds height="32.0" width="32.0" x="0.0" y="0.0"/>
         </bpmndi:BPMNLabel>
@@ -65,34 +65,27 @@
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge bpmnElement="_12" id="BPMNEdge__12" sourceElement="_7" targetElement="_11">
-        <omgdi:waypoint x="533.5" y="279.5"/>
-        <omgdi:waypoint x="533.5" y="516.8667059748974"/>
+        <omgdi:waypoint x="508.5" y="274.5"/>
+        <omgdi:waypoint x="508.5" y="371.0125078222809"/>
         <bpmndi:BPMNLabel>
           <omgdc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge bpmnElement="_2" id="BPMNEdge__2" sourceElement="_7" targetElement="service2">
-        <omgdi:waypoint x="542.0" y="271.0"/>
+      <bpmndi:BPMNEdge bpmnElement="_2" id="BPMNEdge__2" sourceElement="_7" targetElement="修改申请资料状态(pass)">
+        <omgdi:waypoint x="512.0" y="271.0"/>
         <omgdi:waypoint x="630.0" y="157.5"/>
         <bpmndi:BPMNLabel>
           <omgdc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge bpmnElement="_3" id="BPMNEdge__3" sourceElement="dz" targetElement="_11">
-        <omgdi:waypoint x="650.0" y="252.5"/>
-        <omgdi:waypoint x="557.0" y="531.0"/>
-        <bpmndi:BPMNLabel>
-          <omgdc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge bpmnElement="_4" id="BPMNEdge__4" sourceElement="start" targetElement="service1">
+      <bpmndi:BPMNEdge bpmnElement="_4" id="BPMNEdge__4" sourceElement="start" targetElement="修改申请资料状态(ing)">
         <omgdi:waypoint x="102.0" y="206.0"/>
         <omgdi:waypoint x="190.0" y="282.5"/>
         <bpmndi:BPMNLabel>
           <omgdc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge bpmnElement="_5" id="BPMNEdge__5" sourceElement="service1" targetElement="sh">
+      <bpmndi:BPMNEdge bpmnElement="_5" id="BPMNEdge__5" sourceElement="修改申请资料状态(ing)" targetElement="sh">
         <omgdi:waypoint x="275.0" y="282.5"/>
         <omgdi:waypoint x="330.0" y="277.5"/>
         <bpmndi:BPMNLabel>
@@ -101,14 +94,21 @@
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge bpmnElement="_8" id="BPMNEdge__8" sourceElement="sh" targetElement="_7">
         <omgdi:waypoint x="415.0" y="277.5"/>
-        <omgdi:waypoint x="510.0" y="271.0"/>
+        <omgdi:waypoint x="480.0" y="271.0"/>
         <bpmndi:BPMNLabel>
           <omgdc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge bpmnElement="_9" id="BPMNEdge__9" sourceElement="service2" targetElement="dz">
-        <omgdi:waypoint x="682.5" y="185.0"/>
-        <omgdi:waypoint x="682.5" y="225.0"/>
+      <bpmndi:BPMNEdge bpmnElement="_9" id="BPMNEdge__9" sourceElement="修改申请资料状态(pass)" targetElement="dz">
+        <omgdi:waypoint x="715.0" y="157.5"/>
+        <omgdi:waypoint x="755.0" y="197.5"/>
+        <bpmndi:BPMNLabel>
+          <omgdc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge bpmnElement="_10" id="BPMNEdge__10" sourceElement="dz" targetElement="_11">
+        <omgdi:waypoint x="755.0" y="197.5"/>
+        <omgdi:waypoint x="537.0" y="381.0"/>
         <bpmndi:BPMNLabel>
           <omgdc:Bounds height="0.0" width="0.0" x="0.0" y="0.0"/>
         </bpmndi:BPMNLabel>
