@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.jsdengluprovider.dao.JsclientinfoDao">
+
+    <resultMap type="com.example.jsdengluprovider.pojo.Jsclientinfo" id="JsclientinfoMap">
+        <result property="jsClientid" column="JS_ClientID" jdbcType="INTEGER"/>
+        <result property="jsClientname" column="JS_ClientName" jdbcType="VARCHAR"/>
+        <result property="jsSex" column="JS_Sex" jdbcType="VARCHAR"/>
+        <result property="jsCretificatetype" column="JS_CretificateType" jdbcType="VARCHAR"/>
+        <result property="jsIdnumber" column="JS_IDNumber" jdbcType="VARCHAR"/>
+        <result property="jsPhonenumber" column="JS_PhoneNumber" jdbcType="VARCHAR"/>
+        <result property="jsClientrank" column="JS_ClientRank" jdbcType="VARCHAR"/>
+        <result property="jsRegisterway" column="JS_RegisterWay" jdbcType="VARCHAR"/>
+        <result property="u1" column="u1" jdbcType="VARCHAR"/>
+        <result property="u2" column="u2" jdbcType="VARCHAR"/>
+        <result property="u3" column="u3" jdbcType="VARCHAR"/>
+        <result property="u4" column="u4" jdbcType="VARCHAR"/>
+        <result property="u5" column="u5" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="JsclientinfoMap">
+        select
+          JS_ClientID, JS_ClientName, JS_Sex, JS_CretificateType, JS_IDNumber, JS_PhoneNumber, JS_ClientRank, JS_RegisterWay, u1, u2, u3, u4, u5
+        from JSBanKUserInfo.JsClientInfo
+        where JS_ClientID = #{jsClientid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="JsclientinfoMap">
+        select
+          JS_ClientID, JS_ClientName, JS_Sex, JS_CretificateType, JS_IDNumber, JS_PhoneNumber, JS_ClientRank, JS_RegisterWay, u1, u2, u3, u4, u5
+        from JSBanKUserInfo.JsClientInfo
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="JsclientinfoMap">
+        select
+          JS_ClientID, JS_ClientName, JS_Sex, JS_CretificateType, JS_IDNumber, JS_PhoneNumber, JS_ClientRank, JS_RegisterWay, u1, u2, u3, u4, u5
+        from JSBanKUserInfo.JsClientInfo
+        <where>
+            <if test="jsClientid != null">
+                and JS_ClientID = #{jsClientid}
+            </if>
+            <if test="jsClientname != null and jsClientname != ''">
+                and JS_ClientName = #{jsClientname}
+            </if>
+            <if test="jsSex != null and jsSex != ''">
+                and JS_Sex = #{jsSex}
+            </if>
+            <if test="jsCretificatetype != null and jsCretificatetype != ''">
+                and JS_CretificateType = #{jsCretificatetype}
+            </if>
+            <if test="jsIdnumber != null and jsIdnumber != ''">
+                and JS_IDNumber = #{jsIdnumber}
+            </if>
+            <if test="jsPhonenumber != null and jsPhonenumber != ''">
+                and JS_PhoneNumber = #{jsPhonenumber}
+            </if>
+            <if test="jsClientrank != null and jsClientrank != ''">
+                and JS_ClientRank = #{jsClientrank}
+            </if>
+            <if test="jsRegisterway != null and jsRegisterway != ''">
+                and JS_RegisterWay = #{jsRegisterway}
+            </if>
+            <if test="u1 != null and u1 != ''">
+                and u1 = #{u1}
+            </if>
+            <if test="u2 != null and u2 != ''">
+                and u2 = #{u2}
+            </if>
+            <if test="u3 != null and u3 != ''">
+                and u3 = #{u3}
+            </if>
+            <if test="u4 != null and u4 != ''">
+                and u4 = #{u4}
+            </if>
+            <if test="u5 != null and u5 != ''">
+                and u5 = #{u5}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="jsClientid" useGeneratedKeys="true">
+        insert into JSBanKUserInfo.JsClientInfo(JS_ClientName, JS_Sex, JS_CretificateType, JS_IDNumber, JS_PhoneNumber, JS_ClientRank, JS_RegisterWay, u1, u2, u3, u4, u5)
+        values (#{jsClientname}, #{jsSex}, #{jsCretificatetype}, #{jsIdnumber}, #{jsPhonenumber}, #{jsClientrank}, #{jsRegisterway}, #{u1}, #{u2}, #{u3}, #{u4}, #{u5})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update JSBanKUserInfo.JsClientInfo
+        <set>
+            <if test="jsClientname != null and jsClientname != ''">
+                JS_ClientName = #{jsClientname},
+            </if>
+            <if test="jsSex != null and jsSex != ''">
+                JS_Sex = #{jsSex},
+            </if>
+            <if test="jsCretificatetype != null and jsCretificatetype != ''">
+                JS_CretificateType = #{jsCretificatetype},
+            </if>
+            <if test="jsIdnumber != null and jsIdnumber != ''">
+                JS_IDNumber = #{jsIdnumber},
+            </if>
+            <if test="jsPhonenumber != null and jsPhonenumber != ''">
+                JS_PhoneNumber = #{jsPhonenumber},
+            </if>
+            <if test="jsClientrank != null and jsClientrank != ''">
+                JS_ClientRank = #{jsClientrank},
+            </if>
+            <if test="jsRegisterway != null and jsRegisterway != ''">
+                JS_RegisterWay = #{jsRegisterway},
+            </if>
+            <if test="u1 != null and u1 != ''">
+                u1 = #{u1},
+            </if>
+            <if test="u2 != null and u2 != ''">
+                u2 = #{u2},
+            </if>
+            <if test="u3 != null and u3 != ''">
+                u3 = #{u3},
+            </if>
+            <if test="u4 != null and u4 != ''">
+                u4 = #{u4},
+            </if>
+            <if test="u5 != null and u5 != ''">
+                u5 = #{u5},
+            </if>
+        </set>
+        where JS_ClientID = #{jsClientid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from JSBanKUserInfo.JsClientInfo where JS_ClientID = #{jsClientid}
+    </delete>
+
+</mapper>

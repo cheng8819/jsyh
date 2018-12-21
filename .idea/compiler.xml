@@ -9,12 +9,14 @@
         <module name="dm-spring-eureka-server" />
         <module name="js-consumer-remittance" />
         <module name="js-producer-remittance" />
+        <module name="js-provider-denglu" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
-      <module name="dm-spring-eureka-server" target="1.7" />
-      <module name="js-consumer-remittance" target="1.7" />
-      <module name="js-producer-remittance" target="1.7" />
+      <module name="dm-spring-eureka-server" target="1.8" />
+      <module name="js-consumer-remittance" target="1.8" />
+      <module name="js-producer-remittance" target="1.8" />
+      <module name="js-provider-denglu" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

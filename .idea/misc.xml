@@ -9,6 +9,7 @@
         <option value="$PROJECT_DIR$/js/js-producer-remittance/pom.xml" />
         <option value="$PROJECT_DIR$/js/js-consumer-remittance/pom.xml" />
         <option value="$PROJECT_DIR$/js/js-spring-eureka-server/pom.xml" />
+        <option value="$PROJECT_DIR$/js/js-provider-denglu/pom.xml" />
       </list>
     </option>
   </component>

@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/js.iml" filepath="$PROJECT_DIR$/.idea/js.iml" />
       <module fileurl="file://$PROJECT_DIR$/js/js-consumer-remittance/js-consumer-remittance.iml" filepath="$PROJECT_DIR$/js/js-consumer-remittance/js-consumer-remittance.iml" />
       <module fileurl="file://$PROJECT_DIR$/js/js-producer-remittance/js-producer-remittance.iml" filepath="$PROJECT_DIR$/js/js-producer-remittance/js-producer-remittance.iml" />
+      <module fileurl="file://$PROJECT_DIR$/js/js-provider-denglu/js-provider-denglu.iml" filepath="$PROJECT_DIR$/js/js-provider-denglu/js-provider-denglu.iml" />
     </modules>
   </component>
 </project>
