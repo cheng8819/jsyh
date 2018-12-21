@@ -4,7 +4,7 @@ spring:
   application:
     name: js-cosumer-fund
  rabbitmq:
-    host: 123.206.255.244
+    host: localhost
     port: 5672
     username: rabbit
     password: rabbit
@@ -16,8 +16,9 @@ spring:
           prefetch: 1
 eureka:
   client:
+    register-with-eureka: true #将此项目注册到Eureka服务
     service-url:
-      defaultZone: http://root:123456@47.94.235.82:7776/eureka/
+      defaultZone: http://root:123456@localhost:7776/eureka/
 feign:
   hystrix:
     enabled: true

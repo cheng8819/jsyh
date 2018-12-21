@@ -14,7 +14,13 @@ spring:
     password: bank
 mybatis:
   mapper-locations: classpath:mapper/*.xml
-#  type-aliases-package: com.example.jsproducerfund.pojo
+  type-aliases-package: com.example.jsproducerfund.pojo
+#pagehelper分页插件
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql
 #  data:
 #    elasticsearch:
 #        cluster-name: my-auction2

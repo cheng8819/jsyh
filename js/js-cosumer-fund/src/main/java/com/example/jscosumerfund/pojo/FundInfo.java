@@ -1,4 +1,4 @@
-package com.example.jsproducerfund.pojo;
+package com.example.jscosumerfund.pojo;
 
 /**
  * @auther: 666先生的救赎
