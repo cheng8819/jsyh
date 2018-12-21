@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -16,18 +17,21 @@ public class OverdueController {
     @Autowired
     private Repayment repayment;
 
+    //指定用户ID和订单ID查询逾期订单
     @RequestMapping("/allloansoverduebyuidandloid/{uid}/{ltid}")
     public Result allLoansOverdueByuidAndloid(@PathVariable("uid") Integer uid, @PathVariable("ltid") Integer ltid) {
         return repayment.allLoansOverdueByuidAndloid(uid, ltid);
     }
 
-    @RequestMapping("/loandetailsbyuidcon")
-    public Result loanDetailsByuidCon(Integer uid){
+    //指定用户ID所有的住房贷款
+    @RequestMapping("/loandetailsbyuidcon/{uid}")
+    public Result loanDetailsByuidCon(@PathVariable("uid") Integer uid){
         return repayment.loanDetailsByuid(uid);
     }
 
-    @RequestMapping("/repaymenting")
-    public Result repaymenting(Integer liid){
+    //指定订单的还款
+    @RequestMapping("/repaymenting/{liid}")
+    public Result repaymenting(@PathVariable("liid") Integer liid){
         return repayment.repaymenting(liid);
     }
 }

@@ -11,4 +11,14 @@ public class OverdueImpl implements Overdue {
     public Result allLoansOverdueByuidAndloid(Integer uid, Integer ltid) {
         return ResultUtil.success("超时重试");
     }
+
+    @Override
+    public Result loanDetailsByuidCon(Integer uid) {
+        return ResultUtil.success("超时重试");
+    }
+
+    @Override
+    public Result repaymenting(Integer liid) {
+        return ResultUtil.success("超时重试");
+    }
 }

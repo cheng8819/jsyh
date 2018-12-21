@@ -9,6 +9,15 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient(value = "JS-PRODUCER-LOANS")
 public interface Overdue {
 
+    //指定用户ID和订单ID查询逾期订单
     @RequestMapping(value = "/overduecontroller/allloansoverduebyuidandloid/{uid}/{ltid}", method = RequestMethod.GET)
     Result allLoansOverdueByuidAndloid(@PathVariable("uid") Integer uid, @PathVariable("ltid") Integer ltid);
+
+    //指定用户ID所有的住房贷款
+    @RequestMapping(value = "/overduecontroller/loandetailsbyuidcon/{uid}",method = RequestMethod.GET)
+    Result loanDetailsByuidCon(@PathVariable("uid") Integer uid);
+
+    //指定订单的还款
+    @RequestMapping(value = "/overduecontroller/repaymenting/{liid}",method = RequestMethod.GET)
+    Result repaymenting(@PathVariable("liid") Integer liid);
 }

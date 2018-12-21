@@ -12,15 +12,19 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @FeignClient(value = "JS-PRODUCER-LOANS",fallback = LoansImpl.class)
 public interface Loans {
 
+    //全部贷款类型
     @RequestMapping(value = "/loantypes/allloantype", method = RequestMethod.GET)
     Result allLoantype();
 
+    //指定用户ID的所有贷款
     @RequestMapping(value = "/loantypes/allloanstransactionbyuid/{uid}", method = RequestMethod.GET)
     Result allLoansTransactionByUid(@PathVariable(name = "uid")Integer uid);
 
+    //生成订单
     @RequestMapping(value = "/loantypes/addloanstransaction", method = RequestMethod.POST)
     Result addLoanstransaction(LoansTransaction loansTransaction);
 
+    //修改订单状态
     @RequestMapping(value = "/loantypes/updateloanstransactiontostate/{liid}/{state}", method = RequestMethod.GET)
     Result updateLoanstransactionTostate(@PathVariable("liid") Integer liid, @PathVariable("state") Integer state);
 }

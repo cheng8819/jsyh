@@ -119,7 +119,7 @@ public class LoantService {
 		String key = execution.getProcessBusinessKey();
 		//LeaveInfo entity = new LeaveInfo();
 		LeaveInfo entity = leaveInfoDao.findLeaveInfoById(key);
-		LoansTransaction loansTransaction = loansTransactionDao.findLoansTransactionsByLiid(entity.getLoansid());
+		LoansTransaction loansTransaction = loansTransactionDao.findLoansTransactionsByLiapplicationdata(entity.getLoansid());
 		loansTransaction.setListate(1);
 		loansTransactionDao.save(loansTransaction);
 	}

@@ -12,4 +12,14 @@ public class LoanApplicationImpl implements LoanApplication {
     public Result loanApplications(LoansUserinfo loansUserinfo) {
         return ResultUtil.success("超时重试");
     }
+
+    @Override
+    public Object getTaskByUserId(String userId) {
+        return ResultUtil.success("超时重试");
+    }
+
+    @Override
+    public Result completeTask(String taskId, String userId, String audit) {
+        return ResultUtil.success("超时重试");
+    }
 }

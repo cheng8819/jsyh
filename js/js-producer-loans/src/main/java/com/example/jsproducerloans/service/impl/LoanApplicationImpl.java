@@ -123,8 +123,10 @@ public class LoanApplicationImpl implements LoanApplication {
             //获得业务流程的bussinessKey
             String businessKey = result.getBusinessKey();
             LeaveInfo leaveInfo = leaveInfoDao.findLeaveInfoById(businessKey);
-            leaveInfo.setTaskId(task.getId());
-            leaveInfoList.add(leaveInfo);
+            if(leaveInfo != null) {
+                leaveInfo.setTaskId(task.getId());
+                leaveInfoList.add(leaveInfo);
+            }
         }
         return leaveInfoList;
     }
