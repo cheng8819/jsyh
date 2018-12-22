@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -85,25 +84,25 @@ public class FundController {
     @ApiOperation(value = "购买基金产品",notes = "购买基金")
     @ResponseBody
     @RequestMapping(value = "/buyFund",method = RequestMethod.GET)
-    public String buyFund(FundInfo fundInfo,@Param("username") String username){
-        return fundService.buyFund(fundInfo,username);
+    public String buyFund(FundInfo fundInfo,@Param("username") String username,@Param("fund_money")Double fund_money){
+        return fundService.buyFund(fundInfo,username,fund_money);
     }
 
     @ApiOperation(value = "查看购买基金信息",notes = "查询购买基金信息")
     @ResponseBody
     @RequestMapping(value = "/showBuyFund",method = RequestMethod.GET)
-    public String showBuyFund(String username){
-        return fundService.selBuyFund(username);
+    public List<Buy> showBuyFund(@Param("username") String username, @Param("fund_number") String fund_number){
+        return fundService.selBuyFund(username,fund_number);
     }
 
     @ApiOperation(value = "风险承受能力测试",notes = "12个选项必填")
     @ResponseBody
     @RequestMapping(value = "/riskToleranceTest",method = RequestMethod.GET)
-    public String riskToleranceTest(RiskAppetite riskAppetite,String username){
+    public String riskToleranceTest(RiskAppetite riskAppetite){
         return fundService.riskToleranceTest(riskAppetite);
     }
 
-    @ApiOperation(value = "基金开户",notes = "基金开户")
+    @ApiOperation(value = "基金开户",notes = "基金开户，短信验证")
     @ResponseBody
     @RequestMapping(value = "/fundAccount",method = RequestMethod.GET)
     public String fundAccount(FundUser fundUser){

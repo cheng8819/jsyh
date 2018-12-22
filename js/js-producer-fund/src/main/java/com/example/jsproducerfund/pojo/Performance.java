@@ -52,6 +52,15 @@ public class Performance {
      */
     private String fund_rating;
 
+    public Performance(){}
+
+    public Performance(Integer fund_number, String fund_name, String fund_type, String fund_rating) {
+        this.fund_number = fund_number;
+        this.fund_name = fund_name;
+        this.fund_type = fund_type;
+        this.fund_rating = fund_rating;
+    }
+
     public String getFund_type() {
         return fund_type;
     }

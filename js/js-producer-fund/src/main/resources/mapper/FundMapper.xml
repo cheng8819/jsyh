@@ -8,7 +8,7 @@
         select fund_number,fund_name,currency,fund_type,fund_kind,issuing_date,unit_value from fundInfo where new_product=0
     </select>
 
-    <!--查询上市的基金信息：基金代码、名称、单位净值、累计净值、日涨幅、近三个月涨幅、晨星评级、产品状态-->
+    <!--查询上市的基金信息：基金代码、名称、单位净值、累计净值、日涨幅、6、晨星评级、产品状态-->
     <select id="findAll" parameterType="com.example.jsproducerfund.pojo.Performance" resultType="com.example.jsproducerfund.pojo.Performance">
           select fund_number,fund_name,iopy,iopys,day_or,march_rate_of_return,fund_rating,product_status from performance
             <where>
@@ -36,35 +36,42 @@
 
     <!--收藏基金-->
     <insert id="addCollection" parameterType="com.example.jsproducerfund.pojo.CollectInfo">
-        insert into collection(fund_name,username,fund_number) values (fund_name,username,fund_number)
+        insert into collection(fund_name,username,fund_number) values (#{fund_name},#{username},#{fund_number})
     </insert>
 
     <!--添加购买紧基金记录-->
     <insert id="addBuyFund" parameterType="com.example.jsproducerfund.pojo.Buy">
-        insert into buy(username,funds,fund_unit,fund_money) values(username,funds,fund_unit,fund_money)
+        insert into buy(username,product_name,product_number,product_unit,product_money,buy_time)
+        values(#{username},#{product_name},#{product_number},#{product_unit},#{product_money},#{buy_time})
     </insert>
 
     <!--查询购买基金/理财产品信息-->
     <select id="selBuyFound" parameterType="com.example.jsproducerfund.pojo.Buy" resultType="com.example.jsproducerfund.pojo.Buy">
-        select username,funds,fund_unit,fund_money from buy
+        select buy_id,username,product_name,product_number,product_unit,product_money from buy
         <where>
             <if test="username != null">
                 username=#{username}
             </if>
-            <if test="funds != null">
-                funds=#{funds}
+            <if test="product_name != null">
+                product_name=#{product_name}
+            </if>
+            <if test="product_number != null">
+                product_number=#{product_number}
+            </if>
+            <if test="product_rernings != null">
+                product_rernings=#{product_rernings}
             </if>
         </where>
     </select>
 
     <!--基金开户-->
     <insert id="addFundAccount" parameterType="com.example.jsproducerfund.pojo.FundUser">
-        insert into funduser(name,sex,birthday,phone,profession,address,card_type,card_number,risk_grade,beneficial_owner,capital_source,bank_name)
-        values(name,sex,birthday,phone,profession,address,card_type,card_number,risk_grade,beneficial_owner,capital_source,bank_name)
+        insert into funduser(username,sex,birthday,phone,profession,address,card_type,card_number,risk_grade,beneficial_owner,capital_source,bank_name)
+        values(#{username},#{sex},#{birthday},#{phone},#{profession},#{address},#{card_type},#{card_number},#{risk_grade},#{beneficial_owner},#{capital_source},#{bank_name})
     </insert>
 
     <!--修改用户承受风险等级-->
     <update id="updRiskGrade" parameterType="java.lang.String">
-        update funduser set risk_grade = #{risk_grade} where user_id = #{user_id}
+        update funduser set risk_grade=#{risk_grade} where username=#{name}
     </update>
 </mapper>

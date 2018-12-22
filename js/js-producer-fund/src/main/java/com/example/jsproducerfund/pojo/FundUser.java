@@ -9,7 +9,7 @@ package com.example.jsproducerfund.pojo;
 public class FundUser {
 
     private Integer user_id;
-    private String name;
+    private String username;
     private String sex;
     private String birthday;
     private String phone;
@@ -32,12 +32,12 @@ public class FundUser {
         this.user_id = user_id;
     }
 
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getSex() {

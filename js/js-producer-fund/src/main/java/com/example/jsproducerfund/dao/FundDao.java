@@ -7,6 +7,7 @@ import java.util.List;
 
 import com.example.jsproducerfund.util.RiskScore;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 @Mapper
@@ -56,10 +57,10 @@ public interface FundDao {
 
     /**
      * 修改用户风险等级
-     * @param riskScore
+     * @param risk_grade
      * @return
      */
-    Integer updRiskGrade(String riskScore);
+    Integer updRiskGrade(@Param("risk_grade") String risk_grade,@Param("name") String name);
 
     /**
      * 添加基金账户

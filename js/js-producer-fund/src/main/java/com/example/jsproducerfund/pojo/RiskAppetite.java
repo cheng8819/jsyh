@@ -8,6 +8,7 @@ package com.example.jsproducerfund.pojo;
  */
 public class RiskAppetite {
 
+    private String name;
     private String age_grades; //年龄阶段
     private String Investment_experience; //投资经验
     private String investment_horizon; //预期投资期限
@@ -22,6 +23,14 @@ public class RiskAppetite {
     private String issue5;
 
     public RiskAppetite(){}
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
 
     public String getAge_grades() {
         return age_grades;
@@ -122,7 +131,8 @@ public class RiskAppetite {
     @Override
     public String toString() {
         return "RiskAppetite{" +
-                "age_grades='" + age_grades + '\'' +
+                "name='" + name + '\'' +
+                ", age_grades='" + age_grades + '\'' +
                 ", Investment_experience='" + Investment_experience + '\'' +
                 ", investment_horizon='" + investment_horizon + '\'' +
                 ", household_income='" + household_income + '\'' +

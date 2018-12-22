@@ -54,14 +54,32 @@ public interface FundService {
      * 购买基金做两件事：1.在购买表添加一条购买基金的记录
      *                   2.根据查询余额接口判断余额是否充足，充足购买，不充足反馈用户余额不足
      */
-    String buyFund(FundInfo fundInfo,@Param("username") String username);
+    String buyFund(FundInfo fundInfo,@Param("username") String username,@Param("fund_money") Double fund_money);
 
     /**
      * 查询基金购买记录
      * @param username
+     * @param fund_number
      * @return
      */
-    String selBuyFund(String username);
+    List<Buy> selBuyFund(@Param("username") String username,@Param("fund_number") String fund_number);
+
+    /**
+     * 赎回基金
+     * 1.判断基金期限是否到期
+     * 2.根据收益情况给客户打钱
+     * @param fundName
+     * @param username
+     * @return
+     */
+    String sellFund(String fundName,String username);
+
+    /**
+     * 计算基金收益
+     * @param fundName
+     * @return
+     */
+    String fundEarnings(String fundName);
 
     /**
      * 风险承受能力测试接口
@@ -72,6 +90,9 @@ public interface FundService {
 
     /**
      * 基金开户接口
+     * 1.填写必要资料，进行判断
+     * 2.发送验证码
+     * 3.添加客户开户信息
      * @param fundUser 基金开户对象
      * @return
      */

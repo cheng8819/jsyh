@@ -49,4 +49,9 @@ public class FinancialServiceImpl implements FinancialService {
     public String showBrowsingHistory() {
         return null;
     }
+
+    @Override
+    public String showFinancialDetails(String financialName) {
+        return null;
+    }
 }
