@@ -8,6 +8,14 @@ spring:
   sleuth:
     sampler:
       percentage: 1.0
+  redis:
+    cluster:
+      nodes: 127.0.0.1:6381,127.0.0.1:6382,127.0.0.1:6383,127.0.0.1:6384,127.0.0.1:6385,127.0.0.1:6386
+    pool:
+      max-active: 10
+      max-wait: -1
+      max-idle: 8
+      min-idle: 0
 eureka:
   client:
     service-url:

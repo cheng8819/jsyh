@@ -11,11 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @FeignClient(value = "JS-PRODUCER-LOANS",fallback = LoanApplicationImpl.class)
 public interface LoanApplication {
 
-    /**
-     * 贷款申请
-     * @param loansUserinfo
-     * @return
-     */
+     //贷款申请
     @PostMapping("/loanapplication/loanapplications")
     Result loanApplications(LoansUserinfo loansUserinfo);
 

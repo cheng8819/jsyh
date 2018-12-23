@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
-//import tk.mybatis.mapper.entity.Example;
 
 @Service
 public class LoanApplicationImpl implements LoanApplication {
@@ -43,11 +42,7 @@ public class LoanApplicationImpl implements LoanApplication {
      */
     @Override
     public Result registerInfo(LoansUserinfo loansUserinfo) {
-        loansUserinfo.setLuid(0);
         String str = "";
-//        Example example = new Example(LoansPeoples.class);
-//        Example.Criteria criteria = example.createCriteria();
-//        criteria.andEqualTo("lpid",loansUserinfo.getLumarriage());
         if(loansUserinfo.getLumarriage() == null){
             return ResultUtil.success("婚姻不可为空");
         }
@@ -55,9 +50,6 @@ public class LoanApplicationImpl implements LoanApplication {
         if(loansPeoples == null){
             return ResultUtil.success("家庭人数录入有误，只能为单人和夫妻");
         }
-//        Example example1 = new Example(Job.class);
-//        Example.Criteria criteria1 = example1.createCriteria();
-//        criteria1.andEqualTo("jid",loansUserinfo.getLujob());
         if(loansUserinfo.getLujob() == null){
             return ResultUtil.success("职业不可为空");
         }
@@ -65,9 +57,6 @@ public class LoanApplicationImpl implements LoanApplication {
         if(job == null){
             return ResultUtil.success("职业输入不符");
         }
-//        Example example2 = new Example(Education.class);
-//        Example.Criteria criteria2 = example2.createCriteria();
-//        criteria2.andEqualTo("eid",loansUserinfo.getLueducation());
         if(loansUserinfo.getLueducation() == null){
             return ResultUtil.success("学历不可为空");
         }
@@ -75,14 +64,6 @@ public class LoanApplicationImpl implements LoanApplication {
         if(education == null){
             return ResultUtil.success("学历输入错误");
         }
-//        int count = loansUserinfoDao.insert(loansUserinfo);
-//        if(count > 1){
-//            str = "提交成功";
-//            System.out.println(count);
-////            addLeaveAInfo(count);
-//        }else{
-//            str = "提交失败";
-//        }
         LoansUserinfo loansUserinfo1 = loansUserinfoDao.save(loansUserinfo);
         if(loansUserinfo1 != null){
             str = "提交成功";
@@ -98,7 +79,7 @@ public class LoanApplicationImpl implements LoanApplication {
      * @param leid 表单记录id
      */
     @Override
-    public void addLeaveAInfo(Integer leid) {
+    public void addLeaveAInfo(String leid) {
         LeaveInfo leaveInfo = new LeaveInfo();
         leaveInfo.setLoansid(leid);
         String id = UUID.randomUUID().toString();

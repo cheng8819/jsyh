@@ -5,7 +5,6 @@ import com.example.jsproducerloans.controllerpojo.LoansParticulars;
 import com.example.jsproducerloans.dao.HousingRateDao;
 import com.example.jsproducerloans.dao.LoansOverdueDao;
 import com.example.jsproducerloans.dao.LoansTransactionDao;
-import com.example.jsproducerloans.pojo.LoansOverdue;
 import com.example.jsproducerloans.pojo.LoansTransaction;
 import com.example.jsproducerloans.service.Repayment;
 import com.example.jsproducerloans.util.Result;
@@ -13,12 +12,8 @@ import com.example.jsproducerloans.util.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.text.ParsePosition;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
-//import tk.mybatis.mapper.entity.Example;
 
 @Service
 public class RepaymentHouseImpl implements Repayment {
@@ -39,11 +34,6 @@ public class RepaymentHouseImpl implements Repayment {
      */
     @Override
     public Result allLoansOverdueByuidAndloid(Integer ltid, Integer uid) {
-//        Example example = new Example(LoansOverdue.class);
-//        Example.Criteria criteria = example.createCriteria();
-//        criteria.andEqualTo("loid", ltid);
-//        criteria.andEqualTo("uid", uid);
-//        return ResultUtil.success(JSON.toJSON(loansOverdueDao.selectByExample(example)));
         return ResultUtil.success(JSON.toJSON(loansOverdueDao.findLoansOverduesByLoidAndUid(ltid,uid)));
     }
 
@@ -94,6 +84,9 @@ public class RepaymentHouseImpl implements Repayment {
     public Result repaymenting(Integer liid) {
         String str = "";
         LoansTransaction loansTransactionsByLiid = loansTransactionDao.findLoansTransactionsByLiid(liid);
+        if(loansTransactionsByLiid.getLinumberofperiods() == loansTransactionsByLiid.getLinumberofnoperiods()){
+            return ResultUtil.success("贷款已还清,无需再还");
+        }
         if(loansTransactionsByLiid.getLinumberofperiods() - 1 == loansTransactionsByLiid.getLinumberofnoperiods()){
             loansTransactionsByLiid.setListate(0);
         }

@@ -2,8 +2,10 @@ package com.example.jsconsumerloans.pojo;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class LoansOverdue {
+public class LoansOverdue implements Serializable {
 
     private Integer loid;
     private Integer uid;

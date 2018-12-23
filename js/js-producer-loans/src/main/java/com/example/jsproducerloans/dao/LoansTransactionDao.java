@@ -11,5 +11,5 @@ public interface LoansTransactionDao extends JpaRepository<LoansTransaction, Int
     List<LoansTransaction> findLoansTransactionsByLiuidAndListate(Integer liuid,Integer state);
     LoansTransaction findLoansTransactionsByLiid(Integer liid);
     List<LoansTransaction> findLoansTransactionsByLiuidAndLitypeAndListate(Integer uid,Integer type,Integer state);
-    LoansTransaction findLoansTransactionsByLiapplicationdata(Integer liid);
+    LoansTransaction findLoansTransactionsByLiapplicationdata(String liid);
 }

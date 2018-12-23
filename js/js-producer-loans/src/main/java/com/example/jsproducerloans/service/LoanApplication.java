@@ -19,7 +19,7 @@ public interface LoanApplication {
      * 以申请表单记录id添加一条流程
      * @param leid 表单记录id
      */
-    void addLeaveAInfo(Integer leid);
+    void addLeaveAInfo(String leid);
 
     /**
      * 获取当前用户的任务

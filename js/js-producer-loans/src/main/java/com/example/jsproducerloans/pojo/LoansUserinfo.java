@@ -12,8 +12,7 @@ import java.io.Serializable;
 public class LoansUserinfo implements Serializable {
 
     @Id
-    @GeneratedValue
-    private Integer luid;
+    private String luid;
     private Integer luuid;
     private Integer lueducation;
     private Integer lujob;

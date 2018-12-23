@@ -49,12 +49,18 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>asm</artifactId>
+                    <groupId>org.ow2.asm</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
-        <dependency>
-            <groupId>com.springcloudmodel.demo</groupId>
-            <artifactId>dm-common-model</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.springcloudmodel.demo</groupId>-->
+            <!--<artifactId>dm-common-model</artifactId>-->
+        <!--</dependency>-->
         <!--sleuth跟踪-->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -97,6 +103,15 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <version>1.18.4</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.51</version>
         </dependency>
     </dependencies>
     <dependencyManagement>

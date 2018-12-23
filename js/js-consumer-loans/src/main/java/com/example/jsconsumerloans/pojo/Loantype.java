@@ -2,26 +2,11 @@ package com.example.jsconsumerloans.pojo;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class Loantype {
+public class Loantype implements Serializable {
 
     private Integer lid;
     private String ltname;
-
-    public Integer getLid() {
-        return lid;
-    }
-
-    public void setLid(Integer lid) {
-        this.lid = lid;
-    }
-
-    public String getLtname() {
-        return ltname;
-    }
-
-    public void setLtname(String ltname) {
-        this.ltname = ltname;
-    }
-
 }

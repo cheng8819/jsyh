@@ -3,8 +3,10 @@ package com.example.jsconsumerloans.pojo;
 
 import lombok.Data;
 
+import java.io.Serializable;
+
 @Data
-public class LoansLoansandhouses {
+public class LoansLoansandhouses implements Serializable {
 
     private Integer lhid;
     private Double lhmoney;

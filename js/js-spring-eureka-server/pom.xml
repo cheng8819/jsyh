@@ -10,7 +10,7 @@
 
     <name>dm-spring-eureka-server</name>
     <description>Demo project for Spring Cloud</description>
-
+。。
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>

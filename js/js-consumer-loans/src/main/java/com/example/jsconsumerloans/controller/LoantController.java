@@ -2,6 +2,7 @@ package com.example.jsconsumerloans.controller;
 
 import com.example.jsconsumerloans.feign.Loans;
 import com.example.jsconsumerloans.pojo.LoansTransaction;
+import com.example.jsconsumerloans.service.LoanApplicationService;
 import com.example.jsconsumerloans.util.Result;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -20,6 +21,8 @@ public class LoantController {
 
     @Autowired
     private Loans loans;
+    @Autowired
+    private LoanApplicationService loanApplicationService;
 
     @ApiOperation(value = "获取全部贷款类型", httpMethod = "GET")
     @RequestMapping("allloantype")
@@ -36,7 +39,7 @@ public class LoantController {
     @ApiOperation(value = "生成订单", httpMethod = "POST")
     @RequestMapping("/addloanstransaction")
     public Result addLoanstransaction(@RequestBody @ApiParam(name = "LoansTransaction", value = "订单对象json格式", required = true) LoansTransaction loansTransaction) {
-        return loans.addLoanstransaction(loansTransaction);
+        return loanApplicationService.createOrder(loansTransaction);
     }
 
     @ApiOperation(value = "修改订单状态", httpMethod = "GET")

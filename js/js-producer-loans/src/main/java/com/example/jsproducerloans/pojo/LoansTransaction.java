@@ -20,7 +20,7 @@ public class LoansTransaction implements Serializable {
     private Integer linumberofperiods;
     private Integer listate;
     private String lidate;
-    private Integer liapplicationdata;
+    private String liapplicationdata;
     private Integer linumberofnoperiods;
 
 }

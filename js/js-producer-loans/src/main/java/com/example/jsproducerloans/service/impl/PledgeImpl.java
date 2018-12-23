@@ -12,7 +12,6 @@ import com.example.jsproducerloans.util.Result;
 import com.example.jsproducerloans.util.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-//import tk.mybatis.mapper.entity.Example;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -48,29 +47,18 @@ public class PledgeImpl implements Pledge {
      */
     @Override
     public Result allLoansTransactionByUid(Integer uid) {
-//        Example example = new Example(LoansTransaction.class);
-//        Example.Criteria criteria = example.createCriteria();
-//        criteria.andEqualTo("liuid", uid);
-//        criteria.andEqualTo("listate", 1);
-//        List<LoansTransaction> loansTransactions = loansTransactionDao.selectByExample(example);
         List<LoansTransaction> loansTransactions = loansTransactionDao.findLoansTransactionsByLiuidAndListate(uid,1);
         List<LoansTransactionCon> loansTransactionCons = new ArrayList<>();
         for (int i = 0; i < loansTransactions.size(); i++) {
             LoansTransactionCon loansTransactionCon = new LoansTransactionCon();
             loansTransactionCon.setLiid(loansTransactions.get(i).getLiid());
             loansTransactionCon.setLiuid(loansTransactions.get(i).getLiuid());
-//            Example example1 = new Example(RepaymentType.class);
-//            Example.Criteria criteria1 = example1.createCriteria();
-//            criteria1.andEqualTo("rtid", loansTransactions.get(i).getLitype());
-//            RepaymentType repaymentType = repaymentTypeDao.selectOneByExample(example1);
             RepaymentType repaymentType = repaymentTypeDao.findRepaymentTypeByRtid(loansTransactions.get(i).getLitype());
             loansTransactionCon.setLitype(repaymentType.getRtname());
             loansTransactionCon.setLinumberofperiods(loansTransactions.get(i).getLinumberofperiods());
             loansTransactionCon.setLinumber(loansTransactions.get(i).getLinumber());
             loansTransactionCon.setLidate(loansTransactions.get(i).getLidate());
             loansTransactionCons.add(loansTransactionCon);
-//            example1 = null;
-//            criteria1 = null;
         }
         return ResultUtil.success(JSON.toJSON(loansTransactionCons));
     }
@@ -90,13 +78,7 @@ public class PledgeImpl implements Pledge {
         loansTransaction.setLinumberofnoperiods(0);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat();
         loansTransaction.setLidate(simpleDateFormat.format(new Date()));
-//        int count = loansTransactionDao.insert(loansTransaction);
         LoansTransaction loansTransaction1 = loansTransactionDao.save(loansTransaction);
-//        if (count == 1) {
-//            return ResultUtil.success(JSON.toJSON(new String("生成订单成功")));
-//        } else {
-//            return ResultUtil.success(JSON.toJSON(new String("生成订单失败")));
-//        }
         if (loansTransaction1 != null) {
             return ResultUtil.success(JSON.toJSON(new String("生成订单成功")));
         } else {
@@ -116,10 +98,6 @@ public class PledgeImpl implements Pledge {
         if (state > 1 || state < 0) {
             return ResultUtil.success(JSON.toJSON(new String("状态码有误")));
         }
-//        Example example = new Example(LoansTransaction.class);
-//        Example.Criteria criteria = example.createCriteria();
-//        criteria.andEqualTo("liid", lid);
-//        LoansTransaction loansTransaction = loansTransactionDao.selectOneByExample(example);
         if(lid == null){
             System.out.println("空");
         }
@@ -131,14 +109,7 @@ public class PledgeImpl implements Pledge {
         loansTransaction.setListate(state);
         SimpleDateFormat simpleDateFormat = new SimpleDateFormat();
         loansTransaction.setLidate(simpleDateFormat.format(new Date()));
-//        int count = loansTransactionDao.updateByExampleSelective(loansTransaction, example);
         LoansTransaction loansTransaction1 = loansTransactionDao.save(loansTransaction);
-//        int count = loansTransactionDao.updateByExampleSelective(loansTransaction, example);
-//        if (count == 1) {
-//            return ResultUtil.success(JSON.toJSON(new String("修改订单状态成功")));
-//        } else {
-//            return ResultUtil.success(JSON.toJSON(new String("修改订单状态失败")));
-//        }
         if (loansTransaction1 != null) {
             return ResultUtil.success(JSON.toJSON(new String("修改订单状态成功")));
         } else {
