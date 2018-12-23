@@ -100,15 +100,14 @@ public class LoantService {
 	 * 修改申请单的状态
 	 */
 	public void changeStatus(DelegateExecution execution,String status) {
-		
+
 		String key = execution.getProcessBusinessKey();
-		//LeaveInfo entity = new LeaveInfo();
 		LeaveInfo entity = leaveInfoDao.findLeaveInfoById(key);
 		entity.setStatus(status);
 		leaveInfoDao.save(entity);
-		
-	//	System.out.println("修改请假单状态为：" + status);
-		
+
+		//	System.out.println("修改请假单状态为：" + status);
+
 	}
 
 	/**
