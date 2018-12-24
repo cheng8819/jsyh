@@ -1,5 +1,6 @@
 package com.example.jsconsumerloans.controller;
 
+import com.example.jsconsumerloans.feign.ActivitiFeign;
 import com.example.jsconsumerloans.feign.LoanApplication;
 import com.example.jsconsumerloans.pojo.LoansUserinfo;
 import com.example.jsconsumerloans.service.LoanApplicationService;
@@ -33,7 +34,7 @@ public class LoanapplicationController {
     @ApiOperation(value = "获取指定审核人需要审核的贷款申请", httpMethod = "GET")
     @RequestMapping("/getTaskByUserId/{userId}")
     public Object getTaskByUserId(@ApiParam(name = "userId", value = "审核人ID", required = true) @PathVariable("userId") String userId) {
-        return loanApplication.getTaskByUserId(userId);
+        return loanApplicationService.getByUserId(userId);
     }
 
     @ApiOperation(value = "处理待审核的贷款申请", httpMethod = "GET")
@@ -41,6 +42,6 @@ public class LoanapplicationController {
     public Result completeTask(@ApiParam(name = "taskId", value = "审批的任务id", required = true) @PathVariable("taskId") String taskId,
                                @ApiParam(name = "userId", value = "审核人ID", required = true) @PathVariable("userId") String userId,
                                @ApiParam(name = "audit", value = "审核结果通过（cg）未通过（sb）", required = true) @PathVariable("audit") String audit) {
-        return loanApplication.completeTask(taskId, userId, audit);
+        return loanApplicationService.completeTaskByUser(taskId, userId, audit);
     }
 }

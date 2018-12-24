@@ -1,11 +1,9 @@
-package com.example.jsproducerloans.service.ov;
+package com.example.jsconsumerloans.service.ov;
 
-import com.example.jsproducerloans.dao.AuditorDao;
-import com.example.jsproducerloans.dao.LeaveInfoDao;
-import com.example.jsproducerloans.dao.LoansTransactionDao;
-import com.example.jsproducerloans.pojo.Auditor;
-import com.example.jsproducerloans.pojo.LeaveInfo;
-import com.example.jsproducerloans.pojo.LoansTransaction;
+import com.alibaba.fastjson.JSON;
+import com.example.jsconsumerloans.feign.ActivitiFeign;
+import com.example.jsconsumerloans.pojo.Auditor;
+import com.example.jsconsumerloans.pojo.LeaveInfo;
 import org.activiti.engine.*;
 import org.activiti.engine.delegate.DelegateExecution;
 import org.activiti.engine.history.HistoricProcessInstance;
@@ -21,8 +19,6 @@ import java.util.*;
 public class LoantService {
 
 	@Autowired
-	private LeaveInfoDao leaveInfoDao;
-	@Autowired
 	private RuntimeService runtimeService;
 	@Autowired
 	private TaskService taskService;
@@ -31,9 +27,7 @@ public class LoantService {
 	@Autowired
 	private static RepositoryService repositoryService;
 	@Autowired
-	private AuditorDao auditorDao;
-	@Autowired
-	private LoansTransactionDao loansTransactionDao;
+	private ActivitiFeign activitiFeign;
 
 	/**
 	 * 启动流程
@@ -89,7 +83,8 @@ public class LoantService {
 	
 	public List<String> findSh(){
 	 	List<String> kf = new ArrayList<>();
-	 	List<Auditor> auditors = auditorDao.findAll();
+	 	String result = (String) activitiFeign.getAuditorsAll().getData();
+	 	List<Auditor> auditors = JSON.parseArray(result,Auditor.class);
 		for (Auditor auditor : auditors) {
 			kf.add(auditor.getAname());
 		}
@@ -102,12 +97,10 @@ public class LoantService {
 	public void changeStatus(DelegateExecution execution,String status) {
 
 		String key = execution.getProcessBusinessKey();
-		LeaveInfo entity = leaveInfoDao.findLeaveInfoById(key);
+		String result = (String) activitiFeign.findLeaveInfoById(key).getData();
+		LeaveInfo entity = JSON.parseObject(result,LeaveInfo.class);
 		entity.setStatus(status);
-		leaveInfoDao.save(entity);
-
-		//	System.out.println("修改请假单状态为：" + status);
-
+		activitiFeign.updateLeaveInfoState(entity);
 	}
 
 	/**
@@ -117,10 +110,11 @@ public class LoantService {
 	public void daikuan(DelegateExecution execution){
 		String key = execution.getProcessBusinessKey();
 		//LeaveInfo entity = new LeaveInfo();
-		LeaveInfo entity = leaveInfoDao.findLeaveInfoById(key);
-		LoansTransaction loansTransaction = loansTransactionDao.findLoansTransactionsByLiapplicationdata(entity.getLoansid());
-		loansTransaction.setListate(1);
-		loansTransactionDao.save(loansTransaction);
+//		LeaveInfo entity = leaveInfoDao.findLeaveInfoById(key);
+//		LoansTransaction loansTransaction = loansTransactionDao.findLoansTransactionsByLiapplicationdata(entity.getLoansid());
+//		loansTransaction.setListate(1);
+//		loansTransactionDao.save(loansTransaction);
+
 	}
 
 	/**

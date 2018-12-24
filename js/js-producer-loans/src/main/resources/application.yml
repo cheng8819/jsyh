@@ -44,7 +44,7 @@ spring:
     sampler:
       percentage: 1.0
   rabbitmq:
-    host: 127.0.0.1
+    host: 106.12.192.14
     port: 5672
     username: moxiaoze
     password: moxiaoze

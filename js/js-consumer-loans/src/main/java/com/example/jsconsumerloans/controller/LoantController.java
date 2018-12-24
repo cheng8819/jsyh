@@ -43,7 +43,7 @@ public class LoantController {
     }
 
     @ApiOperation(value = "修改订单状态", httpMethod = "GET")
-    @RequestMapping("/updateloanstransactiontostate/{liid}/{state}")
+    @RequestMapping("/updateloanstransacti       ontostate/{liid}/{state}")
     public Result updateLoanstransactionTostate(@ApiParam(name = "liid", value = "订单ID", required = true) @PathVariable("liid") Integer liid, @ApiParam(name = "state", value = "订单状态（成功1失败0）", required = true) @PathVariable("state") Integer state) {
         return loans.updateLoanstransactionTostate(liid, state);
     }
