@@ -7,7 +7,6 @@ import com.example.jsproducerfund.service.FundService;
 import com.example.jsproducerfund.util.RiskRatingAlgorithm;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import javax.servlet.http.HttpServletRequest;
@@ -45,8 +44,7 @@ public class FundServiceImpl implements FundService {
         }
         //分页查询 每页显示10行数据
         PageHelper.startPage(pageNum, 10);
-        PageInfo<FundInfo> fundPageInfo
-                = new PageInfo<>(list);
+        PageInfo<FundInfo> fundPageInfo = new PageInfo<>(list);
         return fundPageInfo.getList();
     }
 
@@ -68,9 +66,7 @@ public class FundServiceImpl implements FundService {
         }
         //分页查询 每页显示10行数据
         PageHelper.startPage(pageNum,10);
-        PageInfo<Performance> fundPageInfo
-                = new PageInfo<>(list);
-        //使用freemarker模板引擎直接返回list集合
+        PageInfo<Performance> fundPageInfo = new PageInfo<>(list);
         return fundPageInfo.getList();
     }
 
@@ -78,11 +74,6 @@ public class FundServiceImpl implements FundService {
     public List<Performance> selFunds(HttpServletRequest request, HttpServletResponse response) {
         //解决跨域问题
         response.setHeader("Access-Control-Allow-Origin", "*");
-        /*String fund_number = request.getParameter("fund_number");
-        String fund_name = request.getParameter("fund_name");
-        String fund_type = request.getParameter("fund_type");
-        String fund_rating = request.getParameter("fund_rating");
-        Performance performance = new Performance(Integer.parseInt(fund_number),fund_name,fund_type,fund_rating);*/
         return fundDao.findAll(null);
     }
 
@@ -97,18 +88,9 @@ public class FundServiceImpl implements FundService {
         //先查询该基金是否已经收藏过
         List<CollectInfo> collections = selCollection(collectInfo);
         if(collections.size() > 0){
-            /*for (CollectInfo coll: collections) {
-                if(fund_number.equals(coll.getFund_number()) && username.equals(coll.getUsername())){
-                    return "已收藏";
-                }
-            }*/
             return "已收藏";
         }
         //没收藏过就添加收藏信息
-        /*CollectInfo collection = new CollectInfo();
-        collection.setFund_name(fund_name);
-        collection.setFund_number(fund_number);
-        collection.setUsername(username);*/
         Integer result = fundDao.addCollection(collectInfo);
         if(result <= 0){
             return "收藏失败";
@@ -119,6 +101,7 @@ public class FundServiceImpl implements FundService {
     @Override
     public List<CollectInfo> selCollection(CollectInfo collection) {
         String username = collection.getUsername();
+        System.out.println("mxh "+username);
         if(username == null){
             System.out.println("用户名为空,返回null");
             return null;
@@ -127,7 +110,10 @@ public class FundServiceImpl implements FundService {
     }
 
     @Override
-    public String buyFund(FundInfo fundInfo, String username,Double fund_money) {
+    public String buyFund(FundInfo fundInfo,String username,Double fund_money) {
+        System.out.println("购买者："+username);
+        //-1.计算金额
+
         //0.查看银行卡每日消费金额上限，基金每日申购上限
 
         //1.调银行卡余额接口查看用户余额是否充足
@@ -145,7 +131,7 @@ public class FundServiceImpl implements FundService {
         Date buyDate = new Date(); //购买时间
 
         //查询记录是否曾经购买过
-        List<Buy> buyInfo = selBuyFund(username, fund_number);
+        List<Buy> buyInfo = selBuyFund(username,fund_number);
         for (Buy info: buyInfo) {
             if (fund_number.equals(info.getProduct_number())){
                 fund_money = fund_money + info.getProduct_money(); //原来花费的金额与新增的相加
@@ -192,8 +178,8 @@ public class FundServiceImpl implements FundService {
         //根据调查问卷算出承受风险等级
         String result = RiskRatingAlgorithm.Algorithm(riskAppetite);
         //将风险等级写入对应用户风险等级栏
-        String name = riskAppetite.getName();
-        fundDao.updRiskGrade(result,name);
+        String username = riskAppetite.getName();
+        fundDao.updRiskGrade(result,username);
         return result;
     }
 

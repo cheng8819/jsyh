@@ -8,6 +8,23 @@ spring:
     url: jdbc:mysql://47.95.116.4:3306/bank?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
     username: bank
     password: bank
+  data:
+    rabbitmq:
+      host: 127.0.0.1
+      port: 5672
+      username: guest
+      password: guest
+redis:
+  host: 127.0.0.1
+  port: 6379
+  database: 0
+  jedis:
+    pool:
+      max-idle: 8 #最大空闲连接数
+      min-idle: 0
+      max-active: 8
+      max-wait: 2000ms
+timeout: 5000ms
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.example.jsproducerfinancial.pojo

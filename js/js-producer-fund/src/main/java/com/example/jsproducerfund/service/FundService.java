@@ -2,7 +2,6 @@ package com.example.jsproducerfund.service;
 
 import com.example.jsproducerfund.pojo.*;
 import org.apache.ibatis.annotations.Param;
-
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.List;
@@ -20,6 +19,12 @@ public interface FundService {
      */
     List<Performance> showFunds(Performance performance,Integer pageCount);
 
+    /**
+     * 查询已上市基金产品
+     * @param request
+     * @param response
+     * @return
+     */
     List<Performance> selFunds(HttpServletRequest request, HttpServletResponse response);
 
     /**

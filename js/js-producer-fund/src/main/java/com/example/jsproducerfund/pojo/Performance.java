@@ -15,17 +15,17 @@ public class Performance {
     /**
      * 单位净值
      */
-    private String iopy;
+    private Double iopy;
 
     /**
      *  累计净值
      */
-    private String iopys;
+    private Double iopys;
 
     /**
      * 日涨幅
      */
-    private String day_or;
+    private Double day_or;
 
     /**
      * 一周回报率
@@ -61,6 +61,13 @@ public class Performance {
         this.fund_rating = fund_rating;
     }
 
+    public Performance(Integer fund_number, String fund_name, Double iopy, Double iopys) {
+        this.fund_number = fund_number;
+        this.fund_name = fund_name;
+        this.iopy = iopy;
+        this.iopys = iopys;
+    }
+
     public String getFund_type() {
         return fund_type;
     }
@@ -85,27 +92,27 @@ public class Performance {
         this.fund_name = fund_name;
     }
 
-    public String getIopy() {
+    public Double getIopy() {
         return iopy;
     }
 
-    public void setIopy(String iopy) {
+    public void setIopy(Double iopy) {
         this.iopy = iopy;
     }
 
-    public String getIopys() {
+    public Double getIopys() {
         return iopys;
     }
 
-    public void setIopys(String iopys) {
+    public void setIopys(Double iopys) {
         this.iopys = iopys;
     }
 
-    public String getDay_or() {
+    public Double getDay_or() {
         return day_or;
     }
 
-    public void setDay_or(String day_or) {
+    public void setDay_or(Double day_or) {
         this.day_or = day_or;
     }
 

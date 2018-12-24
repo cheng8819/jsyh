@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.jsproducerfinancial.dao.FinancialDao">
+
+    <!--查询理财产品信息-->
+    <!--显示字段：理财产品名称、是否保本、募集期/购买期、业绩比较基准、起购金额 期限产品风险等级-->
+    <select id="findAll" parameterType="com.example.jsproducerfinancial.pojo.Finance" resultType="com.example.jsproducerfinancial.pojo.Finance">
+        select product_name,break_even,collect_period,performance_comparison_benchmark,single_subscription_limit,time_limit,product_risk_level from finance
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="product_type != null">
+                product_type = #{product_type}
+            </if>
+        </trim>
+    </select>
+
+    <insert id="addFinance" parameterType="com.example.jsproducerfinancial.pojo.Finance">
+        insert into finance(product_code,product_name,break_even,collect_period,performance_comparison_benchmark,single_subscription_limit,time_limit,product_risk_level)
+        values (#{product_code},#{product_name},#{break_even},#{collect_period},#{performance_comparison_benchmark},#{single_subscription_limit},#{time_limit},#{product_risk_level})
+    </insert>
+
+    <update id="updFinance" parameterType="com.example.jsproducerfinancial.pojo.Finance">
+        update finance
+        <trim prefix="set" suffixOverrides="," suffix="where product_id=product_id">
+            <if test="product_name != null">
+                product_name = #{product_name}
+            </if>
+        </trim>
+    </update>
+
+    <delete id="delFinance" parameterType="java.lang.Integer">
+        delete from finance where product_id=#{product_id}
+    </delete>
+
+    <!--查询浏览记录-->
+    <select id="findAllBH" parameterType="com.example.jsproducerfinancial.pojo.BrowsingHistory" resultType="com.example.jsproducerfinancial.pojo.BrowsingHistory">
+        select browsing_history_id,username,product_name,product_number from browsinghistory
+    </select>
+
+    <insert id="addHistory" parameterType="com.example.jsproducerfinancial.pojo.BrowsingHistory">
+        insert into browsinghistory(username,product_name,product_number,browsing_history_time)
+        values(#{username},#{product_name},#{product_number},#{browsing_history_time})
+    </insert>
+
+    <!--查询购买信息-->
+    <select id="selBuyFinance" parameterType="com.example.jsproducerfinancial.pojo.Buy" resultType="com.example.jsproducerfinancial.pojo.Buy">
+        select * from buy
+        <trim prefix="where" prefixOverrides="and | or">
+            <if test="username != null">
+                and username = #{username}
+            </if>
+        </trim>
+    </select>
+
+    <insert id="addBuyFinance" parameterType="com.example.jsproducerfinancial.pojo.Buy">
+        insert into buy(username,product_name,product_number,product_unit,product_money,buy_time)
+        values(#{username},#{product_name},#{product_number},#{product_unit},#{product_money},#{buy_time})
+    </insert>
+</mapper>

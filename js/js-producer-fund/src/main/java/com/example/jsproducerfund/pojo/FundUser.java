@@ -13,7 +13,7 @@ public class FundUser {
     private String sex;
     private String birthday;
     private String phone;
-    private String profession;
+    private String profession; //职业
     private String address;
     private String card_type;
     private String card_number;

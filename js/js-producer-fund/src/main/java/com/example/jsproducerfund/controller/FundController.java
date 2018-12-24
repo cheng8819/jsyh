@@ -8,6 +8,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -20,7 +21,7 @@ import javax.servlet.http.HttpServletResponse;
  * @date: 2018/12/19 11:49
  */
 @Api("基金相关api")
-@RestController
+@Controller
 public class FundController {
 
     @Autowired
@@ -84,8 +85,15 @@ public class FundController {
     @ApiOperation(value = "购买基金产品",notes = "购买基金")
     @ResponseBody
     @RequestMapping(value = "/buyFund",method = RequestMethod.GET)
-    public String buyFund(FundInfo fundInfo,@Param("username") String username,@Param("fund_money")Double fund_money){
+    public String buyFund(FundInfo fundInfo,String username,Double fund_money){
         return fundService.buyFund(fundInfo,username,fund_money);
+    }
+
+    @ApiOperation(value = "赎回基金产品",notes = "赎回基金")
+    @ResponseBody
+    @RequestMapping(value = "/selFund",method = RequestMethod.GET)
+    public String selFund(String fundName,String username){
+        return fundService.sellFund(fundName,username);
     }
 
     @ApiOperation(value = "查看购买基金信息",notes = "查询购买基金信息")

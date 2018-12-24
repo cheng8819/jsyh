@@ -60,7 +60,7 @@ public interface FundDao {
      * @param risk_grade
      * @return
      */
-    Integer updRiskGrade(@Param("risk_grade") String risk_grade,@Param("name") String name);
+    Integer updRiskGrade(@Param("risk_grade") String risk_grade,@Param("username") String name);
 
     /**
      * 添加基金账户
