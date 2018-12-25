@@ -13,13 +13,15 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.annotation.Resource;
+
 
 @Api(value = "贷款controller", tags = {"贷款操作接口"})
 @RestController
 @RequestMapping("loantypes")
 public class LoantController {
 
-    @Autowired
+    @Resource
     private Loans loans;
     @Autowired
     private LoanApplicationService loanApplicationService;
