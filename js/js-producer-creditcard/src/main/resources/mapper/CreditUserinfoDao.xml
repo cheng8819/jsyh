@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.jsproducercreditcard.dao.CreditUserinfoDao">
+
+    <resultMap type="com.example.jsproducercreditcard.entity.CreditUserinfo" id="CreditUserinfoMap">
+        <result property="cuid" column="cuid" jdbcType="INTEGER"/>
+        <result property="cuname" column="cuname" jdbcType="VARCHAR"/>
+        <result property="cumarriage" column="cumarriage" jdbcType="INTEGER"/>
+        <result property="cusafety" column="cusafety" jdbcType="INTEGER"/>
+        <result property="cuaddress" column="cuaddress" jdbcType="INTEGER"/>
+        <result property="cucardtype" column="cucardtype" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="CreditUserinfoMap">
+        select
+          cuid, cuname, cumarriage, cusafety, cuaddress, cucardtype
+        from jsyh.credit_userinfo
+        where cuid = #{cuid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="CreditUserinfoMap">
+        select
+          cuid, cuname, cumarriage, cusafety, cuaddress, cucardtype
+        from jsyh.credit_userinfo
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="CreditUserinfoMap">
+        select
+          cuid, cuname, cumarriage, cusafety, cuaddress, cucardtype
+        from jsyh.credit_userinfo
+        <where>
+            <if test="cuid != null">
+                and cuid = #{cuid}
+            </if>
+            <if test="cuname != null and cuname != ''">
+                and cuname = #{cuname}
+            </if>
+            <if test="cumarriage != null">
+                and cumarriage = #{cumarriage}
+            </if>
+            <if test="cusafety != null">
+                and cusafety = #{cusafety}
+            </if>
+            <if test="cuaddress != null">
+                and cuaddress = #{cuaddress}
+            </if>
+            <if test="cucardtype != null">
+                and cucardtype = #{cucardtype}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="cuid" useGeneratedKeys="true">
+        insert into jsyh.credit_userinfo(cuname, cumarriage, cusafety, cuaddress, cucardtype)
+        values (#{cuname}, #{cumarriage}, #{cusafety}, #{cuaddress}, #{cucardtype})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update jsyh.credit_userinfo
+        <set>
+            <if test="cuname != null and cuname != ''">
+                cuname = #{cuname},
+            </if>
+            <if test="cumarriage != null">
+                cumarriage = #{cumarriage},
+            </if>
+            <if test="cusafety != null">
+                cusafety = #{cusafety},
+            </if>
+            <if test="cuaddress != null">
+                cuaddress = #{cuaddress},
+            </if>
+            <if test="cucardtype != null">
+                cucardtype = #{cucardtype},
+            </if>
+        </set>
+        where cuid = #{cuid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from jsyh.credit_userinfo where cuid = #{cuid}
+    </delete>
+
+</mapper>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.jsproducercreditcard.dao.HousingSituationDao">
+
+    <resultMap type="com.example.jsproducercreditcard.entity.HousingSituation" id="HousingSituationMap">
+        <result property="hsid" column="hsid" jdbcType="INTEGER"/>
+        <result property="hsname" column="hsname" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="HousingSituationMap">
+        select
+          hsid, hsname
+        from jsyh.housing_situation
+        where hsid = #{hsid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="HousingSituationMap">
+        select
+          hsid, hsname
+        from jsyh.housing_situation
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="HousingSituationMap">
+        select
+          hsid, hsname
+        from jsyh.housing_situation
+        <where>
+            <if test="hsid != null">
+                and hsid = #{hsid}
+            </if>
+            <if test="hsname != null and hsname != ''">
+                and hsname = #{hsname}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="hsid" useGeneratedKeys="true">
+        insert into jsyh.housing_situation(hsname)
+        values (#{hsname})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update jsyh.housing_situation
+        <set>
+            <if test="hsname != null and hsname != ''">
+                hsname = #{hsname},
+            </if>
+        </set>
+        where hsid = #{hsid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from jsyh.housing_situation where hsid = #{hsid}
+    </delete>
+
+</mapper>

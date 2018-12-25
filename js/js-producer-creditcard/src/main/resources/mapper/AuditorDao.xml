@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.jsproducercreditcard.dao.AuditorDao">
+
+    <resultMap type="com.example.jsproducercreditcard.entity.Auditor" id="AuditorMap">
+        <result property="aid" column="aid" jdbcType="INTEGER"/>
+        <result property="aname" column="aname" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="AuditorMap">
+        select
+          aid, aname
+        from jsyh.auditor
+        where aid = #{aid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="AuditorMap">
+        select
+          aid, aname
+        from jsyh.auditor
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="AuditorMap">
+        select
+          aid, aname
+        from jsyh.auditor
+        <where>
+            <if test="aid != null">
+                and aid = #{aid}
+            </if>
+            <if test="aname != null and aname != ''">
+                and aname = #{aname}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="aid" useGeneratedKeys="true">
+        insert into jsyh.auditor(aname)
+        values (#{aname})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update jsyh.auditor
+        <set>
+            <if test="aname != null and aname != ''">
+                aname = #{aname},
+            </if>
+        </set>
+        where aid = #{aid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from jsyh.auditor where aid = #{aid}
+    </delete>
+
+</mapper>

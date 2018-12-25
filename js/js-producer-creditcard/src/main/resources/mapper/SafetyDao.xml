@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.jsproducercreditcard.dao.SafetyDao">
+
+    <resultMap type="com.example.jsproducercreditcard.entity.Safety" id="SafetyMap">
+        <result property="sid" column="sid" jdbcType="INTEGER"/>
+        <result property="siissue" column="siissue" jdbcType="INTEGER"/>
+        <result property="sianswer" column="sianswer" jdbcType="VARCHAR"/>
+        <result property="suid" column="suid" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="SafetyMap">
+        select
+          sid, siissue, sianswer, suid
+        from jsyh.safety
+        where sid = #{sid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="SafetyMap">
+        select
+          sid, siissue, sianswer, suid
+        from jsyh.safety
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="SafetyMap">
+        select
+          sid, siissue, sianswer, suid
+        from jsyh.safety
+        <where>
+            <if test="sid != null">
+                and sid = #{sid}
+            </if>
+            <if test="siissue != null">
+                and siissue = #{siissue}
+            </if>
+            <if test="sianswer != null and sianswer != ''">
+                and sianswer = #{sianswer}
+            </if>
+            <if test="suid != null">
+                and suid = #{suid}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="sid" useGeneratedKeys="true">
+        insert into jsyh.safety(siissue, sianswer, suid)
+        values (#{siissue}, #{sianswer}, #{suid})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update jsyh.safety
+        <set>
+            <if test="siissue != null">
+                siissue = #{siissue},
+            </if>
+            <if test="sianswer != null and sianswer != ''">
+                sianswer = #{sianswer},
+            </if>
+            <if test="suid != null">
+                suid = #{suid},
+            </if>
+        </set>
+        where sid = #{sid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from jsyh.safety where sid = #{sid}
+    </delete>
+
+</mapper>

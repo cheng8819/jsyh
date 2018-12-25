@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.jsproducercreditcard.dao.CreditCardDao">
+
+    <resultMap type="com.example.jsproducercreditcard.entity.CreditCard" id="CreditCardMap">
+        <result property="ccid" column="ccid" jdbcType="INTEGER"/>
+        <result property="ccnumber" column="ccnumber" jdbcType="VARCHAR"/>
+        <result property="ccuid" column="ccuid" jdbcType="INTEGER"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="CreditCardMap">
+        select
+          ccid, ccnumber, ccuid
+        from jsyh.credit_card
+        where ccid = #{ccid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="CreditCardMap">
+        select
+          ccid, ccnumber, ccuid
+        from jsyh.credit_card
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="CreditCardMap">
+        select
+          ccid, ccnumber, ccuid
+        from jsyh.credit_card
+        <where>
+            <if test="ccid != null">
+                and ccid = #{ccid}
+            </if>
+            <if test="ccnumber != null and ccnumber != ''">
+                and ccnumber = #{ccnumber}
+            </if>
+            <if test="ccuid != null">
+                and ccuid = #{ccuid}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="ccid" useGeneratedKeys="true">
+        insert into jsyh.credit_card(ccnumber, ccuid)
+        values (#{ccnumber}, #{ccuid})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update jsyh.credit_card
+        <set>
+            <if test="ccnumber != null and ccnumber != ''">
+                ccnumber = #{ccnumber},
+            </if>
+            <if test="ccuid != null">
+                ccuid = #{ccuid},
+            </if>
+        </set>
+        where ccid = #{ccid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from jsyh.credit_card where ccid = #{ccid}
+    </delete>
+
+</mapper>
