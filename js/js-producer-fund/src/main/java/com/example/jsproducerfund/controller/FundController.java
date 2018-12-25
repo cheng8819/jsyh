@@ -117,4 +117,11 @@ public class FundController {
         return fundService.addFundAccount(fundUser);
     }
 
+    @ApiOperation(value = "基金定投",notes = "任务名称，执行时间")
+    @ResponseBody
+    @RequestMapping(value = "/AIP",method = RequestMethod.GET)
+    public String AIP(String jobName,String time){
+        return fundService.automaticInvestmentPlan(jobName,time);
+    }
+
 }

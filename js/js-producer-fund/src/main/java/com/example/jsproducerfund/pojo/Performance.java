@@ -1,12 +1,14 @@
 package com.example.jsproducerfund.pojo;
 
+import java.io.Serializable;
+
 /**
  * @auther: 666先生的救赎
  * @date: 2018/12/20 22:03
  *
  * 基金绩效表现(performance)表
  */
-public class Performance {
+public class Performance implements Serializable{
 
     private Integer fund_number;
     private String fund_name;
@@ -161,9 +163,10 @@ public class Performance {
         return "Performance{" +
                 "fund_number=" + fund_number +
                 ", fund_name='" + fund_name + '\'' +
-                ", iopy='" + iopy + '\'' +
-                ", iopys='" + iopys + '\'' +
-                ", day_or='" + day_or + '\'' +
+                ", fund_type='" + fund_type + '\'' +
+                ", iopy=" + iopy +
+                ", iopys=" + iopys +
+                ", day_or=" + day_or +
                 ", weekly_rate_of_return='" + weekly_rate_of_return + '\'' +
                 ", monthly_rate_of_return='" + monthly_rate_of_return + '\'' +
                 ", march_rate_of_return='" + march_rate_of_return + '\'' +

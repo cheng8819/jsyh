@@ -3,11 +3,6 @@ package com.example.jsproducerfund.service;
 public interface Calculate {
 
     /**
-     * 定时任务 计算数字
-     */
-    void CalculateCount();
-
-    /**
      * 模拟基金走势
      */
     void FundPerformance();

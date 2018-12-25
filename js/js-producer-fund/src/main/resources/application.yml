@@ -18,6 +18,8 @@ spring:
       port: 5672
       username: guest
       password: guest
+    solr:
+      host: http://47.95.116.4:8983/solr/bank
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   type-aliases-package: com.example.jsproducerfund.pojo

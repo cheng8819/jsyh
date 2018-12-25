@@ -128,15 +128,10 @@
         </dependency>
 
         <!--solr-->
-        <!--<dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-solr</artifactId>
-        </dependency>
         <dependency>
-            <groupId>org.apache.solr</groupId>
-            <artifactId>solr-solrj</artifactId>
-            <version>7.5.0</version>
-        </dependency>-->
+            <groupId>org.springframework.data</groupId>
+            <artifactId>spring-data-solr</artifactId>
+        </dependency>
 
         <!--Quartz-->
         <dependency>
@@ -157,6 +152,13 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+
+        <!--log4j-->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.15</version>
         </dependency>
     </dependencies>
 

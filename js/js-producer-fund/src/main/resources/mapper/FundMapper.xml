@@ -24,6 +24,16 @@
           </where>
     </select>
 
+    <insert id="addPerformance" parameterType="com.example.jsproducerfund.pojo.Performance">
+        insert into performance(fund_number,fund_name,fund_type,iopy,iopys,day_or,weekly_rate_of_return,monthly_rate_of_return,march_rate_of_return,product_status,fund_rating)
+        values (#{fund_number},#{fund_name},#{fund_type},#{iopy},#{iopys},#{day_or},#{weekly_rate_of_return},#{monthly_rate_of_return},#{march_rate_of_return},#{product_status},#{fund_rating})
+    </insert>
+
+    <!--为redis提供数据-->
+    <select id="selPerformance" resultType="com.example.jsproducerfund.pojo.Performance">
+        select * from performance
+    </select>
+
     <!--收藏基金展示-->
     <select id="selCollection" parameterType="com.example.jsproducerfund.pojo.CollectInfo" resultType="com.example.jsproducerfund.pojo.CollectInfo">
         select collection_id,fund_name,username,fund_number from collectInfo

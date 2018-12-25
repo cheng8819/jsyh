@@ -1,5 +1,8 @@
 package com.mxh.test.controller;
 
+import com.mxh.test.pojo.Fund;
+import com.mxh.test.pojo.QuartzManager;
+import com.mxh.test.pojo.ScheduleJob;
 import com.mxh.test.util.RedisUtil.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -19,18 +22,18 @@ public class TestController {
 
     @RequestMapping("/test")
     public void test(){
-        boolean flag = redisUtil.set("mxh","123456");
-        System.out.println(redisUtil.get("mxh"));
+       /* boolean flag = redisUtil.set("mxh","123456");
+        System.out.println(redisUtil.get("mxh"));*/
 
-        List<Object> list = new ArrayList<Object>();
+        /*List<Object> list = new ArrayList<Object>();
         list.add("马鑫海");
         list.add(22);
         list.add("男");
         list.add("北留中学");
         list.add(165.6);
-        redisUtil.lSetList("list",list);
+        redisUtil.lSetList("list",list);*/
 
-        List<Object> list1 = redisUtil.lGet("list",0,-1);
+       /* List<Object> list1 = redisUtil.lGet("list",0,-1);
         for (Object obj : list1) {
             System.out.println(obj);
         }
@@ -46,6 +49,37 @@ public class TestController {
         Iterator<Map.Entry<Object, Object>> iterator = entries.iterator();
         while (iterator.hasNext()){
             System.out.println(iterator.next().getKey() + "==" + iterator.next().getValue());
+        }*/
+
+        List<Object> list = new ArrayList<>();
+        List<Fund> funds = new ArrayList<>();
+        Fund fund1 = new Fund();
+        Fund fund2 = new Fund();
+        Fund fund3 = new Fund();
+        Fund fund4 = new Fund();
+
+        fund1.setIopys(1.00);
+        fund2.setIopys(2.00);
+        fund3.setIopys(3.00);
+        fund4.setIopys(4.00);
+
+        fund1.setIopy(1.00);
+        fund2.setIopy(2.00);
+        fund3.setIopy(3.00);
+        fund4.setIopy(4.00);
+
+        funds.add(fund1);
+        funds.add(fund2);
+        funds.add(fund3);
+        funds.add(fund4);
+
+        list.addAll(funds);
+        redisUtil.lSetList("funds",list);
+        List<Object> fund = redisUtil.lGet("funds",0,-1);
+
+        for(Object obj : fund){
+            Fund fund5 = (Fund) obj;
+            System.out.println("iopy: " + fund5.getIopy() + " ====  iopys " + fund5.getIopys());
         }
     }
 
@@ -92,6 +126,15 @@ public class TestController {
                 +" 赎回总额 "+ totalAmountRedemption
                 +" 赎回费用"+redemptionFee
                 +" 赎回净额(收益)" + netRedemption);
+    }
+
+    @RequestMapping("/test3")
+    public void test3(){
+        ScheduleJob scheduleJob = new ScheduleJob();
+
+        QuartzManager.addJob("吃饭",ScheduleJob.class,"0/10 * * * * ?",scheduleJob);
+        QuartzManager.addJob("睡觉",ScheduleJob.class,"0/10 * * * * ?",scheduleJob);
+        QuartzManager.startJobs();
     }
 
 }

@@ -81,10 +81,20 @@ public interface FundService {
 
     /**
      * 计算基金收益
-     * @param fundName
+     * @param fundName 基金名称
+     * @param num 赎回份额
+     * @param time 购买天数
      * @return
      */
-    String fundEarnings(String fundName);
+    String fundEarnings(String fundName,Integer num,Integer time);
+
+    /**
+     * 计算申购费用
+     * @param fundName
+     * @param money
+     * @return
+     */
+    String fundSubscriptionFee(String fundName,Double money);
 
     /**
      * 风险承受能力测试接口
@@ -102,5 +112,13 @@ public interface FundService {
      * @return
      */
     String addFundAccount(FundUser fundUser);
+
+    /**
+     * 基金定投
+     * @param jobName 定时任务名称
+     * @param time 任务执行时间
+     * @return
+     */
+    String automaticInvestmentPlan(String jobName,String time);
 
 }

@@ -2,10 +2,7 @@ package com.example.jsproducerfund.dao;
 
 import com.example.jsproducerfund.pojo.*;
 import com.example.jsproducerfund.pojo.CollectInfo;
-
 import java.util.List;
-
-import com.example.jsproducerfund.util.RiskScore;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
@@ -20,6 +17,19 @@ public interface FundDao {
      * @return
      */
     List<Performance> findAll(Performance performance);
+
+    /**
+     * 查询基金走势信息
+     * @return
+     */
+    List<Performance> selPerformance();
+
+    /**
+     * 添加基金走势信息
+     * @param performance
+     * @return
+     */
+    Integer addPerformance(Performance performance);
 
     /**
      * 查询新发布的基金信息

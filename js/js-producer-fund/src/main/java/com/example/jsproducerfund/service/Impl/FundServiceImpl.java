@@ -1,14 +1,19 @@
 package com.example.jsproducerfund.service.Impl;
 
-import com.alibaba.fastjson.JSON;
 import com.example.jsproducerfund.dao.FundDao;
 import com.example.jsproducerfund.pojo.*;
 import com.example.jsproducerfund.service.FundService;
+import com.example.jsproducerfund.util.Job.QuartzJobFactory;
+import com.example.jsproducerfund.util.Job.QuartzManager;
+import com.example.jsproducerfund.util.Job.ScheduleJob;
 import com.example.jsproducerfund.util.RiskRatingAlgorithm;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
@@ -25,6 +30,9 @@ public class FundServiceImpl implements FundService {
     private FundDao fundDao;
 
     private Integer pageNum = 1;
+
+    @Autowired
+    private QuartzManager quartzManager;
 
     @Override
     public List<FundInfo> showNewFunds(FundInfo fundInfo, Integer pageCount) {
@@ -201,8 +209,36 @@ public class FundServiceImpl implements FundService {
     }
 
     @Override
-    public String fundEarnings(String fundName) {
-        //计算基金收益
+    public String fundEarnings(String fundName,Integer num,Integer time) {
+        //计算基金收益:
+        Double redemptionRate = 0.005; //赎回费率
+        Double iopy = 1.4; //赎回当日基金净值
+        Double totalAmountRedemption = num * iopy; //赎回总额
+        Double redemptionFee = totalAmountRedemption * redemptionRate; //赎回费用
+        Double netRedemption = totalAmountRedemption - redemptionFee; //赎回净额
+        return null;
+    }
+
+    @Override
+    public String fundSubscriptionFee(String fundName, Double money) {
+        Double iopy = 1.2; //当日净值
+        Double explainRate = 0.015; //申购费率
+        Double netSubscriptionAmount = money / (1.00+explainRate); //净申购金额
+        Double subscriptionFees = money - netSubscriptionAmount; //申购费用
+        Double shareSubscription = netSubscriptionAmount / iopy; //申购份额
+        return null;
+    }
+
+    @Override
+    public String automaticInvestmentPlan(String jobName,String time) {
+        ScheduleJob job = new ScheduleJob();
+        job.setJobId("10001");
+        job.setJobName(jobName);
+        job.setJobGroup("automaticInvestmentPlan");
+        job.setJobStatus("1");
+        job.setCronExpression("0/5 * * * * ?");
+        job.setDesc("基金定投");
+        quartzManager.addJob(job.getJobName(), QuartzJobFactory.class,job.getCronExpression(),job);
         return null;
     }
 }
