@@ -3,17 +3,11 @@ server:
 spring:
   application:
     name: js-cosumer-fund
- rabbitmq:
+  rabbitmq:
     host: localhost
     port: 5672
-    username: rabbit
-    password: rabbit
-    virtual-host: /rabbit-1
-    publisher-confirms: true
-    publisher-returns: true
-    listener:
-        simple:
-          prefetch: 1
+    username: guset
+    password: guest
 eureka:
   client:
     register-with-eureka: true #将此项目注册到Eureka服务

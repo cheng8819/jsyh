@@ -59,6 +59,13 @@ public interface FundDao {
     Integer addBuyFund(Buy buy);
 
     /**
+     * 修改基金购买信息 ：用于赎回基金
+     * @param buy
+     * @return
+     */
+    Integer updBuyFund(Buy buy);
+
+    /**
      * 按条件查询基金购买信息
      * @param buy
      * @return

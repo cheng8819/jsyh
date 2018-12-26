@@ -2,6 +2,8 @@ package com.example.jsproducerfund.config;
 
 import java.util.UUID;
 import javax.annotation.PostConstruct;
+
+import com.example.jsproducerfund.pojo.Buy;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.amqp.rabbit.core.RabbitTemplate.ReturnCallback;
@@ -42,6 +44,15 @@ public class Sender implements RabbitTemplate.ConfirmCallback, ReturnCallback {
         System.out.println("开始发送消息 : " + msg.toLowerCase() + "\n");
         String response = rabbitTemplate.convertSendAndReceive("topicExchange", "key.1", msg, correlationId).toString();
         System.out.println("结束发送消息 : " + msg.toLowerCase() + "\n");
+        System.out.println("消费者响应 : " + response + " 消息处理完成\n");
+    }
+
+    //消费明细传输
+    public void send1(Buy buy){
+        CorrelationData correlationId = new CorrelationData(UUID.randomUUID().toString());
+        System.out.println("开始发送消息 : " + buy.toString()  + "\n");
+        String response = rabbitTemplate.convertSendAndReceive("topicExchange", "key.2", buy, correlationId).toString();
+        System.out.println("结束发送消息 : " + buy.toString() + "\n");
         System.out.println("消费者响应 : " + response + " 消息处理完成\n");
     }
 

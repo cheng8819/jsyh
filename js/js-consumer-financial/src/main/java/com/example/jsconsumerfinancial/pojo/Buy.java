@@ -1,4 +1,4 @@
-package com.example.jsproducerfund.pojo;
+package com.example.jsconsumerfinancial.pojo;
 
 /**
  * @auther: 666先生的救赎
@@ -14,10 +14,10 @@ public class Buy {
     private String product_number;
     private Double product_unit;
     private Double product_money; //购买基金花费金额
-    private Double product_earnings;
-    private Integer product_status; //产品状态 1 已购买 0 已赎回
+    private Double product_rernings;
     private String buy_time;
     private String sell_time;
+    private Integer product_status;
 
     public Buy(){}
 
@@ -36,8 +36,8 @@ public class Buy {
         this.product_number = product_number;
         this.product_unit = product_unit;
         this.product_money = product_money;
-        this.product_status = 1;
         this.buy_time = buy_time;
+        this.product_status = 1;
     }
 
     /**
@@ -45,24 +45,16 @@ public class Buy {
      *
      * @param username
      * @param product_name
-     * @param product_earnings
+     * @param product_rernings
      * @param sell_time
      */
-    public Buy(String username, String product_name, Double product_earnings, String sell_time) {
+    public Buy(String username, String product_name, Double product_rernings, String sell_time) {
         this.buy_id = buy_id;
         this.username = username;
         this.product_name = product_name;
-        this.product_earnings = product_earnings;
-        this.product_status = 0;
+        this.product_rernings = product_rernings;
         this.sell_time = sell_time;
-    }
-
-    public Integer getProduct_status() {
-        return product_status;
-    }
-
-    public void setProduct_status(Integer product_status) {
-        this.product_status = product_status;
+        this.product_status = 0;
     }
 
     public Integer getBuy_id() {
@@ -113,12 +105,12 @@ public class Buy {
         this.product_money = product_money;
     }
 
-    public Double getProduct_earnings() {
-        return product_earnings;
+    public Double getProduct_rernings() {
+        return product_rernings;
     }
 
-    public void setProduct_earnings(Double product_earnings) {
-        this.product_earnings = product_earnings;
+    public void setProduct_rernings(Double product_rernings) {
+        this.product_rernings = product_rernings;
     }
 
     public String getBuy_time() {
@@ -146,7 +138,7 @@ public class Buy {
                 ", product_number='" + product_number + '\'' +
                 ", product_unit=" + product_unit +
                 ", product_money=" + product_money +
-                ", product_earnings=" + product_earnings +
+                ", product_rernings=" + product_rernings +
                 ", buy_time='" + buy_time + '\'' +
                 ", sell_time='" + sell_time + '\'' +
                 '}';

@@ -32,7 +32,8 @@ public class Receiver {
     }
 
     @RabbitListener(queues = "hello.queue2")
-    public void processMessage2(String msg) {
+    public String processMessage2(String msg) {
         System.out.println(Thread.currentThread().getName() + " 接收到来自hello.queue2队列的消息：" + msg);
+        return msg.toUpperCase();
     }
 }

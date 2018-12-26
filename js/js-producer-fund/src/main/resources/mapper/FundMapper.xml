@@ -61,22 +61,28 @@
         values(#{username},#{product_name},#{product_number},#{product_unit},#{product_money},#{buy_time})
     </insert>
 
-    <update id="updBuyFinance" parameterType="com.example.jsproducerfund.pojo.Buy">
+    <!--修改基金购买信息-->
+    <update id="updBuyFund" parameterType="com.example.jsproducerfund.pojo.Buy">
         update buy
         <set>
             <if test="sell_time != null">
-                sell_time=#{sell_time}
+                sell_time=#{sell_time},
             </if>
             <if test="product_status != null">
-                product_status=#{product_status}
-            </if>
-            <if test="product_status != null">
-                product_status=#{product_status}
+                product_status=#{product_status},
             </if>
             <if test="product_earnings != null">
                 product_earnings=#{product_earnings}
             </if>
         </set>
+        <where>
+            <if test="username != null">
+                username = #{username}
+            </if>
+            <if test="product_name != null">
+                and product_name = #{product_name}
+            </if>
+        </where>
     </update>
 
     <!--查询购买基金/理财产品信息-->

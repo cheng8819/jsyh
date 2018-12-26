@@ -52,7 +52,7 @@ public class CalculateImpl implements Calculate {
 
 
     @Override
-    @Scheduled(cron="0/10 * * * * ?")
+    @Scheduled(cron="0 0 17 * * ? ")
     public void FundPerformance() {
         onLoad();
         dayNum++;

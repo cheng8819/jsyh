@@ -1,5 +1,6 @@
 package com.example.jsproducerfund.service.Impl;
 
+import com.example.jsproducerfund.config.Sender;
 import com.example.jsproducerfund.dao.FundDao;
 import com.example.jsproducerfund.pojo.*;
 import com.example.jsproducerfund.service.FundService;
@@ -10,10 +11,7 @@ import com.example.jsproducerfund.util.RiskRatingAlgorithm;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.quartz.SchedulerFactoryBean;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.util.Date;
@@ -33,6 +31,9 @@ public class FundServiceImpl implements FundService {
 
     @Autowired
     private QuartzManager quartzManager;
+
+    @Autowired
+    private Sender sender;
 
     @Override
     public List<FundInfo> showNewFunds(FundInfo fundInfo, Integer pageCount) {
@@ -123,18 +124,12 @@ public class FundServiceImpl implements FundService {
         //-1.计算金额
 
         //0.查看银行卡每日消费金额上限，基金每日申购上限
-
         //1.调银行卡余额接口查看用户余额是否充足
-
         //2.余额充足在基金购买表添加一条购买记录
-
         //3.如果基金以前购买过，现在要追加，修改其购买份额,花费金额
         String fund_name = fundInfo.getFund_name();
         String fund_number = fundInfo.getFund_number();
         Double fund_price = fundInfo.getUnit_value();
-        if(fund_money == null){
-            fund_money = 1000.00; //基金对象里没有花费,默认1000
-        }
         Double fund_unit = fund_money / fund_price; //基金对象里没有购买份额
         Date buyDate = new Date(); //购买时间
 
@@ -177,8 +172,11 @@ public class FundServiceImpl implements FundService {
         //2.修改购买基金信息表里的数据
         Double earnings = 1000.00; //收益
         Buy sellInfo = new Buy(username,fundName,earnings,String.valueOf(new Date()));
-        fundDao.addBuyFund(sellInfo);
-        return null;
+        Integer result = fundDao.updBuyFund(sellInfo);
+        if(result <= 0){
+            return "赎回失败";
+        }
+        return "赎回成功";
     }
 
     @Override

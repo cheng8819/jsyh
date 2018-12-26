@@ -17,14 +17,4 @@ public class JsCosumerFundApplication {
         SpringApplication.run(JsCosumerFundApplication.class, args);
     }
 
-    /**
-     * 实例化RestTemplate，通过@LoadBalanced注解开启均衡负载能力.
-     * @return restTemplate
-     */
-    @Bean
-    @LoadBalanced
-    public RestTemplate restTemplate() {
-        return new RestTemplate();
-    }
-
 }
