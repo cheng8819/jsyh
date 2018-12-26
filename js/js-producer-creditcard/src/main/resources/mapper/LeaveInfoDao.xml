@@ -48,8 +48,8 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="id" useGeneratedKeys="true">
-        insert into jsyh.leave_info(status, loansid, task_id)
-        values (#{status}, #{loansid}, #{taskId})
+        insert into jsyh.leave_info(id,status, loansid, task_id)
+        values (#{id},#{status}, #{loansid}, #{taskId})
     </insert>
 
     <!--通过主键修改数据-->

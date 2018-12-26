@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class CreditUserinfo {
 
-  private Integer cuid;
+  private String cuid;
   private String cuname;
   private Integer cumarriage;
   private Integer cusafety;

@@ -1,5 +1,6 @@
 package com.example.jsproducercreditcard.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.example.jsproducercreditcard.entity.LeaveInfo;
 import com.example.jsproducercreditcard.service.LeaveInfoService;
 import com.example.jsproducercreditcard.util.Result;
@@ -31,7 +32,7 @@ public class LeaveInfoController {
      */
     @GetMapping("selectOneLeaveInfo/{id}")
     public Result selectOneLeaveInfo(@PathVariable("id") String id){
-        return ResultUtil.success(leaveInfoService.queryById(id));
+        return ResultUtil.success(JSON.toJSONString(leaveInfoService.queryById(id)));
     }
 
     /**

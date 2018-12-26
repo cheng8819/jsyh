@@ -42,6 +42,6 @@ public class AuditorController {
      */
     @RequestMapping("/getAuditorAll")
     public Result getAuditorAll(){
-        return ResultUtil.success(JSON.toJSON(auditorService.getAll()));
+        return ResultUtil.success(JSON.toJSONString(auditorService.getAll()));
     }
 }

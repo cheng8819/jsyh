@@ -18,7 +18,7 @@ public interface CreditUserinfoService {
      * @param cuid 主键
      * @return 实例对象
      */
-    CreditUserinfo queryById(Integer cuid);
+    CreditUserinfo queryById(String cuid);
 
     /**
      * 查询多条数据
@@ -51,6 +51,6 @@ public interface CreditUserinfoService {
      * @param cuid 主键
      * @return 是否成功
      */
-    boolean deleteById(Integer cuid);
+    boolean deleteById(String cuid);
 
 }

@@ -56,8 +56,8 @@
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="cuid" useGeneratedKeys="true">
-        insert into jsyh.credit_userinfo(cuname, cumarriage, cusafety, cuaddress, cucardtype)
-        values (#{cuname}, #{cumarriage}, #{cusafety}, #{cuaddress}, #{cucardtype})
+        insert into jsyh.credit_userinfo(cuid,cuname, cumarriage, cusafety, cuaddress, cucardtype)
+        values (#{cuid},#{cuname}, #{cumarriage}, #{cusafety}, #{cuaddress}, #{cucardtype})
     </insert>
 
     <!--通过主键修改数据-->

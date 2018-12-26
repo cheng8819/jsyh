@@ -1,13 +1,11 @@
 package com.example.jsconsumercreditcard.feign;
 
-import com.example.jsconsumercreditcard.entity.Auditor;
 import com.example.jsconsumercreditcard.entity.CreditUserinfo;
 import com.example.jsconsumercreditcard.entity.LeaveInfo;
 import com.example.jsconsumercreditcard.util.Result;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.List;
 
 @FeignClient(value = "JS-PRODUCER-CREDITCARD")
 public interface ApplyCreditCardFeign {
@@ -31,7 +29,7 @@ public interface ApplyCreditCardFeign {
      * 获取全部审核人记录
      * @return
      */
-    @RequestMapping("/getAuditorAll")
+    @RequestMapping("/auditor/getAuditorAll")
     Result getAuditorAll();
 
 
@@ -50,6 +48,6 @@ public interface ApplyCreditCardFeign {
      * @param id LeaveInfo的ID
      * @param state LeaveInfo的state
      */
-    @RequestMapping("/leaveInfo//updateLeaveInfoStateByid/{id}/{state}")
+    @RequestMapping("/leaveInfo/updateLeaveInfoStateByid/{id}/{state}")
     Result updateLeaveInfoStateByid(@PathVariable("id") String id,@PathVariable("state") String state);
 }

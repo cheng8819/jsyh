@@ -5,7 +5,6 @@ import com.example.jsproducercreditcard.entity.CreditUserinfo;
 import com.example.jsproducercreditcard.service.CreditUserinfoService;
 import com.example.jsproducercreditcard.util.Result;
 import com.example.jsproducercreditcard.util.ResultUtil;
-import jdk.nashorn.internal.runtime.JSONListAdapter;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -32,7 +31,7 @@ public class CreditUserinfoController {
      * @return 单条数据
      */
     @GetMapping("selectOne")
-    public CreditUserinfo selectOne(Integer id) {
+    public CreditUserinfo selectOne(String id) {
         return this.creditUserinfoService.queryById(id);
     }
 

@@ -74,7 +74,7 @@ public class ApplyCreaditService {
 		 	str = "";
 		 	return "未找到此任务";
 		 }
-		//2.完成任务
+		 //2.完成任务
 		 map.put("audit",audit);
 		 taskService.complete(taskId, map);
 		 if("cg".equals(audit)){
@@ -103,7 +103,9 @@ public class ApplyCreaditService {
 		String key = execution.getProcessBusinessKey();
 		String result = (String) applyCreditCardFeign.selectOneLeaveInfo(key).getData();
 		LeaveInfo entity = JSON.parseObject(result, LeaveInfo.class);
-		applyCreditCardFeign.updateLeaveInfoStateByid(entity.getId(),entity.getStatus());
+		if(entity != null) {
+			applyCreditCardFeign.updateLeaveInfoStateByid(entity.getId(), status);
+		}
 	}
 
 	/**

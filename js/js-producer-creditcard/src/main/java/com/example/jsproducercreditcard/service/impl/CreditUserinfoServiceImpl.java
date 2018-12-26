@@ -26,7 +26,7 @@ public class CreditUserinfoServiceImpl implements CreditUserinfoService {
      * @return 实例对象
      */
     @Override
-    public CreditUserinfo queryById(Integer cuid) {
+    public CreditUserinfo queryById(String cuid) {
         return this.creditUserinfoDao.queryById(cuid);
     }
 
@@ -73,7 +73,7 @@ public class CreditUserinfoServiceImpl implements CreditUserinfoService {
      * @return 是否成功
      */
     @Override
-    public boolean deleteById(Integer cuid) {
+    public boolean deleteById(String cuid) {
         return this.creditUserinfoDao.deleteById(cuid) > 0;
     }
 }

@@ -23,7 +23,7 @@ public interface CreditUserinfoDao {
      * @param cuid 主键
      * @return 实例对象
      */
-    CreditUserinfo queryById(Integer cuid);
+    CreditUserinfo queryById(String cuid);
 
     /**
      * 查询指定行数据
@@ -65,6 +65,6 @@ public interface CreditUserinfoDao {
      * @param cuid 主键
      * @return 影响行数
      */
-    int deleteById(Integer cuid);
+    int deleteById(String cuid);
 
 }

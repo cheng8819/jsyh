@@ -37,8 +37,16 @@ public class ApplyCreditCardServiceImpl implements ApplyCreditCardService {
      */
     @Override
     public Result applyCreditCard(CreditUserinfo creditUserinfo) {
+        Long id = null;
+        try {
+            id = new IdWorker(15).nextId();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        creditUserinfo.setCuid(id.toString());
         Result result = applyCreditCardFeign.addCreditUserinfo(creditUserinfo);
         if(result.getData() != null){
+            addLeaveAInfo(id.toString());
             return ResultUtil.success("申请提交成功");
         }else{
             return ResultUtil.success("申请提交失败");
