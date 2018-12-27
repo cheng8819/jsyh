@@ -12,4 +12,11 @@ public interface LoanApplication {
      * @return
      */
     Result registerInfo(LoansUserinfo loansUserinfo);
+
+    /**
+     * 查询指定用户的贷款申请进度
+     * @return
+     */
+    Result SelectLoanSchedule(Integer uid);
+
 }

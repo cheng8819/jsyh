@@ -1,8 +1,11 @@
 package com.example.jsproducercreditcard.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.example.jsproducercreditcard.dao.CurrentTypeDao;
 import com.example.jsproducercreditcard.entity.CurrentType;
 import com.example.jsproducercreditcard.service.CurrentTypeService;
+import com.example.jsproducercreditcard.util.Result;
+import com.example.jsproducercreditcard.util.ResultUtil;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -26,8 +29,8 @@ public class CurrentTypeServiceImpl implements CurrentTypeService {
      * @return 实例对象
      */
     @Override
-    public CurrentType queryById(Integer ctid) {
-        return this.currentTypeDao.queryById(ctid);
+    public Result queryById(Integer ctid) {
+        return ResultUtil.success(JSON.toJSONString(currentTypeDao.queryById(ctid)));
     }
 
     /**
@@ -61,7 +64,7 @@ public class CurrentTypeServiceImpl implements CurrentTypeService {
      * @return 实例对象
      */
     @Override
-    public CurrentType update(CurrentType currentType) {
+    public Result update(CurrentType currentType) {
         this.currentTypeDao.update(currentType);
         return this.queryById(currentType.getCtid());
     }

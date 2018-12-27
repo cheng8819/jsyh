@@ -2,8 +2,10 @@ package com.example.jsconsumercreditcard.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.example.jsconsumercreditcard.entity.CreditUserinfo;
+import com.example.jsconsumercreditcard.entity.CurrentType;
 import com.example.jsconsumercreditcard.entity.LeaveInfo;
 import com.example.jsconsumercreditcard.feign.ApplyCreditCardFeign;
+import com.example.jsconsumercreditcard.pojocontroller.CardProgress;
 import com.example.jsconsumercreditcard.service.ApplyCreditCardService;
 import com.example.jsconsumercreditcard.service.ov.ApplyCreaditService;
 import com.example.jsconsumercreditcard.util.IdWorker;
@@ -110,5 +112,43 @@ public class ApplyCreditCardServiceImpl implements ApplyCreditCardService {
     @Override
     public Result completeTaskByUser(String taskId, String userId, String audit) {
         return ResultUtil.success(applyCreaditService.completeTaskByUser(taskId, userId, audit));
+    }
+
+    /**
+     * 根据uid查询办卡进度
+     *
+     * @param uid 用户id
+     * @return
+     */
+    @Override
+    public Result handleCardProgress(Integer uid) {
+        String str ;
+        String result = (String) applyCreditCardFeign.creditUserinfoByUid(uid).getData();
+        List<CreditUserinfo> creditUserinfos = JSON.parseArray(result,CreditUserinfo.class);
+        List<CardProgress> cardProgresses = new ArrayList<>();
+        for(CreditUserinfo creditUserinfo : creditUserinfos){
+            CardProgress cardProgress = new CardProgress();
+            String result1 = (String) applyCreditCardFeign.findCurrentTypeById(creditUserinfo.getCucardtype()).getData();
+            CurrentType currentType = JSON.parseObject(result1,CurrentType.class);
+            cardProgress.setCardType(currentType.getCtname());
+            String result2 = (String) applyCreditCardFeign.findLeaveInfoByCuid(creditUserinfo.getCuid()).getData();
+            LeaveInfo leaveInfo = JSON.parseObject(result2,LeaveInfo.class);
+            switch (leaveInfo.getStatus()){
+                case "pass":
+                    str = "申请通过";
+                    break;
+                case "sb":
+                    str = "申请不通过";
+                    break;
+                case "ing":
+                    str = "审核中";
+                    break;
+                default:
+                    str = "";
+            }
+            cardProgress.setRateOfProgress(str);
+            cardProgresses.add(cardProgress);
+        }
+        return ResultUtil.success(cardProgresses);
     }
 }

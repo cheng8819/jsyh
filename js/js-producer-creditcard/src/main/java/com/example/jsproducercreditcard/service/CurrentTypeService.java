@@ -1,6 +1,7 @@
 package com.example.jsproducercreditcard.service;
 
 import com.example.jsproducercreditcard.entity.CurrentType;
+import com.example.jsproducercreditcard.util.Result;
 
 import java.util.List;
 
@@ -18,7 +19,7 @@ public interface CurrentTypeService {
      * @param ctid 主键
      * @return 实例对象
      */
-    CurrentType queryById(Integer ctid);
+    Result queryById(Integer ctid);
 
     /**
      * 查询多条数据
@@ -43,7 +44,7 @@ public interface CurrentTypeService {
      * @param currentType 实例对象
      * @return 实例对象
      */
-    CurrentType update(CurrentType currentType);
+    Result update(CurrentType currentType);
 
     /**
      * 通过主键删除数据

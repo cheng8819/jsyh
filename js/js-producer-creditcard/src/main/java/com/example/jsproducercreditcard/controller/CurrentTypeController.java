@@ -1,7 +1,7 @@
 package com.example.jsproducercreditcard.controller;
 
-import com.example.jsproducercreditcard.entity.CurrentType;
 import com.example.jsproducercreditcard.service.CurrentTypeService;
+import com.example.jsproducercreditcard.util.Result;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -27,9 +27,9 @@ public class CurrentTypeController {
      * @param id 主键
      * @return 单条数据
      */
-    @GetMapping("selectOne")
-    public CurrentType selectOne(Integer id) {
-        return this.currentTypeService.queryById(id);
+    @GetMapping("/findCurrentTypeById/{id}")
+    public Result findCurrentTypeById(@PathVariable("id") Integer id) {
+        return currentTypeService.queryById(id);
     }
 
 }

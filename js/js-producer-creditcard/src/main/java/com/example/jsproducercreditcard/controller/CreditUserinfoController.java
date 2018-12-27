@@ -46,4 +46,13 @@ public class CreditUserinfoController {
         return ResultUtil.success(JSON.toJSON(creditUserinfoService.insert(creditUserinfo)));
     }
 
+    /**
+     * 根据UID查询申请单记录
+     * @param uid
+     * @return
+     */
+    @GetMapping("/creditUserinfoByUid/{uid}")
+    public Result creditUserinfoByUid(@PathVariable("uid") Integer uid){
+        return creditUserinfoService.findCreditUserinfoByUid(uid);
+    }
 }

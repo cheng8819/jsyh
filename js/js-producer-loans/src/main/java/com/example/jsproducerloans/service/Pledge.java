@@ -34,4 +34,18 @@ public interface Pledge {
      * @return
      */
     Result updateLoansTransactionToState(Integer lid, Integer state);
+
+    /**
+     *根据订单ID查询订单
+     * @param id
+     * @return
+     */
+    Result selectLoansTransactionByid(Integer id);
+
+    /**
+     * 根据申请资料查询订单
+     * @param id
+     * @return
+     */
+    Result selectLoansTransactionByData(String id);
 }

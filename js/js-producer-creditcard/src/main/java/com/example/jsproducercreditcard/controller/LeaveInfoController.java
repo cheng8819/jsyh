@@ -65,4 +65,14 @@ public class LeaveInfoController {
             return ResultUtil.success("id有误");
         }
     }
+
+    /**
+     * 根据CUID查询任务
+     * @param cuid
+     * @return
+     */
+    @GetMapping("/findLeaveInfoByCuid/{cuid}")
+    public Result findLeaveInfoByCuid(@PathVariable("cuid") String cuid){
+       return leaveInfoService.findLeaveInfoByCuid(cuid);
+    }
 }

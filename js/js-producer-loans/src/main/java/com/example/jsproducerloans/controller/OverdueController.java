@@ -16,6 +16,9 @@ public class OverdueController {
     @Qualifier("repaymentHouseImpl")
     @Autowired
     private Repayment repayment;
+    @Qualifier("repaymentPledgeImpl")
+    @Autowired
+    private Repayment repayment1;
 
     //指定用户ID和订单ID查询逾期订单
     @RequestMapping("/allloansoverduebyuidandloid/{uid}/{ltid}")
@@ -27,6 +30,12 @@ public class OverdueController {
     @RequestMapping("/loandetailsbyuidcon/{uid}")
     public Result loanDetailsByuidCon(@PathVariable("uid") Integer uid){
         return repayment.loanDetailsByuid(uid);
+    }
+
+    //指定用户ID所有的质押贷款
+    @RequestMapping("/loandetailsbyuidconz/{uid}")
+    public Result loanDetailsByuidConz(@PathVariable("uid") Integer uid){
+        return repayment1.loanDetailsByuid(uid);
     }
 
     //指定订单的还款

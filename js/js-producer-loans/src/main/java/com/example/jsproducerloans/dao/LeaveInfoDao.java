@@ -7,4 +7,5 @@ import org.springframework.stereotype.Repository;
 @Repository
 public interface LeaveInfoDao extends JpaRepository<LeaveInfo, String> {
     LeaveInfo findLeaveInfoById(String id);
+    LeaveInfo findLeaveInfoByLoansid(String loansid);
 }

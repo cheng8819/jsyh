@@ -17,6 +17,10 @@ public interface Overdue {
     @RequestMapping(value = "/overduecontroller/loandetailsbyuidcon/{uid}",method = RequestMethod.GET)
     Result loanDetailsByuidCon(@PathVariable("uid") Integer uid);
 
+    //指定用户ID所有的质押贷款
+    @RequestMapping(value = "/overduecontroller/loandetailsbyuidconz/{uid}",method = RequestMethod.GET)
+    Result loanDetailsByuidConz(@PathVariable("uid") Integer uid);
+
     //指定订单的还款
     @RequestMapping(value = "/overduecontroller/repaymenting/{liid}",method = RequestMethod.GET)
     Result repaymenting(@PathVariable("liid") Integer liid);

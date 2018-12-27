@@ -27,4 +27,12 @@ public interface Loans {
     //修改订单状态
     @RequestMapping(value = "/loantypes/updateloanstransactiontostate/{liid}/{state}", method = RequestMethod.GET)
     Result updateLoanstransactionTostate(@PathVariable("liid") Integer liid, @PathVariable("state") Integer state);
+
+    //根据订单ID查询订单
+    @RequestMapping(value = "/loantypes/selectLoansTransactionByid/{id}",method = RequestMethod.GET)
+    Result selectLoansTransactionByid(@PathVariable("id") Integer id);
+
+    //根据申请资料查询订单
+    @RequestMapping(value = "/loantypes/selectLoansTransactionByData/{id}",method = RequestMethod.GET)
+    Result selectLoansTransactionByData(@PathVariable("id") String id);
 }

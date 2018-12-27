@@ -36,4 +36,16 @@ public class LoantController {
     public Result updateLoanstransactionTostate(@PathVariable("liid") Integer liid, @PathVariable("state") Integer state) {
         return pledge.updateLoansTransactionToState(liid, state);
     }
+
+    //根据订单ID查询订单
+    @RequestMapping("/selectLoansTransactionByid/{id}")
+    public Result selectLoansTransactionByid(@PathVariable("id") Integer id){
+       return pledge.selectLoansTransactionByid(id);
+    }
+
+    //根据申请资料查询订单
+    @RequestMapping("/selectLoansTransactionByData/{id}")
+    public Result selectLoansTransactionByData(@PathVariable("id") String id){
+        return pledge.selectLoansTransactionByData(id);
+    }
 }

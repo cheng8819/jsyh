@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface LoansUserinfoDao extends JpaRepository<LoansUserinfo, String> {
+    LoansUserinfo findLoansUserinfoByLuid(String luid);
 }

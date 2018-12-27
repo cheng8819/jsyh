@@ -109,7 +109,7 @@ public class ApplyCreaditService {
 	}
 
 	/**
-	 * 贷款成功处理
+	 * 信用卡申请成功处理
 	 * @param execution
 	 */
 	public void daikuan(DelegateExecution execution){

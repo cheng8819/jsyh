@@ -18,6 +18,11 @@ public class OverdueImpl implements Overdue {
     }
 
     @Override
+    public Result loanDetailsByuidConz(Integer uid) {
+        return ResultUtil.success("超时重试");
+    }
+
+    @Override
     public Result repaymenting(Integer liid) {
         return ResultUtil.success("超时重试");
     }

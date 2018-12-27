@@ -27,4 +27,14 @@ public class LoansImpl implements Loans {
     public Result updateLoanstransactionTostate(Integer liid, Integer state) {
         return ResultUtil.success("超时重试");
     }
+
+    @Override
+    public Result selectLoansTransactionByid(Integer id) {
+        return ResultUtil.success("超时重试");
+    }
+
+    @Override
+    public Result selectLoansTransactionByData(String id) {
+        return ResultUtil.success("超时重试");
+    }
 }

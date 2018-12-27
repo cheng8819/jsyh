@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface PledgeRateDao extends JpaRepository<PledgeRate,Integer> {
+    PledgeRate findPledgeRateeByLpid(Integer lpid);
 }

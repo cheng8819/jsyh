@@ -1,6 +1,7 @@
 package com.example.jsproducercreditcard.service;
 
 import com.example.jsproducercreditcard.entity.CreditUserinfo;
+import com.example.jsproducercreditcard.util.Result;
 
 import java.util.List;
 
@@ -53,4 +54,10 @@ public interface CreditUserinfoService {
      */
     boolean deleteById(String cuid);
 
+    /**
+     * 根据用户ID查询用户申请单的记录
+     * @param uid
+     * @return
+     */
+    Result findCreditUserinfoByUid(Integer uid);
 }

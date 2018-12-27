@@ -11,4 +11,5 @@ public class CreditUserinfo {
   private Integer cusafety;
   private Integer cuaddress;
   private Integer cucardtype;
+  private Integer cuuid;
 }

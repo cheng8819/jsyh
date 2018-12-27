@@ -1,6 +1,8 @@
 package com.example.jsproducercreditcard.service;
 
 import com.example.jsproducercreditcard.entity.LeaveInfo;
+import com.example.jsproducercreditcard.util.Result;
+
 import java.util.List;
 
 /**
@@ -51,5 +53,12 @@ public interface LeaveInfoService {
      * @return 是否成功
      */
     boolean deleteById(String id);
+
+    /**
+     * 根据UID查询任务
+     * @param cuid
+     * @return
+     */
+    Result findLeaveInfoByCuid(String cuid);
 
 }

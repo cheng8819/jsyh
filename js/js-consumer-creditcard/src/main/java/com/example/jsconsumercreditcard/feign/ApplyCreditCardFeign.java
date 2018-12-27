@@ -50,4 +50,30 @@ public interface ApplyCreditCardFeign {
      */
     @RequestMapping("/leaveInfo/updateLeaveInfoStateByid/{id}/{state}")
     Result updateLeaveInfoStateByid(@PathVariable("id") String id,@PathVariable("state") String state);
+
+    /**
+     * 根据UID查询申请单记录
+     * @param uid
+     * @return
+     */
+    @GetMapping("/creditUserinfo/creditUserinfoByUid/{uid}")
+    Result creditUserinfoByUid(@PathVariable("uid") Integer uid);
+
+
+    /**
+     * 根据CUID查询任务
+     * @param cuid
+     * @return
+     */
+    @GetMapping("leaveInfo/findLeaveInfoByCuid/{cuid}")
+    Result findLeaveInfoByCuid(@PathVariable("cuid") String cuid);
+
+    /**
+     * 通过主键查询信用卡类型
+     *
+     * @param id 主键
+     * @return
+     */
+    @GetMapping("currentType/findCurrentTypeById/{id}")
+    Result findCurrentTypeById(@PathVariable("id") Integer id);
 }

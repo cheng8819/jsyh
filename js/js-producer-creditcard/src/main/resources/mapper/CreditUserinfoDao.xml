@@ -30,7 +30,7 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="CreditUserinfoMap">
         select
-          cuid, cuname, cumarriage, cusafety, cuaddress, cucardtype
+          cuid, cuname, cumarriage, cusafety, cuaddress, cucardtype,cuuid
         from jsyh.credit_userinfo
         <where>
             <if test="cuid != null">
@@ -51,13 +51,16 @@
             <if test="cucardtype != null">
                 and cucardtype = #{cucardtype}
             </if>
+            <if test="cuuid != null">
+                and cuuid = #{cuuid}
+            </if>
         </where>
     </select>
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="cuid" useGeneratedKeys="true">
-        insert into jsyh.credit_userinfo(cuid,cuname, cumarriage, cusafety, cuaddress, cucardtype)
-        values (#{cuid},#{cuname}, #{cumarriage}, #{cusafety}, #{cuaddress}, #{cucardtype})
+        insert into jsyh.credit_userinfo(cuid,cuname, cumarriage, cusafety, cuaddress, cucardtype,cuuid)
+        values (#{cuid},#{cuname}, #{cumarriage}, #{cusafety}, #{cuaddress}, #{cucardtype},#{cuuid})
     </insert>
 
     <!--通过主键修改数据-->

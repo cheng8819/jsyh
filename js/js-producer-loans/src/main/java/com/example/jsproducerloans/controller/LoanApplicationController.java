@@ -18,4 +18,15 @@ public class LoanApplicationController {
     public Result loanApplications(@RequestBody LoansUserinfo loansUserinfo){
         return loanApplication.registerInfo(loansUserinfo);
     }
+
+    /**
+     * 根据uid查询用户贷款申请进度
+     * @param uid
+     * @return
+     */
+    @GetMapping("/loanScheduleCon/{uid}")
+    public Result LoanScheduleCon(@PathVariable("uid") Integer uid){
+        return loanApplication.SelectLoanSchedule(uid);
+    }
+
 }

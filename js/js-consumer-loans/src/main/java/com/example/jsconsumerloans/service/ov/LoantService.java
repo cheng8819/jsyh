@@ -2,8 +2,11 @@ package com.example.jsconsumerloans.service.ov;
 
 import com.alibaba.fastjson.JSON;
 import com.example.jsconsumerloans.feign.ActivitiFeign;
+import com.example.jsconsumerloans.feign.Loans;
+import com.example.jsconsumerloans.feign.OperationalAmount;
 import com.example.jsconsumerloans.pojo.Auditor;
 import com.example.jsconsumerloans.pojo.LeaveInfo;
+import com.example.jsconsumerloans.pojo.LoansTransaction;
 import org.activiti.engine.*;
 import org.activiti.engine.delegate.DelegateExecution;
 import org.activiti.engine.history.HistoricProcessInstance;
@@ -12,6 +15,7 @@ import org.activiti.engine.task.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.annotation.Resource;
 import java.io.InputStream;
 import java.util.*;
 
@@ -28,6 +32,10 @@ public class LoantService {
 	private static RepositoryService repositoryService;
 	@Autowired
 	private ActivitiFeign activitiFeign;
+	@Resource
+	private Loans loans;
+	@Resource
+	private OperationalAmount operationalAmount;
 
 	/**
 	 * 启动流程
@@ -109,12 +117,15 @@ public class LoantService {
 	 */
 	public void daikuan(DelegateExecution execution){
 		String key = execution.getProcessBusinessKey();
-		//LeaveInfo entity = new LeaveInfo();
-//		LeaveInfo entity = leaveInfoDao.findLeaveInfoById(key);
-//		LoansTransaction loansTransaction = loansTransactionDao.findLoansTransactionsByLiapplicationdata(entity.getLoansid());
-//		loansTransaction.setListate(1);
-//		loansTransactionDao.save(loansTransaction);
-
+		String result = (String) activitiFeign.findLeaveInfoById(key).getData();
+		LeaveInfo leaveInfo = JSON.parseObject(result,LeaveInfo.class);
+		String result1 = (String) loans.selectLoansTransactionByData(leaveInfo.getLoansid()).getData();
+		LoansTransaction loansTransaction = JSON.parseObject(result1,LoansTransaction.class);
+		String str = (String) loans.updateLoanstransactionTostate(loansTransaction.getLiid(),1).getData();
+		if("修改订单状态成功".equals(str)){
+			String idnumber = operationalAmount.idnumberSelectCardnumber("");
+			operationalAmount.deposit(idnumber,loansTransaction.getLinumber().doubleValue(),"贷款");
+		}
 	}
 
 	/**

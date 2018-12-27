@@ -58,9 +58,10 @@ public class PledgeImpl implements Pledge {
             loansTransactionCon.setLinumberofperiods(loansTransactions.get(i).getLinumberofperiods());
             loansTransactionCon.setLinumber(loansTransactions.get(i).getLinumber());
             loansTransactionCon.setLidate(loansTransactions.get(i).getLidate());
+            loansTransactionCon.setLiapplicationdata(loansTransactions.get(i).getLiapplicationdata());
             loansTransactionCons.add(loansTransactionCon);
         }
-        return ResultUtil.success(JSON.toJSON(loansTransactionCons));
+        return ResultUtil.success(JSON.toJSONString(loansTransactionCons));
     }
 
     /**
@@ -115,5 +116,27 @@ public class PledgeImpl implements Pledge {
         } else {
             return ResultUtil.success(JSON.toJSON(new String("修改订单状态失败")));
         }
+    }
+
+    /**
+     * 根据订单ID查询订单
+     *
+     * @param id
+     * @return
+     */
+    @Override
+    public Result selectLoansTransactionByid(Integer id) {
+        return ResultUtil.success(JSON.toJSONString(loansTransactionDao.findLoansTransactionsByLiid(id)));
+    }
+
+    /**
+     * 根据申请资料查询订单
+     *
+     * @param id
+     * @return
+     */
+    @Override
+    public Result selectLoansTransactionByData(String id) {
+        return ResultUtil.success(JSON.toJSONString(loansTransactionDao.findLoansTransactionsByLiapplicationdata(id)));
     }
 }

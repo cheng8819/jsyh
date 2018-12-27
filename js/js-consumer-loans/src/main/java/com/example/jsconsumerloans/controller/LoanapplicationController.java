@@ -1,6 +1,5 @@
 package com.example.jsconsumerloans.controller;
 
-import com.example.jsconsumerloans.feign.ActivitiFeign;
 import com.example.jsconsumerloans.feign.LoanApplication;
 import com.example.jsconsumerloans.pojo.LoansUserinfo;
 import com.example.jsconsumerloans.service.LoanApplicationService;
@@ -19,10 +18,10 @@ import javax.annotation.Resource;
 @RequestMapping("/loanapplication")
 public class LoanapplicationController {
 
-    @Resource
-    private LoanApplication loanApplication;
     @Autowired
     private LoanApplicationService loanApplicationService;
+    @Resource
+    private LoanApplication loanApplication;
 
     @ApiOperation(value = "创建申请表单", httpMethod = "POST")
     @PostMapping("/loanapplications/{id}")
@@ -43,5 +42,16 @@ public class LoanapplicationController {
                                @ApiParam(name = "userId", value = "审核人ID", required = true) @PathVariable("userId") String userId,
                                @ApiParam(name = "audit", value = "审核结果通过（cg）未通过（sb）", required = true) @PathVariable("audit") String audit) {
         return loanApplicationService.completeTaskByUser(taskId, userId, audit);
+    }
+
+    /**
+     * 根据uid查询用户贷款申请进度
+     * @param uid
+     * @return
+     */
+    @ApiOperation(value = "指定用户ID的贷款进度", httpMethod = "GET")
+    @GetMapping("/loanScheduleCon/{uid}")
+    public Result LoanScheduleCon(@ApiParam(name = "uid", value = "用户id", required = true) @PathVariable("uid") Integer uid){
+        return loanApplication.LoanScheduleCon(uid);
     }
 }

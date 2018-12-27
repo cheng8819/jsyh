@@ -37,4 +37,11 @@ public interface ApplyCreditCardService {
      * @return
      */
     Result completeTaskByUser(String taskId, String userId, String audit);
+
+    /**
+     * 根据uid查询办卡进度
+     * @param uid 用户id
+     * @return
+     */
+    Result handleCardProgress(Integer uid);
 }

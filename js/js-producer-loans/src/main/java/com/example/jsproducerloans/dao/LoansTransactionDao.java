@@ -9,6 +9,7 @@ import java.util.List;
 @Repository
 public interface LoansTransactionDao extends JpaRepository<LoansTransaction, Integer> {
     List<LoansTransaction> findLoansTransactionsByLiuidAndListate(Integer liuid,Integer state);
+    List<LoansTransaction> findLoansTransactionsByLiuid(Integer liuid);
     LoansTransaction findLoansTransactionsByLiid(Integer liid);
     List<LoansTransaction> findLoansTransactionsByLiuidAndLitypeAndListate(Integer uid,Integer type,Integer state);
     LoansTransaction findLoansTransactionsByLiapplicationdata(String liid);

@@ -1,5 +1,6 @@
 package com.example.jsproducerloans.service.impl;
 
+import com.example.jsproducerloans.controllerpojo.LoansTransactionSchedule;
 import com.example.jsproducerloans.dao.*;
 import com.example.jsproducerloans.pojo.*;
 import com.example.jsproducerloans.service.LoanApplication;
@@ -7,6 +8,9 @@ import com.example.jsproducerloans.util.Result;
 import com.example.jsproducerloans.util.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Service
 public class LoanApplicationImpl implements LoanApplication {
@@ -19,7 +23,12 @@ public class LoanApplicationImpl implements LoanApplication {
     private JobDao jobDao;
     @Autowired
     private EducationsDao educationDao;
-
+    @Autowired
+    private LoansTransactionDao loansTransactionDao;
+    @Autowired
+    private LoantypeDao loantypeDao;
+    @Autowired
+    private LeaveInfoDao leaveInfoDao;
     /**
      * 录入登记信息
      *
@@ -57,5 +66,45 @@ public class LoanApplicationImpl implements LoanApplication {
             str = "提交失败";
         }
         return ResultUtil.success(str);
+    }
+
+    /**
+     * 查询指定用户的贷款申请进度
+     *
+     * @param uid
+     * @return
+     */
+    @Override
+    public Result SelectLoanSchedule(Integer uid) {
+        String str ;
+        List<LoansTransaction> loansTransactions = loansTransactionDao.findLoansTransactionsByLiuid(uid);
+        List<LoansTransactionSchedule> loansTransactionSchedules = new ArrayList<>();
+        for(LoansTransaction loansTransaction : loansTransactions){
+            LoansTransactionSchedule loansTransactionSchedule = new LoansTransactionSchedule();
+            loansTransactionSchedule.setLiid(loansTransaction.getLiid());
+            loansTransactionSchedule.setLinumberofperiods(loansTransaction.getLinumberofperiods());
+            loansTransactionSchedule.setLinumber(loansTransaction.getLinumber());
+            loansTransactionSchedule.setLidate(loansTransaction.getLidate());
+            String type = loantypeDao.findLoantypeByLid(loansTransaction.getLitype()).getLtname();
+            loansTransactionSchedule.setLitype(type);
+            LoansUserinfo loansUserinfo = loansUserinfoDao.findLoansUserinfoByLuid(loansTransaction.getLiapplicationdata());
+            LeaveInfo leaveInfo = leaveInfoDao.findLeaveInfoByLoansid(loansUserinfo.getLuid());
+            switch (leaveInfo.getStatus()){
+                case "pass":
+                    str = "申请通过";
+                    break;
+                case "sb":
+                    str = "申请不通过";
+                    break;
+                case "ing":
+                    str = "审核中";
+                    break;
+                default:
+                    str = "";
+            }
+            loansTransactionSchedule.setSchedule(str);
+            loansTransactionSchedules.add(loansTransactionSchedule);
+        }
+        return ResultUtil.success(loansTransactionSchedules);
     }
 }

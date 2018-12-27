@@ -1,8 +1,11 @@
 package com.example.jsproducercreditcard.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.example.jsproducercreditcard.dao.CreditUserinfoDao;
 import com.example.jsproducercreditcard.entity.CreditUserinfo;
 import com.example.jsproducercreditcard.service.CreditUserinfoService;
+import com.example.jsproducercreditcard.util.Result;
+import com.example.jsproducercreditcard.util.ResultUtil;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -75,5 +78,18 @@ public class CreditUserinfoServiceImpl implements CreditUserinfoService {
     @Override
     public boolean deleteById(String cuid) {
         return this.creditUserinfoDao.deleteById(cuid) > 0;
+    }
+
+    /**
+     * 根据用户ID查询用户申请单的记录
+     *
+     * @param uid
+     * @return
+     */
+    @Override
+    public Result findCreditUserinfoByUid(Integer uid) {
+        CreditUserinfo creditUserinfo = new CreditUserinfo();
+        creditUserinfo.setCuuid(uid);
+        return ResultUtil.success(JSON.toJSONString(creditUserinfoDao.queryAll(creditUserinfo)));
     }
 }

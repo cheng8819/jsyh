@@ -1,8 +1,11 @@
 package com.example.jsproducercreditcard.service.impl;
 
+import com.alibaba.fastjson.JSON;
 import com.example.jsproducercreditcard.entity.LeaveInfo;
 import com.example.jsproducercreditcard.dao.LeaveInfoDao;
 import com.example.jsproducercreditcard.service.LeaveInfoService;
+import com.example.jsproducercreditcard.util.Result;
+import com.example.jsproducercreditcard.util.ResultUtil;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -75,5 +78,23 @@ public class LeaveInfoServiceImpl implements LeaveInfoService {
     @Override
     public boolean deleteById(String id) {
         return this.leaveInfoDao.deleteById(id) > 0;
+    }
+
+    /**
+     * 根据UID查询任务
+     *
+     * @param cuid
+     * @return
+     */
+    @Override
+    public Result findLeaveInfoByCuid(String cuid) {
+        LeaveInfo leaveInfo = new LeaveInfo();
+        leaveInfo.setLoansid(cuid);
+        LeaveInfo leaveInfo1 = null;
+        List<LeaveInfo> leaveInfos = leaveInfoDao.queryAll(leaveInfo);
+        if(leaveInfos.size() == 1){
+            leaveInfo1 = leaveInfos.get(0);
+        }
+        return ResultUtil.success(JSON.toJSONString(leaveInfo1));
     }
 }
