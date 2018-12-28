@@ -38,6 +38,19 @@ public interface FundDao {
     List<FundInfo> findNewFunds();
 
     /**
+     * 根据基金名称查看基金详情
+     * @param fundName
+     * @return
+     */
+    FundInfo showFundDetails(@Param("fundName") String fundName);
+
+    /**
+     * 查询基金经理信息
+     * @return
+     */
+    FundManager selFundManager(String ManagerName);
+
+    /**
      * 添加收藏信息
      * @param collection 收藏信息
      * @return

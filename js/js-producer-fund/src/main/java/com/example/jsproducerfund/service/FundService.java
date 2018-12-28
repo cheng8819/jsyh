@@ -2,9 +2,10 @@ package com.example.jsproducerfund.service;
 
 import com.example.jsproducerfund.pojo.*;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.web.bind.annotation.RequestParam;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import java.util.List;
 
 /**
  * @auther: 666先生的救赎
@@ -14,10 +15,16 @@ public interface FundService {
 
     /**
      * 查询已上市基金信息，多字段查询，分页显示基金信息
-     * @param performance
+     *
      * @return
      */
-    List<Performance> showFunds(Performance performance,Integer pageCount);
+    String showFunds(@RequestParam("request")HttpServletRequest request,@RequestParam("response") HttpServletResponse response);
+
+    /**
+     * 根据基金名称查看基金详情
+     * @return
+     */
+    String showFundDetails(@Param("fundName")String fundName);
 
     /**
      * 查询已上市基金产品
@@ -25,30 +32,30 @@ public interface FundService {
      * @param response
      * @return
      */
-    List<Performance> selFunds(HttpServletRequest request, HttpServletResponse response);
+    String selFunds();
 
     /**
      * 查询新发布基金信息，多字段查询，分页显示基金信息
-     * @param fundInfo
-     * @param pageCount
+     *
      * @return
      */
-    List<FundInfo> showNewFunds(FundInfo fundInfo,Integer pageCount);
+    String showNewFunds();
 
     /**
      * 基金收藏功能
-     * @param fundInfo 基金信息
+     * @param fund_name 基金名称
+     * @param fund_number 基金代码
      * @param username 用户名/真实姓名
      * @return
      */
-    String collectFund(FundInfo fundInfo,String username);
+    String collectFund(String fund_name,String fund_number,String username);
 
     /**
      * 查询收藏信息接口
-     * @param collection 可按用户名&基金代码准确定位收藏的基金
+     * @param username 可按用户名&基金代码准确定位收藏的基金
      * @return
      */
-    List<CollectInfo> selCollection(CollectInfo collection);
+    String selCollection(String username);
 
     /**
      * 购买基金接口
@@ -67,7 +74,7 @@ public interface FundService {
      * @param fund_number
      * @return
      */
-    List<Buy> selBuyFund(@Param("username") String username,@Param("fund_number") String fund_number);
+    String selBuyFund(@Param("username") String username,@Param("fund_number") String fund_number);
 
     /**
      * 赎回基金

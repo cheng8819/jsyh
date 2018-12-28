@@ -12,6 +12,7 @@
         <module name="js-cosumer-fund" />
         <module name="js-producer-financial" />
         <module name="js-producer-fund" />
+        <module name="js-spring-zuul" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
@@ -21,6 +22,7 @@
       <module name="js-cosumer-fund" target="1.8" />
       <module name="js-producer-financial" target="1.8" />
       <module name="js-producer-fund" target="1.8" />
+      <module name="js-spring-zuul" target="8" />
     </bytecodeTargetLevel>
   </component>
 </project>

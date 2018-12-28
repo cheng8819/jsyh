@@ -1,14 +1,21 @@
 package com.example.jsproducerfund.util.SolrUtil;
 
+import com.example.jsproducerfund.dao.FundDao;
+import com.example.jsproducerfund.pojo.FundInfo;
 import org.apache.solr.client.solrj.SolrClient;
 import org.apache.solr.client.solrj.SolrQuery;
+import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
 import org.apache.solr.common.SolrDocumentList;
 import org.apache.solr.common.SolrInputDocument;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -19,6 +26,37 @@ public class SolrUtil {
     @Autowired
     private SolrClient client;
 
+    @Autowired
+    private FundDao fundDao;
+
+    /**
+     * Solr 定时全量导入
+     *
+     * 每天中午12和23点定时更新数据
+     * @return
+     */
+    @Scheduled(cron="0 0 12,23 * * ?")
+    public String fullAmountOfImport(){
+       /*List<SolrInputDocument> documents = new ArrayList<SolrInputDocument>();
+       //数据库查询全部数据
+       List<FundInfo> funds = fundDao.findNewFunds();
+        for (FundInfo fund : funds) {
+            SolrInputDocument doc = new SolrInputDocument();
+            doc.setField("fund_name",fund.getFund_name());
+            doc.setField("fund_number",fund.getFund_number());
+            documents.add(doc);
+        }
+        try {
+            client.add("fundInfo",documents);
+            client.commit("fundInfo");
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "数据导入失败";
+        }
+        return "数据导入成功";*/
+       return null;
+    }
+
     /**
      * 新增/修改 索引
      * 当 id 存在的时候, 此方法是修改(当然, 我这里用的 uuid, 不会存在的), 如果 id 不存在, 则是新增
@@ -28,20 +66,20 @@ public class SolrUtil {
     public String add() {
         try {
             SolrInputDocument doc = new SolrInputDocument();
-            doc.setField("id", 12);
-            doc.setField("content_ik", "我是中国人, 我爱中国");
+            doc.setField("id", 970529);
+            doc.setField("fund_name", "我是中国人, 我爱中国");
+            doc.setField("fund_number","19970529");
 
             /* 如果spring.data.solr.host 里面配置到 core了, 那么这里就不需要传 collection1 这个参数
              * 下面都是一样的
              */
-            client.add("collection1", doc);
+            client.add(doc);
             //client.commit();
-            client.commit("collection1");
-            return "12";
+            client.commit();
+            return "true";
         } catch (Exception e) {
             e.printStackTrace();
         }
-
         return "error";
     }
 
@@ -97,69 +135,27 @@ public class SolrUtil {
      * @return
      */
     @RequestMapping("search")
-    public Map<String, Map<String, List<String>>> search(){
+    public String search(){
 
+        //初始化SolrQuery
+        SolrQuery query = new SolrQuery("*:*");
+        query.setSort("fund_number", SolrQuery.ORDER.desc);
+        query.setStart(0);
+        //一页显示多少条
+        query.setRows(10);
+        QueryResponse queryResponse = null;
         try {
-            SolrQuery params = new SolrQuery();
-
-            //查询条件, 这里的 q 对应 下面图片标红的地方
-            params.set("q", "fund_name");
-
-            //过滤条件
-            params.set("fq", "fund_number:[1 TO 100]");
-
-            //排序
-            params.addSort("fund_number", SolrQuery.ORDER.asc);
-
-            //分页
-            params.setStart(0);
-            params.setRows(20);
-
-            //默认域
-            params.set("df", "fund_name");
-
-            //只查询指定域
-            params.set("fl", "fund_number,fund_name,fund_type,fund_kind");
-
-            //高亮
-            //打开开关
-            params.setHighlight(true);
-            //指定高亮域
-            params.addHighlightField("fund_name");
-            //设置前缀
-            params.setHighlightSimplePre("<span style='color:red'>");
-            //设置后缀
-            params.setHighlightSimplePost("</span>");
-
-            QueryResponse queryResponse = client.query(params);
-
-            SolrDocumentList results = queryResponse.getResults();
-
-            long numFound = results.getNumFound();
-
-            System.out.println(numFound);
-
-            //获取高亮显示的结果, 高亮显示的结果和查询结果是分开放的
-            Map<String, Map<String, List<String>>> highlight = queryResponse.getHighlighting();
-
-            for (SolrDocument result : results) {
-                System.out.println(result.get("fund_number"));
-                System.out.println(result.get("fund_name"));
-                //System.out.println(result.get("product_num"));
-                System.out.println(result.get("fund_type"));
-                System.out.println(result.get("fund_kind"));
-
-                Map<String, List<String>> map = highlight.get(result.get("id"));
-                List<String> list = map.get("product_title");
-                System.out.println(list.get(0));
-
-                System.out.println("------------------");
-                System.out.println();
+            queryResponse = client.query(query);
+            List<FundInfo> list = queryResponse.getBeans(FundInfo.class);
+            for (FundInfo fund:list){
+                System.out.println(fund.getFund_kind() + "==" + fund.getFund_number() );
             }
-            return highlight;
-        } catch (Exception e) {
+        } catch (SolrServerException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
             e.printStackTrace();
         }
+
         return null;
     }
 

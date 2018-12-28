@@ -15,57 +15,22 @@ import java.util.List;
 public class FundServiceImpl implements FundService {
 
     @Override
-    public List<FundInfo> show(FundInfo fundInfo, Integer index) {
-        return null;
+    public String showNewFunds() {
+        return "服务异常";
     }
 
     @Override
-    public List<Performance> showFunds(Performance fundInfo, Integer index) {
-        return null;
+    public String showFunds(HttpServletRequest request, HttpServletResponse response) {
+        return "服务异常";
     }
 
     @Override
-    public List<Performance> selFunds(HttpServletRequest request, HttpServletResponse response) {
-        return null;
+    public String selFunds() {
+        return "服务异常";
     }
 
     @Override
-    public String collectFund(FundInfo fundInfo, String username) {
-        return "服务错误";
-    }
-
-    @Override
-    public List<CollectInfo> showCollection(CollectInfo collection) {
-        return null;
-    }
-
-    @Override
-    public String buyFund(FundInfo fundInfo, String username, Double fund_money) {
-        return "服务错误";
-    }
-
-    @Override
-    public String selFund(String fundName, String username) {
-        return "服务错误";
-    }
-
-    @Override
-    public List<Buy> showBuyFund(String username, String fund_number) {
-        return null;
-    }
-
-    @Override
-    public String riskToleranceTest(RiskAppetite riskAppetite) {
-        return "服务错误";
-    }
-
-    @Override
-    public String fundAccount(FundUser fundUser) {
-        return "服务错误";
-    }
-
-    @Override
-    public String AIP(String jobName, String time) {
-        return "服务错误";
+    public String showFundDetails(String fundName) {
+        return "服务异常";
     }
 }

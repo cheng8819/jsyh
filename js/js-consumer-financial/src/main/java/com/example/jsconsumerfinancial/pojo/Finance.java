@@ -56,14 +56,6 @@ public class Finance {
         return product_id;
     }
 
-    public String getExpected_annualized_rate() {
-        return expected_annualized_rate;
-    }
-
-    public void setExpected_annualized_rate(String expected_annualized_rate) {
-        this.expected_annualized_rate = expected_annualized_rate;
-    }
-
     public void setProduct_id(Integer product_id) {
         this.product_id = product_id;
     }
@@ -170,5 +162,13 @@ public class Finance {
 
     public void setTime_limit(String time_limit) {
         this.time_limit = time_limit;
+    }
+
+    public String getExpected_annualized_rate() {
+        return expected_annualized_rate;
+    }
+
+    public void setExpected_annualized_rate(String expected_annualized_rate) {
+        this.expected_annualized_rate = expected_annualized_rate;
     }
 }

@@ -1,4 +1,4 @@
-package com.example.jsproducerfund.util.sms;
+package com.example.jsproducerfund.util.SMS;
 
 import java.net.URLEncoder;
 

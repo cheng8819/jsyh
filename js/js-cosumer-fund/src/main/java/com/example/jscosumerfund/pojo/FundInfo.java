@@ -124,7 +124,17 @@ public class FundInfo {
      */
     private String fund_trustee;
 
+    private FundManager fundManager;
+
     public FundInfo(){}
+
+    public FundManager getFundManager() {
+        return fundManager;
+    }
+
+    public void setFundManager(FundManager fundManager) {
+        this.fundManager = fundManager;
+    }
 
     public Integer getNew_product() {
         return new_product;
@@ -196,14 +206,6 @@ public class FundInfo {
 
     public void setRisk_grade(String risk_grade) {
         this.risk_grade = risk_grade;
-    }
-
-    public String getSrart_date() {
-        return start_date;
-    }
-
-    public void setSrart_date(String srart_date) {
-        this.start_date = srart_date;
     }
 
     public String getPortfolio_manager() {

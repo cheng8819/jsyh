@@ -23,6 +23,14 @@
               </if>
           </where>
     </select>
+    
+    <select id="showFundDetails" parameterType="java.lang.String" resultType="com.example.jsproducerfund.pojo.FundInfo">
+        select * from fundInfo where fund_name=#{fundName}
+    </select>
+
+    <select id="selFundManager" parameterType="java.lang.String" resultType="com.example.jsproducerfund.pojo.FundManager">
+        select * from manager where portfolio_manager_name=#{managerName}
+    </select>
 
     <insert id="addPerformance" parameterType="com.example.jsproducerfund.pojo.Performance">
         insert into performance(fund_number,fund_name,fund_type,iopy,iopys,day_or,weekly_rate_of_return,monthly_rate_of_return,march_rate_of_return,product_status,fund_rating)

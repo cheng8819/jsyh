@@ -9,6 +9,7 @@
       <module fileurl="file://$PROJECT_DIR$/js/js-cosumer-fund/js-cosumer-fund.iml" filepath="$PROJECT_DIR$/js/js-cosumer-fund/js-cosumer-fund.iml" />
       <module fileurl="file://$PROJECT_DIR$/js/js-producer-financial/js-producer-financial.iml" filepath="$PROJECT_DIR$/js/js-producer-financial/js-producer-financial.iml" />
       <module fileurl="file://$PROJECT_DIR$/js/js-producer-fund/js-producer-fund.iml" filepath="$PROJECT_DIR$/js/js-producer-fund/js-producer-fund.iml" />
+      <module fileurl="file://$PROJECT_DIR$/js/js-spring-zuul/js-spring-zuul.iml" filepath="$PROJECT_DIR$/js/js-spring-zuul/js-spring-zuul.iml" />
     </modules>
   </component>
 </project>

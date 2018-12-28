@@ -39,7 +39,7 @@ public class CalculateImpl implements Calculate {
      */
     private void onLoad(){
         //懒加载该数据
-        if(funds == null || funds.size() == 0){
+        /*if(funds == null || funds.size() == 0){
             //1.先去数据库查数据
             List<Performance> performances = fundDao.selPerformance();
             funds.addAll(performances);
@@ -47,14 +47,14 @@ public class CalculateImpl implements Calculate {
             redisUtil.lSetList("funds",funds);
             funds.clear(); //清空数据库数据 装载redis数据
             funds.addAll(redisUtil.lGet("funds", 0, -1));
-        }
+        }*/
     }
 
 
     @Override
-    @Scheduled(cron="0 0 17 * * ? ")
+    //@Scheduled(cron="0 0 17 * * ? ")
     public void FundPerformance() {
-        onLoad();
+        /*onLoad();
         dayNum++;
         System.out.println("基金上市第 " + dayNum + "天数据");
         //更改或添加基金数据
@@ -72,7 +72,7 @@ public class CalculateImpl implements Calculate {
         }
         redisUtil.lSetList("funds",funds);
         //rabbitMQ
-        sender.send(JSON.toJSONString(funds));
+        sender.send(JSON.toJSONString(funds));*/
     }
 
     @Override

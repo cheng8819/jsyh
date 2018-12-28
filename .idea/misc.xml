@@ -12,6 +12,7 @@
         <option value="$PROJECT_DIR$/js/js-cosumer-fund/pom.xml" />
         <option value="$PROJECT_DIR$/js/js-spring-eureka-server/pom.xml" />
         <option value="$PROJECT_DIR$/js/js-spring-config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/js/js-spring-zuul/pom.xml" />
       </list>
     </option>
   </component>

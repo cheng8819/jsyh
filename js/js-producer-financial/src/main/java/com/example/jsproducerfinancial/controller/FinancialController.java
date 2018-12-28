@@ -7,32 +7,28 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @auther: 666先生的救赎
  * @date: 2018/12/21 11:19
  */
 @Api("理财产品相关api")
-@Controller
+@RestController
 public class FinancialController {
 
     @Autowired
     private FinancialServiceImpl financialService;
 
     @ApiOperation(value = "查询理财产品信息",notes = "多字段查询，分页")
-    @ResponseBody
     @RequestMapping(value = "/showFinance",method = RequestMethod.GET)
-    public String showFinance(Finance finance,Integer index){
+    public String showFinance(@RequestBody Finance finance,@RequestParam Integer index){
         return financialService.showFinancial(finance,index);
     }
 
     @ApiOperation(value = "查询单个理财产品详情",notes = "根据产品名称查询")
-    @ResponseBody
-    @RequestMapping(value = "/showFinancialDetails",method = RequestMethod.GET)
-    public String showFinancialDetails(String financeName){
+    @RequestMapping(value = "/showFinancialDetails",method = RequestMethod.POST)
+    public String showFinancialDetails(@RequestParam ("financeName")String financeName){
         return financialService.showFinancialDetails(financeName);
     }
 
