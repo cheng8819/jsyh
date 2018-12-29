@@ -1,6 +1,7 @@
 package com.example.jsproducercreditcard.service;
 
 import com.example.jsproducercreditcard.entity.Safety;
+import com.example.jsproducercreditcard.util.Result;
 
 import java.util.List;
 
@@ -35,7 +36,7 @@ public interface SafetyService {
      * @param safety 实例对象
      * @return 实例对象
      */
-    Safety insert(Safety safety);
+    Result insert(Safety safety);
 
     /**
      * 修改数据

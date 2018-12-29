@@ -81,4 +81,8 @@
         delete from jsyh.current_address where caid = #{caid}
     </delete>
 
+    <!--逐渐最大值-->
+    <select id="maxById" resultType="java.lang.Integer">
+        select max(caid)from current_address
+    </select>
 </mapper>

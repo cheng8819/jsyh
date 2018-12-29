@@ -3,6 +3,8 @@ package com.example.jsproducercreditcard.service.impl;
 import com.example.jsproducercreditcard.dao.SafetyDao;
 import com.example.jsproducercreditcard.entity.Safety;
 import com.example.jsproducercreditcard.service.SafetyService;
+import com.example.jsproducercreditcard.util.Result;
+import com.example.jsproducercreditcard.util.ResultUtil;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -49,9 +51,16 @@ public class SafetyServiceImpl implements SafetyService {
      * @return 实例对象
      */
     @Override
-    public Safety insert(Safety safety) {
-        this.safetyDao.insert(safety);
-        return safety;
+    public Result insert(Safety safety) {
+        if (safety.getSiissue() == null || safety.getSianswer() == null){
+            return ResultUtil.success("参数不可为空");
+        }
+        Integer result = null;
+        int count = safetyDao.insert(safety);
+        if(count == 1){
+            result = safetyDao.maxBySid();
+        }
+        return ResultUtil.success(result);
     }
 
     /**

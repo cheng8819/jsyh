@@ -79,4 +79,14 @@ public class CurrentTypeServiceImpl implements CurrentTypeService {
     public boolean deleteById(Integer ctid) {
         return this.currentTypeDao.deleteById(ctid) > 0;
     }
+
+    /**
+     * 获取全部卡类型
+     *
+     * @return
+     */
+    @Override
+    public Result allCardTypes() {
+        return ResultUtil.success(JSON.toJSONString(currentTypeDao.queryAll(new CurrentType())));
+    }
 }

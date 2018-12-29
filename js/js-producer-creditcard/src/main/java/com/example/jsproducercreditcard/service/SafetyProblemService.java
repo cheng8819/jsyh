@@ -1,6 +1,7 @@
 package com.example.jsproducercreditcard.service;
 
 import com.example.jsproducercreditcard.entity.SafetyProblem;
+import com.example.jsproducercreditcard.util.Result;
 
 import java.util.List;
 
@@ -53,4 +54,9 @@ public interface SafetyProblemService {
      */
     boolean deleteById(Integer spid);
 
+    /**
+     * 获取全部的安全问题
+     * @return
+     */
+    Result allSafetyProblem();
 }

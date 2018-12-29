@@ -32,4 +32,12 @@ public class CurrentTypeController {
         return currentTypeService.queryById(id);
     }
 
+    /**
+     * 全部卡类型
+     * @return
+     */
+    @GetMapping("/allCardType")
+    public Result allCardType(){
+        return currentTypeService.allCardTypes();
+    }
 }

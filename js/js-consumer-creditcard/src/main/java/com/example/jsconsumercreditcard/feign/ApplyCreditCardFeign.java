@@ -2,12 +2,13 @@ package com.example.jsconsumercreditcard.feign;
 
 import com.example.jsconsumercreditcard.entity.CreditUserinfo;
 import com.example.jsconsumercreditcard.entity.LeaveInfo;
+import com.example.jsconsumercreditcard.feign.impl.ApplyCreditCardFeignImpl;
 import com.example.jsconsumercreditcard.util.Result;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.*;
 
 
-@FeignClient(value = "JS-PRODUCER-CREDITCARD")
+@FeignClient(value = "JS-PRODUCER-CREDITCARD",fallback = ApplyCreditCardFeignImpl.class)
 public interface ApplyCreditCardFeign {
 
     /**

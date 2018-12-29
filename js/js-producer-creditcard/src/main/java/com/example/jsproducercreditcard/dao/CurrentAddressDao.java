@@ -49,7 +49,7 @@ public interface CurrentAddressDao {
      * @param currentAddress 实例对象
      * @return 影响行数
      */
-    int insert(CurrentAddress currentAddress);
+    Integer insert(CurrentAddress currentAddress);
 
     /**
      * 修改数据
@@ -67,4 +67,9 @@ public interface CurrentAddressDao {
      */
     int deleteById(Integer caid);
 
+    /**
+     * 获取ID最大值
+     * @return
+     */
+    Integer maxById();
 }

@@ -74,4 +74,8 @@
         delete from jsyh.safety where sid = #{sid}
     </delete>
 
+    <!--最大的主键-->
+    <select id="maxBySid" resultType="java.lang.Integer">
+        select max(sid) from safety
+    </select>
 </mapper>

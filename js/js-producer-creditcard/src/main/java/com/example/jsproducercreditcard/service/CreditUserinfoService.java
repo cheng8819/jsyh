@@ -36,7 +36,7 @@ public interface CreditUserinfoService {
      * @param creditUserinfo 实例对象
      * @return 实例对象
      */
-    CreditUserinfo insert(CreditUserinfo creditUserinfo);
+    Result insert(CreditUserinfo creditUserinfo);
 
     /**
      * 修改数据

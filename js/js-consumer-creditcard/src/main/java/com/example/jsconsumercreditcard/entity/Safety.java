@@ -6,7 +6,7 @@ import lombok.Data;
 public class Safety {
 
   private Integer sid;
-  private String siissue;
+  private Integer siissue;
   private String sianswer;
   private Integer suid;
 }

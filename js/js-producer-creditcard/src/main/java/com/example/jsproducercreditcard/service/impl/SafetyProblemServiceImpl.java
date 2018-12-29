@@ -3,6 +3,8 @@ package com.example.jsproducercreditcard.service.impl;
 import com.example.jsproducercreditcard.dao.SafetyProblemDao;
 import com.example.jsproducercreditcard.entity.SafetyProblem;
 import com.example.jsproducercreditcard.service.SafetyProblemService;
+import com.example.jsproducercreditcard.util.Result;
+import com.example.jsproducercreditcard.util.ResultUtil;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -75,5 +77,15 @@ public class SafetyProblemServiceImpl implements SafetyProblemService {
     @Override
     public boolean deleteById(Integer spid) {
         return this.safetyProblemDao.deleteById(spid) > 0;
+    }
+
+    /**
+     * 获取全部的安全问题
+     *
+     * @return
+     */
+    @Override
+    public Result allSafetyProblem() {
+        return ResultUtil.success(safetyProblemDao.queryAll(new SafetyProblem()));
     }
 }

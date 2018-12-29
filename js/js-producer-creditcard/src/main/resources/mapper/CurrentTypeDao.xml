@@ -10,7 +10,7 @@
     <!--查询单个-->
     <select id="queryById" resultMap="CurrentTypeMap">
         select
-          ctid, ctname
+          ctid, ctname,ctimage
         from jsyh.current_type
         where ctid = #{ctid}
     </select>
@@ -18,7 +18,7 @@
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="CurrentTypeMap">
         select
-          ctid, ctname
+          ctid, ctname,ctimage
         from jsyh.current_type
         limit #{offset}, #{limit}
     </select>
@@ -26,7 +26,7 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="CurrentTypeMap">
         select
-          ctid, ctname
+          ctid, ctname,ctimage
         from jsyh.current_type
         <where>
             <if test="ctid != null">

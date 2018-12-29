@@ -2,6 +2,7 @@ package com.example.jsproducercreditcard.controller;
 
 import com.example.jsproducercreditcard.entity.Safety;
 import com.example.jsproducercreditcard.service.SafetyService;
+import com.example.jsproducercreditcard.util.Result;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -32,4 +33,13 @@ public class SafetyController {
         return this.safetyService.queryById(id);
     }
 
+    /**
+     * 新增安全问题
+     * @param safety
+     * @return
+     */
+    @PostMapping("/addSafety")
+    public Result addSafety(@RequestBody Safety safety){
+        return safetyService.insert(safety);
+    }
 }

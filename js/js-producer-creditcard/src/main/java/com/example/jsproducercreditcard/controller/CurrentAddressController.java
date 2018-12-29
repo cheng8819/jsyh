@@ -2,6 +2,8 @@ package com.example.jsproducercreditcard.controller;
 
 import com.example.jsproducercreditcard.entity.CurrentAddress;
 import com.example.jsproducercreditcard.service.CurrentAddressService;
+import com.example.jsproducercreditcard.util.Result;
+import com.example.jsproducercreditcard.util.ResultUtil;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -32,4 +34,13 @@ public class CurrentAddressController {
         return this.currentAddressService.queryById(id);
     }
 
+    /**
+     * 新增地址
+     * @param currentAddress 地址对象
+     * @return
+     */
+    @PostMapping("/addCurrentAddress")
+    public Result addCurrentAddress(@RequestBody CurrentAddress currentAddress){
+        return ResultUtil.success(currentAddressService.insert(currentAddress));
+    }
 }

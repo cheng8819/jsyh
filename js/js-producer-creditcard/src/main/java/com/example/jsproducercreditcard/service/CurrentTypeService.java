@@ -54,4 +54,10 @@ public interface CurrentTypeService {
      */
     boolean deleteById(Integer ctid);
 
+    /**
+     * 获取全部卡类型
+     * @return
+     */
+    Result allCardTypes();
+
 }

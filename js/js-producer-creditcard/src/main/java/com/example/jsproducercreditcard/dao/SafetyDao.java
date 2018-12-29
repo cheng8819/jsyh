@@ -67,4 +67,9 @@ public interface SafetyDao {
      */
     int deleteById(Integer sid);
 
+    /**
+     * 最大的主键
+     * @return
+     */
+    Integer maxBySid();
 }

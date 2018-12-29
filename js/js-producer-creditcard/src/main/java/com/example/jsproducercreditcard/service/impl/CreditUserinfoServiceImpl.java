@@ -52,9 +52,17 @@ public class CreditUserinfoServiceImpl implements CreditUserinfoService {
      * @return 实例对象
      */
     @Override
-    public CreditUserinfo insert(CreditUserinfo creditUserinfo) {
-        this.creditUserinfoDao.insert(creditUserinfo);
-        return creditUserinfo;
+    public Result insert(CreditUserinfo creditUserinfo) {
+        if(creditUserinfo.getCuaddress() == null || creditUserinfo.getCucardtype() == null ||
+                creditUserinfo.getCumarriage() == null || creditUserinfo.getCusafety() == null ||
+                creditUserinfo.getCuuid() == null){
+            return ResultUtil.success("参数不全");
+        }
+        if(creditUserinfoDao.insert(creditUserinfo) == 1){
+            return ResultUtil.success("申请提交成功");
+        }else{
+            return ResultUtil.success("申请提交失败");
+        }
     }
 
     /**

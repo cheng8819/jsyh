@@ -49,9 +49,18 @@ public class CurrentAddressServiceImpl implements CurrentAddressService {
      * @return 实例对象
      */
     @Override
-    public CurrentAddress insert(CurrentAddress currentAddress) {
-        this.currentAddressDao.insert(currentAddress);
-        return currentAddress;
+    public Integer insert(CurrentAddress currentAddress) {
+        if(currentAddress.getCaprovince() == null || currentAddress.getCacity() == null || currentAddress.getCacounty() == null || currentAddress.getCaaddress() == null){
+            return -1;
+        }else if ("".equals(currentAddress.getCaprovince()) || "".equals(currentAddress.getCacity()) || "".equals(currentAddress.getCacounty()) || "".equals(currentAddress.getCaaddress())){
+            return -1;
+        }
+        Integer result = null;
+        int count = currentAddressDao.insert(currentAddress);
+        if(count == 1){
+            result = currentAddressDao.maxById();
+        }
+        return result;
     }
 
     /**

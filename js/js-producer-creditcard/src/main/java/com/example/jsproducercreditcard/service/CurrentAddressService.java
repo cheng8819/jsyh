@@ -33,9 +33,9 @@ public interface CurrentAddressService {
      * 新增数据
      *
      * @param currentAddress 实例对象
-     * @return 实例对象
+     * @return 新增对象的ID
      */
-    CurrentAddress insert(CurrentAddress currentAddress);
+    Integer insert(CurrentAddress currentAddress);
 
     /**
      * 修改数据
