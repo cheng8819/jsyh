@@ -1,5 +1,7 @@
 package com.example.jsproducerfund.util.SMS;
 
+import org.springframework.stereotype.Component;
+
 import java.net.URLEncoder;
 
 /**
@@ -9,6 +11,7 @@ import java.net.URLEncoder;
  * @Description: 验证码通知短信接口
  *
  */
+@Component("SMS")
 public class IndustrySMS
 {
 	private static String operation = "/industrySMS/sendSMS";
