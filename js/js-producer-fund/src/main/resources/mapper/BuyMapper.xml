@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.jsproducerfund.dao.BuyDao">
+
+    <!--添加购买紧基金记录-->
+    <insert id="addBuyFund" parameterType="com.example.jsproducerfund.pojo.Buy">
+        insert into buy(username,product_name,product_number,product_unit,product_money,product_status,buy_time)
+        values(#{username},#{product_name},#{product_number},#{product_unit},#{product_money},#{product_status},#{buy_time})
+    </insert>
+
+    <!--修改基金购买信息-->
+    <update id="updBuyFund" parameterType="com.example.jsproducerfund.pojo.Buy">
+        update buy
+        <set>
+            <if test="sell_time != null">
+                sell_time=#{sell_time},
+            </if>
+            <if test="product_status != null">
+                product_status=#{product_status},
+            </if>
+            <if test="product_earnings != null">
+                product_earnings=#{product_earnings}
+            </if>
+        </set>
+        <where>
+            <if test="username != null">
+                username = #{username}
+            </if>
+            <if test="product_name != null">
+                and product_name = #{product_name}
+            </if>
+        </where>
+    </update>
+
+    <!--查询购买基金/理财产品信息-->
+    <select id="selBuyFound" parameterType="com.example.jsproducerfund.pojo.Buy" resultType="com.example.jsproducerfund.pojo.Buy">
+        select buy_id,username,product_name,product_number,product_unit,product_money,product_earnings,buy_time,product_status from buy
+        <where>
+            <if test="username != null">
+                username=#{username}
+            </if>
+            <if test="product_name != null">
+                product_name=#{product_name}
+            </if>
+            <if test="product_number != null">
+                and product_number=#{product_number}
+            </if>
+            <if test="product_earnings != null">
+                and product_earnings=#{product_earnings}
+            </if>
+        </where>
+    </select>
+
+</mapper>

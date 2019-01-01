@@ -1,28 +1,42 @@
 package com.example.jsproducerfund.dao;
 
 import com.example.jsproducerfund.pojo.*;
-import com.example.jsproducerfund.pojo.CollectInfo;
 import java.util.List;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
+/**
+ * 基金信息操作
+ */
 @Mapper
 @Repository
 public interface FundDao {
 
     /**
-     * 查询基金信息
-     * @param performance
+     * 查询全部基金信息
+     * @param fundInfo
      * @return
      */
-    List<Performance> findAll(Performance performance);
+    List<Performance> findAll(FundInfo fundInfo);
+
+    /**
+     * 查询新发布的基金信息
+     * @return
+     */
+    List<FundInfo> findNewFunds();
+
+    /**
+     * 查询新发布的基金信息
+     * @return
+     */
+    List<FundInfo> findOldFunds(@Param("fund_type") String fund_type);
 
     /**
      * 查询基金走势信息
      * @return
      */
-    List<Performance> selPerformance();
+    List<Performance> selPerformance(@Param("fundNumber") String fundNumber);
 
     /**
      * 添加基金走势信息
@@ -32,71 +46,16 @@ public interface FundDao {
     Integer addPerformance(Performance performance);
 
     /**
-     * 查询新发布的基金信息
-     * @return
-     */
-    List<FundInfo> findNewFunds();
-
-    /**
      * 根据基金名称查看基金详情
-     * @param fundName
+     * @param fundNumber
      * @return
      */
-    FundInfo showFundDetails(@Param("fundName") String fundName);
+    FundInfo showFundDetails(@Param("fundNumber") String fundNumber);
 
     /**
      * 查询基金经理信息
      * @return
      */
     FundManager selFundManager(String ManagerName);
-
-    /**
-     * 添加收藏信息
-     * @param collection 收藏信息
-     * @return
-     */
-    Integer addCollection(CollectInfo collection);
-
-    /**
-     * 查询收藏信息
-     * @param collection 查询条件
-     * @return
-     */
-    List<CollectInfo> selCollection(CollectInfo collection);
-
-    /**
-     * 添加基金购买信息
-     * @param buy 基金购买信息
-     * @return
-     */
-    Integer addBuyFund(Buy buy);
-
-    /**
-     * 修改基金购买信息 ：用于赎回基金
-     * @param buy
-     * @return
-     */
-    Integer updBuyFund(Buy buy);
-
-    /**
-     * 按条件查询基金购买信息
-     * @param buy
-     * @return
-     */
-    List<Buy> selBuyFound(Buy buy);
-
-    /**
-     * 修改用户风险等级
-     * @param risk_grade
-     * @return
-     */
-    Integer updRiskGrade(@Param("risk_grade") String risk_grade,@Param("username") String name);
-
-    /**
-     * 添加基金账户
-     * @param fundUser
-     * @return
-     */
-    Integer addFundAccount(FundUser fundUser);
 
 }

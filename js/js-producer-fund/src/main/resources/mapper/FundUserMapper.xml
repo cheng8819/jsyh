@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.jsproducerfund.dao.FundUserDao">
+
+    <!--基金开户-->
+    <insert id="addFundAccount" parameterType="com.example.jsproducerfund.pojo.FundUser">
+        insert into fundUser(username,sex,birthday,phone,profession,address,card_type,card_number,risk_grade,beneficial_owner,capital_source,bank_name)
+        values(#{username},#{sex},#{birthday},#{phone},#{profession},#{address},#{card_type},#{card_number},#{risk_grade},#{beneficial_owner},#{capital_source},#{bank_name})
+    </insert>
+
+    <!--修改用户承受风险等级-->
+    <update id="updRiskGrade" parameterType="java.lang.String">
+        update fundUser set risk_grade=#{risk_grade} where username=#{username}
+    </update>
+
+</mapper>

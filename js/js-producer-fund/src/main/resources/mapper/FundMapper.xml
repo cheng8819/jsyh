@@ -3,29 +3,55 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.jsproducerfund.dao.FundDao">
 
-    <!--展示新发基金信息：基金代码、名称、币种、产品类型、产品种类、发行日期、发行价-->
+    <!--展示新发基金信息：
+        基金代码、名称、币种、产品类型、产品种类、发行日期、发行价、资金募集方式
+     -->
     <select id="findNewFunds" resultType="com.example.jsproducerfund.pojo.FundInfo">
-        select fund_number,fund_name,currency,fund_type,fund_kind,issuing_date,unit_value,risk_grade,raise_way from fundInfo where new_product=0
+        select fund_number,fund_name,currency,fund_type,fund_kind,issuing_date,unit_value,risk_grade,raise_way from fundInfo where fundStatus=0
     </select>
 
-    <!--查询上市的基金信息：基金代码、名称、单位净值、累计净值、日涨幅、6、晨星评级、产品状态-->
-    <select id="findAll" parameterType="com.example.jsproducerfund.pojo.Performance" resultType="com.example.jsproducerfund.pojo.Performance">
-          select fund_number,fund_name,iopy,iopys,day_or,march_rate_of_return,fund_rating,product_status,raise_way from performance
+    <!--查询上市的基金信息：
+        基金代码、名称、单位净值、累计净值、日涨幅、三个月涨幅、晨星评级、产品状态
+     -->
+    <select id="findOldFunds" parameterType="java.lang.String" resultType="com.example.jsproducerfund.pojo.FundInfo">
+          select fund_number,fund_name,iopv,iopvs,dailyIncreases,threeMonthRise,fund_rating,fundStatus,raise_way from fundInfo
             <where>
-              <if test="fund_number != null">
-                  fund_number=#{fund_number}
-              </if>
-              <if test="fund_name != null">
-                  and fund_name=#{fund_name}
-              </if>
               <if test="fund_type != null">
                   and fund_type=#{fund_type}
               </if>
+              and fundStatus = 1
           </where>
+    </select>
+
+    <select id="findAll" parameterType="com.example.jsproducerfund.pojo.FundInfo" resultType="com.example.jsproducerfund.pojo.FundInfo">
+        select fund_number,fund_name,iopv,iopvs,dailyIncreases,threeMonthRise,fund_rating,fundStatus,raise_way from fundInfo
+        <where>
+            <if test="fund_number != null">
+                fund_number=#{fund_number}
+            </if>
+            <if test="fund_name != null">
+                and fund_name=#{fund_name}
+            </if>
+            <if test="fundStatus != null">
+                and fundStatus=#{fundStatus}
+            </if>
+            <if test="fund_rating != null">
+                and fund_rating=#{fund_rating}
+            </if>
+            <if test="fund_scale != null">
+                and fund_scale=#{fund_scale}
+            </if>
+            <if test="fund_company != null">
+                and fund_company=#{fund_company}
+            </if>
+            <if test="threeMonthRise != null">
+                and threeMonthRise between #{threeMonthRise-10} and #{threeMonthRise}
+            </if>
+        </where>
     </select>
     
     <select id="showFundDetails" parameterType="java.lang.String" resultType="com.example.jsproducerfund.pojo.FundInfo">
-        select * from fundInfo where fund_name=#{fundName}
+        select * from fundInfo where fund_number=#{fundNumber}
     </select>
 
     <select id="selFundManager" parameterType="java.lang.String" resultType="com.example.jsproducerfund.pojo.FundManager">
@@ -38,88 +64,8 @@
     </insert>
 
     <!--为redis提供数据-->
-    <select id="selPerformance" resultType="com.example.jsproducerfund.pojo.Performance">
-        select * from performance
+    <select id="selPerformance" parameterType="java.lang.String" resultType="com.example.jsproducerfund.pojo.Performance">
+        select * from performance where fund_number=#{fundNumber}
     </select>
 
-    <!--收藏基金展示-->
-    <select id="selCollection" parameterType="com.example.jsproducerfund.pojo.CollectInfo" resultType="com.example.jsproducerfund.pojo.CollectInfo">
-        select collection_id,fund_name,username,fund_number from collectInfo
-        <trim  prefix="WHERE" prefixOverrides="and | or">
-            <if test="username != null">
-                and username=#{username}
-            </if>
-            <if test="fund_name != null">
-                and fund_name=#{fund_name}
-            </if>
-            <if test="fund_number != null">
-                and fund_number=#{fund_number}
-            </if>
-        </trim>
-    </select>
-
-    <!--收藏基金-->
-    <insert id="addCollection" parameterType="com.example.jsproducerfund.pojo.CollectInfo">
-        insert into collectInfo(fund_name,username,fund_number) values (#{fund_name},#{username},#{fund_number})
-    </insert>
-
-    <!--添加购买紧基金记录-->
-    <insert id="addBuyFund" parameterType="com.example.jsproducerfund.pojo.Buy">
-        insert into buy(username,product_name,product_number,product_unit,product_money,buy_time)
-        values(#{username},#{product_name},#{product_number},#{product_unit},#{product_money},#{buy_time})
-    </insert>
-
-    <!--修改基金购买信息-->
-    <update id="updBuyFund" parameterType="com.example.jsproducerfund.pojo.Buy">
-        update buy
-        <set>
-            <if test="sell_time != null">
-                sell_time=#{sell_time},
-            </if>
-            <if test="product_status != null">
-                product_status=#{product_status},
-            </if>
-            <if test="product_earnings != null">
-                product_earnings=#{product_earnings}
-            </if>
-        </set>
-        <where>
-            <if test="username != null">
-                username = #{username}
-            </if>
-            <if test="product_name != null">
-                and product_name = #{product_name}
-            </if>
-        </where>
-    </update>
-
-    <!--查询购买基金/理财产品信息-->
-    <select id="selBuyFound" parameterType="com.example.jsproducerfund.pojo.Buy" resultType="com.example.jsproducerfund.pojo.Buy">
-        select buy_id,username,product_name,product_number,product_unit,product_money,product_earnings,buy_time,product_status from buy
-        <where>
-            <if test="username != null">
-                username=#{username}
-            </if>
-            <if test="product_name != null">
-                product_name=#{product_name}
-            </if>
-            <if test="product_number != null">
-                and product_number=#{product_number}
-            </if>
-            <if test="product_earnings != null">
-                and product_earnings=#{product_earnings}
-            </if>
-        </where>
-    </select>
-
-    <!--基金开户-->
-    <insert id="addFundAccount" parameterType="com.example.jsproducerfund.pojo.FundUser">
-        insert into fundUser(username,sex,birthday,phone,profession,address,card_type,card_number,risk_grade,beneficial_owner,capital_source,bank_name)
-        values(#{username},#{sex},#{birthday},#{phone},#{profession},#{address},#{card_type},#{card_number},#{risk_grade},#{beneficial_owner},#{capital_source},#{bank_name})
-    </insert>
-
-    <!--修改用户承受风险等级-->
-    <update id="updRiskGrade" parameterType="java.lang.String">
-        update fundUser set risk_grade=#{risk_grade} where username=#{username}
-    </update>
 </mapper>

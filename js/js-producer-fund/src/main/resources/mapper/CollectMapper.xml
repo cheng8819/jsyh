@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.jsproducerfund.dao.CollectDao">
+
+    <!--收藏基金展示-->
+    <select id="selCollection" parameterType="com.example.jsproducerfund.pojo.CollectInfo" resultType="com.example.jsproducerfund.pojo.CollectInfo">
+        select collection_id,fund_name,username,fund_number from collectInfo
+        <trim  prefix="WHERE" prefixOverrides="and | or">
+            <if test="username != null">
+                and username=#{username}
+            </if>
+            <if test="fund_name != null">
+                and fund_name=#{fund_name}
+            </if>
+            <if test="fund_number != null">
+                and fund_number=#{fund_number}
+            </if>
+        </trim>
+    </select>
+
+    <!--收藏基金-->
+    <insert id="addCollection" parameterType="com.example.jsproducerfund.pojo.CollectInfo">
+        insert into collectInfo(fund_name,username,fund_number) values (#{fund_name},#{username},#{fund_number})
+    </insert>
+
+</mapper>
