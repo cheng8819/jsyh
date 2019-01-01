@@ -13,13 +13,12 @@ import org.springframework.web.bind.annotation.RequestParam;
  */
 @Component
 public class FinanceServiceImpl implements FinanceService {
-
-
     @Override
-    public String showFinancialDetails(String financeName) {
-        return "服务错误";
+    public String showFinance(Integer index) {
+        return null;
     }
-//
+
+    //
 //    @Override
 //    public String showFinancialDetails(String financeName) {
 //        return "服务错误";

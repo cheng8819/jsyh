@@ -5,7 +5,7 @@
     <!--查询理财产品信息-->
     <!--显示字段：理财产品名称、是否保本、募集期/购买期、业绩比较基准、起购金额 期限产品风险等级-->
     <select id="findAll" parameterType="com.example.jsproducerfinancial.pojo.Finance" resultType="com.example.jsproducerfinancial.pojo.Finance">
-        select product_name,break_even,collect_period,performance_comparison_benchmark,single_subscription_limit,time_limit,product_risk_level from finance
+        select product_name,break_even,collect_period,performance_comparison_benchmark,single_subscription_limit,time_limit,product_risk_level,product_lines from finance
         <trim prefix="where" prefixOverrides="and | or">
             <if test="product_type != null">
                 product_type = #{product_type}

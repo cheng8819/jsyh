@@ -5,12 +5,12 @@
 
     <!--展示新发基金信息：基金代码、名称、币种、产品类型、产品种类、发行日期、发行价-->
     <select id="findNewFunds" resultType="com.example.jsproducerfund.pojo.FundInfo">
-        select fund_number,fund_name,currency,fund_type,fund_kind,issuing_date,unit_value from fundInfo where new_product=0
+        select fund_number,fund_name,currency,fund_type,fund_kind,issuing_date,unit_value,risk_grade,raise_way from fundInfo where new_product=0
     </select>
 
     <!--查询上市的基金信息：基金代码、名称、单位净值、累计净值、日涨幅、6、晨星评级、产品状态-->
     <select id="findAll" parameterType="com.example.jsproducerfund.pojo.Performance" resultType="com.example.jsproducerfund.pojo.Performance">
-          select fund_number,fund_name,iopy,iopys,day_or,march_rate_of_return,fund_rating,product_status from performance
+          select fund_number,fund_name,iopy,iopys,day_or,march_rate_of_return,fund_rating,product_status,raise_way from performance
             <where>
               <if test="fund_number != null">
                   fund_number=#{fund_number}
@@ -95,7 +95,7 @@
 
     <!--查询购买基金/理财产品信息-->
     <select id="selBuyFound" parameterType="com.example.jsproducerfund.pojo.Buy" resultType="com.example.jsproducerfund.pojo.Buy">
-        select buy_id,username,product_name,product_number,product_unit,product_money from buy
+        select buy_id,username,product_name,product_number,product_unit,product_money,product_earnings,buy_time,product_status from buy
         <where>
             <if test="username != null">
                 username=#{username}
@@ -104,10 +104,10 @@
                 product_name=#{product_name}
             </if>
             <if test="product_number != null">
-                product_number=#{product_number}
+                and product_number=#{product_number}
             </if>
-            <if test="product_rernings != null">
-                product_rernings=#{product_rernings}
+            <if test="product_earnings != null">
+                and product_earnings=#{product_earnings}
             </if>
         </where>
     </select>

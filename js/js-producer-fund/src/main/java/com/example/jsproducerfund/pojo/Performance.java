@@ -54,6 +54,11 @@ public class Performance implements Serializable{
      */
     private String fund_rating;
 
+    /**
+     * 基金募集类型
+     */
+    private String raise_way;
+
     public Performance(){}
 
     public Performance(Integer fund_number, String fund_name, String fund_type, String fund_rating) {
@@ -68,6 +73,14 @@ public class Performance implements Serializable{
         this.fund_name = fund_name;
         this.iopy = iopy;
         this.iopys = iopys;
+    }
+
+    public String getRaise_way() {
+        return raise_way;
+    }
+
+    public void setRaise_way(String raise_way) {
+        this.raise_way = raise_way;
     }
 
     public String getFund_type() {

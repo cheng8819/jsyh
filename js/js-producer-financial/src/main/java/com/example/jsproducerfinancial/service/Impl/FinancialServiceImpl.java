@@ -69,8 +69,8 @@ public class FinancialServiceImpl implements FinancialService {
 
     private Integer pageNum = 0;
     @Override
-    public String showFinancial(Finance finance,Integer pageCount) {
-        List<Finance> list = financialDao.findAll(finance);
+    public String showFinancial(Integer pageCount) {
+        List<Finance> list = financialDao.findAll(null);
         Integer pageTotal = list.size()/10;  //总页数
         if(pageCount == -1){
             pageNum --;
@@ -82,7 +82,7 @@ public class FinancialServiceImpl implements FinancialService {
             pageNum = 1;
         }
         if(pageNum > pageTotal){
-            pageCount = pageTotal;
+            pageNum = pageTotal;
         }
         //分页查询 每页显示10行数据
         PageHelper.startPage(pageNum,10);

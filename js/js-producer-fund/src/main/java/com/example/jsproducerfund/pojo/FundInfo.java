@@ -125,11 +125,24 @@ public class FundInfo {
     private String start_date;
 
     /**
+     * 募集方式
+     */
+    private String raise_way;
+
+    /**
      * 投资经理信息
      */
     private FundManager fundManager;
 
     public FundInfo(){}
+
+    public String getRaise_way() {
+        return raise_way;
+    }
+
+    public void setRaise_way(String raise_way) {
+        this.raise_way = raise_way;
+    }
 
     public FundManager getFundManager() {
         return fundManager;

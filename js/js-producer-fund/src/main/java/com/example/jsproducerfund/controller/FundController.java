@@ -8,10 +8,8 @@ import io.swagger.annotations.ApiOperation;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -39,8 +37,8 @@ public class FundController {
     @ApiOperation(value = "查询已上市基金产品信息",notes = "支持多字段查询，支持分页查询,index参数 1:上一页  -1:下一页")
     @ResponseBody
     @RequestMapping(value = "/showFunds",method = RequestMethod.GET)
-    public String showFunds(String fundType){
-        return fundService.showFunds(request,response);
+    public String showFunds(@RequestParam("fundType") String fundType){
+        return fundService.showFunds(fundType);
     }
 
     /**
@@ -100,7 +98,7 @@ public class FundController {
     @ApiOperation(value = "查看购买基金信息",notes = "查询购买基金信息")
     @ResponseBody
     @RequestMapping(value = "/showBuyFund",method = RequestMethod.GET)
-    public String showBuyFund(@Param("username") String username, @Param("fund_number") String fund_number){
+    public String showBuyFund(@RequestParam("username") String username, @RequestParam("fund_number") String fund_number){
         return fundService.selBuyFund(username,fund_number);
     }
 

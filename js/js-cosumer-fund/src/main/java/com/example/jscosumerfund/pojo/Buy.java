@@ -14,8 +14,17 @@ public class Buy {
     private String funds;  //购买的基金
     private Integer fund_unit; //购买基金份额
     private BigDecimal fund_money; //购买基金花费金额
+    private String product_earnings;
 
     public Buy(){}
+
+    public String getProduct_earnings() {
+        return product_earnings;
+    }
+
+    public void setProduct_earnings(String product_earnings) {
+        this.product_earnings = product_earnings;
+    }
 
     public Integer getBuy_id() {
         return buy_id;
@@ -74,6 +83,7 @@ public class Buy {
                 ", funds='" + funds + '\'' +
                 ", fund_unit=" + fund_unit +
                 ", fund_money=" + fund_money +
+                ", product_earnings='" + product_earnings + '\'' +
                 '}';
     }
 }

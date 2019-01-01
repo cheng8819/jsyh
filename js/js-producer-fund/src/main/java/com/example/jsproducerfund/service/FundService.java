@@ -18,7 +18,7 @@ public interface FundService {
      *
      * @return
      */
-    String showFunds(@RequestParam("request")HttpServletRequest request,@RequestParam("response") HttpServletResponse response);
+    String showFunds(String fundType);
 
     /**
      * 根据基金名称查看基金详情
@@ -28,8 +28,7 @@ public interface FundService {
 
     /**
      * 查询已上市基金产品
-     * @param request
-     * @param response
+     *
      * @return
      */
     String selFunds();

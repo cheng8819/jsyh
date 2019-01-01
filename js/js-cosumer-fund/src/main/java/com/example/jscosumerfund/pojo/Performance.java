@@ -52,6 +52,19 @@ public class Performance {
      */
     private String fund_rating;
 
+    /**
+     * 基金募集类型
+     */
+    private String raise_way;
+
+    public String getRaise_way() {
+        return raise_way;
+    }
+
+    public void setRaise_way(String raise_way) {
+        this.raise_way = raise_way;
+    }
+
     public String getFund_type() {
         return fund_type;
     }

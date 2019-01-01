@@ -22,8 +22,8 @@ public class FinancialController {
 
     @ApiOperation(value = "查询理财产品信息",notes = "多字段查询，分页")
     @RequestMapping(value = "/showFinance",method = RequestMethod.GET)
-    public String showFinance(@RequestBody Finance finance,@RequestParam Integer index){
-        return financialService.showFinancial(finance,index);
+    public String showFinance(@RequestParam("index") Integer index){
+        return financialService.showFinancial(index);
     }
 
     @ApiOperation(value = "查询单个理财产品详情",notes = "根据产品名称查询")

@@ -20,7 +20,7 @@ public class FundServiceImpl implements FundService {
     }
 
     @Override
-    public String showFunds(HttpServletRequest request, HttpServletResponse response) {
+    public String showFunds(String fundType) {
         return "服务异常";
     }
 
@@ -31,6 +31,16 @@ public class FundServiceImpl implements FundService {
 
     @Override
     public String showFundDetails(String fundName) {
+        return "服务异常";
+    }
+
+    @Override
+    public String fundAccount(FundUser fundUser) {
+        return "服务异常";
+    }
+
+    @Override
+    public String showBuyFund(String username, String fund_number) {
         return "服务异常";
     }
 }

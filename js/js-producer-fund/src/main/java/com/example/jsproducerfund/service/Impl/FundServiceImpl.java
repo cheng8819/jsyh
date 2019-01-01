@@ -47,26 +47,10 @@ public class FundServiceImpl implements FundService {
     }
 
     @Override
-    public String showFunds(HttpServletRequest request,HttpServletResponse response) {
-        Integer index = Integer.valueOf(request.getParameter("index"));
-        String fundType = request.getParameter("fundType");
-        String fundCompany = request.getParameter("fundCompany");
+    public String showFunds(String fundType) {
         Performance performance = new Performance();
         performance.setFund_type(fundType);
         List<Performance> list = fundDao.findAll(performance);
-        Integer pageTotal = list.size()/5;  //总页数
-        if(index == -1){
-            pageNum --;
-        }
-        if(index == 1){
-            pageNum ++;
-        }
-        if(pageNum <= 0){
-            pageNum = 1;
-        }
-        if(pageNum > pageTotal){
-            pageNum = pageTotal;
-        }
         //分页查询 每页显示10行数据
         PageHelper.startPage(pageNum,5);
         PageInfo<Performance> fundPageInfo = new PageInfo<>(list);
@@ -118,8 +102,7 @@ public class FundServiceImpl implements FundService {
     public String selCollection(String username) {
         System.out.println("mxh "+username);
         if(username == null){
-            System.out.println("用户名为空,返回null");
-            return null;
+            return "用户名不允许为空";
         }
         CollectInfo collectInfo = new CollectInfo();
         collectInfo.setUsername(username);

@@ -48,7 +48,7 @@ public interface FinancialService {
      * @param finance 产品字段
      * @return
      */
-    String showFinancial(Finance finance,Integer pageCount);
+    String showFinancial(Integer pageCount);
 
     /**
      * 计算理财产品收益
