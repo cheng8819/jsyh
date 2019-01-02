@@ -2,46 +2,64 @@ package com.cloud.jsproducerremittance.service.impl;
 
 import com.alibaba.fastjson.JSONArray;
 import com.cloud.jsproducerremittance.config.GeneralRemittance;
-import com.cloud.jsproducerremittance.dao.RemittancetransactionDao;
+import com.cloud.jsproducerremittance.dao.remittancetransactionDao;
 import com.cloud.jsproducerremittance.entity.RemittanceTransaction;
 import com.cloud.jsproducerremittance.service.GeneralRemittanceService;
 import com.cloud.jsproducerremittance.util.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 @Service
 public class GeneralRemittanceServiceImpl implements GeneralRemittanceService {
     @Autowired
-    private RemittancetransactionDao remittancetransactionDao;
+    private remittancetransactionDao remittancetransactionDao;
     @Autowired
     private RedisUtil redisUtil;
     private int iteartor = 0;
 
     @Override
+    @Scheduled(cron = "0 0 0 * * ? *")
     public void addGeneralRemittance(RemittanceTransaction remittanceTransaction) {
-        Map<Object, Object> hmget = redisUtil.hmget(GeneralRemittance.REGULAR_PAY);
+        String cardnumber = null;
+        Map<Object, Object> hmget1 = redisUtil.hmget(GeneralRemittance.REGULAR_PAY);
+        for (Object card : hmget1.keySet()) {
+            cardnumber = (String) card;
+            Map<Object, Object> hmget = redisUtil.hmget(cardnumber);
 
-        int count = 0;
-        for (Object o : hmget.values()) {
-            remittanceTransaction = (RemittanceTransaction) o;
-            System.out.println(remittanceTransaction.getRemittancetransactioncardnumber());
-            remittancetransactionDao.saveAndFlush(remittanceTransaction);
-            count++;
+            int count = 0;
+            for (Object  message  : hmget.values()) {
+                remittanceTransaction = (RemittanceTransaction)  message ;
+                if (remittanceTransaction.getState() != 1){
+                    remittancetransactionDao.saveAndFlush(remittanceTransaction);
+                }
+                System.out.println(remittanceTransaction.getRemittancetransactioncardnumber());
+                count++;
+            }
+            System.out.println(count == hmget.size());
+/*            if (count != hmget.size()){
+                GeneralRemittanceServiceImpl grsi = new GeneralRemittanceServiceImpl();
+                grsi.addGeneralRemittance(remittanceTransaction);
+            }*/
         }
-        System.out.println(count == hmget.size());
-        if (count != hmget.size()){
-            GeneralRemittanceServiceImpl grsi = new GeneralRemittanceServiceImpl();
-            grsi.addGeneralRemittance(remittanceTransaction);
-        }
+
     }
     @Override
     public RemittanceTransaction addGeneralRemittancerecord(RemittanceTransaction remittanceTransaction) {
         boolean flage = true;
-        boolean hset = redisUtil.hset(GeneralRemittance.REGULAR_PAY, remittanceTransaction.getRemittancetransactioncardnumber() + iteartor++, remittanceTransaction);
-        boolean hset1 = redisUtil.hset(GeneralRemittance.REGULAR_PAY, remittanceTransaction.getRemittancetransactionnumber() + iteartor++, remittanceTransaction);
+        redisUtil.hset(GeneralRemittance.REGULAR_PAY,remittanceTransaction.getRemittancetransactioncardnumber(),"");
+        redisUtil.hset(GeneralRemittance.REGULAR_PAY,remittanceTransaction.getRemittancetransactionnumber(),"");
+        boolean hset = redisUtil.hset(remittanceTransaction.getRemittancetransactioncardnumber(), "" + iteartor++, remittanceTransaction);
+        boolean hset1 = redisUtil.hset(remittanceTransaction.getRemittancetransactionnumber(), "" + iteartor++, remittanceTransaction);
+        Set<String> allkey = redisUtil.allkey("");
+        for (String s : allkey) {
+            System.out.println(s);
+        }
+
         if (!(hset && hset1)){
             flage = false;
         }
@@ -49,5 +67,19 @@ public class GeneralRemittanceServiceImpl implements GeneralRemittanceService {
             return null;
         }
         return remittanceTransaction;
+    }
+
+    @Override
+    public boolean updateState(RemittanceTransaction remittanceTransaction) {
+        Map<Object, Object> hmget1 = redisUtil.hmget(remittanceTransaction.getRemittancetransactioncurrent());
+        for (Object o : hmget1.keySet()) {
+            RemittanceTransaction o1 = (RemittanceTransaction) hmget1.get(o);
+            if (o1.getRemittancetransactioncardnumber().equals(remittanceTransaction.getRemittancetransactioncardnumber())){
+                o1.setState(2);
+                return redisUtil.hset(remittanceTransaction.getRemittancetransactioncardnumber(), (String) o, o1);
+            }
+
+        }
+        return false;
     }
 }

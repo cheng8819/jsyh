@@ -19,128 +19,120 @@ public class MakeRemittance implements Serializable {
     //预约汇款表
     @Id
     @GeneratedValue
-    private Integer makeremittanceId;
+    private Integer makeremittanceid;
     //预约编号
-    private String makeremittanceSerialnumber;
+    private String makeremittanceserialnumber;
     //预约时间
-    private String makeremittanceTime;
+    private String makeremittancetime;
     //当前时间
-    private String makeremittanceData;
+    private String makeremittancedata;
     //预约汇款金额
-    private String makeremittancePrice;
+    private String makeremittanceprice;
     //预约付款卡号
-    private String makeremittancePaynumber;
+    private String makeremittancepaynumber;
     //收款人姓名
-    private String makeremittanceName;
+    private String makeremittancename;
     //预约收款卡号
-    private String makeremittanceNumber;
+    private String makeremittancenumber;
     //预约付款人ID
-    private Integer makeremittancePayuserid;
+    private Integer makeremittancepayuserid;
     //预约汇款人 付款人
-    private String makeremittancePayname;
+    private String makeremittancepayname;
     //预约信息状态1 待审核 2通过 3取消
-    private Integer makeremittanceType;
+    private Integer makeremittancetype;
     //状态信息
     private String type;
     //预约网点  关联网点表
-    private Integer makeremittanceBranch;
+    private Integer makeremittancebranch;
     //网点信息 展示网点名称
-    private String Branchname;
+    private String branchname;
 
-    public Integer getMakeremittanceId() {
-        return makeremittanceId;
+    public Integer getMakeremittanceid() {
+        return makeremittanceid;
     }
 
-    public void setMakeremittanceId(Integer makeremittanceId) {
-        this.makeremittanceId = makeremittanceId;
+    public void setMakeremittanceid(Integer makeremittanceid) {
+        this.makeremittanceid = makeremittanceid;
     }
 
-    public String getMakeremittanceSerialnumber() {
-        return makeremittanceSerialnumber;
+    public String getMakeremittanceserialnumber() {
+        return makeremittanceserialnumber;
     }
 
-    public void setMakeremittanceSerialnumber(String makeremittanceSerialnumber) {
-        this.makeremittanceSerialnumber = makeremittanceSerialnumber;
+    public void setMakeremittanceserialnumber(String makeremittanceserialnumber) {
+        this.makeremittanceserialnumber = makeremittanceserialnumber;
     }
 
-    public String getMakeremittanceTime() {
-        return makeremittanceTime;
+    public String getMakeremittancetime() {
+        return makeremittancetime;
     }
 
-    public void setMakeremittanceTime(String makeremittanceTime) {
-        this.makeremittanceTime = makeremittanceTime;
+    public void setMakeremittancetime(String makeremittancetime) {
+        this.makeremittancetime = makeremittancetime;
     }
 
-    public String getMakeremittanceData() {
-        return makeremittanceData;
+    public String getMakeremittancedata() {
+        return makeremittancedata;
     }
 
-    public void setMakeremittanceData(String makeremittanceData) {
-        this.makeremittanceData = makeremittanceData;
+    public void setMakeremittancedata(String makeremittancedata) {
+        this.makeremittancedata = makeremittancedata;
     }
 
-    public String getMakeremittancePrice() {
-        return makeremittancePrice;
+    public String getMakeremittanceprice() {
+        return makeremittanceprice;
     }
 
-    public void setMakeremittancePrice(String makeremittancePrice) {
-        this.makeremittancePrice = makeremittancePrice;
+    public void setMakeremittanceprice(String makeremittanceprice) {
+        this.makeremittanceprice = makeremittanceprice;
     }
 
-    public String getMakeremittancePaynumber() {
-        return makeremittancePaynumber;
+    public String getMakeremittancepaynumber() {
+        return makeremittancepaynumber;
     }
 
-    public void setMakeremittancePaynumber(String makeremittancePaynumber) {
-        this.makeremittancePaynumber = makeremittancePaynumber;
+    public void setMakeremittancepaynumber(String makeremittancepaynumber) {
+        this.makeremittancepaynumber = makeremittancepaynumber;
     }
 
-    public String getMakeremittanceName() {
-        return makeremittanceName;
+    public String getMakeremittancename() {
+        return makeremittancename;
     }
 
-    public void setMakeremittanceName(String makeremittanceName) {
-        this.makeremittanceName = makeremittanceName;
+    public void setMakeremittancename(String makeremittancename) {
+        this.makeremittancename = makeremittancename;
     }
 
-    public String getMakeremittanceNumber() {
-        return makeremittanceNumber;
+    public String getMakeremittancenumber() {
+        return makeremittancenumber;
     }
 
-    public void setMakeremittanceNumber(String makeremittanceNumber) {
-        this.makeremittanceNumber = makeremittanceNumber;
+    public void setMakeremittancenumber(String makeremittancenumber) {
+        this.makeremittancenumber = makeremittancenumber;
     }
 
-    public Integer getMakeremittancePayuserid() {
-        return makeremittancePayuserid;
+    public Integer getMakeremittancepayuserid() {
+        return makeremittancepayuserid;
     }
 
-    public void setMakeremittancePayuserid(Integer makeremittancePayuserid) {
-        this.makeremittancePayuserid = makeremittancePayuserid;
+    public void setMakeremittancepayuserid(Integer makeremittancepayuserid) {
+        this.makeremittancepayuserid = makeremittancepayuserid;
     }
 
-    public String getMakeremittancePayname() {
-        return makeremittancePayname;
+    public String getMakeremittancepayname() {
+        return makeremittancepayname;
     }
 
-    public void setMakeremittancePayname(String makeremittancePayname) {
-        this.makeremittancePayname = makeremittancePayname;
+    public void setMakeremittancepayname(String makeremittancepayname) {
+        this.makeremittancepayname = makeremittancepayname;
     }
 
-    public Integer getMakeremittanceType() {
-        return makeremittanceType;
+    public Integer getMakeremittancetype() {
+        return makeremittancetype;
     }
 
-    public void setMakeremittanceType(Integer makeremittanceType) {
-        this.makeremittanceType = makeremittanceType;
-    }
-
-    public Integer getMakeremittanceBranch() {
-        return makeremittanceBranch;
-    }
-
-    public void setMakeremittanceBranch(Integer makeremittanceBranch) {
-        this.makeremittanceBranch = makeremittanceBranch;
+    public void setMakeremittancetype(Integer makeremittancetype) {
+        this.makeremittancetype = makeremittancetype;
     }
 
     public String getType() {
@@ -151,11 +143,19 @@ public class MakeRemittance implements Serializable {
         this.type = type;
     }
 
+    public Integer getMakeremittancebranch() {
+        return makeremittancebranch;
+    }
+
+    public void setMakeremittancebranch(Integer makeremittancebranch) {
+        this.makeremittancebranch = makeremittancebranch;
+    }
+
     public String getBranchname() {
-        return Branchname;
+        return branchname;
     }
 
     public void setBranchname(String branchname) {
-        Branchname = branchname;
+        this.branchname = branchname;
     }
 }

@@ -19,7 +19,7 @@ public class RemittanceTransaction implements Serializable {
     //收款银行1:中行2:建行3:工行4:农行5:交行6:民行7:招行8:邮行9:浦发10: 中信
     private Integer remittancetransactionBlank;
     //汇款金额
-    private String remittancetransactionPrice;
+    private Double remittancetransactionPrice;
     //当前时间 (汇款时间)年月日
     private Integer remittancetransactionTime;
     //汇款时间1：实时汇款2：普通汇款3：次日汇款
@@ -33,6 +33,17 @@ public class RemittanceTransaction implements Serializable {
 
     //手续费
     private String remittancetransactionProcedure;
+
+    //状态
+    private Integer state;
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
+    }
 
     public Integer getRemittancetransactionId() {
         return remittancetransactionId;
@@ -66,11 +77,11 @@ public class RemittanceTransaction implements Serializable {
         this.remittancetransactionBlank = remittancetransactionBlank;
     }
 
-    public String getRemittancetransactionPrice() {
+    public Double getRemittancetransactionPrice() {
         return remittancetransactionPrice;
     }
 
-    public void setRemittancetransactionPrice(String remittancetransactionPrice) {
+    public void setRemittancetransactionPrice(Double remittancetransactionPrice) {
         this.remittancetransactionPrice = remittancetransactionPrice;
     }
 

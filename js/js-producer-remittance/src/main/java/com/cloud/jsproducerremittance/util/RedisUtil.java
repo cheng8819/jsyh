@@ -523,4 +523,13 @@ public class RedisUtil {
             return 0;
         }
     }
+
+    public Set<String> allkey(String key){
+        return redisTemplate.keys("*");
+    }
+
+    public boolean move(String key , int db){
+        return redisTemplate.move(key, db);
+
+    }
 }

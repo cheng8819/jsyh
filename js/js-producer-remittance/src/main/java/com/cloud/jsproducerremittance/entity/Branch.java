@@ -19,65 +19,64 @@ public class Branch implements Serializable {
     //网点ID
     @Id
     @GeneratedValue
-    private Integer branchId;
+    private Integer branchid;
     //网点名称
-    private String branchName;
+    private String branchname;
     //网点地址
-    private String branchSite;
+    private String branchsite;
     //受理业务的时间段  {"one":"00:00 - 11:11","two":"14:30 - 15:30"}
-    private String branchData;
+    private String branchdata;
     //经度
-    private String branchLongitude;
+    private String branchlongitude;
     //维度
-    private String branchDimensionality;
+    private String branchdimensionality;
 
 
-    public Integer getBranchId() {
-        return branchId;
+    public Integer getBranchid() {
+        return branchid;
     }
 
-    public void setBranchId(Integer branchId) {
-        this.branchId = branchId;
+    public void setBranchid(Integer branchid) {
+        this.branchid = branchid;
     }
 
-    public String getBranchName() {
-        return branchName;
+    public String getBranchname() {
+        return branchname;
     }
 
-    public void setBranchName(String branchName) {
-        this.branchName = branchName;
+    public void setBranchname(String branchname) {
+        this.branchname = branchname;
     }
 
-    public String getBranchSite() {
-        return branchSite;
+    public String getBranchsite() {
+        return branchsite;
     }
 
-    public void setBranchSite(String branchSite) {
-        this.branchSite = branchSite;
+    public void setBranchsite(String branchsite) {
+        this.branchsite = branchsite;
     }
 
-    public String getBranchData() {
-        return branchData;
+    public String getBranchdata() {
+        return branchdata;
     }
 
-    public void setBranchData(String branchData) {
-        this.branchData = branchData;
+    public void setBranchdata(String branchdata) {
+        this.branchdata = branchdata;
     }
 
-    public String getBranchLongitude() {
-        return branchLongitude;
+    public String getBranchlongitude() {
+        return branchlongitude;
     }
 
-    public void setBranchLongitude(String branchLongitude) {
-        this.branchLongitude = branchLongitude;
+    public void setBranchlongitude(String branchlongitude) {
+        this.branchlongitude = branchlongitude;
     }
 
-    public String getBranchDimensionality() {
-        return branchDimensionality;
+    public String getBranchdimensionality() {
+        return branchdimensionality;
     }
 
-    public void setBranchDimensionality(String branchDimensionality) {
-        this.branchDimensionality = branchDimensionality;
+    public void setBranchdimensionality(String branchdimensionality) {
+        this.branchdimensionality = branchdimensionality;
     }
-
 }

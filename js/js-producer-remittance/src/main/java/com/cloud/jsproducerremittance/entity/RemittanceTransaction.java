@@ -41,6 +41,16 @@ public class RemittanceTransaction implements Serializable {
 
     //手续费
     private String remittancetransactionprocedure;
+    //状态
+    private Integer state;
+
+    public Integer getState() {
+        return state;
+    }
+
+    public void setState(Integer state) {
+        this.state = state;
+    }
 
     public int getRemittancetransactionid() {
         return remittancetransactionid;
