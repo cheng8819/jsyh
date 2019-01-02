@@ -1,27 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ce3f4790-d3cd-47e8-a661-ccfb63ed1f92" name="Default" comment="2019-1-1 猪事顺利2">
+    <list default="true" id="ce3f4790-d3cd-47e8-a661-ccfb63ed1f92" name="Default" comment="2019-1-2 成功是留给有准备的人的">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-cosumer-fund/src/main/java/com/example/jscosumerfund/controller/FundController.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-cosumer-fund/src/main/java/com/example/jscosumerfund/controller/FundController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-cosumer-fund/src/main/java/com/example/jscosumerfund/pojo/Performance.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-cosumer-fund/src/main/java/com/example/jscosumerfund/pojo/Performance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-cosumer-fund/src/main/java/com/example/jscosumerfund/service/FundService.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-cosumer-fund/src/main/java/com/example/jscosumerfund/service/FundService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-producer-financial/src/main/java/com/example/jsproducerfinancial/controller/FinancialController.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-producer-financial/src/main/java/com/example/jsproducerfinancial/controller/FinancialController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-producer-financial/src/main/java/com/example/jsproducerfinancial/dao/FinancialDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-producer-financial/src/main/java/com/example/jsproducerfinancial/dao/FinancialDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-producer-financial/src/main/java/com/example/jsproducerfinancial/pojo/BrowsingHistory.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-producer-financial/src/main/java/com/example/jsproducerfinancial/pojo/BrowsingHistory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-producer-financial/src/main/java/com/example/jsproducerfinancial/pojo/Buy.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-producer-financial/src/main/java/com/example/jsproducerfinancial/pojo/Buy.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-producer-financial/src/main/java/com/example/jsproducerfinancial/pojo/Finance.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-producer-financial/src/main/java/com/example/jsproducerfinancial/pojo/Finance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-producer-financial/src/main/java/com/example/jsproducerfinancial/service/FinancialService.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-producer-financial/src/main/java/com/example/jsproducerfinancial/service/FinancialService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-producer-financial/src/main/java/com/example/jsproducerfinancial/service/Impl/FinancialServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-producer-financial/src/main/java/com/example/jsproducerfinancial/service/Impl/FinancialServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/js-producer-financial/src/main/resources/mapper/FinanceMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-producer-financial/src/main/resources/mapper/FinanceMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-producer-fund/src/main/java/com/example/jsproducerfund/controller/FundController.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-producer-fund/src/main/java/com/example/jsproducerfund/controller/FundController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-producer-fund/src/main/java/com/example/jsproducerfund/controller/FundUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-producer-fund/src/main/java/com/example/jsproducerfund/controller/FundUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-producer-fund/src/main/java/com/example/jsproducerfund/pojo/FundInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-producer-fund/src/main/java/com/example/jsproducerfund/pojo/FundInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-producer-fund/src/main/java/com/example/jsproducerfund/pojo/Performance.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-producer-fund/src/main/java/com/example/jsproducerfund/pojo/Performance.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-producer-fund/src/main/java/com/example/jsproducerfund/service/BuyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-producer-fund/src/main/java/com/example/jsproducerfund/service/BuyService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-producer-fund/src/main/java/com/example/jsproducerfund/service/Impl/BuyServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-producer-fund/src/main/java/com/example/jsproducerfund/service/Impl/BuyServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-producer-fund/src/main/java/com/example/jsproducerfund/service/Impl/CalculateImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-producer-fund/src/main/java/com/example/jsproducerfund/service/Impl/CalculateImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-producer-fund/src/main/java/com/example/jsproducerfund/service/Impl/FundUserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-producer-fund/src/main/java/com/example/jsproducerfund/service/Impl/FundUserServiceImpl.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/js/js-producer-fund/target/" />
     <ignored path="$PROJECT_DIR$/js/js-producer-financial/target/" />
@@ -86,7 +68,7 @@
           <entry key="java" value="585" />
           <entry key="rnc" value="1" />
           <entry key="txt" value="2" />
-          <entry key="xml" value="86" />
+          <entry key="xml" value="87" />
           <entry key="yml" value="57" />
         </counts>
       </usages-collector>
@@ -98,7 +80,7 @@
           <entry key="JAVA" value="585" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="RNG Compact" value="1" />
-          <entry key="XML" value="86" />
+          <entry key="XML" value="87" />
           <entry key="YAML" value="57" />
         </counts>
       </usages-collector>
@@ -107,7 +89,7 @@
           <entry key="dummy" value="25" />
           <entry key="html" value="2876" />
           <entry key="java" value="21742" />
-          <entry key="txt" value="70" />
+          <entry key="txt" value="82" />
           <entry key="xml" value="2941" />
           <entry key="yml" value="273" />
         </counts>
@@ -116,7 +98,7 @@
         <counts>
           <entry key="HTML" value="2876" />
           <entry key="JAVA" value="21742" />
-          <entry key="PLAIN_TEXT" value="95" />
+          <entry key="PLAIN_TEXT" value="107" />
           <entry key="SQL" value="175" />
           <entry key="XML" value="2766" />
           <entry key="YAML" value="273" />
@@ -126,11 +108,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/js-producer-financial/src/main/java/com/example/jsproducerfinancial/controller/FinancialController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="291">
-              <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+            <state relative-caret-position="594">
+              <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#872#873#0" expanded="true" />
@@ -138,6 +120,15 @@
                 <element signature="e#2610#2611#0" expanded="true" />
                 <element signature="e#2686#2687#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/js-producer-financial/src/main/resources/mapper/FinanceMapper.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="313">
+              <caret line="46" column="26" lean-forward="true" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -216,7 +207,6 @@
         <option value="$PROJECT_DIR$/js/js-producer-fund/src/main/java/com/example/jsproducerfund/service/Impl/BuyServiceImpl.java" />
         <option value="$PROJECT_DIR$/js/js-producer-fund/src/main/java/com/example/jsproducerfund/pojo/Performance.java" />
         <option value="$PROJECT_DIR$/js/js-cosumer-fund/src/main/java/com/example/jscosumerfund/pojo/Performance.java" />
-        <option value="$PROJECT_DIR$/js/js-producer-financial/src/main/resources/mapper/FinanceMapper.xml" />
         <option value="$PROJECT_DIR$/js/js-producer-financial/src/main/java/com/example/jsproducerfinancial/dao/FinancialDao.java" />
         <option value="$PROJECT_DIR$/js/js-producer-financial/src/main/java/com/example/jsproducerfinancial/service/FinancialService.java" />
         <option value="$PROJECT_DIR$/js/js-producer-financial/src/main/java/com/example/jsproducerfinancial/service/Impl/FinancialServiceImpl.java" />
@@ -224,6 +214,7 @@
         <option value="$PROJECT_DIR$/js/js-producer-financial/src/main/java/com/example/jsproducerfinancial/pojo/Buy.java" />
         <option value="$PROJECT_DIR$/js/js-producer-financial/src/main/java/com/example/jsproducerfinancial/pojo/BrowsingHistory.java" />
         <option value="$PROJECT_DIR$/js/js-producer-financial/src/main/java/com/example/jsproducerfinancial/controller/FinancialController.java" />
+        <option value="$PROJECT_DIR$/js/js-producer-financial/src/main/resources/mapper/FinanceMapper.xml" />
       </list>
     </option>
   </component>
@@ -781,7 +772,7 @@
       <workItem from="1546092214417" duration="87000" />
       <workItem from="1546328885988" duration="27207000" />
       <workItem from="1546389666864" duration="1320000" />
-      <workItem from="1546402748213" duration="18952000" />
+      <workItem from="1546402748213" duration="19086000" />
     </task>
     <task id="LOCAL-00001" summary="第二次提交">
       <created>1545363718217</created>
@@ -874,7 +865,14 @@
       <option name="project" value="LOCAL" />
       <updated>1546357379937</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="2019-1-2 成功是留给有准备的人的">
+      <created>1546441063330</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1546441063330</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -889,7 +887,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="303153000" />
+    <option name="totallyTimeSpent" value="303287000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -904,7 +902,7 @@
     <frame x="54" y="-8" width="1320" height="784" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.10714286" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.08492064" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -994,7 +992,8 @@
     <MESSAGE value="2018-12-28 提交" />
     <MESSAGE value="2019-1-1 猪事顺利" />
     <MESSAGE value="2019-1-1 猪事顺利2" />
-    <option name="LAST_COMMIT_MESSAGE" value="2019-1-1 猪事顺利2" />
+    <MESSAGE value="2019-1-2 成功是留给有准备的人的" />
+    <option name="LAST_COMMIT_MESSAGE" value="2019-1-2 成功是留给有准备的人的" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
@@ -1345,13 +1344,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-producer-financial/src/main/resources/mapper/FinanceMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="799">
-          <caret line="59" column="17" selection-start-line="59" selection-start-column="17" selection-end-line="59" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/js-producer-financial/src/main/java/com/example/jsproducerfinancial/dao/FinancialDao.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="435">
@@ -1371,8 +1363,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/js-producer-financial/src/main/java/com/example/jsproducerfinancial/controller/FinancialController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="291">
-          <caret line="23" column="23" selection-start-line="23" selection-start-column="23" selection-end-line="23" selection-end-column="23" />
+        <state relative-caret-position="594">
+          <caret line="22" column="33" selection-start-line="22" selection-start-column="33" selection-end-line="22" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#872#873#0" expanded="true" />
@@ -1380,6 +1372,13 @@
             <element signature="e#2610#2611#0" expanded="true" />
             <element signature="e#2686#2687#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-producer-financial/src/main/resources/mapper/FinanceMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="313">
+          <caret line="46" column="26" lean-forward="true" selection-start-line="46" selection-start-column="26" selection-end-line="46" selection-end-column="26" />
         </state>
       </provider>
     </entry>

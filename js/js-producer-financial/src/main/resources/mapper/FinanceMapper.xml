@@ -41,7 +41,7 @@
         values(#{username},#{product_name},#{product_number},#{browsing_history_time})
     </insert>
 
-    <!--查询购买信息-->
+    <!--&lt;!&ndash;查询购买信息&ndash;&gt;
     <select id="selBuyFinance" parameterType="com.example.jsproducerfinancial.pojo.Buy" resultType="com.example.jsproducerfinancial.pojo.Buy">
         select * from buy
         <trim prefix="where" prefixOverrides="and | or">
@@ -49,7 +49,7 @@
                 and username = #{username}
             </if>
         </trim>
-    </select>
+    </select>-->
 
     <insert id="addBuyFinance" parameterType="com.example.jsproducerfinancial.pojo.Buy">
         insert into buy(username,product_name,product_number,product_unit,product_money,buy_time)
@@ -57,7 +57,7 @@
     </insert>
 
     <!--查询购买记录-->
-    <select id="">
+    <select id="selBuyFinance">
         select buy_id,username,product_name,product_number,product_unit,product_money,product_earnings,buy_time from buy
         <where>
             <if test="username != null">
