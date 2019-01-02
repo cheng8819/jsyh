@@ -33,13 +33,17 @@ public class FundUserServiceImpl implements FundUserService {
 
     @Override
     public String addFundAccount(FundUser fundUser) {
-        //调用短信验证码接口进行身份验证
-        if(fundUser.getUsername() == null || fundUser.getPhone() == null ||
-                fundUser.getCard_number() == null || fundUser.getCard_type() == null ||
-                fundUser.getBeneficial_owner() == null || fundUser.getSex() == null ||
-                fundUser.getCapital_source() == null)
-        {
-            return "开户信息不与允许为空";
+        try {
+            //调用短信验证码接口进行身份验证
+            if(fundUser.getUsername() == null || fundUser.getPhone() == null ||
+                    fundUser.getCard_number() == null || fundUser.getCard_type() == null ||
+                    fundUser.getBeneficial_owner() == null || fundUser.getSex() == null ||
+                    fundUser.getCapital_source() == null)
+            {
+                return "开户信息不与允许为空";
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
         Integer result = fundUserDao.addFundAccount(fundUser);
         if(result <= 0){

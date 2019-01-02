@@ -5,6 +5,7 @@ import com.example.jsproducerfund.dao.BuyDao;
 import com.example.jsproducerfund.dao.FundDao;
 import com.example.jsproducerfund.pojo.Buy;
 import com.example.jsproducerfund.pojo.FundInfo;
+import com.example.jsproducerfund.pojo.Performance;
 import com.example.jsproducerfund.service.BuyService;
 import com.example.jsproducerfund.util.Job.QuartzJobFactory;
 import com.example.jsproducerfund.util.Job.QuartzManager;
@@ -31,21 +32,41 @@ public class BuyServiceImpl implements BuyService {
     @Autowired
     private QuartzManager quartzManager;
 
+    /**
+     *
+     * @param fund_number
+     * @param username
+     * @param fund_money
+     * @return
+     * @desc:
+     *      //-1.计算金额
+     *      //0.查看银行卡每日消费金额上限，基金每日申购上限
+     *      //1.调银行卡余额接口查看用户余额是否充足
+     *      //2.余额充足在基金购买表添加一条购买记录
+     *      //3.如果基金以前购买过，现在要追加，修改其购买份额,花费金额
+     */
     public String buyFund(String fund_number,String username,Double fund_money) {
+        if(username == null || fund_number == null){
+            return "用户标识或基金代码不为空";
+        }
+        if(fund_money == null || fund_money <= 0){
+            return "购买金额不为空或必须大于0";
+        }
         FundInfo fundInfo = fundDao.showFundDetails(fund_number);
         if(fundInfo == null){
             return "未查询到该基金信息";
         }
-        //-1.计算金额
-
-        //0.查看银行卡每日消费金额上限，基金每日申购上限
-        //1.调银行卡余额接口查看用户余额是否充足
-        //2.余额充足在基金购买表添加一条购买记录
-        //3.如果基金以前购买过，现在要追加，修改其购买份额,花费金额
         String fund_name = fundInfo.getFund_name();
-        Double fund_price = fundInfo.getUnit_value();
-        Double fund_unit = fund_money / fund_price; //基金对象里没有购买份额
+        Double fund_unit = cutValue(fundSubscriptionFee(fund_number, fund_money), 3); //计算申购份额
         Date buyDate = new Date(); //购买时间
+
+        if(fund_unit > fundInfo.getFundUnit()){
+            return "购买份额大于剩余基金份额";
+        }
+
+        fundInfo.setFundUnit(fundInfo.getFundUnit() - fund_unit); //减去份额
+        fundInfo.setFund_scale(fundInfo.getFund_scale() + fund_money); //增加基金规模
+        fundInfo.setFund_newscale(fundInfo.getFund_newscale() + fund_money); //增加最新基金规模
 
         //查询记录是否曾经购买过
         Buy oldInfo = new Buy();
@@ -84,13 +105,34 @@ public class BuyServiceImpl implements BuyService {
         return JSON.toJSONString(buys);
     }
 
-    public String sellFund(String fundName, String username) {
-        FundInfo fundInfo = fundDao.findNewFunds().get(0);
-        //1.判断基金期限是否到了
+    /**
+     *
+     * @param fundNumber
+     * @param num
+     * @param username
+     * @return
+     * @desc:
+     *      //1.判断基金期限是否到了
+     *      //2.修改购买基金信息表里的数据
+     */
+    public String sellFund(String fundNumber,Integer num, String username) {
+        if(fundNumber == null || username == null){
+            return "基金代码或用户标识不为空";
+        }
+        if(num == null || num <= 0){
+            return "赎回基金数量不为空或赎回数量必须大等0";
+        }
 
-        //2.修改购买基金信息表里的数据
-        Double earnings = 1000.00; //收益
-        Buy sellInfo = new Buy(username,fundName,earnings,String.valueOf(new Date()));
+        //计算赎回相关费用
+        String data = fundEarnings(fundNumber, num);
+
+        FundInfo fundInfo = fundDao.showFundDetails(fundNumber);
+        fundInfo.setFundUnit(fundInfo.getFundUnit() + num); //增加基金份额
+        Double totalPrice = Double.valueOf(cutValue(data, 1)); //赎回总额
+        fundInfo.setFund_scale(fundInfo.getFund_scale() - totalPrice); //减去基金规模
+
+        Double earnings = Double.valueOf(cutValue(data,4)); //收益
+        Buy sellInfo = new Buy(username,fundNumber,earnings,String.valueOf(new Date()));
         Integer result = buyDao.updBuyFund(sellInfo);
         if(result <= 0){
             return "赎回失败";
@@ -98,26 +140,58 @@ public class BuyServiceImpl implements BuyService {
         return "赎回成功";
     }
 
-    public String fundEarnings(String fundName,Integer num,Integer time) {
+    public String fundEarnings(String fundNumber,Integer num) {
+        if(fundNumber == null || num == null || num <= 0){
+            return "相关数据不完整";
+        }
+        FundInfo fundInfo = fundDao.showFundDetails(fundNumber);
+        if(fundInfo == null){
+            return "未购买该基金";
+        }
         //计算基金收益:
-        Double redemptionRate = 0.005; //赎回费率
-        Double iopy = 1.4; //赎回当日基金净值
-        Double totalAmountRedemption = num * iopy; //赎回总额
+        Double redemptionRate = fundInfo.getMaximum_redemption_rate(); //赎回费率
+        Double iopv = fundDao.selPerformance(fundNumber).get(0).getIopy(); //赎回当日基金净值
+        Double totalAmountRedemption = num * iopv; //赎回总额
         Double redemptionFee = totalAmountRedemption * redemptionRate; //赎回费用
         Double netRedemption = totalAmountRedemption - redemptionFee; //赎回净额
-        return null;
+        Double data[] = {totalAmountRedemption,redemptionRate,iopv,redemptionFee,netRedemption};
+        return String.valueOf(data);
     }
 
-
-    public String fundSubscriptionFee(String fundName, Double money) {
-        Double iopy = 1.2; //当日净值
-        Double explainRate = 0.015; //申购费率
+    public String fundSubscriptionFee(String fundNumber, Double money) {
+        if(fundNumber == null){
+            return "基金代码不为空";
+        }
+        if(money == null || money <= 0){
+            return "购买金额不为空或购买金额必须大于0";
+        }
+        FundInfo fundInfo = fundDao.showFundDetails(fundNumber);
+        if(fundInfo == null){
+            return "未查询到该基金任何信息";
+        }
+        Double iopv = fundInfo.getIopv(); //当日净值
+        Double explainRate = fundInfo.getMaximum_shengou_rate(); //申购费率
         Double netSubscriptionAmount = money / (1.00+explainRate); //净申购金额
         Double subscriptionFees = money - netSubscriptionAmount; //申购费用
-        Double shareSubscription = netSubscriptionAmount / iopy; //申购份额
-        return null;
+        Double shareSubscription = netSubscriptionAmount / iopv; //申购份额
+        Double data[] = {explainRate,subscriptionFees,shareSubscription};
+        return String.valueOf(data);
     }
 
+    /**
+     * 对基金赎回、申购返回结果进行转化
+     * @param data
+     * @param index
+     * @return
+     */
+    public Double cutValue(String data,Integer index){
+        String[] split = data.split(",");
+        Double[] doubleArray = new Double[data.length()];
+        for(int i=0;i<split.length;i++){
+            doubleArray[i] = Double.parseDouble(split[i]);
+        }
+        return doubleArray[index-1];
+    }
 
     public String automaticInvestmentPlan(String jobName,String time) {
         ScheduleJob job = new ScheduleJob();

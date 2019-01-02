@@ -27,20 +27,20 @@ public interface BuyService {
      * 赎回基金
      * 1.判断基金期限是否到期
      * 2.根据收益情况给客户打钱
-     * @param fundName
+     * @param fundNumber
+     * @param num
      * @param username
      * @return
      */
-    String sellFund(String fundName,String username);
+    String sellFund(String fundNumber,Integer num, String username);
 
     /**
      * 计算基金收益
-     * @param fundName 基金名称
+     * @param fundNumber 基金名称
      * @param num 赎回份额
-     * @param time 购买天数
      * @return
      */
-    String fundEarnings(String fundName,Integer num,Integer time);
+    String fundEarnings(String fundNumber,Integer num);
 
     /**
      * 计算申购费用

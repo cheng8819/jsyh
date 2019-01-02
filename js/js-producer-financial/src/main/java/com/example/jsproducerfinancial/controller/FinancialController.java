@@ -1,12 +1,10 @@
 package com.example.jsproducerfinancial.controller;
 
-import com.example.jsproducerfinancial.pojo.BrowsingHistory;
 import com.example.jsproducerfinancial.pojo.Finance;
 import com.example.jsproducerfinancial.service.Impl.FinancialServiceImpl;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 /**
@@ -35,15 +33,15 @@ public class FinancialController {
     @ApiOperation(value = "购买理财产品",notes = "三个主要参数：产品信息、用户标识、金额")
     @ResponseBody
     @RequestMapping(value = "/buyFinance",method = RequestMethod.GET)
-    public String buyFinance(Finance finance,String username,Double money){
-        return financialService.buyFinancial(finance,username,money);
+    public String buyFinance(String financeName,String username,Double money){
+        return financialService.buyFinancial(financeName,username,money);
     }
 
     @ApiOperation(value = "查询已购买理财产品信息",notes = "根据用户标识查询")
     @ResponseBody
     @RequestMapping(value = "/showBuyFinancial",method = RequestMethod.GET)
-    public String showBuyFinancial(String username){
-        return financialService.showBuyFinancial(username);
+    public String showBuyFinancial(String username,String productNumber){
+        return financialService.showBuyFinancial(username,productNumber);
     }
 
     @ApiOperation(value = "赎回理财产品",notes = "产品信息、用户标识")
@@ -63,8 +61,8 @@ public class FinancialController {
     @ApiOperation(value = "添加浏览记录",notes = "产品信息、用户标识")
     @ResponseBody
     @RequestMapping(value = "/showBrowsingHistory",method = RequestMethod.GET)
-    public String showBrowsingHistory(BrowsingHistory browsingHistory){
-        return financialService.showBrowsingHistory(browsingHistory);
+    public String showBrowsingHistory(String username){
+        return financialService.showBrowsingHistory(username);
     }
 
     @ApiOperation(value = "计算理财产品收益",notes = "产品信息、用户标识")

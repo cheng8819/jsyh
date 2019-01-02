@@ -69,4 +69,5 @@ public interface FinancialDao {
      * @return
      */
     List<Buy> selBuyFinance(Buy buy);
+
 }

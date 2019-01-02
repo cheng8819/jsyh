@@ -55,4 +55,18 @@
         insert into buy(username,product_name,product_number,product_unit,product_money,buy_time)
         values(#{username},#{product_name},#{product_number},#{product_unit},#{product_money},#{buy_time})
     </insert>
+
+    <!--查询购买记录-->
+    <select id="">
+        select buy_id,username,product_name,product_number,product_unit,product_money,product_earnings,buy_time from buy
+        <where>
+            <if test="username != null">
+                username = #{username}
+            </if>
+            <if test="product_number != null">
+                and product_number = #{productNumber}
+            </if>
+            and product_status=1
+        </where>
+    </select>
 </mapper>

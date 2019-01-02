@@ -21,22 +21,17 @@ public class FundController {
 
 
     @RequestMapping(value = "/showNewFunds",method = RequestMethod.GET)
-    public String showNewFunds(HttpServletRequest request,HttpServletResponse response){
-        //解决跨域问题
-        //response.setHeader("Access-Control-Allow-Origin", "*");
+    public String showNewFunds(){
         return fundService.showNewFunds();
     }
 
     @RequestMapping(value = "/showOldFunds",method = RequestMethod.GET)
-    public String showFunds(@RequestParam("fundType") String fundType,HttpServletResponse response){
-        //response.setHeader("Access-Control-Allow-Origin", "*");
+    public String showFunds(@RequestParam("fundType") String fundType){
         return fundService.showOldFunds(fundType);
     }
 
     @RequestMapping(value = "/showAllFunds",method = RequestMethod.POST)
-    public String showAllFunds(@RequestBody(required = false) FundInfo fundInfo, HttpServletResponse response){
-        //解决跨域问题
-        //response.setHeader("Access-Control-Allow-Origin", "*");
+    public String showAllFunds(FundInfo fundInfo){
         return fundService.showAllFunds(fundInfo);
     }
 

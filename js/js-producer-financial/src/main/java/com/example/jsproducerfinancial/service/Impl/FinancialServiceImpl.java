@@ -25,10 +25,20 @@ public class FinancialServiceImpl implements FinancialService {
     private FinancialDao financialDao;
 
     @Override
-    public String buyFinancial(Finance finance,String username,Double money) {
+    public String buyFinancial(String financeName,String username,Double money) {
+        if(financeName == null){
+            return "产品名称不为空";
+        }
+        Finance finance = new Finance();
+        finance.setProduct_name(financeName);
+        Finance financeInfo = financialDao.findAll(finance).get(0);
+        if(financeInfo == null){
+            return "未查询到相关信息";
+        }
+
         Buy buy = new Buy();
-        buy.setProduct_name(finance.getProduct_name());
-        buy.setProduct_number(finance.getProduct_code());
+        buy.setProduct_name(financeInfo.getProduct_name());
+        buy.setProduct_number(financeInfo.getProduct_code());
         buy.setUsername(username);
         buy.setProduct_money(money);
         buy.setBuy_time(String.valueOf(new Date())); //放置时间戳
@@ -54,12 +64,15 @@ public class FinancialServiceImpl implements FinancialService {
     }
 
     @Override
-    public String showBuyFinancial(String username) {
+    public String showBuyFinancial(String username,String productNumber) {
         if(username == null || "".equals(username)){
             return "用户名不为空";
         }
         Buy buy = new Buy();
         buy.setUsername(username);
+        if(productNumber != null){
+            buy.setProduct_number(productNumber);
+        }
         List<Buy> list = financialDao.selBuyFinance(buy);
         if(list.size() <= 0){
             return "未查询到购买信息";
@@ -106,6 +119,12 @@ public class FinancialServiceImpl implements FinancialService {
 
     @Override
     public String addBrowsingHistory(Finance finance,String username) {
+        if(finance == null){
+            return "理财产品信息不为空";
+        }
+        if(username == null){
+            return "用户标识不为空";
+        }
         BrowsingHistory browsingHistory = new BrowsingHistory();
         browsingHistory.setUsername(username);
         browsingHistory.setProduct_name(finance.getProduct_name());
@@ -122,8 +141,13 @@ public class FinancialServiceImpl implements FinancialService {
     }
 
     @Override
-    public String showBrowsingHistory(BrowsingHistory browsingHistory) {
-        List<BrowsingHistory> list = financialDao.findAllBH(browsingHistory);
+    public String showBrowsingHistory(String username) {
+        if(username == null){
+            return "用户标识不为空";
+        }
+        BrowsingHistory bh = new BrowsingHistory();
+        bh.setUsername(username);
+        List<BrowsingHistory> list = financialDao.findAllBH(bh);
         if(list.size() <= 0){
             return "未查询到浏览记录";
         }
@@ -132,9 +156,16 @@ public class FinancialServiceImpl implements FinancialService {
 
     @Override
     public String showFinancialDetails(String financialName) {
-        Finance finance = new Finance();
-        finance.setProduct_name(financialName);
-        Finance finance1 = financialDao.findAll(finance).get(0);
+        if(financialName == null){
+            return "理财产品名称不为空";
+        }
+        Finance newFinance = new Finance();
+        newFinance.setProduct_name(financialName);
+        Finance finance = financialDao.findAll(newFinance).get(0);
+        if(finance == null){
+            return "未查询到相关信息";
+        }
         return JSON.toJSONString(finance);
     }
+
 }

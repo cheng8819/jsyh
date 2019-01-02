@@ -82,12 +82,12 @@ public class FundInfo {
     /**
      *  基金募集规模
      */
-    private String fund_scale;
+    private Double fund_scale;
 
     /**
      *  最新基金募集规模
      */
-    private String fund_newscale;
+    private Double fund_newscale;
 
     /**
      * 单位面值(发行价)
@@ -103,17 +103,17 @@ public class FundInfo {
     /**
      * 最大认购费率
      */
-    private String maximum_rengou_rate;
+    private Double maximum_rengou_rate;
 
     /**
      * 最大申购费率
      */
-    private String maximum_shengou_rate;
+    private Double maximum_shengou_rate;
 
     /**
      * 最大赎回费率
      */
-    private String maximum_redemption_rate;
+    private Double maximum_redemption_rate;
 
     /**
      * 首笔最低认购金额

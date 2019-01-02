@@ -7,10 +7,7 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 /**
  * @auther: 666先生的救赎
@@ -19,6 +16,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 @Api("基金用户操作api")
 @Controller
+@CrossOrigin(origins="*", maxAge = 3600,allowCredentials = "true")
 public class FundUserController {
 
     @Autowired
@@ -34,7 +32,7 @@ public class FundUserController {
     @ApiOperation(value = "基金开户",notes = "基金开户，短信验证")
     @ResponseBody
     @RequestMapping(value = "/fundAccount",method = RequestMethod.POST)
-    public String fundAccount(@RequestBody(required = false) FundUser fundUser){
+    public String fundAccount(FundUser fundUser){
         return fundUserService.addFundAccount(fundUser);
     }
 

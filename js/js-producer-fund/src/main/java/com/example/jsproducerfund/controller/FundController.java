@@ -41,8 +41,8 @@ public class FundController {
      */
     @ApiOperation(value = "查询全部基金产品信息",notes = "支持多字段查询，支持分页查询,index参数 1:上一页  -1:下一页")
     @ResponseBody
-    @RequestMapping(value = "/showAllFunds",method = RequestMethod.GET)
-    public String showAllFunds(@RequestBody(required = false) FundInfo fundInfo){
+    @RequestMapping(value = "/showAllFunds",method = RequestMethod.POST)
+    public String showAllFunds(FundInfo fundInfo){
         return fundService.showAllFunds(fundInfo);
     }
 
