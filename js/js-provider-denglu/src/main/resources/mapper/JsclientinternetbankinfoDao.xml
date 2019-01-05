@@ -8,7 +8,39 @@
         <result property="jsInternetbankpassword" column="JS_InternetBankPassWord" jdbcType="VARCHAR"/>
         <result property="jsCookierecord" column="JS_CookieRecord" jdbcType="VARCHAR"/>
         <result property="jsIdnumber" column="JS_IDNumber" jdbcType="VARCHAR"/>
+        <result property="jsInternetBankPhone" column="JS_InternetBankPhone" jdbcType="VARCHAR"/>
     </resultMap>
+
+    <!--用户登录记录cookie 可以免发送登录验证码登录-->
+    <select id="loginRecordCookie" resultType="java.lang.String">
+        select JS_CookieRecord from JSBanKUserInfo.JsClientInternetBankInfo where JS_InternetBankPhone = #{jsInternetBankPhone}
+    </select>
+
+    <!--添加用户cookie记录-->
+    <update id="updateCookieRecord" >
+        update JSBanKUserInfo.JsClientInternetBankInfo
+        <set>
+            <if test="jsCookieRecord != null and jsCookieRecord != ''">
+                JS_CookieRecord = #{jsCookieRecord},
+            </if>
+        </set>
+        where JS_InternetBankPhone = #{jsInternetBankPhone}
+    </update>
+
+    <!--通过网银手机号查询身份证号码-->
+    <select id="selectIdCard" resultType="java.lang.String">
+        select JS_IDNumber
+        from JSBanKUserInfo.JsClientInternetBankInfo
+        where JS_InternetBankPhone = #{jsInternetbankphone}
+    </select>
+
+
+    <!--通过后台id查询密码-->
+    <select id="selectPassword" resultType="java.lang.String">
+        select JS_InternetBankPassWord
+        from JSBanKUserInfo.JsClientInternetBankInfo
+        where JS_ClientID = #{jsClientID}
+    </select>
 
     <!--查询单个-->
     <select id="queryById" resultMap="JsclientinternetbankinfoMap" parameterType="java.lang.String">
@@ -41,6 +73,8 @@ select jsclientinternetbankinfo.JS_ClientID,jsclientinternetbankinfo.JS_CookieRe
        </set>
         where JS_ClientID = #{jsClientid}
     </update>
+
+
 
 
     <select id="getPhone" resultType="java.lang.String">

@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.jsregisterprovider.jsproviderregister.dao.JsclientinfoDao">
+
+    <resultMap type="com.example.jsregisterprovider.jsproviderregister.pojo.Jsclientinfo" id="JsclientinfoMap">
+        <result property="jsClientid" column="JS_ClientID" jdbcType="INTEGER"/>
+        <result property="jsClientname" column="JS_ClientName" jdbcType="VARCHAR"/>
+        <result property="jsSex" column="JS_Sex" jdbcType="VARCHAR"/>
+        <result property="jsCretificatetype" column="JS_CretificateType" jdbcType="VARCHAR"/>
+        <result property="jsIdnumber" column="JS_IDNumber" jdbcType="VARCHAR"/>
+        <result property="jsPhonenumber" column="JS_PhoneNumber" jdbcType="VARCHAR"/>
+        <result property="jsClientrank" column="JS_ClientRank" jdbcType="VARCHAR"/>
+        <result property="jsRegisterway" column="JS_RegisterWay" jdbcType="VARCHAR"/>
+        <result property="jsInternetopentype" column="JS_InternetOpenType" jdbcType="INTEGER"/>
+        <result property="jsNationality" column="JS_Nationality" jdbcType="VARCHAR"/>
+        <result property="jsDateofbirth" column="JS_DateOfBirth" jdbcType="VARCHAR"/>
+        <result property="jsMaritalstatus" column="JS_MaritalStatus" jdbcType="VARCHAR"/>
+        <result property="jsDegreeofeducation" column="JS_DegreeOfEducation" jdbcType="VARCHAR"/>
+        <result property="jsProfession" column="JS_Profession" jdbcType="VARCHAR"/>
+        <result property="jsIndustryinvolved" column="JS_IndustryInvolved" jdbcType="VARCHAR"/>
+        <result property="jsTechnicaltitle" column="JS_TechnicalTitle" jdbcType="VARCHAR"/>
+        <result property="jsAdministrativeranks" column="JS_AdministrativeRanks" jdbcType="VARCHAR"/>
+        <result property="jsTosupportthepopulation" column="JS_ToSupportThePopulation" jdbcType="VARCHAR"/>
+        <result property="jsWorkunit" column="JS_WorkUnit" jdbcType="VARCHAR"/>
+        <result property="jsEntertheworkunittime" column="JS_EnterTheWorkUnitTime" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="JsclientinfoMap">
+        select
+          JS_ClientID, JS_ClientName, JS_Sex, JS_CretificateType, JS_IDNumber, JS_PhoneNumber, JS_ClientRank, JS_RegisterWay, JS_InternetOpenType, JS_Nationality, JS_DateOfBirth, JS_MaritalStatus, JS_DegreeOfEducation, JS_Profession, JS_IndustryInvolved, JS_TechnicalTitle, JS_AdministrativeRanks, JS_ToSupportThePopulation, JS_WorkUnit, JS_EnterTheWorkUnitTime
+        from JSBanKUserInfo.JsClientInfo
+        where JS_ClientID = #{jsClientid}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="JsclientinfoMap">
+        select
+          JS_ClientID, JS_ClientName, JS_Sex, JS_CretificateType, JS_IDNumber, JS_PhoneNumber, JS_ClientRank, JS_RegisterWay, JS_InternetOpenType, JS_Nationality, JS_DateOfBirth, JS_MaritalStatus, JS_DegreeOfEducation, JS_Profession, JS_IndustryInvolved, JS_TechnicalTitle, JS_AdministrativeRanks, JS_ToSupportThePopulation, JS_WorkUnit, JS_EnterTheWorkUnitTime
+        from JSBanKUserInfo.JsClientInfo
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="JsclientinfoMap">
+        select
+          JS_ClientID, JS_ClientName, JS_Sex, JS_CretificateType, JS_IDNumber, JS_PhoneNumber, JS_ClientRank, JS_RegisterWay, JS_InternetOpenType, JS_Nationality, JS_DateOfBirth, JS_MaritalStatus, JS_DegreeOfEducation, JS_Profession, JS_IndustryInvolved, JS_TechnicalTitle, JS_AdministrativeRanks, JS_ToSupportThePopulation, JS_WorkUnit, JS_EnterTheWorkUnitTime
+        from JSBanKUserInfo.JsClientInfo
+        <where>
+            <if test="jsClientid != null">
+                and JS_ClientID = #{jsClientid}
+            </if>
+            <if test="jsClientname != null and jsClientname != ''">
+                and JS_ClientName = #{jsClientname}
+            </if>
+            <if test="jsSex != null and jsSex != ''">
+                and JS_Sex = #{jsSex}
+            </if>
+            <if test="jsCretificatetype != null and jsCretificatetype != ''">
+                and JS_CretificateType = #{jsCretificatetype}
+            </if>
+            <if test="jsIdnumber != null and jsIdnumber != ''">
+                and JS_IDNumber = #{jsIdnumber}
+            </if>
+            <if test="jsPhonenumber != null and jsPhonenumber != ''">
+                and JS_PhoneNumber = #{jsPhonenumber}
+            </if>
+            <if test="jsClientrank != null and jsClientrank != ''">
+                and JS_ClientRank = #{jsClientrank}
+            </if>
+            <if test="jsRegisterway != null and jsRegisterway != ''">
+                and JS_RegisterWay = #{jsRegisterway}
+            </if>
+            <if test="jsInternetopentype != null">
+                and JS_InternetOpenType = #{jsInternetopentype}
+            </if>
+            <if test="jsNationality != null and jsNationality != ''">
+                and JS_Nationality = #{jsNationality}
+            </if>
+            <if test="jsDateofbirth != null and jsDateofbirth != ''">
+                and JS_DateOfBirth = #{jsDateofbirth}
+            </if>
+            <if test="jsMaritalstatus != null and jsMaritalstatus != ''">
+                and JS_MaritalStatus = #{jsMaritalstatus}
+            </if>
+            <if test="jsDegreeofeducation != null and jsDegreeofeducation != ''">
+                and JS_DegreeOfEducation = #{jsDegreeofeducation}
+            </if>
+            <if test="jsProfession != null and jsProfession != ''">
+                and JS_Profession = #{jsProfession}
+            </if>
+            <if test="jsIndustryinvolved != null and jsIndustryinvolved != ''">
+                and JS_IndustryInvolved = #{jsIndustryinvolved}
+            </if>
+            <if test="jsTechnicaltitle != null and jsTechnicaltitle != ''">
+                and JS_TechnicalTitle = #{jsTechnicaltitle}
+            </if>
+            <if test="jsAdministrativeranks != null and jsAdministrativeranks != ''">
+                and JS_AdministrativeRanks = #{jsAdministrativeranks}
+            </if>
+            <if test="jsTosupportthepopulation != null and jsTosupportthepopulation != ''">
+                and JS_ToSupportThePopulation = #{jsTosupportthepopulation}
+            </if>
+            <if test="jsWorkunit != null and jsWorkunit != ''">
+                and JS_WorkUnit = #{jsWorkunit}
+            </if>
+            <if test="jsEntertheworkunittime != null and jsEntertheworkunittime != ''">
+                and JS_EnterTheWorkUnitTime = #{jsEntertheworkunittime}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert">
+        insert into JSBanKUserInfo.JsClientInfo(JS_ClientID,JS_ClientName, JS_Sex, JS_CretificateType, JS_IDNumber, JS_PhoneNumber, JS_ClientRank, JS_RegisterWay, JS_InternetOpenType)
+        values (#{jsClientid},#{jsClientname}, #{jsSex}, #{jsCretificatetype}, #{jsIdnumber}, #{jsPhonenumber}, #{jsClientrank}, #{jsRegisterway}, #{jsInternetopentype})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update JSBanKUserInfo.JsClientInfo
+        <set>
+            <if test="jsClientname != null and jsClientname != ''">
+                JS_ClientName = #{jsClientname},
+            </if>
+            <if test="jsSex != null and jsSex != ''">
+                JS_Sex = #{jsSex},
+            </if>
+            <if test="jsCretificatetype != null and jsCretificatetype != ''">
+                JS_CretificateType = #{jsCretificatetype},
+            </if>
+            <if test="jsIdnumber != null and jsIdnumber != ''">
+                JS_IDNumber = #{jsIdnumber},
+            </if>
+            <if test="jsPhonenumber != null and jsPhonenumber != ''">
+                JS_PhoneNumber = #{jsPhonenumber},
+            </if>
+            <if test="jsClientrank != null and jsClientrank != ''">
+                JS_ClientRank = #{jsClientrank},
+            </if>
+            <if test="jsRegisterway != null and jsRegisterway != ''">
+                JS_RegisterWay = #{jsRegisterway},
+            </if>
+            <if test="jsInternetopentype != null">
+                JS_InternetOpenType = #{jsInternetopentype},
+            </if>
+            <if test="jsNationality != null and jsNationality != ''">
+                JS_Nationality = #{jsNationality},
+            </if>
+            <if test="jsDateofbirth != null and jsDateofbirth != ''">
+                JS_DateOfBirth = #{jsDateofbirth},
+            </if>
+            <if test="jsMaritalstatus != null and jsMaritalstatus != ''">
+                JS_MaritalStatus = #{jsMaritalstatus},
+            </if>
+            <if test="jsDegreeofeducation != null and jsDegreeofeducation != ''">
+                JS_DegreeOfEducation = #{jsDegreeofeducation},
+            </if>
+            <if test="jsProfession != null and jsProfession != ''">
+                JS_Profession = #{jsProfession},
+            </if>
+            <if test="jsIndustryinvolved != null and jsIndustryinvolved != ''">
+                JS_IndustryInvolved = #{jsIndustryinvolved},
+            </if>
+            <if test="jsTechnicaltitle != null and jsTechnicaltitle != ''">
+                JS_TechnicalTitle = #{jsTechnicaltitle},
+            </if>
+            <if test="jsAdministrativeranks != null and jsAdministrativeranks != ''">
+                JS_AdministrativeRanks = #{jsAdministrativeranks},
+            </if>
+            <if test="jsTosupportthepopulation != null and jsTosupportthepopulation != ''">
+                JS_ToSupportThePopulation = #{jsTosupportthepopulation},
+            </if>
+            <if test="jsWorkunit != null and jsWorkunit != ''">
+                JS_WorkUnit = #{jsWorkunit},
+            </if>
+            <if test="jsEntertheworkunittime != null and jsEntertheworkunittime != ''">
+                JS_EnterTheWorkUnitTime = #{jsEntertheworkunittime},
+            </if>
+        </set>
+        where JS_ClientID = #{jsClientid}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from JSBanKUserInfo.JsClientInfo where JS_ClientID = #{jsClientid}
+    </delete>
+
+</mapper>

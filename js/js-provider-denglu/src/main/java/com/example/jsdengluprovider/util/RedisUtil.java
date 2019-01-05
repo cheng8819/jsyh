@@ -1,6 +1,10 @@
 package com.example.jsdengluprovider.util;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.StringRedisTemplate;
+import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.stereotype.Component;
 import org.springframework.util.CollectionUtils;
 
@@ -14,6 +18,18 @@ import java.util.concurrent.TimeUnit;
 public class RedisUtil {
     @Resource
     private RedisTemplate<String, Object> redisTemplate;
+
+    @Bean
+    public RedisTemplate<Object, Object> redisTemplate(RedisConnectionFactory factory) {
+        RedisTemplate redisTemplate = new StringRedisTemplate(factory);
+        StringRedisSerializer stringRedisSerializer =new StringRedisSerializer();
+        redisTemplate.setValueSerializer(stringRedisSerializer);
+        redisTemplate.setKeySerializer(stringRedisSerializer);
+        redisTemplate.setHashKeySerializer(stringRedisSerializer);
+        redisTemplate.setHashValueSerializer(stringRedisSerializer);
+        redisTemplate.afterPropertiesSet();
+        return redisTemplate;
+    }
 
     public void setRedisTemplate(RedisTemplate<String, Object> redisTemplate) {
         this.redisTemplate = redisTemplate;
@@ -30,6 +46,7 @@ public class RedisUtil {
     public boolean expire(String key, long time) {
         try {
             if (time > 0) {
+
                 redisTemplate.expire(key, time, TimeUnit.SECONDS);
             }
             return true;

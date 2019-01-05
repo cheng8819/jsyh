@@ -1,0 +1,59 @@
+{
+  "name" : "Jsclientinternetbankinfo",
+  "comment" : null,
+  "fullColumn" : [ {
+    "name" : "jsClientid",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsInternetbankusername",
+    "comment" : "客户网银用户名",
+    "type" : "java.lang.String",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsInternetbankpassword",
+    "comment" : "客户网银密码",
+    "type" : "java.lang.String",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsCookierecord",
+    "comment" : "客户网银登录记录",
+    "type" : "java.lang.String",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsIdnumber",
+    "comment" : "证件号码",
+    "type" : "java.lang.String",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsInternetbankphone",
+    "comment" : "客户网银手机号",
+    "type" : "java.lang.String",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsOnlinebankregistrationtime",
+    "comment" : "网银注册时间",
+    "type" : "java.util.Date",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  } ],
+  "pkColumn" : null,
+  "otherColumn" : null,
+  "savePackageName" : "com.example.jsregisterprovider.jsproviderregister",
+  "savePath" : "./js/js-provider-register/src/main/java/com/example/jsregisterprovider/jsproviderregister",
+  "saveModelName" : "js-provider-register"
+}

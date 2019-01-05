@@ -1,9 +1,11 @@
 package com.example.jsdengluprovider.service;
 
+import com.nimbusds.jose.JOSEException;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.text.ParseException;
 
 public interface UserInfoService {
     /**
@@ -11,10 +13,10 @@ public interface UserInfoService {
      *
      * @param name     用户名
      * @param password 密码
-     * @param request  cookie密文  判断是否需要验证手机号码
+     *
      * @return
      */
-    public String login(String name, String password, HttpServletRequest request,HttpServletResponse response);
+    String login(String name, String password,HttpServletRequest request,HttpServletResponse response) throws Exception;
 
     /**
      * 验证短信验证码
@@ -22,55 +24,66 @@ public interface UserInfoService {
      * @param phone   手机号码
      * @param SMSCode 验证码
      */
-    public String verifySMSCode(String phone, String SMSCode,String operationState, HttpServletResponse response);
+    String verifySMSCode(String phone, String SMSCode,String operationState, HttpServletResponse response) throws Exception;
 
     /**
      * @param name 用户名获取手机号码
      *             <p>
      *             获取手机号码
      */
-    public String getPhone(String name);
+    String getPhone(String name);
 
     /**
      * 给登陆手机发送验证码
-     * @param operationState 操作状态码
+     *
      */
-    public String loginSendSms(String phoneNum,String operationState);
+    String loginSendSms(String phoneNum);
 
 
-    public String addToRedis(String respCode, String phoneNum, String param, String result);
+    String addToRedis(String respCode, String phoneNum, String param, String result);
 
     /**
      * 判断页面是否为第一次登录
      * 1为不是第一次登录
      * 0为第一次登录
      */
-    public String IsThisYourFirstLogin(String name,HttpServletRequest request);
+    String isThisYourFirstLogin(String name,HttpServletRequest request);
 
     /**
      * 修改密码短信验证码
      * @param phoneNum 手机号码
      *
      */
-    public String UpdatePasswordSendSMS(String phoneNum,String operationState);
+    String updatePasswordSendSMS(String phoneNum,String operationState);
 
-    /**
-     * 用户查询拿到银行卡号
-     */
-    public String selectClientBankNumber(HttpServletRequest request);
 
     /**
      * 银行卡密码验证
      */
-    public String BankPasswordverification(String IDNumber,String password,HttpServletRequest request,HttpServletResponse response);
+    String bankPasswordverification(String IDNumber,String password,HttpServletRequest request,HttpServletResponse response);
 
     /**
-     * 修改密码
+     * 忘记密码服务修改密码
      */
-    String UpdateInternetBankPassword(String onePassword,String twoPassword,HttpServletRequest request,HttpServletResponse response);
+    String updateInternetBankPassword(String onePassword,String twoPassword,HttpServletRequest request,HttpServletResponse response);
 
     /**
      * 注册
      */
     String register(String UserName,String CertificateType,String IDNumber,String PhoneNumber);
+
+    /**
+     * 忘记密码身份验证
+     */
+    String forgetPasswordAuthentication(String name, String IDNumber, HttpServletRequest request);
+
+    /**
+     * 登录成功后的策略
+     */
+    String loginSuccess(String name,HttpServletRequest request,HttpServletResponse response);
+
+    /**
+     * 登录状态获取用户信息
+     */
+    String getLoginStateInfo(HttpServletRequest request) throws ParseException, JOSEException;
 }

@@ -78,4 +78,16 @@ public interface JsclientinternetbankinfoDao {
     String getPhone(@RequestParam("name") String name);
 
     int UpdatePassWord(@Param("jsClientid") Integer jsClientid,@Param("jsInternetbankpassword") String jsInternetbankpassword);
+
+    //查询密码
+    String selectPassword(@Param("jsClientID") Integer jsClientID);
+
+    //通过手机号码查询cookie获取设备登录记录密文
+    String loginRecordCookie(@Param("jsInternetBankPhone") String jsInternetBankPhone);
+
+    //更新cookie信息
+    Integer updateCookieRecord(@Param("jsInternetBankPhone") String jsInternetBankPhone,@Param("jsCookieRecord") String jsCookieRecord);
+
+    //通过手机号查询身份证
+    String selectIdCard(String jsInternetbankphone);
 }

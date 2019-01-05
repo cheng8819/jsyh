@@ -20,6 +20,8 @@ public class Jsclientinternetbankinfo implements Serializable {
     private String jsCookierecord;
     //证件号码
     private String jsIdnumber;
+    //客户网银手机号
+    private String jsInternetBankPhone;
 
     //手机号
     private Jsclientinfo jsclientinfo;
@@ -29,6 +31,14 @@ public class Jsclientinternetbankinfo implements Serializable {
 
     public Jsclientbank getJsclientbank() {
         return jsclientbank;
+    }
+
+    public String getJsInternetBankPhone() {
+        return jsInternetBankPhone;
+    }
+
+    public void setJsInternetBankPhone(String jsInternetBankPhone) {
+        this.jsInternetBankPhone = jsInternetBankPhone;
     }
 
     public void setJsclientbank(Jsclientbank jsclientbank) {

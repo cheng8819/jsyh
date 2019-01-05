@@ -11,25 +11,40 @@
         <result property="jsPhonenumber" column="JS_PhoneNumber" jdbcType="VARCHAR"/>
         <result property="jsClientrank" column="JS_ClientRank" jdbcType="VARCHAR"/>
         <result property="jsRegisterway" column="JS_RegisterWay" jdbcType="VARCHAR"/>
-        <result property="u1" column="u1" jdbcType="VARCHAR"/>
+        <result property="jsInternetOpenType" column="JS_InternetOpenType" jdbcType="INTEGER"/>
         <result property="u2" column="u2" jdbcType="VARCHAR"/>
         <result property="u3" column="u3" jdbcType="VARCHAR"/>
         <result property="u4" column="u4" jdbcType="VARCHAR"/>
         <result property="u5" column="u5" jdbcType="VARCHAR"/>
     </resultMap>
 
+
+    <!--查询用户手机号是否存在-->
+    <select id="selectPhoneExist" resultType="int">
+        select JS_ClientID from JSBanKUserInfo.JsClientInfo where JS_InternetOpenType = #{jsInternetOpenType} and JS_PhoneNumber = #{jsPhonenumber}
+    </select>
+
     <!--查询单个-->
     <select id="queryById" resultMap="JsclientinfoMap">
         select
-          JS_ClientID, JS_ClientName, JS_Sex, JS_CretificateType, JS_IDNumber, JS_PhoneNumber, JS_ClientRank, JS_RegisterWay, u1, u2, u3, u4, u5
+          JS_ClientID, JS_ClientName, JS_Sex, JS_CretificateType, JS_IDNumber, JS_PhoneNumber, JS_ClientRank, JS_RegisterWay
         from JSBanKUserInfo.JsClientInfo
         where JS_ClientID = #{jsClientid}
+    </select>
+<!--通过姓名和身份证号码查询手机号-->
+    <select id="throughNameIDNumberGetPhoneNumber" resultType="java.lang.String">
+        select JS_PhoneNumber from JSBanKUserInfo.JsClientInfo where JS_ClientName = #{jsClientname} and JS_IDNumber = #{jsidnumber}
+    </select>
+
+    <!--通过手机号码查询用户后台的id号码-->
+    <select id="throughPhoneNumberClientID">
+        select JS_ClientID from JSBanKUserInfo.JsClientInfo where JS_PhoneNumber = #{jsPhoneNumber}
     </select>
 
     <!--查询指定行数据-->
     <select id="queryAllByLimit" resultMap="JsclientinfoMap">
         select
-          JS_ClientID, JS_ClientName, JS_Sex, JS_CretificateType, JS_IDNumber, JS_PhoneNumber, JS_ClientRank, JS_RegisterWay, u1, u2, u3, u4, u5
+          JS_ClientID, JS_ClientName, JS_Sex, JS_CretificateType, JS_IDNumber, JS_PhoneNumber, JS_ClientRank, JS_RegisterWay
         from JSBanKUserInfo.JsClientInfo
         limit #{offset}, #{limit}
     </select>
@@ -37,7 +52,7 @@
     <!--通过实体作为筛选条件查询-->
     <select id="queryAll" resultMap="JsclientinfoMap">
         select
-          JS_ClientID, JS_ClientName, JS_Sex, JS_CretificateType, JS_IDNumber, JS_PhoneNumber, JS_ClientRank, JS_RegisterWay, u1, u2, u3, u4, u5
+          JS_ClientID, JS_ClientName, JS_Sex, JS_CretificateType, JS_IDNumber, JS_PhoneNumber, JS_ClientRank, JS_RegisterWay
         from JSBanKUserInfo.JsClientInfo
         <where>
             <if test="jsClientid != null">
@@ -64,21 +79,7 @@
             <if test="jsRegisterway != null and jsRegisterway != ''">
                 and JS_RegisterWay = #{jsRegisterway}
             </if>
-            <if test="u1 != null and u1 != ''">
-                and u1 = #{u1}
-            </if>
-            <if test="u2 != null and u2 != ''">
-                and u2 = #{u2}
-            </if>
-            <if test="u3 != null and u3 != ''">
-                and u3 = #{u3}
-            </if>
-            <if test="u4 != null and u4 != ''">
-                and u4 = #{u4}
-            </if>
-            <if test="u5 != null and u5 != ''">
-                and u5 = #{u5}
-            </if>
+
         </where>
     </select>
 
@@ -113,21 +114,7 @@
             <if test="jsRegisterway != null and jsRegisterway != ''">
                 JS_RegisterWay = #{jsRegisterway},
             </if>
-            <if test="u1 != null and u1 != ''">
-                u1 = #{u1},
-            </if>
-            <if test="u2 != null and u2 != ''">
-                u2 = #{u2},
-            </if>
-            <if test="u3 != null and u3 != ''">
-                u3 = #{u3},
-            </if>
-            <if test="u4 != null and u4 != ''">
-                u4 = #{u4},
-            </if>
-            <if test="u5 != null and u5 != ''">
-                u5 = #{u5},
-            </if>
+
         </set>
         where JS_ClientID = #{jsClientid}
     </update>

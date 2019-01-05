@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.jsregisterprovider.jsproviderregister.dao.JsclientinternetbankinfoDao">
+
+    <resultMap type="com.example.jsregisterprovider.jsproviderregister.pojo.Jsclientinternetbankinfo" id="JsclientinternetbankinfoMap">
+        <result property="jsClientid" column="JS_ClientID" jdbcType="INTEGER"/>
+        <result property="jsInternetbankusername" column="JS_InternetBankUserName" jdbcType="VARCHAR"/>
+        <result property="jsInternetbankpassword" column="JS_InternetBankPassWord" jdbcType="VARCHAR"/>
+        <result property="jsCookierecord" column="JS_CookieRecord" jdbcType="VARCHAR"/>
+        <result property="jsIdnumber" column="JS_IDNumber" jdbcType="VARCHAR"/>
+        <result property="jsInternetbankphone" column="JS_InternetBankPhone" jdbcType="VARCHAR"/>
+        <result property="jsOnlinebankregistrationtime" column="JS_OnlineBankRegistrationTime" jdbcType="TIMESTAMP"/>
+    </resultMap>
+
+    <!--查询要注册的手机号是否存在-->
+    <select id="registerPhoneExists" resultType="int">
+        select count(1) from JSBanKUserInfo.JsClientInternetBankInfo where JS_InternetBankPhone = #{phone}
+    </select>
+
+    <!--查询身份证号是否存在-->
+    <select id="selectIdCard" resultType="java.lang.String">
+        select JS_InternetBankPhone from JSBanKUserInfo.JsClientInternetBankInfo where JS_IDNumber = #{jsIDNumber}
+    </select>
+
+    <!--查询银行卡号是否存在-->
+    <select id="selectBankCardExists" resultType="int">
+        select count(1) from JSBanKUserInfo.JsClientInternetBankInfo where JS_IDNumber = #{jsIdnumber}
+    </select>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="JsclientinternetbankinfoMap">
+        select
+          JS_ClientID, JS_InternetBankUserName, JS_InternetBankPassWord, JS_CookieRecord, JS_IDNumber, JS_InternetBankPhone, JS_OnlineBankRegistrationTime
+        from JSBanKUserInfo.JsClientInternetBankInfo
+        where JS_IDNumber = #{jsIdnumber}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="JsclientinternetbankinfoMap">
+        select
+          JS_ClientID, JS_InternetBankUserName, JS_InternetBankPassWord, JS_CookieRecord, JS_IDNumber, JS_InternetBankPhone, JS_OnlineBankRegistrationTime
+        from JSBanKUserInfo.JsClientInternetBankInfo
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="JsclientinternetbankinfoMap">
+        select
+          JS_ClientID, JS_InternetBankUserName, JS_InternetBankPassWord, JS_CookieRecord, JS_IDNumber, JS_InternetBankPhone, JS_OnlineBankRegistrationTime
+        from JSBanKUserInfo.JsClientInternetBankInfo
+        <where>
+            <if test="jsClientid != null">
+                and JS_ClientID = #{jsClientid}
+            </if>
+            <if test="jsInternetbankusername != null and jsInternetbankusername != ''">
+                and JS_InternetBankUserName = #{jsInternetbankusername}
+            </if>
+            <if test="jsInternetbankpassword != null and jsInternetbankpassword != ''">
+                and JS_InternetBankPassWord = #{jsInternetbankpassword}
+            </if>
+            <if test="jsCookierecord != null and jsCookierecord != ''">
+                and JS_CookieRecord = #{jsCookierecord}
+            </if>
+            <if test="jsIdnumber != null and jsIdnumber != ''">
+                and JS_IDNumber = #{jsIdnumber}
+            </if>
+            <if test="jsInternetbankphone != null and jsInternetbankphone != ''">
+                and JS_InternetBankPhone = #{jsInternetbankphone}
+            </if>
+            <if test="jsOnlinebankregistrationtime != null">
+                and JS_OnlineBankRegistrationTime = #{jsOnlinebankregistrationtime}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert">
+        insert into JSBanKUserInfo.JsClientInternetBankInfo(JS_IDNumber,JS_ClientID, JS_InternetBankUserName, JS_InternetBankPassWord, JS_InternetBankPhone)
+        values (#{jsIdnumber},#{jsClientid}, #{jsInternetbankusername}, #{jsInternetbankpassword}, #{jsInternetbankphone})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update JSBanKUserInfo.JsClientInternetBankInfo
+        <set>
+            <if test="jsClientid != null">
+                JS_ClientID = #{jsClientid},
+            </if>
+            <if test="jsInternetbankusername != null and jsInternetbankusername != ''">
+                JS_InternetBankUserName = #{jsInternetbankusername},
+            </if>
+            <if test="jsInternetbankpassword != null and jsInternetbankpassword != ''">
+                JS_InternetBankPassWord = #{jsInternetbankpassword},
+            </if>
+            <if test="jsCookierecord != null and jsCookierecord != ''">
+                JS_CookieRecord = #{jsCookierecord},
+            </if>
+            <if test="jsInternetbankphone != null and jsInternetbankphone != ''">
+                JS_InternetBankPhone = #{jsInternetbankphone},
+            </if>
+            <if test="jsOnlinebankregistrationtime != null">
+                JS_OnlineBankRegistrationTime = #{jsOnlinebankregistrationtime},
+            </if>
+        </set>
+        where JS_IDNumber = #{jsIdnumber}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from JSBanKUserInfo.JsClientInternetBankInfo where JS_IDNumber = #{jsIdnumber}
+    </delete>
+
+</mapper>

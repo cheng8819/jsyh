@@ -2,6 +2,7 @@ package com.example.jsdengluprovider.dao;
 
 import com.example.jsdengluprovider.pojo.Jsclientinfo;
 import org.apache.ibatis.annotations.Param;
+
 import java.util.List;
 
 /**
@@ -60,6 +61,20 @@ public interface JsclientinfoDao {
      * @param jsClientid 主键
      * @return 影响行数
      */
-    int deleteById(Integer jsClientid);
+    Integer deleteById(Integer jsClientid);
 
+    /**
+     * 通过姓名和身份证号码查询手机号码
+     */
+    String throughNameIDNumberGetPhoneNumber(@Param("jsClientname") String jsClientname,@Param("jsidnumber") String jsidnumber);
+
+    /**
+     * 通过手机号码查询用户后台的id
+     */
+    Integer throughPhoneNumberClientID(@Param("jsPhoneNumber") String jsPhoneNumber);
+
+    /**
+     * 查询手机号是否存在
+     */
+    Integer selectPhoneExist(@Param("jsInternetOpenType") Integer jsInternetOpenType,@Param("jsPhonenumber") String jsPhonenumber);
 }

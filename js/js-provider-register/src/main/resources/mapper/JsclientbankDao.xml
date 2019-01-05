@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.jsregisterprovider.jsproviderregister.dao.JsclientbankDao">
+
+    <resultMap type="com.example.jsregisterprovider.jsproviderregister.pojo.Jsclientbank" id="JsclientbankMap">
+        <result property="jsBanknumber" column="JS_BankNumber" jdbcType="VARCHAR"/>
+        <result property="jsBanktype" column="JS_BankType" jdbcType="INTEGER"/>
+        <result property="jsBankpassword" column="JS_BankPassWord" jdbcType="VARCHAR"/>
+        <result property="jsClientid" column="JS_ClientID" jdbcType="INTEGER"/>
+        <result property="jsBankremainingsum" column="JS_BankRemainingSum" jdbcType="NUMERIC"/>
+        <result property="jsBankstate" column="JS_BankState" jdbcType="INTEGER"/>
+        <result property="jsBankphone" column="JS_BankPhone" jdbcType="VARCHAR"/>
+        <result property="jsIdnumber" column="JS_IDNumber" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="JsclientbankMap">
+        select
+          JS_BankNumber, JS_BankType, JS_BankPassWord, JS_ClientID, JS_BankRemainingSum, JS_BankState, JS_BankPhone, JS_IDNumber
+        from JSBanKUserInfo.JsClientBank
+        where JS_BankNumber = #{jsBanknumber}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="JsclientbankMap">
+        select
+          JS_BankNumber, JS_BankType, JS_BankPassWord, JS_ClientID, JS_BankRemainingSum, JS_BankState, JS_BankPhone, JS_IDNumber
+        from JSBanKUserInfo.JsClientBank
+        limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="JsclientbankMap">
+        select
+          JS_BankNumber, JS_BankType, JS_BankPassWord, JS_ClientID, JS_BankRemainingSum, JS_BankState, JS_BankPhone, JS_IDNumber
+        from JSBanKUserInfo.JsClientBank
+        <where>
+            <if test="jsBanknumber != null and jsBanknumber != ''">
+                and JS_BankNumber = #{jsBanknumber}
+            </if>
+            <if test="jsBanktype != null">
+                and JS_BankType = #{jsBanktype}
+            </if>
+            <if test="jsBankpassword != null and jsBankpassword != ''">
+                and JS_BankPassWord = #{jsBankpassword}
+            </if>
+            <if test="jsClientid != null">
+                and JS_ClientID = #{jsClientid}
+            </if>
+            <if test="jsBankremainingsum != null">
+                and JS_BankRemainingSum = #{jsBankremainingsum}
+            </if>
+            <if test="jsBankstate != null">
+                and JS_BankState = #{jsBankstate}
+            </if>
+            <if test="jsBankphone != null and jsBankphone != ''">
+                and JS_BankPhone = #{jsBankphone}
+            </if>
+            <if test="jsIdnumber != null and jsIdnumber != ''">
+                and JS_IDNumber = #{jsIdnumber}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="jsBanknumber" useGeneratedKeys="true">
+        insert into JSBanKUserInfo.JsClientBank(JS_BankType, JS_BankPassWord, JS_ClientID, JS_BankRemainingSum, JS_BankState, JS_BankPhone, JS_IDNumber)
+        values (#{jsBanktype}, #{jsBankpassword}, #{jsClientid}, #{jsBankremainingsum}, #{jsBankstate}, #{jsBankphone}, #{jsIdnumber})
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update JSBanKUserInfo.JsClientBank
+        <set>
+            <if test="jsBanktype != null">
+                JS_BankType = #{jsBanktype},
+            </if>
+            <if test="jsBankpassword != null and jsBankpassword != ''">
+                JS_BankPassWord = #{jsBankpassword},
+            </if>
+            <if test="jsClientid != null">
+                JS_ClientID = #{jsClientid},
+            </if>
+            <if test="jsBankremainingsum != null">
+                JS_BankRemainingSum = #{jsBankremainingsum},
+            </if>
+            <if test="jsBankstate != null">
+                JS_BankState = #{jsBankstate},
+            </if>
+            <if test="jsBankphone != null and jsBankphone != ''">
+                JS_BankPhone = #{jsBankphone},
+            </if>
+            <if test="jsIdnumber != null and jsIdnumber != ''">
+                JS_IDNumber = #{jsIdnumber},
+            </if>
+        </set>
+        where JS_BankNumber = #{jsBanknumber}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete from JSBanKUserInfo.JsClientBank where JS_BankNumber = #{jsBanknumber}
+    </delete>
+
+</mapper>

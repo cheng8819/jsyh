@@ -1,0 +1,59 @@
+server:
+  port: 8079
+eureka:
+  client:
+    service-url:
+      defaultZone: http://39.105.7.229:6001/eureka/
+  instance:
+    prefer-ip-address: true
+spring:
+  datasource:
+    # 使用druid数据源
+    url: jdbc:mysql://39.105.7.229:3306/JSBanKUserInfo?charecterEncoding=UTF-8&useSSL=false
+    username: root
+    password: Sunkefan123..
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.jdbc.Driver
+    druid:
+      #最大连接池数量
+      max-active: 10
+      #最小连接池数量
+      min-idle: 1
+      initial-size: 1
+      max-wait: 60000
+      #销毁线程中如果检测到当前连接的最后活跃时间和当前时间的差值大于minEvictableIdleTimeMillis，则关闭当前连接。
+      minEvictableIdleTimeMillis: 300000
+      #用来检测连接是否有效的sql，要求是一个查询语句。如果validationQuery为null，testOnBorrow、testOnReturn、testWhileIdle都不会其作用
+      validationQuery: select 'x'
+      #配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒
+      timeBetweenEvictionRunsMillis: 60000
+  application:
+    name: js-producer-register
+  profiles:
+    active: dev
+  redis:
+    # redis数据库索引（默认为0），我们使用索引为3的数据库，避免和其他数据库冲突
+    database: 3
+    # redis服务器地址（默认为localhost）
+    host: localhost
+    # redis端口（默认为6379）
+    port: 6379
+    # redis访问密码（默认为空）
+    password:
+    # redis连接超时时间（单位为毫秒）
+    timeout: 0
+    # redis连接池配置
+    pool:
+      # 最大可用连接数（默认为8，负数表示无限）
+      max-active: 8
+      # 最大空闲连接数（默认为8，负数表示无限）
+      max-idle: 8
+      # 最小空闲连接数（默认为0，该值只有为正数才有作用）
+      min-idle: 0
+      # 从连接池中获取连接最大等待时间（默认为-1，单位为毫秒，负数表示无限）
+      max-wait: -1
+
+mybatis:
+  mapperLocations: classpath:mapper/*.xml
+
+

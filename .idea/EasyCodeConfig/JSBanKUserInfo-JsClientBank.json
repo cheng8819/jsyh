@@ -1,0 +1,66 @@
+{
+  "name" : "Jsclientbank",
+  "comment" : null,
+  "fullColumn" : [ {
+    "name" : "jsBanknumber",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsBanktype",
+    "comment" : "银行卡类型(1.借记卡 2.信用卡 3.储蓄卡)",
+    "type" : "java.lang.Integer",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsBankpassword",
+    "comment" : "银行卡密码",
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsClientid",
+    "comment" : "客户后台id",
+    "type" : "java.lang.Integer",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsBankremainingsum",
+    "comment" : "银行卡余额",
+    "type" : "java.lang.Double",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsBankstate",
+    "comment" : "银行卡状态 0正常 -1挂失 1锁定",
+    "type" : "java.lang.Integer",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsBankphone",
+    "comment" : "银行卡预留手机号码",
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsIdnumber",
+    "comment" : "身份证号码",
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  } ],
+  "pkColumn" : null,
+  "otherColumn" : null,
+  "savePackageName" : "com.example.jsregisterprovider.jsproviderregister",
+  "savePath" : "./js/js-provider-register/src/main/java/com/example/jsregisterprovider/jsproviderregister",
+  "saveModelName" : "js-provider-register"
+}

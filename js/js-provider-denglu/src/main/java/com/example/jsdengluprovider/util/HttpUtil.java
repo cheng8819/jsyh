@@ -1,7 +1,6 @@
 package com.example.jsdengluprovider.util;
 
 
-import org.apache.commons.codec.digest.DigestUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -12,8 +11,13 @@ import java.net.URLConnection;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
-public class HttpUtil {
+import org.apache.commons.codec.digest.DigestUtils;
 
+/**
+ * http请求工具
+ */
+public class HttpUtil
+{
     /**
      * 构造通用参数timestamp、sig和respDataType
      *
@@ -24,8 +28,10 @@ public class HttpUtil {
         // 时间戳
         SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");
         String timestamp = sdf.format(new Date());
+
         // 签名
         String sig = DigestUtils.md5Hex(Config.ACCOUNT_SID + Config.AUTH_TOKEN + timestamp);
+
         return "&timestamp=" + timestamp + "&sig=" + sig + "&respDataType=" + Config.RESP_DATA_TYPE;
     }
 
@@ -85,6 +91,13 @@ public class HttpUtil {
         return result;
     }
 
+    /**
+     * 回调测试工具方法
+     *
+     * @param url
+     * @param reqStr
+     * @return
+     */
     public static String postHuiDiao(String url, String body)
     {
         String result = "";

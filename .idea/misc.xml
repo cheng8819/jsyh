@@ -10,6 +10,13 @@
         <option value="$PROJECT_DIR$/js/js-consumer-remittance/pom.xml" />
         <option value="$PROJECT_DIR$/js/js-spring-eureka-server/pom.xml" />
         <option value="$PROJECT_DIR$/js/js-provider-denglu/pom.xml" />
+        <option value="$PROJECT_DIR$/js/js-spring-zuul/pom.xml" />
+        <option value="$PROJECT_DIR$/js-provider-register/pom.xml" />
+        <option value="$PROJECT_DIR$/js-consumer-register/pom.xml" />
+        <option value="$PROJECT_DIR$/js/js-provider-register/pom.xml" />
+        <option value="$PROJECT_DIR$/js/js-consumer-register/pom.xml" />
+        <option value="$PROJECT_DIR$/jscommon/pom.xml" />
+        <option value="$PROJECT_DIR$/js/jscommon/pom.xml" />
       </list>
     </option>
   </component>

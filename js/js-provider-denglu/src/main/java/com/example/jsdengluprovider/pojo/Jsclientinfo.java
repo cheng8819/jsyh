@@ -26,8 +26,8 @@ public class Jsclientinfo implements Serializable {
     private String jsClientrank;
     //注册方式
     private String jsRegisterway;
-    
-    private String u1;
+    //客户网银开通状态 0关闭 1开通
+    private Integer jsInternetOpenType;
     
     private String u2;
     
@@ -102,12 +102,12 @@ public class Jsclientinfo implements Serializable {
         this.jsRegisterway = jsRegisterway;
     }
 
-    public String getU1() {
-        return u1;
+    public Integer getJsInternetOpenType() {
+        return jsInternetOpenType;
     }
 
-    public void setU1(String u1) {
-        this.u1 = u1;
+    public void setJsInternetOpenType(Integer jsInternetOpenType) {
+        this.jsInternetOpenType = jsInternetOpenType;
     }
 
     public String getU2() {

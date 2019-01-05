@@ -1,0 +1,150 @@
+{
+  "name" : "Jsclientinfo",
+  "comment" : null,
+  "fullColumn" : [ {
+    "name" : "jsClientid",
+    "comment" : null,
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsClientname",
+    "comment" : "客户姓名",
+    "type" : "java.lang.String",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsSex",
+    "comment" : "性别",
+    "type" : "java.lang.String",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsCretificatetype",
+    "comment" : "客户证件类型",
+    "type" : "java.lang.String",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsIdnumber",
+    "comment" : "证件号码",
+    "type" : "java.lang.String",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsPhonenumber",
+    "comment" : "电话号码",
+    "type" : "java.lang.String",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsClientrank",
+    "comment" : "客户级别",
+    "type" : "java.lang.String",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsRegisterway",
+    "comment" : "注册方式",
+    "type" : "java.lang.String",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsInternetopentype",
+    "comment" : "客户网银开通状态 0 未开通  1开通",
+    "type" : null,
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsNationality",
+    "comment" : "国籍",
+    "type" : "java.lang.String",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsDateofbirth",
+    "comment" : "出生日期",
+    "type" : "java.lang.String",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsMaritalstatus",
+    "comment" : "婚姻状况",
+    "type" : "java.lang.String",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsDegreeofeducation",
+    "comment" : "教育程度",
+    "type" : "java.lang.String",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsProfession",
+    "comment" : "职业",
+    "type" : "java.lang.String",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsIndustryinvolved",
+    "comment" : "所属行业",
+    "type" : "java.lang.String",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsTechnicaltitle",
+    "comment" : "技术职称",
+    "type" : "java.lang.String",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsAdministrativeranks",
+    "comment" : "行政级别",
+    "type" : "java.lang.String",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsTosupportthepopulation",
+    "comment" : "供养人口",
+    "type" : "java.lang.String",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsWorkunit",
+    "comment" : "工作单位",
+    "type" : "java.lang.String",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  }, {
+    "name" : "jsEntertheworkunittime",
+    "comment" : "进入本工作单位时间",
+    "type" : "java.lang.String",
+    "shortType" : null,
+    "custom" : false,
+    "ext" : { }
+  } ],
+  "pkColumn" : null,
+  "otherColumn" : null,
+  "savePackageName" : "com.example.jsregisterprovider.jsproviderregister",
+  "savePath" : "./js/js-provider-register/src/main/java/com/example/jsregisterprovider/jsproviderregister",
+  "saveModelName" : "js-provider-register"
+}

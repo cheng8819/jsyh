@@ -71,4 +71,6 @@ public interface JsclientbankDao {
      * 查询银行卡号和密码是否正确
      */
     int selectBankPasswordRight(@Param("jsbanknumber") String jsbanknumber,@Param("jsbankpassword") String jsbankpassword,@Param("jsclientid") Integer jsclientid);
+
+
 }

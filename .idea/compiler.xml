@@ -7,16 +7,24 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="dm-spring-eureka-server" />
+        <module name="js-common" />
+        <module name="js-consumer-register" />
         <module name="js-consumer-remittance" />
-        <module name="js-producer-remittance" />
         <module name="js-provider-denglu" />
+        <module name="js-provider-register" />
+        <module name="js-spring-zuul" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel target="8">
       <module name="dm-spring-eureka-server" target="1.8" />
+      <module name="js-common" target="1.8" />
+      <module name="js-consumer-register" target="1.8" />
       <module name="js-consumer-remittance" target="1.8" />
       <module name="js-producer-remittance" target="1.8" />
       <module name="js-provider-denglu" target="8" />
+      <module name="js-provider-register" target="1.8" />
+      <module name="js-spring-zuul" target="8" />
+      <module name="jscommon" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>

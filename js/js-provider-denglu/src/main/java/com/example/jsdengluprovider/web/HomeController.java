@@ -32,7 +32,7 @@ public class HomeController {
                 msg = "IncorrectCredentialsException -- > 密码不正确：";
             } else if ("kaptchaValidateFailed".equals(exception)) {
                 System.out.println("kaptchaValidateFailed -- > 验证码错误");
-                msg = "kaptchaValidateFailed -- > 验证码错误";
+                msg = "kaptchaValidateFailed -3- > 验证码错误";
             } else {
                 msg = "else >> "+exception;
                 System.out.println("else -- >" + exception);

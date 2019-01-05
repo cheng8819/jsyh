@@ -31,7 +31,7 @@ public class BankUser {
     private String reservedms;//网银预留信息
     private Integer faststate;//是否快捷支付（0否，1是）
     private String idcarddate;//身份证到期日期
-//    private String bankcarddate;//办卡日期
+    private String bankcarddate;//办卡日期
     private String e_mail;//邮箱
     private Double tallage;//所交税额
     private Integer integral;//个人积分
