@@ -37,4 +37,4 @@ pagehelper:
 eureka:
   client:
     service-url:
-      defaultZone: http://root:123456@localhost:7776/eureka/
+      defaultZone: http://root:123456@39.105.153.204:7776/eureka

@@ -10,6 +10,7 @@
         select fund_number,fund_name,currency,fund_type,fund_kind,issuing_date,unit_value,risk_grade,raise_way from fundInfo where fundStatus=0
     </select>
 
+
     <!--查询上市的基金信息：
         基金代码、名称、单位净值、累计净值、日涨幅、三个月涨幅、晨星评级、产品状态
      -->
@@ -23,6 +24,7 @@
           </where>
     </select>
 
+
     <select id="findAll" parameterType="com.example.jsproducerfund.pojo.FundInfo" resultType="com.example.jsproducerfund.pojo.FundInfo">
         select fund_number,fund_name,iopv,iopvs,dailyIncreases,threeMonthRise,fund_rating,fundStatus,raise_way from fundInfo
         <where>
@@ -30,7 +32,7 @@
                 fund_number=#{fund_number}
             </if>
             <if test="fund_name != null">
-                and fund_name=#{fund_name}
+                and fund_name like #{fund_name}
             </if>
             <if test="fundStatus != null">
                 and fundStatus=#{fundStatus}
@@ -49,23 +51,60 @@
             </if>
         </where>
     </select>
-    
+
+
+    <update id="updFundInfo" parameterType="com.example.jsproducerfund.pojo.FundInfo">
+        update fundInfo
+        <trim prefix="set" suffixOverrides=",">
+            <if test="fundStatus != null ">
+                fundStatus=#{fundStatus}
+            </if>
+            <if test="fund_scale != null">
+                fund_scale=#{fund_scale}
+            </if>
+            <if test="fund_newscale != null">
+                fund_newscale=#{fund_newscale}
+            </if>
+            <if test="unit_value != null">
+                unit_value=#{unit_value}
+            </if>
+            <if test="iopv != null">
+                iopv=#{iopv}
+            </if>
+            <if test="iopvs != null">
+                iopvs=#{iopvs}
+            </if>
+            <if test="dailyIncreases != null">
+                dailyIncreases=#{dailyIncreases}
+            </if>
+        </trim>
+        where fund_number=#{fund_number}
+    </update>
+
+
     <select id="showFundDetails" parameterType="java.lang.String" resultType="com.example.jsproducerfund.pojo.FundInfo">
         select * from fundInfo where fund_number=#{fundNumber}
     </select>
+
 
     <select id="selFundManager" parameterType="java.lang.String" resultType="com.example.jsproducerfund.pojo.FundManager">
         select * from manager where portfolio_manager_name=#{managerName}
     </select>
 
+
     <insert id="addPerformance" parameterType="com.example.jsproducerfund.pojo.Performance">
-        insert into performance(fund_number,fund_name,fund_type,iopy,iopys,day_or,weekly_rate_of_return,monthly_rate_of_return,march_rate_of_return,product_status,fund_rating)
-        values (#{fund_number},#{fund_name},#{fund_type},#{iopy},#{iopys},#{day_or},#{weekly_rate_of_return},#{monthly_rate_of_return},#{march_rate_of_return},#{product_status},#{fund_rating})
+        insert into performance(fund_number,fund_name,fund_type,iopv,iopvs,dailyIncreases,weekly_rate_of_return,monthly_rate_of_return,threeMonthRise,fundStatus,fund_rating,write_time)
+        values (#{fund_number},#{fund_name},#{fund_type},#{iopv},#{iopvs},#{dailyIncreases},#{weekly_rate_of_return},#{monthly_rate_of_return},#{threeMonthRise},#{fundStatus},#{fund_rating},#{write_time})
     </insert>
 
     <!--为redis提供数据-->
     <select id="selPerformance" parameterType="java.lang.String" resultType="com.example.jsproducerfund.pojo.Performance">
         select * from performance where fund_number=#{fundNumber}
+    </select>
+
+
+    <select id="findPerformanceByFundInfo" resultType="com.example.jsproducerfund.pojo.Performance">
+        select fund_number,fund_name,iopv,iopvs,dailyIncreases,weekly_rate_of_return,monthly_rate_of_return,threeMonthRise from fundInfo
     </select>
 
 </mapper>

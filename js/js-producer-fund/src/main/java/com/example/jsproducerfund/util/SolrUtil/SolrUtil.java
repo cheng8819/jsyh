@@ -7,17 +7,14 @@ import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
-import org.apache.solr.common.SolrDocumentList;
 import org.apache.solr.common.SolrInputDocument;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
 
 @RestController
 @RequestMapping("solr")
@@ -35,9 +32,9 @@ public class SolrUtil {
      * 每天中午12和23点定时更新数据
      * @return
      */
-    @Scheduled(cron="0 0 12,23 * * ?")
+    @Scheduled(cron="0 0 15 * * ?")
     public String fullAmountOfImport(){
-       /*List<SolrInputDocument> documents = new ArrayList<SolrInputDocument>();
+       List<SolrInputDocument> documents = new ArrayList<SolrInputDocument>();
        //数据库查询全部数据
        List<FundInfo> funds = fundDao.findNewFunds();
         for (FundInfo fund : funds) {
@@ -53,8 +50,7 @@ public class SolrUtil {
             e.printStackTrace();
             return "数据导入失败";
         }
-        return "数据导入成功";*/
-       return null;
+        return "数据导入成功";
     }
 
     /**

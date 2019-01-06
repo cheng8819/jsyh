@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 /**
@@ -40,8 +41,9 @@ public class CalculateImpl implements Calculate {
     private void onLoad(){
         //懒加载该数据
         if(funds == null || funds.size() == 0){
-            //1.先去数据库查数据
-            List<Performance> performances = fundDao.selPerformance(null);
+            //1.先去FundInfo表查数据
+            List<Performance> performances = fundDao.findPerformanceByFundInfo();
+            //List<Performance> performances = fundDao.selPerformance(null);
             funds.addAll(performances);
             //2.放入Redis 以后操作redis中的基金走势数据
             redisUtil.lSetList("funds",funds);
@@ -52,7 +54,7 @@ public class CalculateImpl implements Calculate {
 
 
     @Override
-    @Scheduled(cron="0 0 17 * * ? ")
+    @Scheduled(cron="2 * * * * ? ")
     public void FundPerformance() {
         onLoad();
         dayNum++;
@@ -63,20 +65,29 @@ public class CalculateImpl implements Calculate {
                 //模拟每日单位净值变化数据
                 Performance performance = (Performance) obj;
                 Double newValue = RandomNumber.getRandomNum();
-                performance.setIopys(performance.getIopy()+newValue); //更改累计净值
-                performance.setIopy(newValue); //更改单位净值
-                performance.setDay_or(newValue-0.5); //每日涨幅
+                performance.setIopvs(performance.getIopv()+newValue); //更改累计净值
+                performance.setIopv(newValue); //更改单位净值
+                performance.setDailyIncreases(newValue-0.5); //每日涨幅
+                performance.setWrite_time(String.valueOf(new Date()));
                 //打印基金每天变化数据
-                System.out.println("每只基金变化: " + performance.toString());
+                //System.out.println("每只基金变化: " + performance.toString());
             }
         }
+        redisUtil.expire("funds",0);
         redisUtil.lSetList("funds",funds);
         //rabbitMQ
         sender.send(JSON.toJSONString(funds));
     }
 
+    @Scheduled(cron="2 * * * * ? ")
     @Override
-    public void automaticInvestmentPlan() {
-        //购买日期 购买期限 购买品种 分红方式
+    public void FundPersistence() {
+        List<Performance> data = new ArrayList<Performance>();
+        List<Object> list = redisUtil.lGet("funds", 0, -1);
+        Performance p = null;
+        for (Object object : list){
+            p = (Performance) object;
+            System.out.println(p.toString());
+        }
     }
 }

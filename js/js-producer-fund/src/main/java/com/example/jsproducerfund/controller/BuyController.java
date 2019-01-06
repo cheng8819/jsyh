@@ -32,9 +32,9 @@ public class BuyController {
 
     @ApiOperation(value = "赎回基金产品",notes = "赎回基金")
     @ResponseBody
-    @RequestMapping(value = "/selFund",method = RequestMethod.GET)
-    public String selFund(@RequestParam("fundName") String fundName,@RequestParam("username") String username){
-        return buyService.sellFund(fundName,username);
+    @RequestMapping(value = "/sellFund",method = RequestMethod.GET)
+    public String sellFund(@RequestParam("fundName") String fundName,@RequestParam("num") Integer num,@RequestParam("username") String username){
+        return buyService.sellFund(fundName,num,username);
     }
 
     @ApiOperation(value = "查看购买基金信息",notes = "查询购买基金信息")

@@ -2,7 +2,6 @@ package com.example.jsproducerfund.config;
 
 import java.util.UUID;
 import javax.annotation.PostConstruct;
-
 import com.example.jsproducerfund.pojo.Buy;
 import org.springframework.amqp.core.Message;
 import org.springframework.amqp.rabbit.core.RabbitTemplate;

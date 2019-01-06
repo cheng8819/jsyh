@@ -178,4 +178,14 @@ public class FundInfo implements Serializable {
      */
     private String fund_company;
 
+    /**
+     * 投资范围
+     */
+    private String investment_objective;
+
+    /**
+     * 投资目标
+     */
+    private String investment_scope;
+
 }

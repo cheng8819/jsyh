@@ -3,7 +3,11 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://root:123456@localhost:7776/eureka/
+      defaultZone: http://root:123456@39.105.153.204:7776/eureka/
+  instance:
+    hostname: 192.168.51.161
+    prefer-ip-address: false
+    instance-id: 192.168.51.161:8084
 spring:
   application:
     name: js-producer-fund

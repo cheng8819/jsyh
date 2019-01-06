@@ -1,7 +1,6 @@
 package com.example.jsproducerfund.pojo;
 
 import lombok.Data;
-
 import java.io.Serializable;
 
 /**
@@ -11,7 +10,7 @@ import java.io.Serializable;
  * 基金绩效表现(performance)表
  */
 @Data
-public class Performance implements Serializable{
+public class Performance implements Serializable {
 
     private String fund_number;
     private String fund_name;
@@ -56,5 +55,10 @@ public class Performance implements Serializable{
      * 基金评级
      */
     private String fund_rating;
+
+    /**
+     * 记录时间
+     */
+    private String write_time;
 
 }

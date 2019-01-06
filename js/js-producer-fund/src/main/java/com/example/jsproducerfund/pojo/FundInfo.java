@@ -175,4 +175,14 @@ public class FundInfo {
      * 基金公司
      */
     private String fund_company;
+
+    /**
+     * 投资范围
+     */
+    private String investment_objective;
+
+    /**
+     * 投资目标
+     */
+    private String investment_scope;
 }

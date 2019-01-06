@@ -58,4 +58,17 @@ public interface FundDao {
      */
     FundManager selFundManager(String ManagerName);
 
+    /**
+     *修改基金信息
+     * @param fundInfo
+     * @return
+     */
+    Integer updFundInfo(FundInfo fundInfo);
+
+    /**
+     * 初始化：从基金信息表查询要变化的走势数据
+     * @return
+     */
+    List<Performance> findPerformanceByFundInfo();
+
 }

@@ -67,6 +67,11 @@ public class BuyServiceImpl implements BuyService {
         fundInfo.setFundUnit(fundInfo.getFundUnit() - fund_unit); //减去份额
         fundInfo.setFund_scale(fundInfo.getFund_scale() + fund_money); //增加基金规模
         fundInfo.setFund_newscale(fundInfo.getFund_newscale() + fund_money); //增加最新基金规模
+        //修改基金信息
+        Integer count = fundDao.updFundInfo(fundInfo);
+        if(count <= 0){
+            return "基金数据修改失败";
+        }
 
         //查询记录是否曾经购买过
         Buy oldInfo = new Buy();
@@ -106,7 +111,7 @@ public class BuyServiceImpl implements BuyService {
     }
 
     /**
-     *
+     * 赎回基金
      * @param fundNumber
      * @param num
      * @param username
@@ -130,6 +135,11 @@ public class BuyServiceImpl implements BuyService {
         fundInfo.setFundUnit(fundInfo.getFundUnit() + num); //增加基金份额
         Double totalPrice = Double.valueOf(cutValue(data, 1)); //赎回总额
         fundInfo.setFund_scale(fundInfo.getFund_scale() - totalPrice); //减去基金规模
+        //修改基金信息
+        Integer count = fundDao.updFundInfo(fundInfo);
+        if(count <= 0){
+            return "基金数据修改失败";
+        }
 
         Double earnings = Double.valueOf(cutValue(data,4)); //收益
         Buy sellInfo = new Buy(username,fundNumber,earnings,String.valueOf(new Date()));
@@ -150,7 +160,7 @@ public class BuyServiceImpl implements BuyService {
         }
         //计算基金收益:
         Double redemptionRate = fundInfo.getMaximum_redemption_rate(); //赎回费率
-        Double iopv = fundDao.selPerformance(fundNumber).get(0).getIopy(); //赎回当日基金净值
+        Double iopv = fundDao.selPerformance(fundNumber).get(0).getIopv(); //赎回当日基金净值
         Double totalAmountRedemption = num * iopv; //赎回总额
         Double redemptionFee = totalAmountRedemption * redemptionRate; //赎回费用
         Double netRedemption = totalAmountRedemption - redemptionFee; //赎回净额

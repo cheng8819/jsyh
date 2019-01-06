@@ -9,12 +9,14 @@ import lombok.Data;
 @Data
 public class Finance {
 
-    private Integer product_id;
-
     /**
      * 理财产品代码
      */
     private String product_code;
+
+    /**
+     * 理财产品名称
+     */
     private String product_name;
 
     /**
@@ -50,7 +52,7 @@ public class Finance {
     /**
      * 产品额度
      */
-    private String product_lines;
+    private Double product_lines;
 
     /**
      * 募集期
@@ -75,6 +77,6 @@ public class Finance {
     /**
      * 预计年化利率
      */
-    private String expected_annualized_rate;
+    private Double expected_annualized_rate;
 
 }

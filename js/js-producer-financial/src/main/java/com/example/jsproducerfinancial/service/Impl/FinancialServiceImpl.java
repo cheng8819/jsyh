@@ -9,10 +9,14 @@ import com.example.jsproducerfinancial.service.FinancialService;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
+
+import com.example.jsproducerfinancial.util.MyTimeFormatterUtils;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import javax.xml.crypto.Data;
 
 /**
  * @auther: 666先生的救赎
@@ -29,12 +33,19 @@ public class FinancialServiceImpl implements FinancialService {
         if(financeName == null){
             return "产品名称不为空";
         }
+        //查找理财产品信息
         Finance finance = new Finance();
         finance.setProduct_name(financeName);
         Finance financeInfo = financialDao.findAll(finance).get(0);
         if(financeInfo == null){
             return "未查询到相关信息";
         }
+        if(finance.getProduct_lines() < money){
+            return "产品额度不足";
+        }
+        //修改理财产品额度
+        finance.setProduct_lines(finance.getProduct_lines()-money);
+        financialDao.updFinance(finance);
 
         Buy buy = new Buy();
         buy.setProduct_name(financeInfo.getProduct_name());
@@ -42,7 +53,7 @@ public class FinancialServiceImpl implements FinancialService {
         buy.setUsername(username);
         buy.setProduct_money(money);
         buy.setBuy_time(String.valueOf(new Date())); //放置时间戳
-
+        //添加购买记录
         Integer result = financialDao.addBuyFinance(buy);
         if(result <= 0){
             return "购买失败";
@@ -52,7 +63,31 @@ public class FinancialServiceImpl implements FinancialService {
 
     @Override
     public String sellFinancial(Finance finance,String username) {
-        String financeName = finance.getProduct_name();
+        String financeName = null;
+        try {
+            financeName = finance.getProduct_name();
+            String financeNumber = finance.getProduct_code();
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "数据不完整(缺少理财产品名称或理财产品代码)";
+        }
+
+        Buy buyInfo = new Buy();
+        buyInfo.setUsername(username);
+        buyInfo.setProduct_number(financeName);
+        Buy buy = financialDao.selBuyFinance(buyInfo).get(0);
+        if(buy == null){
+            return "未查找到相关理财产品信息";
+        }
+        Date now = new Date();
+        Date buyTime = MyTimeFormatterUtils.String2Date(buy.getBuy_time());
+        Date deadline = MyTimeFormatterUtils.String2Date(finance.getTime_limit());
+        if( (now.getTime() - buyTime.getTime()) <= deadline.getTime() ){
+            return "理财期限未结束";
+        }
+
+
+
         //计算理财产品收益
         Double earings = Double.valueOf(calculateEarnings(finance,username));
         Buy newBuy = new Buy(username,financeName,earings,String.valueOf(new Date()));

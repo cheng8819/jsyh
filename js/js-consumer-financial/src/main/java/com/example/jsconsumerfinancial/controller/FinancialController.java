@@ -24,16 +24,4 @@ public class FinancialController {
         return financeService.showFinance(index);
     }
 
-    /*@ApiOperation(value = "查询理财产品详情",notes = "根据理财产品名称查询")
-    @RequestMapping(value = "/showFinancialDetails",method = RequestMethod.POST)
-    public String showFinancialDetails(@RequestParam("financeName") String financeName){
-        return financeService.showFinancialDetails(financeName);
-    }*/
-
-//    @ApiOperation(value = "查询理财产品详情",notes = "根据理财产品名称查询")
-//    @RequestMapping(value = "showFinancialDetails",method = RequestMethod.GET)
-//    public String showFinancialDetails(@RequestParam("financeName") String financeName){
-//        return financeService.showFinancialDetails(financeName);
-//    }
-
 }
