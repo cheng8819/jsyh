@@ -5,6 +5,7 @@ import com.example.jsconsumerloans.feign.impl.LoansImpl;
 import com.example.jsconsumerloans.pojo.LoansTransaction;
 import com.example.jsconsumerloans.util.Result;
 import org.springframework.cloud.netflix.feign.FeignClient;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -35,4 +36,16 @@ public interface Loans {
     //根据申请资料查询订单
     @RequestMapping(value = "/loantypes/selectLoansTransactionByData/{id}",method = RequestMethod.GET)
     Result selectLoansTransactionByData(@PathVariable("id") String id);
+
+    //全部住房贷款种类
+    @GetMapping("/loantypes/slectAllLoansType")
+    Result slectAllLoansType();
+
+    //全部学历
+    @GetMapping("/loantypes/selectAllEducation")
+    Result selectAllEducation();
+
+    //全部职业
+    @GetMapping("/loantypes/selectAllJobs")
+    Result selectAllJobs();
 }

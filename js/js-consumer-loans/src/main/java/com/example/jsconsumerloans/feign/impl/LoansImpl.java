@@ -37,4 +37,19 @@ public class LoansImpl implements Loans {
     public Result selectLoansTransactionByData(String id) {
         return ResultUtil.success("超时重试");
     }
+
+    @Override
+    public Result slectAllLoansType() {
+        return ResultUtil.success("超时重试");
+    }
+
+    @Override
+    public Result selectAllEducation() {
+        return ResultUtil.success("超时重试");
+    }
+
+    @Override
+    public Result selectAllJobs() {
+        return ResultUtil.success("超时重试");
+    }
 }

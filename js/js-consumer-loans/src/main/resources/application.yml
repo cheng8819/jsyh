@@ -48,7 +48,10 @@ spring:
 eureka:
   client:
     service-url:
-      defaultZone: http://root:123456@localhost:7776/eureka/
+      defaultZone: http://root:123456@39.105.153.204:7776/eureka/
+  instance:
+    prefer-ip-address: true
+    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
 feign:
   hystrix:
     enabled: true
@@ -57,3 +60,6 @@ dm-spring-provider-zhanghu:
     NFLoadBalancerRuleClassName: com.netflix.loadbalancer.RandomRule
 logging:
   level: info
+tm:
+  manager:
+    url: http://47.100.246.114:8899/tx/manager/

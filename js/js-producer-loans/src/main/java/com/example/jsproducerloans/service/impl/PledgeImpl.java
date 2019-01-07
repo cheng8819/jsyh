@@ -2,10 +2,9 @@ package com.example.jsproducerloans.service.impl;
 
 import com.alibaba.fastjson.JSON;
 import com.example.jsproducerloans.controllerpojo.LoansTransactionCon;
-import com.example.jsproducerloans.dao.LoansTransactionDao;
-import com.example.jsproducerloans.dao.LoantypeDao;
-import com.example.jsproducerloans.dao.RepaymentTypeDao;
+import com.example.jsproducerloans.dao.*;
 import com.example.jsproducerloans.pojo.LoansTransaction;
+import com.example.jsproducerloans.pojo.LoansType;
 import com.example.jsproducerloans.pojo.RepaymentType;
 import com.example.jsproducerloans.service.Pledge;
 import com.example.jsproducerloans.util.Result;
@@ -27,8 +26,11 @@ public class PledgeImpl implements Pledge {
     @Autowired
     private LoansTransactionDao loansTransactionDao;
     @Autowired
-    private RepaymentTypeDao repaymentTypeDao;
-
+    private LoansTypeDao loansTypeDao;
+    @Autowired
+    private EducationsDao educationsDao;
+    @Autowired
+    private JobDao jobDao;
     /**
      * 全部贷款种类
      *
@@ -53,15 +55,15 @@ public class PledgeImpl implements Pledge {
             LoansTransactionCon loansTransactionCon = new LoansTransactionCon();
             loansTransactionCon.setLiid(loansTransactions.get(i).getLiid());
             loansTransactionCon.setLiuid(loansTransactions.get(i).getLiuid());
-            RepaymentType repaymentType = repaymentTypeDao.findRepaymentTypeByRtid(loansTransactions.get(i).getLitype());
-            loansTransactionCon.setLitype(repaymentType.getRtname());
+            LoansType loansType = loansTypeDao.findLoansTypeByLtid(loansTransactions.get(i).getLitype());
+            loansTransactionCon.setLitype(loansType.getLttype());
             loansTransactionCon.setLinumberofperiods(loansTransactions.get(i).getLinumberofperiods());
             loansTransactionCon.setLinumber(loansTransactions.get(i).getLinumber());
             loansTransactionCon.setLidate(loansTransactions.get(i).getLidate());
             loansTransactionCon.setLiapplicationdata(loansTransactions.get(i).getLiapplicationdata());
             loansTransactionCons.add(loansTransactionCon);
         }
-        return ResultUtil.success(JSON.toJSONString(loansTransactionCons));
+        return ResultUtil.success(loansTransactionCons);
     }
 
     /**
@@ -138,5 +140,35 @@ public class PledgeImpl implements Pledge {
     @Override
     public Result selectLoansTransactionByData(String id) {
         return ResultUtil.success(JSON.toJSONString(loansTransactionDao.findLoansTransactionsByLiapplicationdata(id)));
+    }
+
+    /**
+     * 获取全部住房贷款类型
+     *
+     * @return
+     */
+    @Override
+    public Result selectAllLoansType() {
+        return ResultUtil.success(loansTypeDao.findAll());
+    }
+
+    /**
+     * 获取全部的学历信息
+     *
+     * @return
+     */
+    @Override
+    public Result selectAllEducation() {
+        return ResultUtil.success(educationsDao.findAll());
+    }
+
+    /**
+     * 获取全部职业信息
+     *
+     * @return
+     */
+    @Override
+    public Result selectAllJob() {
+        return ResultUtil.success(jobDao.findAll());
     }
 }

@@ -48,4 +48,22 @@ public class LoantController {
     public Result selectLoansTransactionByData(@PathVariable("id") String id){
         return pledge.selectLoansTransactionByData(id);
     }
+
+    //全部住房贷款种类
+    @GetMapping("/slectAllLoansType")
+    public Result slectAllLoansType(){
+        return pledge.selectAllLoansType();
+    }
+
+    //全部学历
+    @GetMapping("/selectAllEducation")
+    public Result selectAllEducation(){
+        return pledge.selectAllEducation();
+    }
+
+    //全部职业
+    @GetMapping("/selectAllJobs")
+    public Result selectAllJobs(){
+        return pledge.selectAllJob();
+    }
 }

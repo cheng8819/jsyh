@@ -29,6 +29,8 @@ public class LoanApplicationImpl implements LoanApplication {
     private LoantypeDao loantypeDao;
     @Autowired
     private LeaveInfoDao leaveInfoDao;
+    @Autowired
+    private LoansTypeDao loansTypeDao;
     /**
      * 录入登记信息
      *
@@ -85,7 +87,7 @@ public class LoanApplicationImpl implements LoanApplication {
             loansTransactionSchedule.setLinumberofperiods(loansTransaction.getLinumberofperiods());
             loansTransactionSchedule.setLinumber(loansTransaction.getLinumber());
             loansTransactionSchedule.setLidate(loansTransaction.getLidate());
-            String type = loantypeDao.findLoantypeByLid(loansTransaction.getLitype()).getLtname();
+            String type = loansTypeDao.findLoansTypeByLtid(loansTransaction.getLitype()).getLttype();
             loansTransactionSchedule.setLitype(type);
             LoansUserinfo loansUserinfo = loansUserinfoDao.findLoansUserinfoByLuid(loansTransaction.getLiapplicationdata());
             LeaveInfo leaveInfo = leaveInfoDao.findLeaveInfoByLoansid(loansUserinfo.getLuid());

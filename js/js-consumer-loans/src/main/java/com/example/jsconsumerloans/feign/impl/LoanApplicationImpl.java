@@ -12,4 +12,15 @@ public class LoanApplicationImpl implements LoanApplication {
     public Result loanApplications(LoansUserinfo loansUserinfo) {
         return ResultUtil.success("超时重试");
     }
+
+    /**
+     * 根据uid查询用户贷款申请进度
+     *
+     * @param uid
+     * @return
+     */
+    @Override
+    public Result LoanScheduleCon(Integer uid) {
+        return null;
+    }
 }

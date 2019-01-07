@@ -2,27 +2,28 @@ package com.example.jsconsumerloans.feign;
 
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @FeignClient(value = "js-producer-management")
 public interface OperationalAmount {
 
     //查银行卡号
     @RequestMapping(value ="/card/idnumberSelectCardnumber" )
-    String idnumberSelectCardnumber(String idnumber);
+    String idnumberSelectCardnumber(@RequestParam("idnumber") String idnumber);
 
     //查余额
     @RequestMapping(value ="/card/selectBalance" )
-    Double selectBalance(String cardnumber);
+    Double selectBalance(@RequestParam("cardnumber") String cardnumber);
 
     //加余额
     @RequestMapping(value ="/card/deposit" )
-    boolean deposit(String cardnumber,Double core,String type);
+    boolean deposit(@RequestParam("cardnumber") String cardnumber,@RequestParam("core") Double core,@RequestParam("type") String type);
 
     //减余额
     @RequestMapping(value ="/card/remittance" )
-    boolean remittance(String cardnumber,Double core ,String type);
+    boolean remittance(@RequestParam("cardnumber")String cardnumber,@RequestParam("core") Double core ,@RequestParam("type") String type);
 
     //查银行卡状态
     @RequestMapping(value ="/card/cardnumberSelectState")
-    String cardnumberSelectState(String cardnumber);
+    String cardnumberSelectState(@RequestParam("cardnumber") String cardnumber);
 }

@@ -20,6 +20,6 @@ public interface LoanApplication {
      * @param uid
      * @return
      */
-    @GetMapping("/loanScheduleCon/{uid}")
+    @GetMapping("/loanapplication/loanScheduleCon/{uid}")
     Result LoanScheduleCon(@PathVariable("uid") Integer uid);
 }

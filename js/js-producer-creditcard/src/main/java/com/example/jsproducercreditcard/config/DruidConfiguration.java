@@ -73,7 +73,7 @@ public class DruidConfiguration {
             //configuration
             datasource.setInitialSize(initialSize);
             datasource.setMinIdle(minIdle);
-            datasource.setMaxActive(maxActive);
+            datasource.setMaxActive(10);
             datasource.setMaxWait(maxWait);
             datasource.setTimeBetweenEvictionRunsMillis(timeBetweenEvictionRunsMillis);
             datasource.setMinEvictableIdleTimeMillis(minEvictableIdleTimeMillis);

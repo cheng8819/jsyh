@@ -1,9 +1,12 @@
 server:
-  port: 8087
+  port: 9090
 eureka:
   client:
     service-url:
-      defaultZone: http://root:123456@localhost:7776/eureka/
+      defaultZone: http://root:123456@39.105.153.204:7776/eureka/
+  instance:
+    prefer-ip-address: true
+    instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
 spring:
   jpa:
     hibernate:

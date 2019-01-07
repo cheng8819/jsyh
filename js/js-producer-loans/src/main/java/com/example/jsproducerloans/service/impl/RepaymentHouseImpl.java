@@ -71,7 +71,7 @@ public class RepaymentHouseImpl implements Repayment {
             loansParticulars1.setThisMonth(money);
             loansParticulars.add(loansParticulars1);
         }
-        return ResultUtil.success(loansParticulars);
+        return ResultUtil.success(JSON.toJSONString(loansParticulars));
     }
 
     /**

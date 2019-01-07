@@ -8,12 +8,10 @@ import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 
 
 @Api(value = "贷款controller", tags = {"贷款操作接口"})
@@ -28,7 +26,12 @@ public class LoantController {
 
     @ApiOperation(value = "获取全部贷款类型", httpMethod = "GET")
     @RequestMapping("allloantype")
-    public Result allLoantype() {
+    public Result allLoantype(HttpServletRequest httpServletRequest) {
+        System.out.println("----------------------------------");
+        for (int i = 0; i < httpServletRequest.getCookies().length; i++) {
+            System.out.println(httpServletRequest.getCookies()[i].getName());
+        }
+        System.out.println("----------------------------------");
         return loans.allLoantype();
     }
 
@@ -48,5 +51,23 @@ public class LoantController {
     @RequestMapping("/updateloanstransactiontostate/{liid}/{state}")
     public Result updateLoanstransactionTostate(@ApiParam(name = "liid", value = "订单ID", required = true) @PathVariable("liid") Integer liid, @ApiParam(name = "state", value = "订单状态（成功1失败0）", required = true) @PathVariable("state") Integer state) {
         return loans.updateLoanstransactionTostate(liid, state);
+    }
+
+    @ApiOperation(value = "全部住房贷款种类", httpMethod = "GET")
+    @GetMapping("/slectAllLoansType")
+    public Result slectAllLoansType(){
+        return loans.slectAllLoansType();
+    }
+
+    @ApiOperation(value = "全部学历", httpMethod = "GET")
+    @GetMapping("/selectAllEducation")
+    public Result selectAllEducation(){
+        return loans.selectAllEducation();
+    }
+
+    @ApiOperation(value = "全部职业", httpMethod = "GET")
+    @GetMapping("/selectAllJobs")
+    public Result selectAllJobs(){
+        return loans.selectAllJobs();
     }
 }

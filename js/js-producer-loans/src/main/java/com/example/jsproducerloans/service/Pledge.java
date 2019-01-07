@@ -48,4 +48,22 @@ public interface Pledge {
      * @return
      */
     Result selectLoansTransactionByData(String id);
+
+    /**
+     * 获取全部住房贷款类型
+     * @return
+     */
+    Result selectAllLoansType();
+
+    /**
+     * 获取全部的学历信息
+     * @return
+     */
+    Result selectAllEducation();
+
+    /**
+     * 获取全部职业信息
+     * @return
+     */
+    Result selectAllJob();
 }

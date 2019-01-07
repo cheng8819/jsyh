@@ -123,8 +123,8 @@ public class LoantService {
 		LoansTransaction loansTransaction = JSON.parseObject(result1,LoansTransaction.class);
 		String str = (String) loans.updateLoanstransactionTostate(loansTransaction.getLiid(),1).getData();
 		if("修改订单状态成功".equals(str)){
-			String idnumber = operationalAmount.idnumberSelectCardnumber("");
-			operationalAmount.deposit(idnumber,loansTransaction.getLinumber().doubleValue(),"贷款");
+//			String idnumber = operationalAmount.idnumberSelectCardnumber("");
+			operationalAmount.deposit("6228211659001411572",loansTransaction.getLinumber().doubleValue(),"贷款");
 		}
 	}
 

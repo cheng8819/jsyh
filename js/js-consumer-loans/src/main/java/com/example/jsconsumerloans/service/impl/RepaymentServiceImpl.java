@@ -12,6 +12,7 @@ import com.example.jsconsumerloans.util.ResultUtil;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.text.DecimalFormat;
 import java.util.List;
 
 @Service
@@ -32,15 +33,16 @@ public class RepaymentServiceImpl implements RepaymentService {
      */
     @Override
     public Result repaymentById(Integer id,Integer uid) {
-        String idNumber = operationalAmount.idnumberSelectCardnumber("");
+//        String idNumber = operationalAmount.idnumberSelectCardnumber("");
         String result = (String) loans.selectLoansTransactionByid(id).getData();
         LoansTransaction loansTransaction = JSON.parseObject(result,LoansTransaction.class);
         String result1;
         if(loansTransaction.getLitype() == 2) {
-            result1 = (String) overdue.loanDetailsByuidCon(uid).getData();
+            result1 = overdue.loanDetailsByuidCon(uid).getData().toString();
         }else{
-            result1 = (String) overdue.loanDetailsByuidConz(uid).getData();
+            result1 = overdue.loanDetailsByuidConz(uid).getData().toString();
         }
+        System.out.println(result1);
         List<LoansParticulars> loansParticulars = JSON.parseArray(result1, LoansParticulars.class);
         LoansParticulars loansParticular2 = null;
         for(LoansParticulars loansParticular1 : loansParticulars){
@@ -49,9 +51,13 @@ public class RepaymentServiceImpl implements RepaymentService {
                 break;
             }
         }
+
+        DecimalFormat df = new DecimalFormat("#.00");
+        double moneys = new Double(df.format(loansParticular2.getThisMonth().doubleValue())).doubleValue();
+        boolean flag = operationalAmount.remittance("6228211659001411572",moneys,loansParticular2.getLitype());
+        String flag1 = overdue.repaymenting(id).getData().toString();
         if(loansParticular2 != null){
-            if(operationalAmount.remittance(idNumber,loansParticular2.getThisMonth().doubleValue(),loansParticular2.getLitype())
-            && "还款成功".equals(overdue.repaymenting(id))){
+            if(flag && "还款成功".equals(flag1)){
                 return ResultUtil.success("还款成功");
             }else{
                 return ResultUtil.success("还款失败");

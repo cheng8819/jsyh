@@ -1,8 +1,11 @@
 package com.example.jsconsumerloans.controller;
 
+import com.alibaba.fastjson.JSON;
+import com.example.jsconsumerloans.controllerpojo.LoansParticulars;
 import com.example.jsconsumerloans.feign.Overdue;
 import com.example.jsconsumerloans.service.RepaymentService;
 import com.example.jsconsumerloans.util.Result;
+import com.example.jsconsumerloans.util.ResultUtil;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiParam;
@@ -32,13 +35,13 @@ public class OverdueController {
     @ApiOperation(value = "指定用户ID所有的住房贷款", httpMethod = "GET")
     @RequestMapping("/loandetailsbyuidcon/{uid}")
     public Result loanDetailsByuidCon(@ApiParam(name = "uid", value = "用户ID", required = true) @PathVariable("uid") Integer uid){
-        return overdue.loanDetailsByuidCon(uid);
+        return ResultUtil.success(JSON.parseArray(overdue.loanDetailsByuidCon(uid).getData().toString(), LoansParticulars.class));
     }
 
     @ApiOperation(value = "指定订单的还款", httpMethod = "GET")
-    @RequestMapping("/repaymenting/{liid}")
+    @RequestMapping("/repaymenting/{liid}/{uid}")
     public Result repaymenting(@ApiParam(name = "uid", value = "用户ID", required = true) @PathVariable("uid") Integer uid,
             @ApiParam(name = "liid", value = "订单ID", required = true) @PathVariable("liid") Integer liid){
-        return repaymentService.repaymentById(uid,liid);
+        return repaymentService.repaymentById(liid,uid);
     }
 }
