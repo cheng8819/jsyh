@@ -55,7 +55,7 @@ public class RepaymentHouseImpl implements Repayment {
             loansParticulars1.setLimoney(loansTransaction.getLinumber());
             loansParticulars1.setLidate(loansTransaction.getLidate());
             // 获取利率
-            System.out.println(loansTransaction.getLinumberofperiods());
+            // System.out.println(loansTransaction.getLinumberofperiods());
             Double rate = housingRateDao.findHousingRateByLrid(loansTransaction.getLinumberofperiods()).getLrratemonth();
             //获取时间并计算距离查询时的时间
 //            String date = loansTransaction.getLidate();
