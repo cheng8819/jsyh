@@ -1,6 +1,7 @@
 package com.example.jsconsumerloans.service.ov;
 
 import com.alibaba.fastjson.JSON;
+import com.codingapi.tx.annotation.TxTransaction;
 import com.example.jsconsumerloans.feign.ActivitiFeign;
 import com.example.jsconsumerloans.feign.Loans;
 import com.example.jsconsumerloans.feign.OperationalAmount;
@@ -14,6 +15,7 @@ import org.activiti.engine.repository.ProcessDefinition;
 import org.activiti.engine.task.Task;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.io.InputStream;
@@ -30,7 +32,7 @@ public class LoantService {
 	private HistoryService historyService;
 	@Autowired
 	private static RepositoryService repositoryService;
-	@Autowired
+	@Resource
 	private ActivitiFeign activitiFeign;
 	@Resource
 	private Loans loans;
@@ -102,6 +104,7 @@ public class LoantService {
 	/**
 	 * 修改申请单的状态
 	 */
+	@TxTransaction
 	public void changeStatus(DelegateExecution execution,String status) {
 
 		String key = execution.getProcessBusinessKey();
@@ -115,6 +118,8 @@ public class LoantService {
 	 * 贷款成功处理
 	 * @param execution
 	 */
+	@TxTransaction(isStart = true)
+	@Transactional
 	public void daikuan(DelegateExecution execution){
 		String key = execution.getProcessBusinessKey();
 		String result = (String) activitiFeign.findLeaveInfoById(key).getData();
@@ -124,7 +129,10 @@ public class LoantService {
 		String str = (String) loans.updateLoanstransactionTostate(loansTransaction.getLiid(),1).getData();
 		if("修改订单状态成功".equals(str)){
 //			String idnumber = operationalAmount.idnumberSelectCardnumber("");
-			operationalAmount.deposit("6228211659001411572",loansTransaction.getLinumber().doubleValue(),"贷款");
+			boolean flag = operationalAmount.deposit("6228211659001411572", loansTransaction.getLinumber().doubleValue(), "贷款");
+			if(!flag){
+				throw new RuntimeException("增加钱失败");
+			}
 		}
 	}
 

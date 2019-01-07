@@ -1,12 +1,13 @@
 package com.example.jsconsumerloans.feign;
 
+import com.example.jsconsumerloans.feign.impl.OverdueImpl;
 import com.example.jsconsumerloans.util.Result;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-@FeignClient(value = "JS-PRODUCER-LOANS")
+@FeignClient(value = "JS-PRODUCER-LOANS",fallback = OverdueImpl.class)
 public interface Overdue {
 
     //指定用户ID和订单ID查询逾期订单

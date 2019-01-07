@@ -1,6 +1,7 @@
 package com.example.jsconsumerloans.service.impl;
 
 import com.alibaba.fastjson.JSON;
+import com.codingapi.tx.annotation.TxTransaction;
 import com.example.jsconsumerloans.controllerpojo.LoansParticulars;
 import com.example.jsconsumerloans.feign.Loans;
 import com.example.jsconsumerloans.feign.OperationalAmount;
@@ -10,6 +11,7 @@ import com.example.jsconsumerloans.service.RepaymentService;
 import com.example.jsconsumerloans.util.Result;
 import com.example.jsconsumerloans.util.ResultUtil;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
 import java.text.DecimalFormat;
@@ -32,7 +34,9 @@ public class RepaymentServiceImpl implements RepaymentService {
      * @return
      */
     @Override
-    public Result repaymentById(Integer id,Integer uid) {
+    @TxTransaction(isStart = true)
+    @Transactional
+    public Result repaymentById(Integer id,Integer uid){
 //        String idNumber = operationalAmount.idnumberSelectCardnumber("");
         String result = (String) loans.selectLoansTransactionByid(id).getData();
         LoansTransaction loansTransaction = JSON.parseObject(result,LoansTransaction.class);
@@ -51,11 +55,13 @@ public class RepaymentServiceImpl implements RepaymentService {
                 break;
             }
         }
-
+        String flag1 = overdue.repaymenting(id).getData().toString();
         DecimalFormat df = new DecimalFormat("#.00");
         double moneys = new Double(df.format(loansParticular2.getThisMonth().doubleValue())).doubleValue();
         boolean flag = operationalAmount.remittance("6228211659001411572",moneys,loansParticular2.getLitype());
-        String flag1 = overdue.repaymenting(id).getData().toString();
+        if(!flag){
+            throw  new RuntimeException("扣款失败");
+        }
         if(loansParticular2 != null){
             if(flag && "还款成功".equals(flag1)){
                 return ResultUtil.success("还款成功");

@@ -1,5 +1,6 @@
 package com.example.jsproducerloans.service.impl;
 
+import com.codingapi.tx.annotation.TxTransaction;
 import com.example.jsproducerloans.dao.AuditorDao;
 import com.example.jsproducerloans.dao.LeaveInfoDao;
 import com.example.jsproducerloans.pojo.Auditor;
@@ -44,6 +45,7 @@ public class ActivitiServiceImpl implements ActivitiService {
      * @param leaveInfo
      */
     @Override
+    @TxTransaction
     public String updateLeaveInfoState(LeaveInfo leaveInfo) {
         LeaveInfo leaveInfo1 = leaveInfoDao.save(leaveInfo);
         return leaveInfo1 == null ? "修改失败" : "修改成功";

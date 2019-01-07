@@ -1,10 +1,11 @@
 package com.example.jsconsumerloans.feign;
 
+import com.example.jsconsumerloans.feign.impl.OperationalAmountImpl;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(value = "js-producer-management")
+@FeignClient(value = "js-producer-management",fallback = OperationalAmountImpl.class)
 public interface OperationalAmount {
 
     //查银行卡号

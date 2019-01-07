@@ -41,7 +41,7 @@ public class OverdueController {
     @ApiOperation(value = "指定订单的还款", httpMethod = "GET")
     @RequestMapping("/repaymenting/{liid}/{uid}")
     public Result repaymenting(@ApiParam(name = "uid", value = "用户ID", required = true) @PathVariable("uid") Integer uid,
-            @ApiParam(name = "liid", value = "订单ID", required = true) @PathVariable("liid") Integer liid){
+            @ApiParam(name = "liid", value = "订单ID", required = true) @PathVariable("liid") Integer liid) throws Exception {
         return repaymentService.repaymentById(liid,uid);
     }
 }

@@ -57,3 +57,6 @@ spring:
     listener:
       simple:
         prefetch: 1
+tm:
+  manager:
+    url: http://47.100.246.114:8899/tx/manager/

@@ -1,6 +1,7 @@
 package com.example.jsproducerloans.service.impl;
 
 import com.alibaba.fastjson.JSON;
+import com.codingapi.tx.annotation.TxTransaction;
 import com.example.jsproducerloans.controllerpojo.LoansParticulars;
 import com.example.jsproducerloans.dao.HousingRateDao;
 import com.example.jsproducerloans.dao.LoansOverdueDao;
@@ -81,6 +82,7 @@ public class RepaymentHouseImpl implements Repayment {
      * @return
      */
     @Override
+    @TxTransaction
     public Result repaymenting(Integer liid) {
         String str = "";
         LoansTransaction loansTransactionsByLiid = loansTransactionDao.findLoansTransactionsByLiid(liid);
