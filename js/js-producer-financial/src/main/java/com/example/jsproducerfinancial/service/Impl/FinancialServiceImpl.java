@@ -6,17 +6,19 @@ import com.example.jsproducerfinancial.pojo.BrowsingHistory;
 import com.example.jsproducerfinancial.pojo.Buy;
 import com.example.jsproducerfinancial.pojo.Finance;
 import com.example.jsproducerfinancial.service.FinancialService;
+
+import java.text.DateFormat;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
-
 import com.example.jsproducerfinancial.util.MyTimeFormatterUtils;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import javax.xml.crypto.Data;
+import javax.print.attribute.standard.DateTimeAtCreation;
 
 /**
  * @auther: 666先生的救赎
@@ -34,25 +36,20 @@ public class FinancialServiceImpl implements FinancialService {
             return "产品名称不为空";
         }
         //查找理财产品信息
-        Finance finance = new Finance();
-        finance.setProduct_name(financeName);
-        Finance financeInfo = financialDao.findAll(finance).get(0);
+        Finance financeInfo = financialDao.findFinanceDetails(financeName,null);
         if(financeInfo == null){
             return "未查询到相关信息";
         }
-        if(finance.getProduct_lines() < money){
+        if(financeInfo.getProduct_lines() < money){
             return "产品额度不足";
         }
         //修改理财产品额度
-        finance.setProduct_lines(finance.getProduct_lines()-money);
-        financialDao.updFinance(finance);
+        financeInfo.setProduct_lines(financeInfo.getProduct_lines()-money);
+        financialDao.updFinance(financeInfo);
 
-        Buy buy = new Buy();
-        buy.setProduct_name(financeInfo.getProduct_name());
-        buy.setProduct_number(financeInfo.getProduct_code());
-        buy.setUsername(username);
-        buy.setProduct_money(money);
-        buy.setBuy_time(String.valueOf(new Date())); //放置时间戳
+        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+        String time = sdf.format(new Date());
+        Buy buy = new Buy(username,financeInfo.getProduct_name(),financeInfo.getProduct_code(),1.00,money,time);
         //添加购买记录
         Integer result = financialDao.addBuyFinance(buy);
         if(result <= 0){
@@ -62,35 +59,37 @@ public class FinancialServiceImpl implements FinancialService {
     }
 
     @Override
-    public String sellFinancial(Finance finance,String username) {
-        String financeName = null;
-        try {
-            financeName = finance.getProduct_name();
-            String financeNumber = finance.getProduct_code();
-        } catch (Exception e) {
-            e.printStackTrace();
+    public String sellFinancial(String financeName,String username) {
+        if(financeName == null || "".equals(financeName) || username == null || "".equals(username)){
             return "数据不完整(缺少理财产品名称或理财产品代码)";
         }
-
         Buy buyInfo = new Buy();
         buyInfo.setUsername(username);
-        buyInfo.setProduct_number(financeName);
+        buyInfo.setProduct_name(financeName);
         Buy buy = financialDao.selBuyFinance(buyInfo).get(0);
         if(buy == null){
             return "未查找到相关理财产品信息";
         }
         Date now = new Date();
-        Date buyTime = MyTimeFormatterUtils.String2Date(buy.getBuy_time());
-        Date deadline = MyTimeFormatterUtils.String2Date(finance.getTime_limit());
-        if( (now.getTime() - buyTime.getTime()) <= deadline.getTime() ){
+        DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        Date buyTime = null;
+        try {
+            buyTime = format.parse(buy.getBuy_time());
+        } catch (ParseException e) {
+            return "赎回来财产品失败";
+        }
+        Finance financeDetails = financialDao.findFinanceDetails(financeName,null);
+        if( (now.getTime() - buyTime.getTime()) <= Integer.valueOf(financeDetails.getTime_limit()) ){
             return "理财期限未结束";
         }
-
-
-
         //计算理财产品收益
-        Double earings = Double.valueOf(calculateEarnings(finance,username));
-        Buy newBuy = new Buy(username,financeName,earings,String.valueOf(new Date()));
+        Double earings = Double.valueOf(calculateEarnings(financeDetails,username));
+
+        //修改该理财产品额度
+        financeDetails.setProduct_lines( financeDetails.getProduct_lines() - buy.getProduct_money());
+        financialDao.updFinance(financeDetails);
+
+        Buy newBuy = new Buy(username,financeName,earings,format.format(now));
         Integer result = financialDao.updBuyFinance(newBuy);
         if(result <= 0){
             return "赎回失败";
@@ -138,12 +137,21 @@ public class FinancialServiceImpl implements FinancialService {
         return JSON.toJSONString(fundPageInfo.getList());
     }
 
+    /**
+     * 计算收益
+     * @param finance
+     * @param username
+     * @return
+     * @desc:
+     *      计算理财财产品收益
+     *      投资人预期收益＝理财本金×预期收益率×理财期限/365。
+     */
     @Override
     public String calculateEarnings(Finance finance,String username) {
-        //计算理财财产品收益
-        //投资人预期收益＝理财本金×预期收益率×理财期限/365。
-        Integer time_limit = Integer.valueOf(finance.getTime_limit()); //理财期限
-        Double annualizedReturns = Double.valueOf(finance.getExpected_annualized_rate()); //年化收益率
+        //理财期限
+        Integer time_limit = Integer.valueOf(finance.getTime_limit());
+        //年化收益率
+        Double annualizedReturns = Double.valueOf(finance.getExpected_annualized_rate());
         Buy buy = new Buy();
         buy.setUsername(username);
         Buy buyFinance = financialDao.selBuyFinance(buy).get(0);
@@ -196,11 +204,22 @@ public class FinancialServiceImpl implements FinancialService {
         }
         Finance newFinance = new Finance();
         newFinance.setProduct_name(financialName);
-        Finance finance = financialDao.findAll(newFinance).get(0);
+        Finance finance = financialDao.findFinanceDetails(financialName,null);
         if(finance == null){
             return "未查询到相关信息";
         }
         return JSON.toJSONString(finance);
     }
 
+    @Override
+    public String showFinanceDetails(String product_name) {
+        if(product_name == null || "".equals(product_name)){
+            return "理财产品名称不能为空";
+        }
+        Finance financeDetails = financialDao.findFinanceDetails(product_name,null);
+        if(financeDetails == null){
+            return "未查询到相关信息";
+        }
+        return JSON.toJSONString(financeDetails);
+    }
 }

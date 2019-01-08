@@ -215,4 +215,25 @@ public class BuyServiceImpl implements BuyService {
         return "定时任务创建成功";
     }
 
+    @Override
+    public String showBuyInfoByTime(String username, String startTime, String stopTime) {
+        if(username == null || "".equals(username)){
+            return "用户标识不为空";
+        }
+        if(startTime == null || stopTime == null){
+            return "查询时间区间不为空";
+        }
+        return JSON.toJSONString(buyDao.findBuyInfoByTime(username,startTime,stopTime));
+    }
+
+    @Override
+    public String showSellInfoByTime(String username, String startTime, String stopTime) {
+        if(username == null || "".equals(username)){
+            return "用户标识不为空";
+        }
+        if(startTime == null || stopTime == null){
+            return "查询时间区间不为空";
+        }
+        return JSON.toJSONString(buyDao.findSellInfoByTime(username,startTime,stopTime));
+    }
 }

@@ -44,11 +44,11 @@ public class FundServiceImpl implements FundService {
 
     @Override
     public String showAllFunds(FundInfo fundInfo) {
-        List<Performance> performanceList = fundDao.findAll(fundInfo);
-        if(performanceList.size() <= 0){
+        List<FundInfo> fundInfos = fundDao.findAll(fundInfo);
+        if(fundInfos.size() <= 0){
             return "未查询到任何信息";
         }
-        return JSON.toJSONString(performanceList);
+        return JSON.toJSONString(fundInfos);
     }
 
     @Override

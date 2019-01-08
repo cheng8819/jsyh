@@ -1,6 +1,9 @@
 package com.example.jsproducerfund.service;
 
+import com.example.jsproducerfund.pojo.Buy;
 import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 public interface BuyService {
 
@@ -57,5 +60,21 @@ public interface BuyService {
      * @return
      */
     String automaticInvestmentPlan(String jobName,String time);
+
+    /**
+     * 按时间段查询购买记录
+     * @param startTime
+     * @param stopTime
+     * @return
+     */
+    String showBuyInfoByTime(String username, String startTime, String stopTime);
+
+    /**
+     * 按时间段查询赎回记录
+     * @param startTime
+     * @param stopTime
+     * @return
+     */
+    String showSellInfoByTime(String username, String startTime,String stopTime);
 
 }

@@ -1,23 +1,75 @@
 package com.example.jsproducerfund.pojo;
 
+import lombok.Data;
+
 /**
  * @auther: 666先生的救赎
  * @date: 2018/12/19 17:33
  *
  * 产品买卖记录
  */
+@Data
 public class Buy {
 
+    /**
+     * 购买记录ID
+     */
     private Integer buy_id;
+
+    /**
+     * 用户标识
+     */
     private String username;
+
+    /**
+     * 产品名称
+     */
     private String product_name;
+
+    /**
+     * 产品代码
+     */
     private String product_number;
+
+    /**
+     * 购买份额
+     */
     private Double product_unit;
-    private Double product_money; //购买基金花费金额
+
+    /**
+     * 购买基金花费金额
+     */
+    private Double product_money;
+
+    /**
+     * 产品收益
+     */
     private Double product_earnings;
-    private Integer product_status; //产品状态 1 已购买 0 已赎回
+
+    /**
+     * 产品状态 1 已购买 0 已赎回
+     */
+    private Integer product_status;
+
+    /**
+     * 购买时间
+     */
     private String buy_time;
+
+    /**
+     * 赎回时间
+     */
     private String sell_time;
+
+    /**
+     * 分红模式
+     */
+    private String dividend_distribution;
+
+    /**
+     * 收费模式
+     */
+    private String charge_mode;
 
     public Buy(){}
 
@@ -49,7 +101,6 @@ public class Buy {
      * @param sell_time
      */
     public Buy(String username, String product_name, Double product_earnings, String sell_time) {
-        this.buy_id = buy_id;
         this.username = username;
         this.product_name = product_name;
         this.product_earnings = product_earnings;
@@ -57,98 +108,4 @@ public class Buy {
         this.sell_time = sell_time;
     }
 
-    public Integer getProduct_status() {
-        return product_status;
-    }
-
-    public void setProduct_status(Integer product_status) {
-        this.product_status = product_status;
-    }
-
-    public Integer getBuy_id() {
-        return buy_id;
-    }
-
-    public void setBuy_id(Integer buy_id) {
-        this.buy_id = buy_id;
-    }
-
-    public String getUsername() {
-        return username;
-    }
-
-    public void setUsername(String username) {
-        this.username = username;
-    }
-
-    public String getProduct_name() {
-        return product_name;
-    }
-
-    public void setProduct_name(String product_name) {
-        this.product_name = product_name;
-    }
-
-    public String getProduct_number() {
-        return product_number;
-    }
-
-    public void setProduct_number(String product_number) {
-        this.product_number = product_number;
-    }
-
-    public Double getProduct_unit() {
-        return product_unit;
-    }
-
-    public void setProduct_unit(Double product_unit) {
-        this.product_unit = product_unit;
-    }
-
-    public Double getProduct_money() {
-        return product_money;
-    }
-
-    public void setProduct_money(Double product_money) {
-        this.product_money = product_money;
-    }
-
-    public Double getProduct_earnings() {
-        return product_earnings;
-    }
-
-    public void setProduct_earnings(Double product_earnings) {
-        this.product_earnings = product_earnings;
-    }
-
-    public String getBuy_time() {
-        return buy_time;
-    }
-
-    public void setBuy_time(String buy_time) {
-        this.buy_time = buy_time;
-    }
-
-    public String getSell_time() {
-        return sell_time;
-    }
-
-    public void setSell_time(String sell_time) {
-        this.sell_time = sell_time;
-    }
-
-    @Override
-    public String toString() {
-        return "Buy{" +
-                "buy_id=" + buy_id +
-                ", username='" + username + '\'' +
-                ", product_name='" + product_name + '\'' +
-                ", product_number='" + product_number + '\'' +
-                ", product_unit=" + product_unit +
-                ", product_money=" + product_money +
-                ", product_earnings=" + product_earnings +
-                ", buy_time='" + buy_time + '\'' +
-                ", sell_time='" + sell_time + '\'' +
-                '}';
-    }
 }

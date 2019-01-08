@@ -1,5 +1,6 @@
 package com.example.jsconsumerfinancial.service;
 
+import com.example.jsconsumerfinancial.pojo.Finance;
 import com.example.jsconsumerfinancial.service.Impl.FinanceServiceImpl;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.cloud.netflix.feign.FeignClient;
@@ -22,5 +23,11 @@ public interface FinanceService {
     public String buyFinance(@RequestParam("financeName") String financeName,
                              @RequestParam("username") String username,
                              @RequestParam("money") Double money);
+
+
+    @ApiOperation(value = "赎回理财产品",notes = "产品信息、用户标识")
+    @ResponseBody
+    @RequestMapping(value = "/sellFinancial",method = RequestMethod.POST)
+    public String sellFinancial(@RequestParam("financeName") String financeName,@RequestParam("username") String username);
 
 }

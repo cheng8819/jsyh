@@ -51,4 +51,20 @@ public class BuyController {
         return buyService.automaticInvestmentPlan(jobName,time);
     }
 
+
+    @ApiOperation(value = "按时间区间查询基金购买记录",notes = "用户标识，开始时间，结束时间")
+    @ResponseBody
+    @RequestMapping(value = "/showBuyInfoByTime",method = RequestMethod.GET)
+    public String showBuyInfoByTime(@RequestParam("username") String username,@RequestParam("startTime") String startTime,@RequestParam("stopTime") String stopTime){
+        return buyService.showBuyInfoByTime(username,startTime,stopTime);
+    }
+
+
+    @ApiOperation(value = "按时间区间查询基金赎回记录",notes = "用户标识，开始时间，结束时间")
+    @ResponseBody
+    @RequestMapping(value = "/showSellInfoByTime",method = RequestMethod.GET)
+    public String showSellInfoByTime(@RequestParam("username") String username,@RequestParam("startTime") String startTime,@RequestParam("stopTime") String stopTime){
+        return buyService.showSellInfoByTime(username,startTime,stopTime);
+    }
+
 }

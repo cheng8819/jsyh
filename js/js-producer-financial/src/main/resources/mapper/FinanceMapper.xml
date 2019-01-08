@@ -13,6 +13,19 @@
         </trim>
     </select>
 
+    <!--查询基金详情-->
+    <select id="findFinanceDetails" parameterType="java.lang.String" resultType="com.example.jsproducerfinancial.pojo.Finance">
+        select * from finance
+        <where>
+            <if test="financeName != null">
+                product_name = #{financeName}
+            </if>
+            <if test="financeNumber != null">
+                and product_code = #{financeNumber}
+            </if>
+        </where>
+    </select>
+
     <insert id="addFinance" parameterType="com.example.jsproducerfinancial.pojo.Finance">
         insert into finance(product_code,product_name,break_even,collect_period,performance_comparison_benchmark,single_subscription_limit,time_limit,product_risk_level)
         values (#{product_code},#{product_name},#{break_even},#{collect_period},#{performance_comparison_benchmark},#{single_subscription_limit},#{time_limit},#{product_risk_level})
@@ -20,9 +33,15 @@
 
     <update id="updFinance" parameterType="com.example.jsproducerfinancial.pojo.Finance">
         update finance
-        <trim prefix="set" suffixOverrides="," suffix="where product_id=product_id">
+        <trim prefix="set" suffixOverrides="," suffix="where product_code=product_code">
             <if test="product_name != null">
-                product_name = #{product_name}
+                product_name = #{product_name},
+            </if>
+            <if test="product_lines != null">
+                product_lines = #{product_lines},
+            </if>
+            <if test="expected_annualized_rate != null">
+                expected_annualized_rate = #{expected_annualized_rate}
             </if>
         </trim>
     </update>
@@ -41,32 +60,43 @@
         values(#{username},#{product_name},#{product_number},#{browsing_history_time})
     </insert>
 
-    <!--&lt;!&ndash;查询购买信息&ndash;&gt;
-    <select id="selBuyFinance" parameterType="com.example.jsproducerfinancial.pojo.Buy" resultType="com.example.jsproducerfinancial.pojo.Buy">
-        select * from buy
-        <trim prefix="where" prefixOverrides="and | or">
-            <if test="username != null">
-                and username = #{username}
-            </if>
-        </trim>
-    </select>-->
-
     <insert id="addBuyFinance" parameterType="com.example.jsproducerfinancial.pojo.Buy">
-        insert into buy(username,product_name,product_number,product_unit,product_money,buy_time)
-        values(#{username},#{product_name},#{product_number},#{product_unit},#{product_money},#{buy_time})
+        insert into buy(username,product_name,product_number,product_unit,product_money,product_status,buy_time)
+        values(#{username},#{product_name},#{product_number},#{product_unit},#{product_money},#{product_status},#{buy_time})
     </insert>
 
+    <update id="updBuyFinance" parameterType="com.example.jsproducerfinancial.pojo.Buy">
+        update buy
+        <set>
+            <if test="product_earnings != null" >
+                product_earnings=#{product_earnings},
+            </if>
+            <if test="sell_time != null" >
+                sell_time=#{sell_time}
+            </if>
+        </set>
+        <where>
+            <if test="username != null">
+                username=#{username}
+            </if>
+            <if test="product_name != null">
+                and product_name=#{product_name}
+            </if>
+        </where>
+    </update>
+
     <!--查询购买记录-->
-    <select id="selBuyFinance">
+    <select id="selBuyFinance" resultType="com.example.jsproducerfinancial.pojo.Buy">
         select buy_id,username,product_name,product_number,product_unit,product_money,product_earnings,buy_time from buy
         <where>
             <if test="username != null">
                 username = #{username}
             </if>
             <if test="product_number != null">
-                and product_number = #{productNumber}
+                and product_number = #{product_number}
             </if>
             and product_status=1
         </where>
     </select>
+
 </mapper>

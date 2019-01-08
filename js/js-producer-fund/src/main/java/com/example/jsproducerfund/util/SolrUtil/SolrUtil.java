@@ -7,152 +7,124 @@ import org.apache.solr.client.solrj.SolrQuery;
 import org.apache.solr.client.solrj.SolrServerException;
 import org.apache.solr.client.solrj.response.QueryResponse;
 import org.apache.solr.common.SolrDocument;
+import org.apache.solr.common.SolrDocumentList;
 import org.apache.solr.common.SolrInputDocument;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Component;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-@RestController
-@RequestMapping("solr")
+
+@Component
 public class SolrUtil {
 
     @Autowired
-    private SolrClient client;
+    private SolrClient solrClient;
 
     @Autowired
     private FundDao fundDao;
 
     /**
      * Solr 定时全量导入
-     *
-     * 每天中午12和23点定时更新数据
      * @return
      */
-    @Scheduled(cron="0 0 15 * * ?")
     public String fullAmountOfImport(){
-       List<SolrInputDocument> documents = new ArrayList<SolrInputDocument>();
-       //数据库查询全部数据
-       List<FundInfo> funds = fundDao.findNewFunds();
-        for (FundInfo fund : funds) {
+        ArrayList<SolrInputDocument> docs = new ArrayList<SolrInputDocument>();
+        List<FundInfo> allFunds = fundDao.findAll(null);
+        for (FundInfo fund: allFunds) {
             SolrInputDocument doc = new SolrInputDocument();
-            doc.setField("fund_name",fund.getFund_name());
             doc.setField("fund_number",fund.getFund_number());
-            documents.add(doc);
+            doc.setField("fund_name",fund.getFund_name());
+            doc.setField("fund_shortname",fund.getFund_shortname());
+            doc.setField("fund_rating",fund.getFund_rating());
+            doc.setField("fund_type",fund.getFund_type());
+            doc.setField("fund_kind",fund.getFund_kind());
+            doc.setField("issuing_date",fund.getIssuing_date());
+            doc.setField("currency",fund.getCurrency());
+            doc.setField("fundStatus",fund.getFundStatus());
+            doc.setField("raise_way",fund.getRaise_way());
+            doc.setField("fund_scale",fund.getFund_scale());
+            doc.setField("fund_newscale",fund.getFund_newscale());
+
+            doc.setField("unit_value",fund.getUnit_value());
+            doc.setField("maximum_rengou_rate",fund.getMaximum_rengou_rate());
+            doc.setField("maximum_shengou_rate",fund.getMaximum_shengou_rate());
+            doc.setField("maximum_redemption_rate",fund.getMaximum_redemption_rate());
+            doc.setField("minimum_initial_subscription_amount",fund.getMinimum_initial_subscription_amount());
+            doc.setField("minimum_purchase_amount",fund.getMinimum_purchase_amount());
+            doc.setField("minimum_additional_subscription_amount",fund.getMinimum_additional_subscription_amount());
+
+            doc.setField("performance_benchmark",fund.getPerformance_benchmark());
+            doc.setField("risk_grade",fund.getRisk_grade());
+            doc.setField("start_date",fund.getStart_date());
+            doc.setField("portfolio_manager",fund.getPortfolio_manager());
+            doc.setField("fund_manager",fund.getFund_manager());
+            doc.setField("fund_trustee",fund.getFund_trustee());
+
+            doc.setField("investment_scope",fund.getInvestment_scope());
+            doc.setField("investment_objective",fund.getInvestment_objective());
+            doc.setField("create_time",fund.getCreate_time());
+            doc.setField("fund_trustee",fund.getFund_trustee());
+            doc.setField("iopv",fund.getIopv());
+            doc.setField("iopvs",fund.getIopvs());
+            doc.setField("dailyIncreases",fund.getDailyIncreases());
+
+            doc.setField("weekly_rate_of_return",fund.getWeekly_rate_of_return());
+            doc.setField("monthly_rate_of_return",fund.getMonthly_rate_of_return());
+            doc.setField("threeMonthRise",fund.getThreeMonthRise());
+            doc.setField("fund_company",fund.getFund_company());
+
+            docs.add(doc);
         }
         try {
-            client.add("fundInfo",documents);
-            client.commit("fundInfo");
+            solrClient.add(docs);
         } catch (Exception e) {
-            e.printStackTrace();
             return "数据导入失败";
         }
         return "数据导入成功";
     }
 
     /**
-     * 新增/修改 索引
-     * 当 id 存在的时候, 此方法是修改(当然, 我这里用的 uuid, 不会存在的), 如果 id 不存在, 则是新增
-     * @return
-     */
-    @RequestMapping("add")
-    public String add() {
-        try {
-            SolrInputDocument doc = new SolrInputDocument();
-            doc.setField("id", 970529);
-            doc.setField("fund_name", "我是中国人, 我爱中国");
-            doc.setField("fund_number","19970529");
-
-            /* 如果spring.data.solr.host 里面配置到 core了, 那么这里就不需要传 collection1 这个参数
-             * 下面都是一样的
-             */
-            client.add(doc);
-            //client.commit();
-            client.commit();
-            return "true";
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return "error";
-    }
-
-    /**
-     * 根据id删除索引
-     * @param id
-     * @return
-     */
-    @RequestMapping("delete")
-    public String delete(String id)  {
-        try {
-            client.deleteById("collection1",id);
-            client.commit("collection1");
-            return id;
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return "error";
-    }
-
-    /**
      * 删除所有的索引
      * @return
      */
-    @RequestMapping("deleteAll")
     public String deleteAll(){
         try {
-
-            client.deleteByQuery("collection1","*:*");
-            client.commit("collection1");
-
-            return "success";
+            solrClient.deleteByQuery("*:*");
+            solrClient.commit(false,false);
         } catch (Exception e) {
-            e.printStackTrace();
+            return "删除所有索引失败";
         }
-        return "error";
-    }
-
-    /**
-     * 根据id查询索引
-     * @return
-     * @throws Exception
-     */
-    @RequestMapping("getById")
-    public String getById() throws Exception {
-        SolrDocument document = client.getById("collection1", "536563");
-        System.out.println(document);
-        return document.toString();
+        return "删除所有索引成功";
     }
 
     /**
      * 综合查询: 在综合查询中, 有按条件查询, 条件过滤, 排序, 分页, 高亮显示, 获取部分域信息
      * @return
      */
-    @RequestMapping("search")
-    public String search(){
-
-        //初始化SolrQuery
-        SolrQuery query = new SolrQuery("*:*");
-        query.setSort("fund_number", SolrQuery.ORDER.desc);
-        query.setStart(0);
-        //一页显示多少条
-        query.setRows(10);
-        QueryResponse queryResponse = null;
+    public String search(String keywords){
+        SolrQuery solrQuery = new SolrQuery();
+        //搜索条件
+        solrQuery.set("q","keywords:" + keywords);
         try {
-            queryResponse = client.query(query);
-            List<FundInfo> list = queryResponse.getBeans(FundInfo.class);
-            for (FundInfo fund:list){
-                System.out.println(fund.getFund_kind() + "==" + fund.getFund_number() );
+            QueryResponse response = solrClient.query(solrQuery);
+            SolrDocumentList results = response.getResults();
+            for (SolrDocument doc : results) {
+                Object fund_number = doc.get("fund_number");
+                Object fund_name = doc.get("fund_name");
+                Object fund_shortname = doc.get("fund_shortname");
+                Object fund_rating = doc.get("fund_rating");
+                Object fund_type = doc.get("fund_type");
+                Object fund_kind = doc.get("fund_kind");
+                Object issuing_date = doc.get("issuing_date");
+                System.out.println(fund_number + "=" + fund_name + "=" + fund_shortname + "=" +
+                        fund_rating + "=" + fund_type + "=" +fund_kind + "=" + issuing_date);
             }
-        } catch (SolrServerException e) {
-            e.printStackTrace();
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            return "未查询到相关信息";
         }
-
-        return null;
+        return "true";
     }
 
 }

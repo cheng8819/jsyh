@@ -1,10 +1,12 @@
 package com.example.jsconsumerfinancial.pojo;
 
+import java.io.Serializable;
+
 /**
  * @auther: 666先生的救赎
  * @date: 2018/12/24 17:23
  */
-public class Finance {
+public class Finance implements Serializable {
 
     private Integer product_id;
     private String product_code;

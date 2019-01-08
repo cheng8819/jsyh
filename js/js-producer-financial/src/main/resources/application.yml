@@ -5,6 +5,7 @@ spring:
     name: js-producer-financial
   datasource:
     driver-class-name: com.mysql.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
     url: jdbc:mysql://47.95.116.4:3306/bank?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
     username: bank
     password: bank
@@ -37,4 +38,13 @@ pagehelper:
 eureka:
   client:
     service-url:
-      defaultZone: http://root:123456@39.105.153.204:7776/eureka
+      defaultZone: http://root:123456@39.105.153.204:7776/eureka/
+  instance:
+    hostname: 192.168.51.161
+    prefer-ip-address: false
+    instance-id: 192.168.51.161:8023
+debug: true
+logging:
+  pattern:
+    console: "%d - %msg%n"
+  path: classpath:log

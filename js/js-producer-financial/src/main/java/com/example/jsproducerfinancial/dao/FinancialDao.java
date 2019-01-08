@@ -3,6 +3,7 @@ package com.example.jsproducerfinancial.dao;
 import com.example.jsproducerfinancial.pojo.BrowsingHistory;
 import com.example.jsproducerfinancial.pojo.Buy;
 import com.example.jsproducerfinancial.pojo.Finance;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 import java.util.List;
 
@@ -15,6 +16,13 @@ public interface FinancialDao {
      * @return
      */
     List<Finance> findAll(Finance finance);
+
+    /**
+     * 查询基金详情
+     * @param financeName
+     * @return
+     */
+    Finance findFinanceDetails(@Param("financeName") String financeName,@Param("financeNumber") String financeNumber);
 
     /**
      * 增加理财产品信息

@@ -1,11 +1,11 @@
 package com.example.jscosumerfund.controller;
 
+import com.alibaba.fastjson.JSON;
 import com.example.jscosumerfund.pojo.FundInfo;
 import com.example.jscosumerfund.service.FundService;
+import com.example.jscosumerfund.util.RedisUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
 
 
 /**
@@ -19,6 +19,8 @@ public class FundController {
     @Autowired
     private FundService fundService;
 
+    @Autowired
+    private RedisUtil redisUtil;
 
     @RequestMapping(value = "/showNewFunds",method = RequestMethod.GET)
     public String showNewFunds(){
@@ -38,6 +40,16 @@ public class FundController {
     @RequestMapping(value = "/showFundDetails",method = RequestMethod.GET)
     public String showFundDetails(@RequestParam("fundNumber")String fundNumber){
         return fundService.showFundDetails(fundNumber);
+    }
+
+    @RequestMapping(value = "/setKey",method = RequestMethod.POST)
+    public boolean setKey(String key,Object object){
+        return redisUtil.set(key,object);
+    }
+
+    @RequestMapping(value = "/getKey",method = RequestMethod.POST)
+    public String getKey(String key){
+        return JSON.toJSONString(redisUtil.get(key));
     }
 
 }

@@ -17,7 +17,7 @@ public class ManagementServiceImpl implements ManagementService {
 
     @Override
     public Double selectBalance(String cardnumber) {
-        return -1.00;
+        return -1000.00;
     }
 
     @Override

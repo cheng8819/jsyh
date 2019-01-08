@@ -1,70 +1,67 @@
 package com.example.jscosumerfund.service;
 
-import com.example.jscosumerfund.service.Impl.FundUserServiceImpl;
 import com.example.jscosumerfund.service.Impl.ManagementServiceImpl;
 import org.springframework.cloud.netflix.feign.FeignClient;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
-@FeignClient(value = "js-producer-fund",fallback = ManagementServiceImpl.class)
+/**
+ * 银行账户管理服务
+ */
+@FeignClient(value = "js-producer-management",fallback = ManagementServiceImpl.class)
 public interface ManagementService {
 
     /**
      * 查银行卡号：
-     * 参数依次填入（idnumber身份证号）。
-     * 去孙科凡那里拿身份证号
-     * 结果直接返回的是（银行卡号）字符串，查不到银行卡会返回字符串“查不到”。
-     * @param idnumber
-     * @return
+     *
+     * @param idnumber 身份证号
+     * @return 银行卡号/查不到
      */
-    @RequestMapping(value ="/idnumberSelectCardnumber" )
-    public String idnumberSelectCardnumber(String idnumber);
+    @RequestMapping(value ="/card/idnumberSelectCardnumber")
+    String idnumberSelectCardnumber(@RequestParam("idnumber") String idnumber);
 
     /**
      * 查余额：
-     *      参数依次填入（cardnumber银行卡号）
-     *      结果直接返回的是（余额）金额。
-     * @param cardnumber
-     * @return
+     *
+     * @param cardnumber 银行卡号
+     * @return 余额
      */
-    @RequestMapping(value ="/selectBalance" )
-    public Double selectBalance(String cardnumber);
+    @RequestMapping(value ="/card/selectBalance")
+    Double selectBalance(@RequestParam("cardnumber") String cardnumber);
 
     /**
      * 加余额：
-     *      参数依次填入（cardnumber银行卡号、core交易金额、type交易类型）。
-     *      注：交易类型type填写的是自定义字符串
-     *      （如：购买基金、购买保险、存款、汇款......等）
-     *      结果直接返回的是 （true）或者（false）。
-     * @param cardnumber
-     * @param core
-     * @param type
+     *
+     * @param cardnumber 银行卡号
+     * @param core        交易金额
+     * @param type        交易类型
      * @return
      */
-    @RequestMapping(value ="/deposit" )
-    public boolean deposit(String cardnumber,Double core,String type);
+    @RequestMapping(value ="/card/deposit" )
+    boolean deposit(@RequestParam("cardnumber") String cardnumber,
+                    @RequestParam("core") Double core,
+                    @RequestParam("type") String type);
 
     /**
      * 减余额：
-     *      参数依次填入（cardnumber银行卡号、core交易金额、type交易类型）。
-     *      注：交易类型type填写的是自定义字符串
-     *      （如：购买基金、购买保险、存款、汇款......等）
-     *      结果直接返回的是 （true）或者（false）。
-     * @param cardnumber
-     * @param core
-     * @param type
+     *
+     * @param cardnumber 银行卡号
+     * @param core        交易金额
+     * @param type        交易类型
      * @return
      */
-    @RequestMapping(value ="/remittance" )
-    public boolean remittance(String cardnumber,Double core ,String type);
+    @RequestMapping(value ="/card/remittance")
+    boolean remittance(@RequestParam("cardnumber") String cardnumber,
+                       @RequestParam("core") Double core,
+                       @RequestParam("type") String type);
 
     /**
      * 查银行卡状态：
-     *      参数依次填入（（cardnumber银行卡号）
-     *      结果直接返回的是 “正常”、“挂失”、“冻结”三种状态字符串。
-     * @param cardnumber
-     * @return
+     *
+     * @param cardnumber 银行卡号
+     * @return “正常”、“挂失”、“冻结”
      */
-    @RequestMapping(value ="/cardnumberSelectState" )
-    public String cardnumberSelectState(String cardnumber);
+    @RequestMapping(value ="/card/cardnumberSelectState")
+    public String cardnumberSelectState(@RequestParam("cardnumber") String cardnumber);
 
 }

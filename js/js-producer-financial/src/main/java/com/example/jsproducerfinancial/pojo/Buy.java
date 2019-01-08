@@ -17,7 +17,7 @@ public class Buy {
     private String product_number;
     private Double product_unit;
     private Double product_money; //购买基金花费金额
-    private Double product_rernings;
+    private Double product_earnings;
     private String buy_time;
     private String sell_time;
     private Integer product_status;
@@ -48,14 +48,14 @@ public class Buy {
      *
      * @param username
      * @param product_name
-     * @param product_rernings
+     * @param product_earnings
      * @param sell_time
      */
-    public Buy(String username, String product_name, Double product_rernings, String sell_time) {
+    public Buy(String username, String product_name, Double product_earnings, String sell_time) {
         this.buy_id = buy_id;
         this.username = username;
         this.product_name = product_name;
-        this.product_rernings = product_rernings;
+        this.product_earnings = product_earnings;
         this.sell_time = sell_time;
         this.product_status = 0;
     }

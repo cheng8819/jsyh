@@ -43,7 +43,6 @@ public class CalculateImpl implements Calculate {
         if(funds == null || funds.size() == 0){
             //1.先去FundInfo表查数据
             List<Performance> performances = fundDao.findPerformanceByFundInfo();
-            //List<Performance> performances = fundDao.selPerformance(null);
             funds.addAll(performances);
             //2.放入Redis 以后操作redis中的基金走势数据
             redisUtil.lSetList("funds",funds);
@@ -54,9 +53,9 @@ public class CalculateImpl implements Calculate {
 
 
     @Override
-    @Scheduled(cron="2 * * * * ? ")
+    //@Scheduled(cron="0 0 11 * * ?")
     public void FundPerformance() {
-        onLoad();
+        /*onLoad();
         dayNum++;
         System.out.println("基金上市第 " + dayNum + "天数据");
         //更改或添加基金数据
@@ -76,18 +75,19 @@ public class CalculateImpl implements Calculate {
         redisUtil.expire("funds",0);
         redisUtil.lSetList("funds",funds);
         //rabbitMQ
-        sender.send(JSON.toJSONString(funds));
+        sender.send(JSON.toJSONString(funds));*/
     }
 
-    @Scheduled(cron="2 * * * * ? ")
+    //@Scheduled(cron="0 0 11 * * ?")
     @Override
     public void FundPersistence() {
-        List<Performance> data = new ArrayList<Performance>();
+        /*List<Performance> data = new ArrayList<Performance>();
         List<Object> list = redisUtil.lGet("funds", 0, -1);
         Performance p = null;
         for (Object object : list){
             p = (Performance) object;
             System.out.println(p.toString());
-        }
+        }*/
     }
+
 }

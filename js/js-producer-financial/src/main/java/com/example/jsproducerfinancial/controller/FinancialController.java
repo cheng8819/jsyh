@@ -24,6 +24,12 @@ public class FinancialController {
         return financialService.showFinancial(index);
     }
 
+    @ApiOperation(value = "查询理财产品详情",notes = "根据产品名称查询")
+    @RequestMapping(value = "/showFinanceDetails",method = RequestMethod.GET)
+    public String showFinanceDetails(@RequestParam("product_name") String product_name){
+        return financialService.showFinanceDetails(product_name);
+    }
+
     @ApiOperation(value = "查询单个理财产品详情",notes = "根据产品名称查询")
     @RequestMapping(value = "/showFinancialDetails",method = RequestMethod.POST)
     public String showFinancialDetails(@RequestParam ("financeName")String financeName){
@@ -33,7 +39,7 @@ public class FinancialController {
     @ApiOperation(value = "购买理财产品",notes = "三个主要参数：产品信息、用户标识、金额")
     @ResponseBody
     @RequestMapping(value = "/buyFinance",method = RequestMethod.GET)
-    public String buyFinance(String financeName,String username,Double money){
+    public String buyFinance(@RequestParam("financeName") String financeName,@RequestParam("username") String username,@RequestParam("money") Double money){
         return financialService.buyFinancial(financeName,username,money);
     }
 
@@ -46,9 +52,9 @@ public class FinancialController {
 
     @ApiOperation(value = "赎回理财产品",notes = "产品信息、用户标识")
     @ResponseBody
-    @RequestMapping(value = "/sellFinancial",method = RequestMethod.GET)
-    public String sellFinancial(Finance finance,String username){
-        return financialService.sellFinancial(finance,username);
+    @RequestMapping(value = "/sellFinancial",method = RequestMethod.POST)
+    public String sellFinancial(@RequestParam("financeName") String financeName,@RequestParam("username") String username){
+        return financialService.sellFinancial(financeName,username);
     }
 
     @ApiOperation(value = "添加浏览记录",notes = "产品信息、用户标识")

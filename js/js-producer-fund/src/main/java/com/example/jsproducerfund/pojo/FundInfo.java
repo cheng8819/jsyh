@@ -185,4 +185,10 @@ public class FundInfo {
      * 投资目标
      */
     private String investment_scope;
+
+    private String create_time;
+
+    private Double weekly_rate_of_return;
+
+    private Double monthly_rate_of_return;
 }

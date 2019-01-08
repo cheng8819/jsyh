@@ -18,7 +18,7 @@ public interface FundDao {
      * @param fundInfo
      * @return
      */
-    List<Performance> findAll(FundInfo fundInfo);
+    List<FundInfo> findAll(FundInfo fundInfo);
 
     /**
      * 查询新发布的基金信息

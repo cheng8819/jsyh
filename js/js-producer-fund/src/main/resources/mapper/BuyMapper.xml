@@ -52,4 +52,38 @@
         </where>
     </select>
 
+    <!--查询购买记录-->
+    <select id="findBuyInfoByTime" parameterType="java.lang.String" resultType="com.example.jsproducerfund.pojo.Buy">
+        select buy_id,product_name,product_number,product_unit,product_money,charge_mode,dividend_distribution,buy_time from buy
+        <where>
+            <if test="startTime != null">
+                buy_time &gt;= #{startTime}
+            </if>
+            <if test="stopTime != null">
+                and buy_time &lt;= #{stopTime}
+            </if>
+            <if test="username != null">
+                and username = #{username}
+            </if>
+            and product_status = 1
+        </where>
+    </select>
+
+    <!--查询赎回记录-->
+    <select id="findSellInfoByTime" parameterType="java.lang.String" resultType="com.example.jsproducerfund.pojo.Buy">
+        select * from buy
+        <where>
+            <if test="startTime != null">
+                sell_time &gt;= #{startTime}
+            </if>
+            <if test="stopTime != null">
+                and sell_time &lt;= #{stopTime}
+            </if>
+            <if test="username != null">
+                and username = #{username}
+            </if>
+            and product_status = 0
+        </where>
+    </select>
+
 </mapper>

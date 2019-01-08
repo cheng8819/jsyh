@@ -24,4 +24,9 @@ public class FinanceServiceImpl implements FinanceService {
     public String buyFinance(String financeName, String username, Double money) {
         return "服务异常...";
     }
+
+    @Override
+    public String sellFinancial(String financeName, String username) {
+        return "服务异常...";
+    }
 }

@@ -20,3 +20,8 @@ eureka:
 feign:
   hystrix:
     enabled: true
+debug: true
+logging:
+  pattern:
+    console: "%d - %msg%n"
+  path: classpath:log

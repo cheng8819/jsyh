@@ -21,11 +21,11 @@ public interface FinancialService {
      * 1.判断产品期限是否到期
      * 2.改变购买记录里的产品状态
      * 3.向银行账户打钱--收益
-     * @param finance 理财产品
+     * @param financeName 理财产品名称
      * @param username 用户标识
      * @return
      */
-    String sellFinancial(Finance finance,String username);
+    String sellFinancial(String financeName,String username);
 
     /**
      * 查看购买的理财产品记录
@@ -71,5 +71,12 @@ public interface FinancialService {
      * @return
      */
     String showBrowsingHistory(String username);
+
+    /**
+     * 根据产品名称查询理财产品详情
+     * @param product_name
+     * @return
+     */
+    String showFinanceDetails(String product_name);
 
 }

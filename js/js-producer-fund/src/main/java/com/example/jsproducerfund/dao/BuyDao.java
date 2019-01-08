@@ -2,6 +2,7 @@ package com.example.jsproducerfund.dao;
 
 import com.example.jsproducerfund.pojo.Buy;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -33,4 +34,19 @@ public interface BuyDao {
      */
     List<Buy> selBuyFound(Buy buy);
 
+    /**
+     * 按时间段查询购买记录
+     * @param startTime
+     * @param stopTime
+     * @return
+     */
+    List<Buy> findBuyInfoByTime(@Param("username") String username,@Param("startTime") String startTime,@Param("stopTime") String stopTime);
+
+    /**
+     * 按时间段查询赎回记录
+     * @param startTime
+     * @param stopTime
+     * @return
+     */
+    List<Buy> findSellInfoByTime(@Param("username") String username,@Param("startTime") String startTime,@Param("stopTime") String stopTime);
 }
