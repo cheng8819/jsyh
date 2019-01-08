@@ -45,9 +45,9 @@ public class IndustrySMS {
         }catch (Exception e){
             e.printStackTrace();
         }
-
         // 提交请求
         String result = HttpUtil.post(url, body);
+        //String result = "{\"respCode\":\"00000\",\"respDesc\":\"请求成功。\",\"failCount\":\"0\",\"failList\":[],\"smsId\":\"c21cbaf46d4f4e3f97b10111d0b3fb91\"}";
         System.out.println("result:" + System.lineSeparator() + result);
         //System.out.println("result:" + System.lineSeparator() + result);
         map.put("result", result);

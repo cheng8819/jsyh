@@ -36,7 +36,16 @@ public class UserInfoController {
     @RequestMapping("/login")
     public String login(@RequestParam("name") String name,@RequestParam("password") String password,HttpServletRequest request) throws Exception {
         //System.out.println("*********"+request.getSession().getId());
-        String login = userInfoService.login(name, password,request);
+        Cookie[] cookies = request.getCookies();
+        String cookiePassword = null;
+        if (cookies!=null){
+            for (Cookie c :cookies){
+                if (c.getName().equals(userInfoService.getPhone(name))){
+                    cookiePassword = c.getValue();
+                }
+            }
+        }
+        String login = userInfoService.login(name, password,cookiePassword);
         System.out.println("111");
         //httpsession = request.getSession();
         //System.out.println("sessionid === "  + request.getSession().getId());
@@ -121,7 +130,7 @@ public class UserInfoController {
      * VerifyTheLoginVerificationCode?phoneNumber=17603452718&smsCode=
      */
     @RequestMapping("/VerifyTheLoginVerificationCode")
-    public String verifyTheLoginVerificationCode(@RequestParam("phoneNumber") String phoneNumber,@RequestParam("smsCode") String smsCode,HttpServletResponse response) throws Exception {
+    public String verifyTheLoginVerificationCode(@RequestParam("phoneNumber") String phoneNumber,@RequestParam("smsCode") String smsCode) throws Exception {
         return userInfoService.verifySMSCode(phoneNumber,smsCode,"1");
     }
 
@@ -176,22 +185,16 @@ public class UserInfoController {
 
 
     @RequestMapping("/gettokenww")
-    public String gnjnskf(HttpServletRequest request,HttpServletResponse response) {
+    public String gnjnskf(HttpServletRequest request) {
         Cookie[] cookies = request.getCookies();
-
-        String userid = request.getHeader("userid");
-        String userids = request.getHeader("idcard");
-        System.out.println(userid);
-        System.out.println(userids);
-        try {
-            for (Cookie c : cookies) {
-                if (c.getName().equals("TOKEN")) {
+        if (cookies!=null){
+            for (Cookie c :cookies){
+                if (c.getName().equals("17603452718")){
                     return c.getValue();
                 }
             }
-        } catch (Exception x) {
-            return "11a";
         }
+
         return "11b";
     }
 

@@ -3,30 +3,11 @@
   <component name="ChangeListManager">
     <list id="e44aebb9-787c-4471-a909-dd4e819fb7f5" name="Revert: 王日升" comment="" />
     <list default="true" id="ce3f4790-d3cd-47e8-a661-ccfb63ed1f92" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/CookieUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/config/WebConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/uitl/CookieUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/JsDengluProviderApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/JsDengluProviderApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/config/CorsConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/config/CorsConfiguration.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/ForgetThePassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/ForgetThePassword.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/UserInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/UserInfoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/test.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/UserInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/UserInfoService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/UserRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/UserRealm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/impl/UserInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/impl/UserInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/ShiroSessionConvertUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/ShiroSessionFactory.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/ShiroSessionRedisConstant.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/ShiroSessionRedisUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/web/GuestController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/web/HomeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/JsSpringZuulApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/JsSpringZuulApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/filter/PreFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/filter/PreFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/uitl/RedisSessionConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/uitl/RedisSessionConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/IndustrySMS.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/IndustrySMS.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/js-spring-zuul/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-spring-zuul/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-spring-zuul/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-spring-zuul/src/main/resources/bootstrap.yml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/js/js-consumer-remittance/target/" />
     <ignored path="$PROJECT_DIR$/js/js-producer-remittance/target/" />
@@ -76,14 +57,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="UserInfoController.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/UserInfoController.java">
+      <file leaf-file-name="IndustrySMS.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/IndustrySMS.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="281">
-              <caret line="199" column="7" selection-start-line="199" selection-start-column="7" selection-end-line="199" selection-end-column="7" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="329">
+              <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
             </state>
           </provider>
         </entry>
@@ -100,8 +78,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>get</find>
-      <find>set</find>
       <find>selectClientBankNumber</find>
       <find>selectPhoneExist</find>
       <find>bankNumberLogin</find>
@@ -129,6 +105,8 @@
       <find>bankCardPageToSendSmsVerificationCode</find>
       <find>getToken</find>
       <find>selectIdCard</find>
+      <find>getNamePhone</find>
+      <find>phoneNumber</find>
       <find>VerifyTheLoginVerificationCode</find>
     </findStrings>
   </component>
@@ -163,7 +141,6 @@
         <option value="$PROJECT_DIR$/js/js-provider-denglu/pom.xml" />
         <option value="$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/controller/ClientRegisterController.java" />
         <option value="$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/util/IndustrySMS.java" />
-        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/IndustrySMS.java" />
         <option value="$PROJECT_DIR$/js/jscommon/src/main/java/com/service/pojo/ClientRegisterBankInfo.java" />
         <option value="$PROJECT_DIR$/js/js-provider-register/src/main/java/com/example/jsregisterprovider/jsproviderregister/service/impl/ClientRegisterServiceImpl.java" />
         <option value="$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/controller/ClientRegistersController.java" />
@@ -174,10 +151,8 @@
         <option value="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/JsSpringZuulApplication.java" />
         <option value="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/config/AjaxIntercepter.java" />
         <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/UserRealm.java" />
-        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/test.java" />
         <option value="$PROJECT_DIR$/js/js-spring-zuul/src/main/resources/application.properties" />
         <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/JsDengluProviderApplication.java" />
-        <option value="$PROJECT_DIR$/js/js-spring-zuul/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/config/WebConfig.java" />
         <option value="$PROJECT_DIR$/js/js-spring-zuul/src/main/resources/bootstrap.yml" />
         <option value="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/uitl/RedisSessionConfig.java" />
@@ -186,10 +161,13 @@
         <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/config/CorsConfiguration.java" />
         <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/ForgetThePassword.java" />
-        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/UserInfoService.java" />
         <option value="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/filter/PreFilter.java" />
-        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/impl/UserInfoServiceImpl.java" />
+        <option value="$PROJECT_DIR$/js/js-spring-zuul/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/test.java" />
+        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/UserInfoService.java" />
         <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/UserInfoController.java" />
+        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/impl/UserInfoServiceImpl.java" />
+        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/IndustrySMS.java" />
       </list>
     </option>
   </component>
@@ -547,7 +525,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.JsSpringZuulApplication">
+  <component name="RunManager" selected="Spring Boot.JsDengluProviderApplication">
     <configuration name="SHAUtil (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.encryption.SHAUtil" />
       <module name="js-common" />
@@ -886,7 +864,7 @@
       <workItem from="1546821359611" duration="12305000" />
       <workItem from="1546844338885" duration="23869000" />
       <workItem from="1546907791959" duration="6705000" />
-      <workItem from="1546928056435" duration="3943000" />
+      <workItem from="1546928056435" duration="7757000" />
     </task>
     <task id="LOCAL-00001" summary="初始">
       <created>1545181297192</created>
@@ -938,7 +916,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="290277000" />
+    <option name="totallyTimeSpent" value="294091000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -972,7 +950,7 @@
       <window_info anchor="bottom" id="Java Enterprise" order="14" weight="0.32952926" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3580599" />
-      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.19543509" />
+      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.1825963" />
       <window_info anchor="bottom" id="Spring" order="12" weight="0.32952926" />
       <window_info anchor="bottom" id="Terminal" order="2" weight="0.3281027" />
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2808311" />
@@ -1038,14 +1016,16 @@
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/impl/UserInfoServiceImpl.java</url>
-          <line>121</line>
-          <properties />
-          <option name="timeStamp" value="14" />
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/CookieUtils.java</url>
+          <line>28</line>
+          <properties class="com.example.jsdengluprovider.util.CookieUtils" method="writeCookie">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
-      <option name="time" value="15" />
+      <option name="time" value="16" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
@@ -1081,13 +1061,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="190">
           <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/IndustrySMS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1192,13 +1165,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-spring-zuul/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="575">
-          <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/uitl/RedisSessionConfig.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
@@ -1247,13 +1213,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/web/UserInfoController.java">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/CookieUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="280">
-          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/RegisterService.java">
       <provider selected="true" editor-type-id="text-editor">
@@ -1328,13 +1287,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="653">
-          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/js/jscommon/src/main/java/com/encryption/SHAUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="312">
@@ -1342,37 +1294,65 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/UserInfoService.java">
+    <entry file="file://$PROJECT_DIR$/js/js-spring-zuul/src/main/resources/application.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
+        <state relative-caret-position="644">
+          <caret line="28" column="22" selection-start-line="28" selection-start-column="22" selection-end-line="28" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/CookieUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="28" column="34" selection-start-line="28" selection-start-column="23" selection-end-line="28" selection-end-column="34" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="164">
+          <caret line="50" column="23" selection-start-line="50" selection-start-column="23" selection-end-line="50" selection-end-column="23" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/filter/PreFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="63" column="45" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="45" />
+        <state relative-caret-position="341">
+          <caret line="109" column="9" lean-forward="true" selection-start-line="109" selection-start-column="9" selection-end-line="109" selection-end-column="9" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/impl/UserInfoServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/UserInfoService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="76">
-          <caret line="121" column="25" lean-forward="true" selection-start-line="121" selection-start-column="25" selection-end-line="121" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="299">
+          <caret line="18" column="67" selection-start-line="18" selection-start-column="67" selection-end-line="18" selection-end-column="67" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/UserInfoController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="281">
-          <caret line="199" column="7" selection-start-line="199" selection-start-column="7" selection-end-line="199" selection-end-column="7" />
+        <state relative-caret-position="253">
+          <caret line="40" column="27" lean-forward="true" selection-start-line="40" selection-start-column="27" selection-end-line="40" selection-end-column="27" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/impl/UserInfoServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="114" column="49" selection-start-line="114" selection-start-column="49" selection-end-line="114" selection-end-column="49" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/IndustrySMS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="329">
+          <caret line="46" column="9" selection-start-line="46" selection-start-column="9" selection-end-line="46" selection-end-column="9" />
         </state>
       </provider>
     </entry>

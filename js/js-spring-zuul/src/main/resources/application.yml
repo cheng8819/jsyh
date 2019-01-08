@@ -27,7 +27,6 @@ zuul:
 ribbon:
   ReadTimeout: 60000
   SocketTimeout: 60000
-
 ---
 spring:
   redis:

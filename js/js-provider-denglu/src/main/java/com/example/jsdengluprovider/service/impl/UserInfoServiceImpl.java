@@ -101,39 +101,35 @@ public class UserInfoServiceImpl implements UserInfoService {
      * @return
      */
     @Override
-    public String login(String name, String password,HttpServletRequest requests) {
+    public String login(String name, String password, String cookiePassword) {
         String phone = getPhone(name);
         ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
         HttpServletRequest request = requestAttributes.getRequest();
         HttpServletResponse response = requestAttributes.getResponse();
         response.addHeader("P3P", "CP=CAO PSA OUR");
         //取出cookie的加密密文与服务器进行对比，如果不对需要先进行设备验证,获取登录手机验证码
-        Cookie[] cookies = requests.getCookies();
-        System.out.println("request"  + request.getHeader("phone"));
+        Cookie[] cookies = request.getCookies();
+        System.out.println("request" + request.getHeader("phone"));
         //if (cookies != null) {
-        /*if (cookies!=null) {
-            for (Cookie a : cookies) {
-                if (a.getName().equals(phone)) {
-                    System.out.println("a.getName()" + a.getName() + phone);
-                    try {
-                        System.out.println("a.getValue()" + SHAUtil.shaEncode(phone));
-
-                        if (!a.getValue().equals(SHAUtil.shaEncode(phone))) {
-                            System.out.println("12");
-                            return "请先发送验证码验证";
-                        }
-                    } catch (Exception e) {
-                        e.printStackTrace();
-                        return "请重新登陆";
-                    }
-                }else {
+        if (cookiePassword != null) {
+            System.out.println("logincookie不为空");
+            System.out.println("a.getName()" + cookiePassword);
+            try {
+                System.out.println("a.getValue()" + SHAUtil.shaEncode(phone));
+                if (!cookiePassword.equals(SHAUtil.shaEncode(phone))) {
+                    System.out.println("12");
                     return "请先发送验证码验证";
                 }
+            } catch (Exception e) {
+                e.printStackTrace();
+                return "请重新登陆";
             }
+
+
         } else {
             System.out.println("qingfasongyanzhenga ");
             return "请先发送验证码验证";
-        }*/
+        }
         Jsclientinternetbankinfo jsclientinternetbankinfo = null;
 
         if (name.matches(PHONE_NUMBER_REG)) {
@@ -142,7 +138,7 @@ public class UserInfoServiceImpl implements UserInfoService {
             jsclientinternetbankinfo = jsclientinternetbankinfoDao.phonelogin(name, password);
             if (jsclientinternetbankinfo != null) {
                 System.out.println("手机登录成功");
-                loginSuccess(phone, request, response);
+                loginSuccess(phone, response);
                 //AddLoginSuccess(response, jsclientinternetbankinfo);
                 return "200";
             }
@@ -153,7 +149,7 @@ public class UserInfoServiceImpl implements UserInfoService {
             jsclientinternetbankinfo = jsclientinternetbankinfoDao.bankNumberLogin(name, password);
             if (jsclientinternetbankinfo != null) {
                 System.out.println("银行登录成功");
-                loginSuccess(phone, request, response);
+                loginSuccess(phone, response);
                 //AddLoginSuccess(response, jsclientinternetbankinfo);
                 return "200";
             }
@@ -164,7 +160,7 @@ public class UserInfoServiceImpl implements UserInfoService {
             jsclientinternetbankinfo = jsclientinternetbankinfoDao.userNameLogin(name, password);
             if (jsclientinternetbankinfo != null) {
                 System.out.println("用户名登录成功");
-                loginSuccess(phone, request, response);
+                loginSuccess(phone, response);
                 //AddLoginSuccess(response, jsclientinternetbankinfo);
                 return "200";
             }
@@ -326,7 +322,7 @@ public class UserInfoServiceImpl implements UserInfoService {
      * @return
      */
     @Override
-    public String loginSuccess(String name, HttpServletRequest request, HttpServletResponse response) {
+    public String loginSuccess(String name, HttpServletResponse response) {
         //获取生成token
 
         Map<String, Object> map = new HashMap<>();
@@ -340,7 +336,6 @@ public class UserInfoServiceImpl implements UserInfoService {
         map.put("exp", new Date().getTime() + 1000 * 60 * 1);
         try {
             String token = TokenUtils.creatToken(map);
-            HttpSession session = request.getSession();
             //session.setAttribute("REDIS_TOKEN", token);
             System.out.println("token=" + token);
             //jedis.set(request.getSession().getId(), JSON.toJSONString(session) ,ShiroSessionRedisConstant.SHIROSESSION_REDIS_EXTIRETIME);
@@ -354,7 +349,7 @@ public class UserInfoServiceImpl implements UserInfoService {
 //                tokenCookie.setMaxAge(1000*60);
                 //response.addCookie(smsphone);
                 //response.addCookie(tokenCookie);
-                CookieUtils.writeCookie(response,"TOKEN",token);
+                CookieUtils.writeCookie(response, "TOKEN", token);
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -416,7 +411,7 @@ public class UserInfoServiceImpl implements UserInfoService {
                 userCookie.setPath("/");
                 response.addCookie(userCookie);*/
                 System.out.println("cookieyanzhengmima");
-                CookieUtils.writeCookie(response,phone,SHAUtil.shaEncode(phone));
+                CookieUtils.writeCookie(response, phone, SHAUtil.shaEncode(phone));
                 return "200";
             }
         } else if (operationState.equals("2")) {

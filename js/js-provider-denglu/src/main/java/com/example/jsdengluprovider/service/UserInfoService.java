@@ -16,7 +16,7 @@ public interface UserInfoService {
      *
      * @return
      */
-    String login(String name, String password,HttpServletRequest request) throws Exception;
+    String login(String name, String password,String cookiePassword) throws Exception;
 
     /**
      * 验证短信验证码
@@ -80,7 +80,7 @@ public interface UserInfoService {
     /**
      * 登录成功后的策略
      */
-    String loginSuccess(String name,HttpServletRequest request,HttpServletResponse response);
+    String loginSuccess(String name,HttpServletResponse response);
 
     /**
      * 登录状态获取用户信息
