@@ -20,12 +20,15 @@ import org.springframework.data.redis.connection.RedisConnection;
 import org.springframework.data.redis.core.RedisCallback;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
 import org.springframework.stereotype.Service;
+import org.springframework.web.context.request.RequestContextHolder;
+import org.springframework.web.context.request.ServletRequestAttributes;
 import redis.clients.jedis.JedisPool;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import javax.xml.ws.spi.http.HttpContext;
 
 import java.text.ParseException;
 import java.util.*;
@@ -98,31 +101,39 @@ public class UserInfoServiceImpl implements UserInfoService {
      * @return
      */
     @Override
-    public String login(String name, String password, HttpServletRequest request, HttpServletResponse response){
+    public String login(String name, String password,HttpServletRequest requests) {
         String phone = getPhone(name);
-        Cookie[] cookies = request.getCookies();
-
+        ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        HttpServletRequest request = requestAttributes.getRequest();
+        HttpServletResponse response = requestAttributes.getResponse();
+        response.addHeader("P3P", "CP=CAO PSA OUR");
         //取出cookie的加密密文与服务器进行对比，如果不对需要先进行设备验证,获取登录手机验证码
-        if (cookies != null) {
-            //if (true) {
+        Cookie[] cookies = requests.getCookies();
+        System.out.println("request"  + request.getHeader("phone"));
+        //if (cookies != null) {
+        /*if (cookies!=null) {
             for (Cookie a : cookies) {
                 if (a.getName().equals(phone)) {
+                    System.out.println("a.getName()" + a.getName() + phone);
                     try {
-                        if (!a.getValue().equals(SHAUtil.shaEncode(phone))){
-                            System.out.println("12");
+                        System.out.println("a.getValue()" + SHAUtil.shaEncode(phone));
 
+                        if (!a.getValue().equals(SHAUtil.shaEncode(phone))) {
+                            System.out.println("12");
                             return "请先发送验证码验证";
                         }
-                    }catch (Exception e){
+                    } catch (Exception e) {
                         e.printStackTrace();
                         return "请重新登陆";
                     }
+                }else {
+                    return "请先发送验证码验证";
                 }
             }
-        } else{
+        } else {
             System.out.println("qingfasongyanzhenga ");
             return "请先发送验证码验证";
-        }
+        }*/
         Jsclientinternetbankinfo jsclientinternetbankinfo = null;
 
         if (name.matches(PHONE_NUMBER_REG)) {
@@ -162,6 +173,24 @@ public class UserInfoServiceImpl implements UserInfoService {
 
     }
 
+    @Override
+    public String tokenGetIdCard(String token) throws ParseException, JOSEException {
+        if (token != null) {
+            Map<String, Object> validMap = TokenUtils.valid(token);
+            int i = (int) validMap.get("Result");
+            if (i == 0) {
+                System.out.println("token解析成功");
+                net.minidev.json.JSONObject jsonObject = (net.minidev.json.JSONObject) validMap.get("data");
+                System.out.println("phone是" + jsonObject.get("idcard"));
+                System.out.println("idcard是" + jsonObject.get("idcard"));
+                System.out.println("exp是" + jsonObject.get("exp"));
+                return (String) jsonObject.get("idcard");
+            } else if (i == 2) {
+                return "403";
+            }
+        }
+        return "403";
+    }
 
     /**
      * 银行卡密码验证
@@ -304,7 +333,7 @@ public class UserInfoServiceImpl implements UserInfoService {
         String idcard = jsclientinternetbankinfoDao.selectIdCard(name);
         //建立载荷，这些数据根据业务，自己定义。
         map.put("phone", name);
-        map.put("idcard",idcard);
+        map.put("idcard", idcard);
         //生成时间
         map.put("sta", new Date().getTime());
         //过期时间
@@ -312,22 +341,30 @@ public class UserInfoServiceImpl implements UserInfoService {
         try {
             String token = TokenUtils.creatToken(map);
             HttpSession session = request.getSession();
-            session.setAttribute("REDIS_TOKEN", token);
+            //session.setAttribute("REDIS_TOKEN", token);
             System.out.println("token=" + token);
             //jedis.set(request.getSession().getId(), JSON.toJSONString(session) ,ShiroSessionRedisConstant.SHIROSESSION_REDIS_EXTIRETIME);
-            Cookie tokenCookie = new Cookie(ShiroSessionRedisConstant.SSOTOKEN_COOKIE_KEY, request.getSession().getId());
-            try{
-                Cookie smsphone = new Cookie(name,SHAUtil.shaEncode(name));
-                smsphone.setMaxAge(1000*60);
-                smsphone.setPath("/");
-                response.addCookie(smsphone);
-            }catch (Exception e){
+            //Cookie sessionId = new Cookie(ShiroSessionRedisConstant.SSOTOKEN_COOKIE_KEY, request.getSession().getId());
+//            Cookie tokenCookie = new Cookie("TOKEN", token);
+            try {
+//                Cookie smsphone = new Cookie(name, SHAUtil.shaEncode(name));
+//                smsphone.setMaxAge(1000 * 60);
+//                smsphone.setPath("/");
+//                tokenCookie.setPath("/");
+//                tokenCookie.setMaxAge(1000*60);
+                //response.addCookie(smsphone);
+                //response.addCookie(tokenCookie);
+                CookieUtils.writeCookie(response,"TOKEN",token);
+            } catch (Exception e) {
                 e.printStackTrace();
             }
 
-            tokenCookie.setMaxAge(10000);
-            tokenCookie.setPath("/");
-            response.addCookie(tokenCookie);
+            //sessionId.setMaxAge(10000);
+            //sessionId.setPath("/");
+            //tokenCookie.setMaxAge(10000);
+            //tokenCookie.setPath("/");
+            //response.addCookie(sessionId);
+            //response.addCookie(tokenCookie);
             return token;
         } catch (JOSEException e) {
             System.out.println("生成token失败");
@@ -362,18 +399,24 @@ public class UserInfoServiceImpl implements UserInfoService {
      * @param operationState 操作状态码 1 登录 2 修改密码
      */
     @Override
-    public String verifySMSCode(String phone, String SMSCode, String operationState, HttpServletResponse response) throws Exception {
+    public String verifySMSCode(String phone, String SMSCode, String operationState) throws Exception {
         operationState = operationState.equals("1") ? phone + "LOGIN_PHONE" : "2";
         String s = varParam(operationState, SMSCode);
+        ServletRequestAttributes requestAttributes = (ServletRequestAttributes) RequestContextHolder.getRequestAttributes();
+        HttpServletRequest request = requestAttributes.getRequest();
+        HttpServletResponse response = requestAttributes.getResponse();
+        response.addHeader("P3P", "CP=CAO PSA OUR");
         //String s = "0";
         if (operationState.equals(phone + "LOGIN_PHONE")) {
             if (s.equals("0")) {
                 // 541789798 为手机号加密的  加密完成存入数据库cookie密文
-                Cookie userCookie = new Cookie(phone, SHAUtil.shaEncode(phone));
+                //Cookie userCookie = new Cookie(phone, SHAUtil.shaEncode(phone));
                 jsclientinternetbankinfoDao.updateCookieRecord(phone, SHAUtil.shaEncode(phone));
-                userCookie.setMaxAge(7 * 24 * 60 * 60); //存活期为一个月 30*24*60*60
+                /*userCookie.setMaxAge(7 * 24 * 60 * 60); //存活期为一个月 30*24*60*60
                 userCookie.setPath("/");
-                response.addCookie(userCookie);
+                response.addCookie(userCookie);*/
+                System.out.println("cookieyanzhengmima");
+                CookieUtils.writeCookie(response,phone,SHAUtil.shaEncode(phone));
                 return "200";
             }
         } else if (operationState.equals("2")) {

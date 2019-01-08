@@ -3,144 +3,30 @@
   <component name="ChangeListManager">
     <list id="e44aebb9-787c-4471-a909-dd4e819fb7f5" name="Revert: 王日升" comment="" />
     <list default="true" id="ce3f4790-d3cd-47e8-a661-ccfb63ed1f92" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_alibaba_fastjson_1_2_13.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_fasterxml_jackson_module_jackson_module_afterburner_2_8_9.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_stephenc_jcip_jcip_annotations_1_0_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_hystrix_hystrix_javanica_1_5_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_hystrix_hystrix_metrics_event_stream_1_5_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_hystrix_hystrix_serialization_1_5_12.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_netflix_zuul_zuul_core_1_3_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__com_nimbusds_nimbus_jose_jwt_4_23.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__commons_io_commons_io_2_6.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_9_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_core_2_6_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_schema_2_6_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spi_2_6_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_spring_web_2_6_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger2_2_6_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_common_2_6_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_springfox_springfox_swagger_ui_2_6_0.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_annotations_1_5_10.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__io_swagger_swagger_models_1_5_10.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__net_minidev_json_smart_1_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__nl_bitwalker_UserAgentUtils_1_2_4.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_commons_commons_lang3_3_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_mapstruct_mapstruct_1_0_0_Final.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_16_20.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_netflix_hystrix_dashboard_1_3_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_hystrix_1_3_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_hystrix_dashboard_1_3_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_cloud_spring_cloud_starter_zuul_1_3_5_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_core_1_2_0_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_plugin_spring_plugin_metadata_1_2_0_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_session_spring_session_1_3_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_springframework_session_spring_session_data_redis_1_3_1_RELEASE.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_d3js_3_4_11.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_webjars_jquery_2_1_1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/controller/ClientRegistersController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/feign/BankCardFeign.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/feign/ClientRegisterFeign.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/service/ClientRegisterService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/service/impl/ClientRegisterServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/util/Config.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/util/Encryption.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/util/HttpUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/util/IndustrySMS.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/util/RedisUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/util/Swagger2.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/config/CorsConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/ForgetThePassword.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/LoginExitController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/RegisterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/dao/ShiroSessionRedisDao.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/listener/ShiroSessionListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/LoginExitService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/RegisterService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/UserRealm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/impl/RegisterServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/impl/login.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/session/HttpSessionWrapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/session/SessionManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/session/ShiroSession.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/Const.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/Encryption.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/HttpInfoUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/RedisSessionConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/ShiroSessionConvertUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/ShiroSessionFactory.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/ShiroSessionRedisConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/ShiroSessionRedisUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/TokenTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/TokenUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/WebUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/smssss.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-register/src/main/java/com/example/jsregisterprovider/jsproviderregister/controller/ClientRegisterController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-register/src/main/java/com/example/jsregisterprovider/jsproviderregister/controller/test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-register/src/main/java/com/example/jsregisterprovider/jsproviderregister/service/ClientRegisterService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-register/src/main/java/com/example/jsregisterprovider/jsproviderregister/service/impl/ClientRegisterServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-register/src/main/java/com/example/jsregisterprovider/jsproviderregister/util/IdentityCardUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-provider-register/src/main/java/com/example/jsregisterprovider/jsproviderregister/util/RedisSessionConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/uitl/RedisSessionConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/uitl/TokenUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/jscommon/jscommon.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/jscommon/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/jscommon/src/main/java/com/encryption/SHAUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/jscommon/src/main/java/com/pojo/Jsclientbank.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/jscommon/src/main/java/com/pojo/Jsclientinfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/jscommon/src/main/java/com/pojo/Jsclientinternetbankinfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/jscommon/src/main/java/com/service/pojo/ClientRegister.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/jscommon/src/main/java/com/service/pojo/ClientRegisterBankInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/js/jscommon/src/main/java/com/service/pojo/ClientRegisterUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_auth0_java_jwt_3_2_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_autoconfigure_1_2_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__com_github_pagehelper_pagehelper_spring_boot_starter_1_2_3.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__io_jsonwebtoken_jjwt_0_7_0.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Maven__org_apache_poi_poi_3_14.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/CookieUtils.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/config/WebConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/uitl/CookieUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/JsDengluProviderApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/JsDengluProviderApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/config/MyShiroRealm.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/config/ShiroConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/config/CorsConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/config/CorsConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/ForgetThePassword.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/ForgetThePassword.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/UserInfoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/UserInfoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/test.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/dao/JsclientbankDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/dao/JsclientbankDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/dao/JsclientinfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/dao/JsclientinfoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/dao/JsclientinternetbankinfoDao.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/dao/JsclientinternetbankinfoDao.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/pojo/Jsclientinfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/pojo/Jsclientinfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/pojo/Jsclientinternetbankinfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/pojo/Jsclientinternetbankinfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/UserInfoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/UserInfoService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/UserRealm.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/UserRealm.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/impl/UserInfoServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/impl/UserInfoServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/Config.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/HttpUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/HttpUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/IndustrySMS.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/IndustrySMS.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/RedisUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/RedisUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/web/HomeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/web/HomeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/ShiroSessionConvertUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/ShiroSessionFactory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/ShiroSessionRedisConstant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/ShiroSessionRedisUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/web/GuestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/web/HomeController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/resources/mapper/JsclientinfoDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/resources/mapper/JsclientinfoDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/resources/mapper/JsclientinternetbankinfoDao.xml" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-provider-denglu/src/main/resources/mapper/JsclientinternetbankinfoDao.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/resources/static/js/jquery-1.8.3.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/resources/templates/login.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/resources/templates/test.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/resources/templates/user/add.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/resources/templates/user/register.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/resources/templates/user/update.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/resources/templates/yanzheng.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-provider-denglu/src/main/resources/templates/yz.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-spring-zuul/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-spring-zuul/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/JsSpringZuulApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/JsSpringZuulApplication.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/filter/PreFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/filter/PreFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/pojo/BankUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/pojo/BankUser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/uitl/RedisConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/uitl/RedisConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/uitl/RedisUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/uitl/RedisUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/uitl/RedisSessionConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/uitl/RedisSessionConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/js-spring-zuul/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-spring-zuul/src/main/resources/application.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/js-spring-zuul/src/main/resources/bootstrap.yml" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-spring-zuul/src/main/resources/bootstrap.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/js-spring-zuul/src/main/resources/redis.properties" beforeDir="false" afterPath="$PROJECT_DIR$/js/js-spring-zuul/src/main/resources/redis.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/js/js-consumer-remittance/target/" />
     <ignored path="$PROJECT_DIR$/js/js-producer-remittance/target/" />
@@ -190,11 +76,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="JsSpringZuulApplication.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/JsSpringZuulApplication.java">
+      <file leaf-file-name="UserInfoController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/UserInfoController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="161">
-              <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+            <state relative-caret-position="281">
+              <caret line="199" column="7" selection-start-line="199" selection-start-column="7" selection-end-line="199" selection-end-column="7" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -211,9 +100,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>provider</find>
-      <find>UpdateInternetBankPassword</find>
-      <find>main</find>
       <find>get</find>
       <find>set</find>
       <find>selectClientBankNumber</find>
@@ -241,6 +127,9 @@
       <find>SESSION</find>
       <find>sendRegisterSMS</find>
       <find>bankCardPageToSendSmsVerificationCode</find>
+      <find>getToken</find>
+      <find>selectIdCard</find>
+      <find>VerifyTheLoginVerificationCode</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -250,26 +139,11 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/service/ClientRegisterService.java" />
-        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/TokenTest.java" />
-        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/TokenUtils.java" />
-        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/resources/mapper/JsclientinternetbankinfoDao.xml" />
-        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/dao/JsclientinternetbankinfoDao.java" />
-        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/ForgetThePassword.java" />
-        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/config/CorsConfiguration.java" />
-        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/WebUtil.java" />
-        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/session/HttpSessionWrapper.java" />
-        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/session/SessionManager.java" />
-        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/session/HttpServletRequestWrapper2.java" />
-        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/RedisSessionConfig.java" />
-        <option value="$PROJECT_DIR$/js/js-provider-register/src/main/java/com/example/jsregisterprovider/jsproviderregister/controller/test.java" />
         <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/ShiroSessionRedisConstant.java" />
-        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/UserInfoService.java" />
         <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/web/HomeController.java" />
         <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/HttpUtil.java" />
         <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/smssss.java" />
         <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/Config.java" />
-        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/resources/application.yml" />
         <option value="$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/util/Config.java" />
         <option value="$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/feign/ClientRegisterFeign.java" />
         <option value="$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/util/Swagger2.java" />
@@ -284,8 +158,6 @@
         <option value="$PROJECT_DIR$/js/js-spring-zuul/pom.xml" />
         <option value="$PROJECT_DIR$/js/js-spring-zuul/src/main/resources/redis.properties" />
         <option value="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/uitl/RedisConfig.java" />
-        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/UserInfoController.java" />
-        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/test.java" />
         <option value="$PROJECT_DIR$/js/js-provider-register/pom.xml" />
         <option value="$PROJECT_DIR$/js/js-provider-register/src/main/java/com/example/jsregisterprovider/jsproviderregister/controller/ClientRegisterController.java" />
         <option value="$PROJECT_DIR$/js/js-provider-denglu/pom.xml" />
@@ -295,12 +167,29 @@
         <option value="$PROJECT_DIR$/js/jscommon/src/main/java/com/service/pojo/ClientRegisterBankInfo.java" />
         <option value="$PROJECT_DIR$/js/js-provider-register/src/main/java/com/example/jsregisterprovider/jsproviderregister/service/impl/ClientRegisterServiceImpl.java" />
         <option value="$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/controller/ClientRegistersController.java" />
-        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/impl/UserInfoServiceImpl.java" />
         <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/Encryption.java" />
         <option value="$PROJECT_DIR$/js/jscommon/src/main/java/com/encryption/Encryption.java" />
         <option value="$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/util/Encryption.java" />
         <option value="$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/service/impl/ClientRegisterServiceImpl.java" />
+        <option value="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/JsSpringZuulApplication.java" />
+        <option value="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/config/AjaxIntercepter.java" />
+        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/UserRealm.java" />
+        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/test.java" />
+        <option value="$PROJECT_DIR$/js/js-spring-zuul/src/main/resources/application.properties" />
+        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/JsDengluProviderApplication.java" />
+        <option value="$PROJECT_DIR$/js/js-spring-zuul/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/config/WebConfig.java" />
+        <option value="$PROJECT_DIR$/js/js-spring-zuul/src/main/resources/bootstrap.yml" />
+        <option value="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/uitl/RedisSessionConfig.java" />
+        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/RedisSessionConfig.java" />
+        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/CookieUtils.java" />
+        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/config/CorsConfiguration.java" />
+        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/resources/application.yml" />
+        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/ForgetThePassword.java" />
+        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/UserInfoService.java" />
         <option value="$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/filter/PreFilter.java" />
+        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/impl/UserInfoServiceImpl.java" />
+        <option value="$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/UserInfoController.java" />
       </list>
     </option>
   </component>
@@ -328,15 +217,6 @@
   <component name="MavenProjectNavigator">
     <treeState>
       <expand>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="js-common" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-        </path>
-        <path>
-          <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
-          <item name="js-common" type="9519ce18:MavenProjectsStructure$ProjectNode" />
-          <item name="Lifecycle" type="58874e2:MavenProjectsStructure$LifecycleNode" />
-        </path>
         <path>
           <item name="" type="16c1761:MavenProjectsStructure$RootNode" />
           <item name="js-denglu-provider" type="9519ce18:MavenProjectsStructure$ProjectNode" />
@@ -369,9 +249,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -388,146 +265,74 @@
               <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
               <item name="jsyh" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="js-consumer-register" type="462c0819:PsiDirectoryNode" />
+              <item name="js-provider-denglu" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
               <item name="jsyh" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="js-consumer-register" type="462c0819:PsiDirectoryNode" />
+              <item name="js-provider-denglu" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
               <item name="jsyh" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="js-consumer-register" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsyh" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="js-consumer-register" type="462c0819:PsiDirectoryNode" />
+              <item name="js-provider-denglu" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
               <item name="jsyh" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="js-consumer-register" type="462c0819:PsiDirectoryNode" />
+              <item name="js-provider-denglu" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jsconsumerregister" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
               <item name="jsyh" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="js-consumer-register" type="462c0819:PsiDirectoryNode" />
+              <item name="js-provider-denglu" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jsconsumerregister" type="462c0819:PsiDirectoryNode" />
+              <item name="jsdengluprovider" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsyh" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="js-provider-denglu" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jsdengluprovider" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsyh" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="js-provider-denglu" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jsdengluprovider" type="462c0819:PsiDirectoryNode" />
               <item name="controller" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
               <item name="jsyh" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="js-consumer-register" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jsconsumerregister" type="462c0819:PsiDirectoryNode" />
-              <item name="feign" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsyh" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="js-consumer-register" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jsconsumerregister" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsyh" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="js-consumer-register" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jsconsumerregister" type="462c0819:PsiDirectoryNode" />
-              <item name="service" type="462c0819:PsiDirectoryNode" />
-              <item name="impl" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsyh" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="js-consumer-register" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="jsconsumerregister" type="462c0819:PsiDirectoryNode" />
-              <item name="util" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsyh" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="js-consumer-register" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsyh" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="js-provider-denglu" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsyh" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="js-provider-denglu" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsyh" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="js-provider-denglu" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsyh" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="js-provider-denglu" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsyh" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="js-provider-denglu" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="jsdengluprovider" type="462c0819:PsiDirectoryNode" />
+              <item name="dao" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
@@ -577,10 +382,7 @@
               <item name="jsyh" type="462c0819:PsiDirectoryNode" />
               <item name="js" type="462c0819:PsiDirectoryNode" />
               <item name="js-provider-denglu" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-              <item name="mapper" type="462c0819:PsiDirectoryNode" />
+              <item name="target" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
@@ -621,6 +423,17 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="jsspringzuul" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsyh" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="js-spring-zuul" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jsspringzuul" type="462c0819:PsiDirectoryNode" />
+              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
@@ -632,6 +445,17 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="jsspringzuul" type="462c0819:PsiDirectoryNode" />
               <item name="filter" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jsyh" type="462c0819:PsiDirectoryNode" />
+              <item name="js" type="462c0819:PsiDirectoryNode" />
+              <item name="js-spring-zuul" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="jsspringzuul" type="462c0819:PsiDirectoryNode" />
+              <item name="key" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
@@ -664,61 +488,13 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="resources" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsyh" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="jscommon" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsyh" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="jscommon" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsyh" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="jscommon" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsyh" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="jscommon" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsyh" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="jscommon" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="jsyh" type="b2602c69:ProjectViewProjectNode" />
-              <item name="jsyh" type="462c0819:PsiDirectoryNode" />
-              <item name="js" type="462c0819:PsiDirectoryNode" />
-              <item name="jscommon" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="com" type="462c0819:PsiDirectoryNode" />
-              <item name="encryption" type="462c0819:PsiDirectoryNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -737,6 +513,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
+    <property name="restartRequiresConfirmation" value="false" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
@@ -744,17 +521,18 @@
       <recent name="D:\12月开始实训\晋商银行项目\后台\分支我的项目\jsyh\js" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.jsdengluprovider.util" />
+      <recent name="com.example.jsdengluprovider.config" />
       <recent name="com.encryption" />
       <recent name="com.example.jsspringzuul.uitl" />
       <recent name="com.example.jsregisterprovider.jsproviderregister.util" />
-      <recent name="com.example.jsconsumerregister.jsconsumerregister.util" />
-      <recent name="com.service.pojo" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\12月开始实训\晋商银行项目\后台\分支我的项目\jsyh\js\js-provider-denglu\src\main\java\com\example\jsdengluprovider\util" />
+      <recent name="D:\12月开始实训\晋商银行项目\后台\分支我的项目\jsyh\js\js-spring-zuul\src\main\java\com\example\jsspringzuul\uitl" />
+      <recent name="D:\12月开始实训\晋商银行项目\后台\分支我的项目\jsyh\js\js-spring-zuul\src\main\java\com\example\jsspringzuul\config" />
       <recent name="D:\12月开始实训\晋商银行项目\后台\分支我的项目\jsyh\js\js-consumer-register\src\main\java\com\example\jsconsumerregister\jsconsumerregister\util" />
       <recent name="D:\12月开始实训\晋商银行项目\后台\分支我的项目\jsyh\js\jscommon\src\main\java\com\pojo" />
-      <recent name="D:\12月开始实训\晋商银行项目\后台\分支我的项目\jsyh\js\js-provider-denglu\src\main\java\com\example\jsdengluprovider\util" />
-      <recent name="D:\js\js\js-producer-remittance\src\main\java\com\cloud\jsproducerremittance" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -769,10 +547,10 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.JsProviderRegisterApplication">
-    <configuration name="SHAUtil" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.example.jsdengluprovider.util.SHAUtil" />
-      <module name="js-provider-denglu" />
+  <component name="RunManager" selected="Spring Boot.JsSpringZuulApplication">
+    <configuration name="SHAUtil (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.encryption.SHAUtil" />
+      <module name="js-common" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <extension name="coverage">
         <pattern>
@@ -1055,18 +833,18 @@
       <item itemvalue="Spring Boot.JsProviderRegisterApplication" />
       <item itemvalue="Spring Boot.JsConsumerRegisterApplication" />
       <item itemvalue="Spring Boot.JsSpringZuulApplication" />
-      <item itemvalue="Application.SHAUtil" />
       <item itemvalue="JUnit.JsProviderRegisterApplicationTests.contextLoads" />
       <item itemvalue="JUnit.JsConsumerRegisterApplicationTests.contextLoads" />
       <item itemvalue="JUnit.JsProviderRegisterApplicationTests" />
+      <item itemvalue="Application.SHAUtil (1)" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Spring Boot.JsSpringZuulApplication" />
+        <item itemvalue="Application.SHAUtil (1)" />
         <item itemvalue="JUnit.JsProviderRegisterApplicationTests" />
         <item itemvalue="JUnit.JsProviderRegisterApplicationTests.contextLoads" />
         <item itemvalue="JUnit.JsConsumerRegisterApplicationTests.contextLoads" />
-        <item itemvalue="Application.SHAUtil" />
       </list>
     </recent_temporary>
   </component>
@@ -1103,7 +881,12 @@
       <workItem from="1546417676759" duration="1198000" />
       <workItem from="1546562485967" duration="36685000" />
       <workItem from="1546620059088" duration="1031000" />
-      <workItem from="1546650461678" duration="1257000" />
+      <workItem from="1546650461678" duration="11066000" />
+      <workItem from="1546668787020" duration="11768000" />
+      <workItem from="1546821359611" duration="12305000" />
+      <workItem from="1546844338885" duration="23869000" />
+      <workItem from="1546907791959" duration="6705000" />
+      <workItem from="1546928056435" duration="3943000" />
     </task>
     <task id="LOCAL-00001" summary="初始">
       <created>1545181297192</created>
@@ -1155,7 +938,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="221878000" />
+    <option name="totallyTimeSpent" value="290277000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1171,39 +954,39 @@
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.32907802" />
-      <window_info anchor="bottom" id="Application Servers" order="8" type="WINDOWED" weight="0.32909605" />
-      <window_info anchor="right" id="Maven Projects" order="6" weight="0.25938338" />
-      <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Event Log" order="10" side_tool="true" weight="0.32907802" />
+      <window_info anchor="bottom" x="731" y="390" width="170" height="47" id="Application Servers" order="9" type="WINDOWED" weight="0.32909605" />
+      <window_info anchor="right" id="Maven Projects" order="6" weight="0.1152815" />
+      <window_info anchor="bottom" id="Database Changes" order="11" show_stripe_button="false" />
       <window_info id="Capture Tool" order="6" />
       <window_info id="Designer" order="2" />
       <window_info anchor="right" id="Database" order="7" weight="0.3297587" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="4" />
-      <window_info anchor="bottom" id="Debug" order="4" weight="0.40228245" />
+      <window_info anchor="bottom" id="Debug" order="4" weight="0.22396576" />
       <window_info anchor="bottom" id="TODO" order="7" />
+      <window_info anchor="bottom" id="Messages" order="13" weight="0.2724679" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info id="Image Layers" order="3" />
-      <window_info anchor="bottom" id="Java Enterprise" order="14" />
+      <window_info anchor="bottom" id="Java Enterprise" order="14" weight="0.32952926" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="bottom" id="Version Control" order="12" weight="0.3580599" />
-      <window_info anchor="bottom" id="Run" order="3" weight="0.48359486" />
-      <window_info anchor="bottom" id="Spring" order="11" />
+      <window_info anchor="bottom" id="Version Control" order="8" weight="0.3580599" />
+      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.19543509" />
+      <window_info anchor="bottom" id="Spring" order="12" weight="0.32952926" />
       <window_info anchor="bottom" id="Terminal" order="2" weight="0.3281027" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25201073" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2808311" />
       <window_info anchor="right" id="Bean Validation" order="10" />
       <window_info id="Web" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Find" order="1" weight="0.15121256" />
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info id="Favorites" order="5" side_tool="true" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
-      <window_info anchor="bottom" id="Messages" order="13" weight="0.2724679" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="right" id="BPMNPalette" order="5" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.29243937" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -1254,10 +1037,245 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="3" />
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/impl/UserInfoServiceImpl.java</url>
+          <line>121</line>
+          <properties />
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="15" />
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/impl/RegisterServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/dao/JsclientinternetbankinfoDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="91" column="11" selection-start-line="91" selection-start-column="11" selection-end-line="91" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/Const.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/HttpInfoUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/HttpUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/IndustrySMS.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/PassWord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/web/HomeController.java" />
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/web/GuestController.java" />
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/dao/ShiroSessionRedisDao.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="41" selection-start-line="6" selection-start-column="41" selection-end-line="6" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/ShiroSessionConvertUtil.java" />
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/RedisUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="30" column="22" lean-forward="true" selection-start-line="30" selection-start-column="22" selection-end-line="30" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/Config.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/UserRealm.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="34" column="15" lean-forward="true" selection-start-line="34" selection-start-column="15" selection-end-line="34" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/impl/login.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-spring-zuul/src/main/resources/application.properties" />
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/config/WebConfig.java" />
+    <entry file="file://$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/pojo/BankUser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-391">
+          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/mavenjar/com/netflix/zuul/zuul-core/1.3.0/zuul-core-1.3.0.jar!/com/netflix/zuul/context/RequestContext.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="139">
+          <caret line="95" selection-start-line="95" selection-end-line="95" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/concurrent/ConcurrentHashMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="940" selection-start-line="940" selection-end-line="940" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/uitl/RedisConfig.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/uitl/ResponseUtil.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/uitl/TokenUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1242">
+          <caret line="62" selection-start-line="62" selection-end-line="62" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/JsSpringZuulApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-46">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-spring-zuul/src/main/resources/redis.properties">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-spring-zuul/src/main/resources/bootstrap.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-spring-zuul/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="575">
+          <caret line="25" column="21" lean-forward="true" selection-start-line="25" selection-start-column="21" selection-end-line="25" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/uitl/RedisSessionConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="299">
+          <caret line="13" lean-forward="true" selection-start-line="13" selection-end-line="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/config/WebConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="92" column="33" selection-start-line="92" selection-start-column="33" selection-end-line="92" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/RedisSessionConfig.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="6" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/WebUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/TokenUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="24" column="25" selection-start-line="24" selection-start-column="25" selection-end-line="24" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/JsDengluProviderApplication.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="161">
+          <caret line="14" column="16" selection-start-line="14" selection-start-column="16" selection-end-line="14" selection-end-column="16" />
+          <folding>
+            <element signature="e#686#687#0" expanded="true" />
+            <element signature="e#764#765#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/web/UserInfoController.java">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/CookieUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="280">
+          <caret line="29" column="32" selection-start-line="29" selection-start-column="32" selection-end-line="29" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/RegisterService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/LoginExitService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="6" column="17" selection-start-line="6" selection-start-column="17" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/config/CorsConfiguration.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="391">
+          <caret line="68" column="7" selection-start-line="68" selection-start-column="7" selection-end-line="68" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/RegisterController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="115">
@@ -1272,343 +1290,89 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/ForgetThePassword.java">
+    <entry file="file://$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/uitl/CookieUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-932">
-          <caret line="16" column="13" selection-start-line="16" selection-start-column="13" selection-end-line="16" selection-end-column="13" />
+        <state relative-caret-position="-93">
+          <caret line="15" column="29" lean-forward="true" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/UserInfoController.java">
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/resources/redis.properties">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-805">
-          <caret line="36" column="75" selection-start-line="36" selection-start-column="75" selection-end-line="36" selection-end-column="75" />
+        <state relative-caret-position="161">
+          <caret line="7" column="6" lean-forward="true" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://E:/mavenjar/org/springframework/spring-web/4.3.10.RELEASE/spring-web-4.3.10.RELEASE.jar!/org/springframework/web/context/request/ServletRequestAttributes.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="21" column="13" selection-start-line="21" selection-start-column="13" selection-end-line="21" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/resources/application.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="115">
+          <caret line="5" column="38" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+          <folding>
+            <element signature="e#945#985#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/ForgetThePassword.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="230">
+          <caret line="50" column="68" selection-start-line="50" selection-start-column="68" selection-end-line="50" selection-end-column="68" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="48" column="26" selection-start-line="48" selection-start-column="22" selection-end-line="48" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://C:/Program Files/Java/jdk1.8.0_181/src.zip!/java/util/Map.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="211" column="6" selection-start-line="211" selection-start-column="6" selection-end-line="211" selection-end-column="6" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/uitl/TokenUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="58" column="37" selection-start-line="58" selection-start-column="37" selection-end-line="58" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/jscommon/src/main/java/com/service/pojo/ClientRegisterUser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="299">
-          <caret line="17" column="32" lean-forward="true" selection-start-line="17" selection-start-column="19" selection-end-line="17" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-provider-register/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-115">
-          <caret line="40" column="26" lean-forward="true" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-provider-register/src/main/java/com/example/jsregisterprovider/jsproviderregister/controller/test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="9" column="13" selection-start-line="9" selection-start-column="13" selection-end-line="9" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-consumer-register/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1725" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-provider-register/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-207">
-          <caret line="72" column="20" selection-start-line="72" selection-start-column="20" selection-end-line="72" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="77" column="39" selection-start-line="77" selection-start-column="39" selection-end-line="77" selection-end-column="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-spring-zuul/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-989">
-          <caret line="35" column="21" lean-forward="true" selection-start-line="35" selection-start-column="21" selection-end-line="35" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/util/Config.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/util/HttpUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="14" column="13" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://E:/mavenjar/io/springfox/springfox-spring-web/2.6.0/springfox-spring-web-2.6.0.jar!/springfox/documentation/spring/web/plugins/DocumentationPluginsBootstrapper.class">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="104">
-          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-provider-register/src/main/java/com/example/jsregisterprovider/jsproviderregister/controller/ClientRegisterController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-46">
-          <caret line="32" column="37" selection-start-line="32" selection-start-column="22" selection-end-line="32" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/jscommon/src/main/java/com/service/pojo/ClientRegister.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-spring-zuul/src/main/resources/bootstrap.yml">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-spring-zuul/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="28" column="17" lean-forward="true" selection-start-line="28" selection-start-column="17" selection-end-line="28" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/ShiroSessionRedisConstant.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="424">
-          <caret line="20" column="31" selection-start-line="20" selection-start-column="31" selection-end-line="20" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/uitl/RedisSessionConfig.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="207">
-          <caret line="9" lean-forward="true" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/JsConsumerRegisterApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/IndustrySMS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="308">
-          <caret line="21" column="68" selection-start-line="21" selection-start-column="68" selection-end-line="21" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/RedisUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/util/RedisUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="115">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-consumer-register/src/main/resources/application.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" lean-forward="true" selection-start-line="11" selection-end-line="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-provider-register/src/main/java/com/example/jsregisterprovider/jsproviderregister/util/IdentityCardUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="12" column="38" selection-start-line="12" selection-start-column="38" selection-end-line="12" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/jscommon/src/main/java/com/service/pojo/ClientRegisterBankInfo.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-437">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-provider-register/src/main/resources/mapper/JsclientinfoDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-618" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-provider-register/src/main/resources/mapper/JsclientinternetbankinfoDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1311">
-          <caret line="15" column="35" selection-start-line="15" selection-start-column="16" selection-end-line="15" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-provider-register/src/main/java/com/example/jsregisterprovider/jsproviderregister/service/impl/ClientRegisterServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="633">
-          <caret line="88" selection-start-line="88" selection-end-line="88" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/resources/mapper/JsclientinternetbankinfoDao.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="483">
-          <caret line="30" column="28" selection-start-line="30" selection-start-column="16" selection-end-line="30" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/SHAUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="15" column="25" selection-start-line="15" selection-start-column="25" selection-end-line="15" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/util/PassWord.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
+        <state relative-caret-position="653">
+          <caret line="62" lean-forward="true" selection-start-line="62" selection-end-line="62" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/jscommon/src/main/java/com/encryption/SHAUtil.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="552">
-          <caret line="24" selection-start-line="24" selection-end-line="24" />
+        <state relative-caret-position="312">
+          <caret line="45" column="8" selection-start-line="45" selection-start-column="8" selection-end-line="45" selection-end-column="8" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/jscommon/src/main/java/com/encryption/Encryption.java">
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/UserInfoService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="20" column="10" lean-forward="true" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+        <state relative-caret-position="23">
+          <caret line="18" column="11" selection-start-line="18" selection-start-column="11" selection-end-line="18" selection-end-column="11" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/util/Encryption.java">
+    <entry file="file://$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/filter/PreFilter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="11" column="13" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/service/impl/ClientRegisterServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="134" column="35" lean-forward="true" selection-start-line="134" selection-start-column="35" selection-end-line="134" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/controller/ClientRegistersController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="632">
-          <caret line="83" selection-start-line="83" selection-end-line="83" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/feign/BankCardFeign.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#201#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/feign/ClientRegisterFeign.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="184">
-          <caret line="12" column="17" selection-start-line="12" selection-start-column="17" selection-end-line="12" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/service/ClientRegisterService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="503">
-          <caret line="43" column="11" selection-start-line="43" selection-start-column="11" selection-end-line="43" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/util/IndustrySMS.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="20" column="34" lean-forward="true" selection-start-line="20" selection-start-column="34" selection-end-line="20" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-consumer-register/src/main/java/com/example/jsconsumerregister/jsconsumerregister/util/Swagger2.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="17" column="13" selection-start-line="17" selection-start-column="13" selection-end-line="17" selection-end-column="13" />
+        <state relative-caret-position="249">
+          <caret line="63" column="45" selection-start-line="63" selection-start-column="40" selection-end-line="63" selection-end-column="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/impl/UserInfoServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="88">
-          <caret line="113" column="37" lean-forward="true" selection-start-line="113" selection-start-column="37" selection-end-line="113" selection-end-column="37" />
+        <state relative-caret-position="76">
+          <caret line="121" column="25" lean-forward="true" selection-start-line="121" selection-start-column="25" selection-end-line="121" selection-end-column="25" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/impl/login.java">
+    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/controller/UserInfoController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="4" column="13" selection-start-line="4" selection-start-column="13" selection-end-line="4" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-provider-denglu/src/main/java/com/example/jsdengluprovider/service/impl/RegisterServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/filter/PreFilter.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="53" lean-forward="true" selection-start-line="53" selection-end-line="53" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/js-spring-zuul/src/main/java/com/example/jsspringzuul/JsSpringZuulApplication.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="161">
-          <caret line="10" column="14" selection-start-line="10" selection-start-column="14" selection-end-line="10" selection-end-column="14" />
+        <state relative-caret-position="281">
+          <caret line="199" column="7" selection-start-line="199" selection-start-column="7" selection-end-line="199" selection-end-column="7" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1664,7 +1428,7 @@
       </state>
       <state key="ModuleStructureConfigurable.UI">
         <settings>
-          <last-edited>jscommon</last-edited>
+          <last-edited>js-common</last-edited>
           <splitter-proportions>
             <option name="proportions">
               <list>

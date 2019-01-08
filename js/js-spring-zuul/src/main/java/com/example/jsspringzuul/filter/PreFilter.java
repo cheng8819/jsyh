@@ -14,8 +14,11 @@ import org.springframework.stereotype.Component;
 import javax.annotation.Resource;
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.text.ParseException;
+import java.util.Date;
+import java.util.HashMap;
 import java.util.Map;
 
 @Component//组件化到spring
@@ -48,9 +51,27 @@ public class PreFilter extends ZuulFilter {
         ctx = RequestContext.getCurrentContext();
         HttpServletRequest request = ctx.getRequest();
         String requestURI = request.getRequestURI();
-        if ("/tologin/login".equals(requestURI)) {
+//        if("/tologin/login".equals(requestURI)||"/tologin/toa".equals(requestURI)
+//                ||"/tologin//getNamePhone".equals(requestURI)||"/tologin/loginsms".equals(requestURI)
+//                ||"tologin/VerifyTheLoginVerificationCode".equals(requestURI)){
+//            System.out.println(request.getSession().getId());
+//            return false;
+//        }
+        String token = null;
+        Cookie[] cookies = request.getCookies();
+        if (cookies!=null){
+            for (Cookie c :cookies){
+                if (c.getName().equals("TOKEN")){
+                    token = c.getValue();
+                }
+            }
+        }
+        ctx.addZuulRequestHeader("TOKEN",token);
+        if ("tologin/toa".equals(requestURI)){
             return true;
         }
+        //ctx.addZuulRequestHeader("phone",String.valueOf(jsonObject.get("phone")));
+        System.out.println("aaaaaaaaaaaaaa" + request.getSession().getId());
 
 //        // TODO
         return false;
@@ -58,23 +79,37 @@ public class PreFilter extends ZuulFilter {
 
     @Override
     public Object run() {
-        RequestContext ctx = RequestContext.getCurrentContext();
-        HttpServletRequest request = ctx.getRequest();
-
+        RequestContext ctxs = RequestContext.getCurrentContext();
+        HttpServletRequest request = ctxs.getRequest();
+        //HttpSession sess = request.getSession().getSessionContext().getSession("62838764-3112-4588-8a05-698b97baae28");
         //String login = request.getParameter("login");
         Cookie[] cookies = request.getCookies();
         String sessionId = null;
-        for (Cookie c : cookies) {
-            if ("SESSIONID".equals(c.getName())) {
-                sessionId = c.getValue();
+        if ("OPTIONS".equalsIgnoreCase(request.getMethod())) {
+            return null;
+        }
+//        for (Cookie c : cookies) {
+//            if ("SESSION".equals(c.getName())) {
+//                sessionId = c.getValue();
+//            }
+//        }
+
+        //System.out.println(redisUtil.get("REDIS_TOKEN"));
+        //System.out.println(sessionId);
+        HttpSession session = request.getSession();
+        System.out.println("sessionid == " + session.getId());
+        //String token = (String) session.getAttribute("REDIS_TOKEN");
+        String token = null;
+
+        if (cookies!=null){
+            for (Cookie c :cookies){
+                if (c.getName().equals("TOKEN")){
+                    token = c.getValue();
+                }
             }
         }
-        //System.out.println(redisUtil.get("REDIS_TOKEN"));
-        System.out.println(sessionId);
-        HttpSession session = RequestContext.getCurrentContext().getRequest().getSession();
-        System.out.println("sessionid == " + session.getId());
-        String token = (String) session.getAttribute("REDIS_TOKEN");
-        if (sessionId != null && sessionId.equals(session.getId())) {
+        //if (sessionId != null && sessionId.equals(session.getId())) {
+            if (token!=null) {
             System.out.println("token" + token);
             Map<String, Object> validMap = null;
                 try {
@@ -86,33 +121,70 @@ public class PreFilter extends ZuulFilter {
                 if (i == 0) {
                     System.out.println("token解析成功");
                     JSONObject jsonObject = (JSONObject) validMap.get("data");
-                    System.out.println("uid=" + jsonObject.get("uid"));
-                    System.out.println("sta=" + jsonObject.get("sta"));
+                    System.out.println("uid=" + jsonObject.get("phone"));
+                    System.out.println("sta=" + jsonObject.get("idcard"));
                     System.out.println("exp=" + jsonObject.get("exp"));
+                    //生成时间
+                    ctxs.addZuulRequestHeader("idcard", String.valueOf(jsonObject.get("idcard")));
+                    Map<String, Object> map = new HashMap<>();
+                    //建立载荷，这些数据根据业务，自己定义。
+                    map.put("phone", jsonObject.get("phone"));
+                    map.put("idcard", jsonObject.get("idcard"));
+                    //生成时间
+                    map.put("sta", new Date().getTime());
+                    //过期时间
+                    map.put("exp", new Date().getTime() + 1000 * 60 * 1);
+                    String newToken = TokenUtils.creatToken(map);
+                    //session.setAttribute("REDIS_TOKEN",newToken);
+                    Cookie cookie  = new Cookie("TOKEN",newToken);
+                    //ctxs.addZuulRequestHeader("userid", String.valueOf("121"));
+                    cookie.setMaxAge(1000*60);
+                    cookie.setPath("/");
+                    HttpServletResponse response = ctxs.getResponse();
+                    response.addCookie(cookie);
+                    System.out.println(newToken);
+                    System.out.println(JSON.toJSONString(validMap));
                     return null;
                 } else if (i == 1) {
-                    ctx.setSendZuulResponse(false);
-                    ctx.setResponseStatusCode(403);
-                    ctx.addZuulResponseHeader("content-type", "text/html;charset=utf-8");
-                    ctx.setResponseBody("认证失败");
+
+                    //ctxs.addZuulResponseHeader("content-type", "text/html;charset=utf-8");
+                    ctxs.setResponseBody("认证失败");
+                    Cookie cookie  = new Cookie("TOKEN",null);
+                    cookie.setMaxAge(0);
+                    cookie.setPath("/");
+                    HttpServletResponse response = ctxs.getResponse();
+                    response.addCookie(cookie);
                 } else if (i == 2) {
-                    ctx.setSendZuulResponse(false);
-                    ctx.setResponseStatusCode(403);
-                    ctx.addZuulResponseHeader("content-type", "text/html;charset=utf-8");
-                    ctx.setResponseBody("已过期请重新登陆");
+                    //ctxs.setSendZuulResponse(false);
+                    //ctxs.addZuulResponseHeader("content-type", "text/html;charset=utf-8");
+                    ctxs.setResponseBody("已过期请重新登陆");
+                    Cookie cookie  = new Cookie("TOKEN",null);
+                    cookie.setMaxAge(0);
+                    cookie.setPath("/");
+                    HttpServletResponse response = ctxs.getResponse();
+                    response.addCookie(cookie);
                     session.invalidate();
                 } else if(token==null){
-                    ctx.setSendZuulResponse(false);
-                    ctx.setResponseStatusCode(403);
-                    ctx.addZuulResponseHeader("content-type", "text/html;charset=utf-8");
-                    ctx.setResponseBody("未登录，请先登录");
+                    //ctxs.setSendZuulResponse(false);
+//                    ctxs.setResponseStatusCode(403);
+                   // ctxs.addZuulResponseHeader("content-type", "text/html;charset=utf-8");
+                    ctxs.setResponseBody("未登录，请先登录");
+                    Cookie cookie  = new Cookie("TOKEN",null);
+                    cookie.setMaxAge(0);
+                    cookie.setPath("/");
+                    HttpServletResponse response = ctxs.getResponse();
+                    response.addCookie(cookie);
                 }
                 } catch (Exception e) {
                     e.printStackTrace();
-                    ctx.setSendZuulResponse(false);
-                    ctx.setResponseStatusCode(403);
-                    ctx.addZuulResponseHeader("content-type", "text/html;charset=utf-8");
-                    ctx.setResponseBody("未登录，请先登录");
+
+                   // ctxs.addZuulResponseHeader("content-type", "text/html;charset=utf-8");
+                    ctxs.setResponseBody("未登录，请先登录");
+                    Cookie cookie  = new Cookie("TOKEN",null);
+                    cookie.setMaxAge(0);
+                    cookie.setPath("/");
+                    HttpServletResponse response = ctxs.getResponse();
+                    response.addCookie(cookie);
                 }
 
         /*if (login == null) {
@@ -123,10 +195,15 @@ public class PreFilter extends ZuulFilter {
         }*/
 
         }else{
-            ctx.setSendZuulResponse(false);
-            ctx.setResponseStatusCode(403);
+//            ctx.setSendZuulResponse(false);
+//            ctx.setResponseStatusCode(404);
             ctx.addZuulResponseHeader("content-type", "text/html;charset=utf-8");
             ctx.setResponseBody("未登录，请先登录");
+                Cookie cookie  = new Cookie("TOKEN",null);
+                cookie.setMaxAge(0);
+                cookie.setPath("/");
+                HttpServletResponse response = ctxs.getResponse();
+                response.addCookie(cookie);
             return token;
         }
         return "1234";

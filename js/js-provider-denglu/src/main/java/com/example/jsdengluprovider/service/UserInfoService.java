@@ -16,7 +16,7 @@ public interface UserInfoService {
      *
      * @return
      */
-    String login(String name, String password,HttpServletRequest request,HttpServletResponse response) throws Exception;
+    String login(String name, String password,HttpServletRequest request) throws Exception;
 
     /**
      * 验证短信验证码
@@ -24,7 +24,7 @@ public interface UserInfoService {
      * @param phone   手机号码
      * @param SMSCode 验证码
      */
-    String verifySMSCode(String phone, String SMSCode,String operationState, HttpServletResponse response) throws Exception;
+    String verifySMSCode(String phone, String SMSCode,String operationState) throws Exception;
 
     /**
      * @param name 用户名获取手机号码
@@ -86,4 +86,9 @@ public interface UserInfoService {
      * 登录状态获取用户信息
      */
     String getLoginStateInfo(HttpServletRequest request) throws ParseException, JOSEException;
+
+    /**
+     * token获取用户身份证号码
+     */
+    String tokenGetIdCard(String token) throws ParseException, JOSEException;
 }

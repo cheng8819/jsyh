@@ -3,9 +3,11 @@ server:
 eureka:
   client:
     service-url:
-      defaultZone: http://39.105.7.229:6001/eureka/
+      defaultZone: http://root:123456@39.105.153.204:7776/eureka/
   instance:
-    prefer-ip-address: true
+    hostname: 192.168.50.247
+    prefer-ip-address: false
+    instance-id: 192.168.50.247:8080
 spring:
   datasource:
     # 使用druid数据源
@@ -52,6 +54,9 @@ spring:
       min-idle: 0
       # 从连接池中获取连接最大等待时间（默认为-1，单位为毫秒，负数表示无限）
       max-wait: -1
+ribbon:
+  ReadTimeout: 50000
+  ConnectTimeout: 50000
 mybatis:
   mapperLocations: classpath:mapper/*.xml
 

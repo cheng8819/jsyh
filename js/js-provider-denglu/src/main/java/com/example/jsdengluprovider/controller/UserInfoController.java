@@ -11,18 +11,21 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.text.ParseException;
 
 @RestController
-@CrossOrigin(origins = "*", maxAge = 3600,allowCredentials="true")
+@CrossOrigin(origins = "*",allowCredentials="true")
 public class UserInfoController {
 
     @Autowired
     @Qualifier("userInfoServiceImpl")
     private UserInfoService userInfoService;
 
+    private HttpSession httpsession;
 
     /**
      *     用户登录接口
@@ -31,10 +34,12 @@ public class UserInfoController {
      *                先判断用户名密码是否正确，正确后再判断cookie密文是否第一次登录，如果不是需要进行第二次验证
      */
     @RequestMapping("/login")
-    public String login(@RequestParam("name") String name,@RequestParam("password") String password,HttpServletRequest request,HttpServletResponse response) throws Exception {
-        String login = userInfoService.login(name, password,request,response);
+    public String login(@RequestParam("name") String name,@RequestParam("password") String password,HttpServletRequest request) throws Exception {
+        //System.out.println("*********"+request.getSession().getId());
+        String login = userInfoService.login(name, password,request);
         System.out.println("111");
-        System.out.println("sessionid === "  + request.getSession().getId());
+        //httpsession = request.getSession();
+        //System.out.println("sessionid === "  + request.getSession().getId());
         return login;
         /*try {
             //获取subject
@@ -67,6 +72,18 @@ public class UserInfoController {
     @RequestMapping("/getLoginStateInfo")
     public String getLoginStateInfo(HttpServletRequest request) throws ParseException, JOSEException {
         return userInfoService.getLoginStateInfo(request);
+    }
+
+    /**
+     * 根据token获取身份证号码
+     * @param token
+     * @return
+     * @throws ParseException
+     * @throws JOSEException
+     */
+    @RequestMapping("/tokenGetIdCard")
+    public String tokenGetIdCard(String token) throws ParseException, JOSEException {
+        return userInfoService.tokenGetIdCard(token);
     }
 
     /**
@@ -105,7 +122,7 @@ public class UserInfoController {
      */
     @RequestMapping("/VerifyTheLoginVerificationCode")
     public String verifyTheLoginVerificationCode(@RequestParam("phoneNumber") String phoneNumber,@RequestParam("smsCode") String smsCode,HttpServletResponse response) throws Exception {
-        return userInfoService.verifySMSCode(phoneNumber,smsCode,"1",response);
+        return userInfoService.verifySMSCode(phoneNumber,smsCode,"1");
     }
 
     /**
@@ -157,6 +174,34 @@ public class UserInfoController {
         return userInfoService.isThisYourFirstLogin(name,request);
     }
 
+
+    @RequestMapping("/gettokenww")
+    public String gnjnskf(HttpServletRequest request,HttpServletResponse response) {
+        Cookie[] cookies = request.getCookies();
+
+        String userid = request.getHeader("userid");
+        String userids = request.getHeader("idcard");
+        System.out.println(userid);
+        System.out.println(userids);
+        try {
+            for (Cookie c : cookies) {
+                if (c.getName().equals("TOKEN")) {
+                    return c.getValue();
+                }
+            }
+        } catch (Exception x) {
+            return "11a";
+        }
+        return "11b";
+    }
+
+    /**
+     * 获取token
+     */
+    @RequestMapping("/getToken")
+    public String a(HttpServletRequest request){
+        return request.getHeader("TOKEN")==null?"请登录":request.getHeader("TOKEN");
+    }
 
 
     /**

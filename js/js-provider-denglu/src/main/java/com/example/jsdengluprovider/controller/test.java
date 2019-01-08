@@ -19,27 +19,28 @@ import java.net.HttpCookie;
 
 @SuppressWarnings("ALL")
 @RestController
-@CrossOrigin(origins = "*", maxAge = 3600,allowCredentials="true")
+@CrossOrigin(origins = "*",allowCredentials="true")
 public class test {
     @Autowired
     private JsclientinternetbankinfoDao jsclientinternetbankinfoDao;
+
     @RequestMapping("/test")
-    public String a(){
+    public String a() {
         return JSON.toJSONString(jsclientinternetbankinfoDao.queryById("140423199611160010"));
     }
 
     @RequestMapping("/abcd")
-    public String abcd(HttpServletRequest request,HttpServletResponse response){
+    public String abcd(HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
-        session.setAttribute("a","abc123");
+        session.setAttribute("a", "abc123");
         String s = JSON.toJSONString(session);
         System.out.println(s);
         System.out.println(session.getId());
         Cookie[] cookies = request.getCookies();
         response.setHeader("Access-Control-Allow-Origin", "*");
-        response.setHeader("Access-Control-Allow-Credentials","true");
-            for (Cookie c : cookies){
-            if (c.getName().equals("1")){
+        response.setHeader("Access-Control-Allow-Credentials", "true");
+        for (Cookie c : cookies) {
+            if (c.getName().equals("1")) {
                 return c.getValue();
             }
         }
@@ -47,26 +48,30 @@ public class test {
     }
 
     @RequestMapping("/opop")
-    public String opop(){
+    public String opop() {
         return "asbcd";
     }
 
-    @RequestMapping("/abcde")
-    public String abcde(HttpServletResponse response){
-        
-        System.out.println("123");
-        Cookie cookie = new Cookie("a","12345");
-        cookie.setPath("/");
-        cookie.setMaxAge(5000);
+
+    @RequestMapping("/opops")
+    public String opops(HttpServletResponse response,HttpServletRequest request) {
+        Cookie cookie = new Cookie("TOKEN","a");
         response.addCookie(cookie);
-       return "abcd";
+        return "asbcd";
+    }
+
+
+
+    @RequestMapping("/abcde")
+    public String abcde(HttpServletResponse response) {
+
+        response.setHeader("token", "abclaskjuhijojkbhuihonbjhvyguihjbkh");
+        return "abcd";
     }
 
     @RequestMapping("/testabc")
-    public String testabc(){
-        smssss.execute();
-        IndustrySMS.execute("17603452718",100);
-        return "";
+    public String testabc(HttpServletRequest request) {
+        return request.getHeader("token");
     }
 
 }

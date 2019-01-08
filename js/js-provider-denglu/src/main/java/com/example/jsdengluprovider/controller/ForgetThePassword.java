@@ -48,7 +48,7 @@ public class ForgetThePassword {
      */
     @RequestMapping("/CodeIsItRight")
     public String codeIsItRight(@RequestParam("phoneNumber") String phoneNumber, @RequestParam("smsCode") String smsCode, HttpServletResponse response) throws Exception {
-        return userInfoService.verifySMSCode(phoneNumber,smsCode,"2",response);
+        return userInfoService.verifySMSCode(phoneNumber,smsCode,"2");
     }
 
     /**

@@ -1,21 +1,33 @@
 server:
   port: 7600
+  tomcat:
+    redirect-context-root:
 eureka:
   client:
     service-url:
       defaultZone: http://39.105.7.229:6001/eureka/
+  instance:
+    hostname: 192.168.50.247
+    prefer-ip-address: false
+    instance-id: 192.168.50.247:7600
+
 zuul:
   host:
-    maxTotalConnections: 200
-    maxPerRouteConnections: 20
+    connect-timeout-millis: 60000
+    socket-timeout-millis: 60000
   routes:
     login:
       path: /tologin/**
       serviceId: js-producer-login
-  retryable: true
+  strip-prefix: false
+  ribbon:
+    eager-load:
+      enabled: true
+  sensitive-headers: "*"
 ribbon:
-  ReadTimeout: 3000
-  ConnectTimeout: 3000
+  ReadTimeout: 60000
+  SocketTimeout: 60000
+
 ---
 spring:
   redis:
@@ -35,3 +47,12 @@ spring:
     name: js-spring-zuul
   profiles:
     active: dev
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 100000
